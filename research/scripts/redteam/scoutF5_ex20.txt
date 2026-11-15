@@ -1,0 +1,2 @@
+n 20 primitive 1047540 fails 0
+n 21 primitive 2097018 fails 0

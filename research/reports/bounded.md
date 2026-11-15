@@ -68,8 +68,8 @@ For n = 6, 10, 12, 14, 18, 20 there is no delta as in L6: already a handful of n
 satisfy: every delta outside the union of the V_d lies outside span(M_i)+V_d for all d in D(n), for some i. (So every
 near-constant family N·1 + delta is covered by a stratified linear set delta' + N{e_i+e_j : {i,j} in M_i} ⊆ E_n.)
 Scripts: `arr2.py` (subspace-arrangement engine), `near_constant.py`; certificates `cert_nearconst_<n>.json`.
-For n = 30 the same was observed modulo the prime 2^31-1 only (`arrangement_rand.py 30 400`: family dies after 18
-random matchings) -- NOT yet re-verified over Q at the time of this checkpoint.
+UPDATE: also verified EXACTLY over Q for n = 30 (10 matchings suffice, `near_constant.py 30 120 1`, cert_nearconst_30.json),
+and for odd n = 15, 21 using non-crossing matchings of n-1 points plus one singleton (cert_nearconst_15/21.json).
 
 **C2. COMPUTER-CHECKED.** `oriented.py 6`: for the two-scale family 1·N + eps·v (v a generic total order), the
 restricted strategy "non-crossing perfect matching with pairs oriented by v and a directed cycle in every quotient graph
@@ -81,4 +81,38 @@ strategy class is insufficient; it is NOT an obstruction.
   side conditions). A snippet of Kászonyi (Publ. Math. Debrecen 2010) states "if n = p_1^{f_1}...p_k^{f_k} and
   sum 1/p_i < 4/5 then Q_n is CF" -- note 1/2+1/3+1/5 > 4/5, so that statement does not cover n = 30.
 
-(Sections on further work follow below once done.)
+
+
+## 4. Further analysis (after checkpoint)
+
+**L8 (fiber decomposition). PROVED.** Apply the L6 argument with a full-dimensional family u + L·delta, u ranging over
+a lattice cone in V_e (e | n), and D = {d in D(n): e | d} (the same Dickson / sign-fixing proof works, using a
+moment-curve sequence to get e independent increments). The coverer's span(P_1) must contain V_e, so every constrained
+block functional sums to zero on each residue class mod e inside the block, and every witness cycle mod d (e | d) lies
+inside one residue class mod e. The problem therefore splits into the e interleaved fibers {i ≡ b mod e}, each a copy of
+the n/e problem. For n = 30, e = 5 (D = {15,10}) a d=15 witness pair can always be nested around a d=10 witness pair
+from another fiber, so this family gives no obstruction (hand argument, checked case by case in the analysis; not
+machine-checked).
+
+**L9 (generic families are easy). PROVED (sketch fully written in reasoning, summarized):** for a full-dimensional
+family around a strictly positive generic direction u*, thin-wedge pairs of a non-crossing perfect matching give witnesses
+whenever some cycle of the quotient graph Gamma_d(M) has multiplicative flux prod u*_i/u*_j != 1; this is exactly the
+near-constant condition for delta = log u*. For even n every Gamma_d(M) has a cycle (n/2 edges on d <= n/2 vertices), so
+by C1 the coverer wins at n = 30.
+
+**Lesson / barrier for this method.** Every "one-scale" Dickson-family obstruction I could formulate (near-constant,
+V_e-fiber, generic) is coverable at n = 30, the first case with sum 1/p > 1. The remaining hope is multi-scale families
+(N·u* + M·y + delta with u* in V_d), where witnesses for d in D must be ORIENTED at the y-scale (C2); but extra stratified
+links between matching pairs widen the allowed witness cone again, and for n = 6 the oriented model already has 72 bad
+orders although Q_6 is CF. I did not find an obstruction.
+
+**On the scout's non-crossing-pairs conjecture.** Even if true it does not prove KK: by L5(a,d), sets of the form
+{x_i != x_j, x_i != x_k} (shared endpoint) are not stratified, and single-defect words like N·1 + e_1 force all witness
+pairs to share coordinate 1. One would need pairwise DISJOINT non-crossing witnesses (L4), which fail for N·1 + e_1;
+such points are instead covered by rigid matchings (L6/C1). A correct KK proof needs both mechanisms.
+
+## 5. Final claim
+(iii) partial results only: L1-L8 proved; C1 machine-checked exactly for n in {6,10,12,14,15,18,20,21,30}:
+the near-constant slab E_n ∩ {max - min <= B} is covered by finitely many stratified linear subsets of E_n for these n,
+so the natural pumping/Dickson obstruction L6 cannot disprove KK there. Evidence points toward KK being TRUE, i.e. the
+(ab*)^n route is unlikely to prove the main conjecture.

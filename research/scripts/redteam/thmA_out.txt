@@ -1,0 +1,44 @@
+2 omega 1 L 1 uniqueFrom 1 ThmA True R1a True R1b True maxc@L-1 None
+3 omega 1 L 2 uniqueFrom 1 ThmA True R1a True R1b True maxc@L-1 1
+4 omega 1 L 2 uniqueFrom 2 ThmA True R1a True R1b True maxc@L-1 2
+5 omega 1 L 3 uniqueFrom 1 ThmA True R1a True R1b True maxc@L-1 1
+6 omega 2 L 4 uniqueFrom 4 ThmA True R1a True R1b True maxc@L-1 2
+7 omega 1 L 4 uniqueFrom 1 ThmA True R1a True R1b True maxc@L-1 1
+8 omega 1 L 5 uniqueFrom 4 ThmA True R1a True R1b True maxc@L-1 1
+9 omega 1 L 6 uniqueFrom 3 ThmA True R1a True R1b True maxc@L-1 1
+10 omega 2 L 6 uniqueFrom 6 ThmA True R1a True R1b True maxc@L-1 2
+11 omega 1 L 7 uniqueFrom 1 ThmA True R1a True R1b True maxc@L-1 1
+12 omega 2 L 8 uniqueFrom 8 ThmA True R1a True R1b True maxc@L-1 2
+13 omega 1 L 8 uniqueFrom 1 ThmA True R1a True R1b True maxc@L-1 1
+14 omega 2 L 9 uniqueFrom 8 ThmA True R1a True R1b True maxc@L-1 1
+15 omega 2 L 10 uniqueFrom 7 ThmA True R1a True R1b True maxc@L-1 1
+16 omega 1 L 10 uniqueFrom 8 ThmA True R1a True R1b True maxc@L-1 1
+17 omega 1 L 11 uniqueFrom 1 ThmA True R1a True R1b True maxc@L-1 1
+18 omega 2 L 12 uniqueFrom 12 ThmA True R1a True R1b True maxc@L-1 2
+19 omega 1 L 12 uniqueFrom 1 ThmA True R1a True R1b True maxc@L-1 1
+20 omega 2 L 13 uniqueFrom 12 ThmA True R1a True R1b True maxc@L-1 1
+21 omega 2 L 14 uniqueFrom 9 ThmA True R1a True R1b True maxc@L-1 1
+22 omega 2 L 14 uniqueFrom 12 ThmA True R1a True R1b True maxc@L-1 1
+23 omega 1 L 15 uniqueFrom 1 ThmA True R1a True R1b True maxc@L-1 1
+24 omega 2 L 16 uniqueFrom 16 ThmA True R1a True R1b True maxc@L-1 2
+25 omega 1 L 16 uniqueFrom 5 ThmA True R1a True R1b True maxc@L-1 1
+26 omega 2 L 17 uniqueFrom 14 ThmA True R1a True R1b True maxc@L-1 1
+27 omega 1 L 18 uniqueFrom 9 ThmA True R1a True R1b True maxc@L-1 1
+28 omega 2 L 18 uniqueFrom 16 ThmA True R1a True R1b True maxc@L-1 1
+29 omega 1 L 19 uniqueFrom 1 ThmA True R1a True R1b True maxc@L-1 1
+30 omega 3 L 20 uniqueFrom 20 ThmA True R1a True R1b True maxc@L-1 2
+31 omega 1 L 20 uniqueFrom 1 ThmA True R1a True R1b True maxc@L-1 1
+32 omega 1 L 21 uniqueFrom 16 ThmA True R1a True R1b True maxc@L-1 1
+33 omega 2 L 22 uniqueFrom 13 ThmA True R1a True R1b True maxc@L-1 1
+34 omega 2 L 22 uniqueFrom 18 ThmA True R1a True R1b True maxc@L-1 1
+35 omega 2 L 23 uniqueFrom 11 ThmA True R1a True R1b True maxc@L-1 1
+36 omega 2 L 24 uniqueFrom 24 ThmA True R1a True R1b True maxc@L-1 2
+37 omega 1 L 24 uniqueFrom 1 ThmA True R1a True R1b True maxc@L-1 1
+38 omega 2 L 25 uniqueFrom 20 ThmA True R1a True R1b True maxc@L-1 1
+39 omega 2 L 26 uniqueFrom 15 ThmA True R1a True R1b True maxc@L-1 1
+40 omega 2 L 26 uniqueFrom 24 ThmA True R1a True R1b True maxc@L-1 1
+ALL PASS
+
+real	0m12.737s
+user	0m11.676s
+sys	0m0.891s
