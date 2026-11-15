@@ -1,0 +1,9 @@
+n=9 results (first run):
+RESULT n=9 l=3 k=1: C*=3.500000  (bound 4^k=4); greedy integer cover=8
+RESULT n=9 l=4 k=1: C*=3.500000 (bound 4^k=4); greedy integer cover=9
+RESULT n=4 l=2 k=1: C*=3.000000  (bound 4^k=4),  1/C*=0.333333;  greedy integer cover=4;  #1-entries=12  #0-entries=4
+RESULT n=6 l=3 k=2: C*=3.500000  (bound 4^k=16),  1/C*=0.285714;  greedy integer cover=7;  #1-entries=54  #0-entries=10
+RESULT n=6 l=2 k=2: C*=3.000000  (bound 4^k=16),  1/C*=0.333333;  greedy integer cover=4;  #1-entries=54  #0-entries=10
+RESULT n=8 l=4 k=1: C*=3.750000  (bound 4^k=4),  1/C*=0.266667;  greedy integer cover=16;  #1-entries=240  #0-entries=16
+RESULT n=10 l=5 k=2: C*=3.875000  (bound 4^k=16),  1/C*=0.258065;  greedy integer cover=31;  #1-entries=990  #0-entries=34
+RESULT n=10 l=4 k=2: C*=3.750000  (bound 4^k=16),  1/C*=0.266667;  greedy integer cover=16;  #1-entries=990  #0-entries=34

@@ -1,0 +1,10 @@
+(1) psi(n) <= 2^n <= 2 psi(n) holds for 1 <= n <= 3000
+(2) C(i+j,i) <= 2 psi(i,j) for all i,j>=1, i+j <= 400; max fraction of non-primitive = 0.3333
+(3) m=14: f = 0.4508  (need <= 0.5 for m >= 16)
+(3) m=15: f = 0.4346  (need <= 0.5 for m >= 16)
+(3) m=16: f = 0.4201  (need <= 0.5 for m >= 16)
+(3) m=17: f = 0.4072  (need <= 0.5 for m >= 16)
+(3) m=18: f = 0.3955  (need <= 0.5 for m >= 16)
+(3) m=19: f = 0.3848  (need <= 0.5 for m >= 16)
+(3) m=20: f = 0.3751  (need <= 0.5 for m >= 16)
+(4) brute-force agreement for n <= 16 (both psi(n) and psi(i,j))

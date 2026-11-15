@@ -1,0 +1,4 @@
+n=16: max #completions of the long side over all admissible spans = 1
+n=17: max #completions of the long side over all admissible spans = 1
+n=18: max #completions of the long side over all admissible spans = 1
+Corollary 2.4 verified for all offsets.
