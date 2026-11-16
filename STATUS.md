@@ -56,3 +56,12 @@ Goal: prove substantial intermediate steps toward the full conjecture.
 - Q ∩ (b*a)^m b* is not linear for any m ≥ 2. This re-proves Horváth's non-linearity of Q.
 - For prime m, that slice is metalinear of width 2.
 - Barrier: every bounded CF slice of Q has finite index. So a proof that Q is not of finite index must show the index grows across slices.
+
+## Novelty check (web search only)
+The key papers could not be fetched: Koechlin (FSTTCS 2022) and Koga (Acta Cybernetica 2022) are on hosts blocked by the network policy. Verdicts rest on abstracts and snippets.
+- **Ambiguity Theorem A, unambiguous case: KNOWN.** Koechlin's "three-variable criterion" for bounded languages. The finitely ambiguous extension was not found anywhere: **probably new, unconfirmed**.
+- **Ambiguity Theorem B: LARGELY COVERED.** Koechlin uses primitive words as an example (Props 14 and 17). n = 3 is Makarov (DLT 2021). The general statement for every n with an odd prime factor may be a routine extension of Koechlin's method. **Weakly new at best.**
+- **Ambiguity Theorem C (inherent ambiguity exactly 2 for prime p):** not found. **Probably new, but minor.**
+- **Density Theorems 1 and 2 (fixed-rate linear, the class FR):** Sin'ya (regular) and Koga (a dense class Γ(TL), compared with regular and DCF languages) are the nearest. No result for linear or even-linear languages was found. **Probably new, unconfirmed until Koga's Γ(TL) is read.**
+- **Closure Theorem B (every rational-transduction image of Q has a semilinear Parikh image):** not found. **Probably new.**
+- **Rectangle barrier (2⌈n/3⌉ balanced rectangles via Fine–Wilf):** not found, but it is elementary. **Likely folklore-level.**
