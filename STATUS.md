@@ -36,3 +36,23 @@ Any proof must exploit non-uniformity across lengths n, because each fixed lengt
 - Kászonyi–Katsura at n = 210 (a counterexample would prove the conjecture);
 - finite ambiguity;
 - density statements for CFLs (Sin'ya's route).
+
+## Round 3: intermediate theorems (red-teamed in `research/reports/redteam2.md`)
+Goal: prove substantial intermediate steps toward the full conjecture.
+
+**Ambiguity (`ambiguity.md`). Confirmed by red team.**
+- **Theorem A.** If a finitely ambiguous grammar G has L(G) ⊆ (ab*)^n, then its parse-tree-counting generating function in the block variables y_1..y_n is rational, and every irreducible denominator factor involves at most 2 variables, which are non-crossing (A′). The unambiguous case is known (Ginsburg–Ullian; Koechlin 2022). The finitely ambiguous extension appears new.
+- **Theorem B.** If n has an odd prime factor, then Q ∩ (ab*)^n is inherently ambiguous: the denominator has the factor 1 − Π_{i≡1 mod n/q} y_i in q ≥ 3 variables. The case n = 3 is known (Makarov 2021; Koechlin 2022).
+- **Theorem C.** For an odd prime p, Q ∩ (ab*)^p is a union of two unambiguous CFLs, so its inherent ambiguity is exactly 2. Slices with prime n can give nothing beyond "not unambiguous".
+- **Open target this points to:** the inherent ambiguity of Q ∩ (ab*)^n is unbounded in n. That would make Q not finitely ambiguous.
+
+**Density (`density.md`). Confirmed by red team.**
+- **Theorem 1.** Let L have a (p,q)-fixed-rate linear grammar (this includes regular and even-linear languages) with growth rate 2. Then there are u0 ∈ L and D ≥ 1 such that u0(v u0)^{Dj} ∈ L for every word v and every j ≥ 0. So L contains infinitely many non-primitive words. This generalises Sin'ya's regular-language theorem.
+- **Theorem 2.** The same holds for the class FR: closures of fixed-rate linear languages under union and concatenation, and ultralinear grammars with fixed rates. Corollary: Q ∉ FR.
+- **Limits.** Density does not force any fixed power. Growth rate alone fails outside FR: E' = {|w|_b = |w|_a + 1} is DCF with growth rate 2 and contains only primitive words.
+- **Open target:** the same statement for general (mixed-rate) linear CFLs. It reduces to a Boolean-matrix lemma.
+
+**Finite index (`finiteindex.md`). Not red-teamed.**
+- Q ∩ (b*a)^m b* is not linear for any m ≥ 2. This re-proves Horváth's non-linearity of Q.
+- For prime m, that slice is metalinear of width 2.
+- Barrier: every bounded CF slice of Q has finite index. So a proof that Q is not of finite index must show the index grows across slices.

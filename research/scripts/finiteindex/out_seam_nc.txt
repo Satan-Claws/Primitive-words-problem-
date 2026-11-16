@@ -1,0 +1,2 @@
+m 4 k 2 structures 121 coverer wins after 50
+m 6 k 2 structures 1401 coverer wins after 273

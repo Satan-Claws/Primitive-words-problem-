@@ -1,0 +1,2 @@
+14 structures 8192 coverer wins used 5
+15 structures 16384 coverer wins used 7

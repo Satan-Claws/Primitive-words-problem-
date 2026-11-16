@@ -1,0 +1,3 @@
+6 structures 32 coverer wins used 3
+10 structures 512 coverer wins used 4
+12 structures 2048 coverer wins used 4
