@@ -1,0 +1,5 @@
+M=2: non-crossing edge sets 48, weighted families with W in span V: 1552, violations (a) 0 (b) 0 (c) 0
+M=3: non-crossing edge sets 2880, weighted families with W in span V: 245091, violations (a) 0 (b) 0 (c) 0
+crossing example: dim 3 (needs >= 3: ok), W in span: True  #vanishing functionals 1 > dim-(2M-1) = 0
+
+[exited with code 0]

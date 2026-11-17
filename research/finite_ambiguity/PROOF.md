@@ -4,7 +4,7 @@
 More precisely, if G is k-ambiguous then L(G) ≠ Q; a witness slice is
 R_m = a(ab⁺)^{m−1} a (ab⁺)^{m−1} with m = 2k+1, where some word must have ≥ ⌈m/2⌉ > k trees.
 
-Status: §2–§3 audited — CORRECT WITH FIXES (F1–F4 applied; AUDIT_structure.md). §1, §4–§5 audit pending (AUDIT_geometry.md).
+Status: both audits complete — CORRECT WITH FIXES (structure: AUDIT_structure.md, fixes F1–F4 applied inline; geometry: AUDIT_geometry.md, fixes G1–G6 in §7). Not peer-reviewed.
 
 ---
 
@@ -190,3 +190,14 @@ arbitrary, Q has no finitely ambiguous grammar. ∎
   "∃ i: x_i ≠ y_i" gives ≤ m−1 (in fact 2(m−1) half-space pieces, ply m−1).
 * No normal-form assumption is imposed on G: Lemma 1.1 converts any cycle-free grammar without
   increasing any tree count.
+
+## 7. Geometry-audit fixes (AUDIT_geometry.md)
+* G1 (Lemma 4.2, "Moreover"): the non-interleaving argument of 4.1 applies to *all* components, full or
+  not: two components containing {i,M+i} and {j,M+j} would interleave. Only the non-full count is used.
+* G2 (§5 notation): n_v, V_{σ,0}, V_{σ,1} are defined only when W ⊆ span V_σ, which holds in cases 2–4
+  (positivity fact). In case 2, ⟨λ,c_σ⟩ = 0 gives c_σ ∈ span V_σ, so n_v(c_σ) is defined.
+* G3 (case 2): λ_i = −λ_{M+i} follows directly from W ⊆ span V_σ = λ^⊥.
+* G4 (choice of N): what is used is I_σ | N!, N! > |⟨λ_σ,c_σ⟩|, and N! > D_σ·γ_σ (all depend only on G_m).
+* G5 (thresholds): t₀(R) is the maximum over all σ of the case-wise thresholds, and also t₀(R) > N!·R so
+  that P(t,±δ) ∈ NE_M (all coordinates ≥ 1, and y − x = ±N!δ ≠ 0).
+* G6: the D_n-annotation interface is fix F1 above.

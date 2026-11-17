@@ -34,9 +34,12 @@ print('--- natural / structured pieces, omega =', omega)
 for name, (c, V) in natural.items():
     cls, psi = classify(V)
     pat = pattern(c, V, Lm)
-    desc = 'empty' if not pat else ('half-plane psi=%s' % (tuple(str(x) for x in psi),) if psi and
+    desc = 'empty' if not pat else ('half-plane psi=%s' % (tuple(str(x) for x in psi),) if cls == '4' and
              pat == {d for d in deltas if psi[0]*d[0]+psi[1]*d[1] > 0} else 'pattern=%s' % sorted(pat))
-    print(f'{name:45s} case {cls:3s} on window: {desc}; meets diagonal: {meets_diag(c, V)}')
+    if cls.startswith('dim3'):
+        desc = ('pattern == {delta_2 > 0}' if pat == {d for d in deltas if d[1] > 0} else 'pattern=%s' % sorted(pat))
+    if len(desc) > 90: desc = desc[:90] + '...'
+    print(f'{name:45s} case {cls[:44]:3s} on window: {desc}; meets diagonal: {meets_diag(c, V)}')
 
 def exact_cover(universe, sets):
     universe = set(universe)
