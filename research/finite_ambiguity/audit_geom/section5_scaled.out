@@ -1,0 +1,3 @@
+Lm = lcm(1..40) omega = (7, 11) R = 3
+consistent sets by case: {'1': 3518, '2': 5, '3': 363, '3-meetsDiag': 38, '4-empty': 56, '4-halfplane': 6, '4-halfplane-meetsDiag': 12}
+unexplained mismatches: 0
