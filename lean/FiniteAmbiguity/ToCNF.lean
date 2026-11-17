@@ -124,8 +124,10 @@ open Classical in
 noncomputable def cnf : CNF where
   N := NT G
   start := sym G (.inr G.start)
-  bin := Finset.univ.filter fun p => ∃ X', ReflTransGen (U G) p.1 X' ∧ Own G X' p.2.1 p.2.2
-  term := Finset.univ.filter fun p => ReflTransGen (U G) p.1 (sym G (.inl p.2))
+  bin := @Finset.filter _ (fun p => ∃ X', ReflTransGen (U G) p.1 X' ∧ Own G X' p.2.1 p.2.2)
+    (Classical.decPred _) Finset.univ
+  term := @Finset.filter _ (fun p => ReflTransGen (U G) p.1 (sym G (.inl p.2)))
+    (Classical.decPred _) Finset.univ
 
 /-- The rule used at the top of `relabel X t` is a rule of `cnf G`. -/
 def TopOK (X : NT G) : CTree (NT G) → Prop
@@ -213,7 +215,7 @@ lemma binL_root {ts : List (Tree G.N)} {t} (h : binL G ts = some t) :
   | nil => simp [binL] at h
   | cons s ts =>
     simp only [binL] at h
-    split at h <;> simp at h <;> subst h <;> simp [CTree.root]
+    split at h <;> simp at h <;> subst h <;> first | simp | simp [CTree.root]
 
 lemma yieldList_eq_nil {ts : List (Tree G.N)} (h : Tree.yieldList ts = []) :
     ∀ s ∈ ts, s.yield = [] := by
@@ -254,7 +256,7 @@ theorem binL_valid : ∀ ts : List (Tree G.N), G.ValidList ts → ts.map Tree.ro
     simp only [binL] at h
     split at h
     · simp at h
-    · rename_i hn r hr
+    · rename_i r hn hr
       simp only [Option.some.injEq] at h; subst h
       obtain ⟨h1, h2⟩ := binL_valid ts hvts hsuf' r hr
       have hnull : Nullable G s.root := ⟨s, hvs, rfl, norm_eq_none.1 hn⟩
@@ -342,7 +344,7 @@ theorem realized_of_valid : ∀ t : CTree (NT G), (cnf G).Valid t → Realized t
   | .leaf X c, h => by
     have h' : ReflTransGen (U G) X (sym G (.inl c)) := by
       have : (X, c) ∈ (cnf G).term := h
-      simpa [cnf] using this
+      exact (Finset.mem_filter.1 this).2
     have base : Realized (CTree.leaf (sym G (.inl c)) c) :=
       Or.inl ⟨.leaf c, trivial, rfl⟩
     exact realized_chain h' base rfl
@@ -350,7 +352,7 @@ theorem realized_of_valid : ∀ t : CTree (NT G), (cnf G).Valid t → Realized t
     obtain ⟨hb, hl, hr⟩ := h
     have hb' : ∃ X', ReflTransGen (U G) X X' ∧ Own G X' l.root r.root := by
       have : (X, l.root, r.root) ∈ (cnf G).bin := hb
-      simpa [cnf] using this
+      exact (Finset.mem_filter.1 this).2
     obtain ⟨X', hX, x, γ, hsuf, rfl, hlr, hrr⟩ := hb'
     obtain ⟨s, hsr, hsv, hs⟩ := realized_sym (realized_of_valid l hl) hlr
     obtain ⟨ts, hγ, htv, hts⟩ := realized_lab (sufs_tail hsuf) (realized_of_valid r hr) hrr
@@ -385,7 +387,7 @@ theorem to_cnf (G : CFG) (hcf : G.CycleFree) :
     · rw [← relabel_self t]
       have := norm_valid s hv t ht
       exact valid_relabel (by rw [norm_root ht]; exact this.1) this.2
-    · rw [norm_root ht, hroot]; rfl
+    · exact (norm_root ht).trans (by rw [hroot]; rfl)
     · rw [norm_yield ht, hy]
   · unfold CNF.amb CFG.amb
     let f : Tree G.N → CTree (cnf G).N := fun s => (norm G s).getD (.leaf (cnf G).start false)
