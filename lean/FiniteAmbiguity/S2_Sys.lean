@@ -299,5 +299,197 @@ lemma rep_conv {i l : ℕ} {f g : (ℕ → ℕ) → ℕ∞} (hf : Rep i f) (hg :
     simp only [List.map_cons, List.sum_cons]
     rw [conv_add_left]
 
+/-! ## Adding a period (rings) -/
+
+/-- Add one period `v`, supported on `{0, m}`, to a system within `[0, m]`. -/
+def Sys.addPeriod (S : Sys) (m : ℕ) (hS : S.Within m) (v : ℕ → ℕ)
+    (hv : ∀ k, v k ≠ 0 → k = 0 ∨ k = m) : Sys where
+  ι := Option S.ι
+  c := S.c
+  v := fun o => match o with
+    | none => v
+    | some j => S.v j
+  pair := fun o => match o with
+    | none => (0, m)
+    | some j => S.pair j
+  le := by
+    rintro (_ | j)
+    · exact Nat.zero_le _
+    · exact S.le j
+  supp := by
+    rintro (_ | j) k hk
+    · exact hv k hk
+    · exact S.supp j k hk
+  laminar := by
+    rintro (_ | j) (_ | j')
+    · simp
+    · have := hS j'; simp only; omega
+    · simp only; omega
+    · exact S.laminar j j'
+
+lemma Sys.addPeriod_within (S : Sys) (m : ℕ) (hS : S.Within m) (v : ℕ → ℕ)
+    (hv : ∀ k, v k ≠ 0 → k = 0 ∨ k = m) : (S.addPeriod m hS v hv).Within m := by
+  rintro (_ | j)
+  · exact le_rfl
+  · exact hS j
+
+lemma shiftF_add (m : ℕ) (p : ℕ → ℕ) (f g : (ℕ → ℕ) → ℕ∞) (x : ℕ → ℕ) :
+    shiftF m p (fun y => f y + g y) x = shiftF m p f x + shiftF m p g x := by
+  unfold shiftF; split_ifs <;> simp
+
+lemma cnt_addPeriod (S : Sys) (m : ℕ) (hS : S.Within m) (v : ℕ → ℕ)
+    (hv : ∀ k, v k ≠ 0 → k = 0 ∨ k = m) (x : ℕ → ℕ) :
+    cnt m (S.addPeriod m hS v hv) x = cnt m S x + shiftF m v (cnt m (S.addPeriod m hS v hv)) x := by
+  classical
+  set S' := S.addPeriod m hS v hv with hS'
+  have hval : ∀ (q : Option S.ι → ℕ) k, S'.val q k = S.val (fun j => q (some j)) k + q none * v k := by
+    intro q k
+    have : S'.val q k = S.c k + (q none * v k + ∑ j : S.ι, q (some j) * S.v j k) := by
+      show _ + _ = _ + _
+      congr 1
+      exact Fintype.sum_option _
+    rw [this]; simp only [Sys.val]; ring
+  let ext : (S.ι → ℕ) → (Option S.ι → ℕ) := fun q o => Option.elim o 0 q
+  have hext : Function.Injective ext := by
+    intro a b h; funext j; exact congrFun h (some j)
+  let inc : (Option S.ι → ℕ) → (Option S.ι → ℕ) := fun q => Function.update q none (q none + 1)
+  have hinc : Function.Injective inc := by
+    intro a b h
+    funext o
+    have := congrFun h o
+    cases o with
+    | none => simp [inc] at this; exact this
+    | some j => simpa [inc] using this
+  have hsplit : S'.fib m x = {q | q ∈ S'.fib m x ∧ q none = 0} ∪ {q | q ∈ S'.fib m x ∧ q none ≠ 0} := by
+    ext q; simp only [Set.mem_union, Set.mem_ofPred_eq]; tauto
+  have hA : {q | q ∈ S'.fib m x ∧ q none = 0} = ext '' S.fib m x := by
+    ext q
+    constructor
+    · rintro ⟨hq, h0⟩
+      refine ⟨fun j => q (some j), ?_, ?_⟩
+      · intro k hk
+        have := hq k hk
+        change S'.val q k = x k at this
+        rw [hval q k, h0, zero_mul, add_zero] at this
+        exact this
+      · funext o; cases o with
+        | none => exact h0.symm
+        | some j => rfl
+    · rintro ⟨q', hq', rfl⟩
+      refine ⟨fun k hk => ?_, rfl⟩
+      change S'.val (ext q') k = x k
+      rw [hval]; simp only [ext, Option.elim, zero_mul, add_zero]; exact hq' k hk
+  have hAe : {q | q ∈ S'.fib m x ∧ q none = 0}.encard = (S.fib m x).encard := by
+    rw [hA]; exact hext.encard_image _
+  unfold cnt
+  rw [hsplit, Set.encard_union_eq, hAe]
+  · congr 1
+    unfold shiftF
+    split_ifs with hge
+    · refine Eq.trans ?_ (hinc.encard_image (S'.fib m (x - v)))
+      congr 1
+      ext q
+      constructor
+      · rintro ⟨hq, h0⟩
+        let q0 : Option S.ι → ℕ := q
+        have h0' : q0 none ≠ 0 := h0
+        refine ⟨Function.update q0 none (q0 none - 1), ?_, ?_⟩
+        · intro k hk
+          change S'.val _ k = (x - v) k
+          have := hq k hk
+          change S'.val q0 k = x k at this
+          rw [hval q0 k] at this
+          rw [hval]
+          have e : (fun j => Function.update q0 none (q0 none - 1) (some j)) =
+              fun j => q0 (some j) := by
+            funext j; rw [Function.update_of_ne (Option.some_ne_none j)]
+          rw [e, Function.update_self, Pi.sub_apply]
+          have h1 : q0 none = (q0 none - 1) + 1 := by omega
+          rw [h1, add_mul, one_mul] at this
+          have := hge k hk
+          omega
+        · funext o; cases o with
+          | none =>
+            simp only [inc, Function.update_self]
+            show q0 none - 1 + 1 = q0 none
+            omega
+          | some j =>
+            simp only [inc]
+            rw [Function.update_of_ne (Option.some_ne_none j),
+              Function.update_of_ne (Option.some_ne_none j)]
+      · rintro ⟨q', hq', rfl⟩
+        refine ⟨fun k hk => ?_, by simp [inc]⟩
+        change S'.val (inc q') k = x k
+        have := hq' k hk
+        change S'.val q' k = (x - v) k at this
+        rw [hval] at this ⊢
+        have e : (fun j => inc q' (some j)) = fun j => q' (some j) := by funext j; simp [inc]
+        rw [e]
+        simp only [inc, Function.update_self, Pi.sub_apply] at this ⊢
+        have := hge k hk
+        rw [add_mul, one_mul]
+        omega
+    · rw [Set.encard_eq_zero, Set.eq_empty_iff_forall_notMem]
+      rintro q ⟨hq, h0⟩
+      let q0 : Option S.ι → ℕ := q
+      have h0' : q0 none ≠ 0 := h0
+      apply hge
+      intro k hk
+      have := hq k hk
+      change S'.val q0 k = x k at this
+      rw [hval q0 k] at this
+      have h1 : v k ≤ q0 none * v k := Nat.le_mul_of_pos_left _ (Nat.pos_of_ne_zero h0')
+      omega
+  · rw [Set.disjoint_left]
+    rintro q ⟨-, h0⟩ ⟨-, h1⟩
+    exact h1 h0
+
+lemma ring_unique (m : ℕ) (v : ℕ → ℕ) (hv0 : ∃ k ≤ m, v k ≠ 0) (E G H : (ℕ → ℕ) → ℕ∞)
+    (hG : ∀ x, G x = E x + shiftF m v G x) (hH : ∀ x, H x = E x + shiftF m v H x) :
+    ∀ x, G x = H x := by
+  classical
+  suffices ∀ n, ∀ x, ∑ k ∈ range (m + 1), x k = n → G x = H x from fun x => this _ x rfl
+  intro n
+  induction n using Nat.strong_induction_on with
+  | _ n ih =>
+    intro x hx
+    rw [hG, hH]
+    congr 1
+    unfold shiftF
+    split_ifs with hge
+    · refine ih _ ?_ _ rfl
+      rw [← hx]
+      obtain ⟨k0, hk0, hvk0⟩ := hv0
+      apply Finset.sum_lt_sum
+      · intro k hk; simp
+      · exact ⟨k0, by simp; omega, by simp; have := hge k0 hk0; omega⟩
+    · rfl
+
+lemma rep_ring {m : ℕ} (v : ℕ → ℕ) (hv : ∀ k, v k ≠ 0 → k = 0 ∨ k = m) (hv0 : ∃ k ≤ m, v k ≠ 0)
+    {E G : (ℕ → ℕ) → ℕ∞} (hE : Rep m E) (hG : ∀ x, G x = E x + shiftF m v G x) : Rep m G := by
+  obtain ⟨Ls, hW, he⟩ := hE
+  have key : ∀ Ls : List Sys, (∀ S ∈ Ls, S.Within m) → ∃ Ls' : List Sys, (∀ S ∈ Ls', S.Within m) ∧
+      ∀ x, (Ls'.map fun S => cnt m S x).sum = (Ls.map fun S => cnt m S x).sum +
+        shiftF m v (fun y => (Ls'.map fun S => cnt m S y).sum) x := by
+    intro Ls
+    induction Ls with
+    | nil => exact fun _ => ⟨[], by simp, fun x => by simp [shiftF]⟩
+    | cons S Ls ih =>
+      intro hW
+      obtain ⟨Ls', hW', he'⟩ := ih fun S' h => hW S' (by simp [h])
+      have hS := hW S (by simp)
+      refine ⟨S.addPeriod m hS v hv :: Ls', ?_, fun x => ?_⟩
+      · intro S' h
+        rcases List.mem_cons.mp h with rfl | h
+        · exact Sys.addPeriod_within S m hS v hv
+        · exact hW' S' h
+      · simp only [List.map_cons, List.sum_cons]
+        rw [shiftF_add, cnt_addPeriod, he']
+        ring
+  obtain ⟨Ls', hW', he'⟩ := key Ls hW
+  refine ⟨Ls', hW', fun x => ?_⟩
+  refine ring_unique m v hv0 E G (fun x => (Ls'.map fun S => cnt m S x).sum) hG (fun x => ?_) x
+  rw [he', he]
+
 end S2
 end FA
