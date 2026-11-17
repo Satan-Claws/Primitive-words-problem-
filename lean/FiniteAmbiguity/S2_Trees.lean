@@ -210,16 +210,13 @@ lemma splitSum_segWord (F : Word → Word → ℕ∞) : ∀ (m : ℕ) (x : ℕ �
     rw [splitSum_rep, splitSum_cons, splitSum_segWord _ m]
     rw [← add_assoc]
     congr 1
-    · simp only [Function.update_self, Nat.sub_zero, zf, ite_true]
-      trace_state
+    · simp only [Function.update_self]
+      have hz : ∀ j, segWord (m + 1) (zf 0 j x) =
+          List.replicate (x 0 - j) true ++ false :: segWord m (fun k => x (k + 1)) := by
+        intro j; simp [segWord, zf]
+      simp only [hz, Nat.sub_zero]
       rw [Finset.sum_range_succ]
-      congr 1
-      · refine Finset.sum_congr rfl fun k hk => ?_
-        congr 2
-        have : ∀ k', (if k' + 1 = 0 then x 0 - k else x (k' + 1 + 0)) = x (k' + 1) := by
-          intro k'; simp
-        simp [this]
-      · simp
+      simp
     · refine Finset.sum_congr rfl fun i _ => Finset.sum_congr rfl fun j _ => ?_
       have h1 : Function.update x (i + 1) j 0 = x 0 := by simp
       have h2 : (fun k => Function.update x (i + 1) j (k + 1)) = Function.update (fun k => x (k + 1)) i j := by
@@ -228,7 +225,7 @@ lemma splitSum_segWord (F : Word → Word → ℕ∞) : ∀ (m : ℕ) (x : ℕ �
         · subst hk; simp
         · simp [Function.update_of_ne hk, Function.update_of_ne (show k + 1 ≠ i + 1 by omega)]
       have h3 : zf (i + 1) j x = zf i j (fun k => x (k + 1)) := by
-        funext k; simp only [zf]; split_ifs <;> simp [Nat.add_assoc, Nat.add_comm 1]
+        funext k; simp only [zf]; split_ifs <;> simp [Nat.add_assoc]
       rw [h1, h2, h3, show m + 1 - (i + 1) = m - i by omega]
 
 /-- Tree count on segment words. -/
