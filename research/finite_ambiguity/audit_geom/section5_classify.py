@@ -64,41 +64,46 @@ def classify(V):
     if any(v == 0 and l != (0, 0) for v, l in zip(vals, lv)): return ('nongeneric', None)
     if any(v < 0 for v in vals): return ('1', None)
     V1 = [j for j in range(r) if lv[j] == (0, 0)]
-    if r == 3: assert not V1; return ('2', None)
+    if r == 3:
+        if V1: return ('dim3_with_V1(Lemma X fails: non-laminar)', (coords(V,[0,0,1,0]), coords(V,[0,0,0,1]), V1))
+        return ('2', None)
     if r < 3: return ('LEMMA_X_VIOLATION', None)
     if not V1: return ('3', None)
-    assert len(V1) == 1, 'positivity fact violated'
+    if len(V1) > 1: return ('POSITIVITY_FACT_VIOLATION', None)
     j = V1[0]
     e3 = coords(V, [0, 0, 1, 0]); e4 = coords(V, [0, 0, 0, 1])
     return ('4', (e3[j], e4[j]))
 
-stats = {}; mism = 0; checked = 0
 deltas = [d for d in itertools.product(range(-R, R+1), repeat=2) if d != (0, 0)]
-for trial in range(4000):
-    r = random.choice([1, 2, 3, 4, 4, 4])
-    V = rand_laminar(r)
-    if V is None: continue
-    c = [random.randint(0, 4) for _ in range(n)]
-    cls, psi = classify(V)
-    if cls in ('nongeneric',): continue
-    T = 10**6
-    t = Lm * T
-    pat = {d for d in deltas if member(c, V, [t*omega[0], t*omega[1], t*omega[0] + Lm*d[0], t*omega[1] + Lm*d[1]])}
-    if cls in ('1', '2', '3'): ok = not pat
-    elif cls == '4':
-        half = {d for d in deltas if psi[0]*d[0] + psi[1]*d[1] > 0}
-        ok = (not pat) or pat == half
-    else: ok = False
-    key = cls + ('' if cls != '4' else ('-empty' if not pat else '-halfplane'))
-    if ok: stats[key] = stats.get(key, 0) + 1; checked += 1; continue
-    # mismatch: look for a diagonal point of L (then the hypothesis L cap Delta = empty fails, no contradiction)
-    found = None
-    for a in itertools.product(range(0, 25), repeat=r):
-        P = [c[i] + sum(a[j]*V[j][i] for j in range(r)) for i in range(n)]
-        if P[0] == P[2] and P[1] == P[3]: found = P; break
-    if found: stats[key + '-meetsDiag'] = stats.get(key + '-meetsDiag', 0) + 1
-    else:
-        mism += 1; print('MISMATCH (no diagonal point found)', cls, V, c, psi, sorted(pat))
-print('Lm =', Lm if Lm < 10**6 else 'lcm(1..40)', 'omega =', omega, 'R =', R)
-print('consistent sets by case:', dict(sorted(stats.items())))
-print('unexplained mismatches:', mism)
+def main():
+  stats = {}; mism = 0; checked = 0
+  for trial in range(4000):
+      r = random.choice([1, 2, 3, 4, 4, 4])
+      V = rand_laminar(r)
+      if V is None: continue
+      c = [random.randint(0, 4) for _ in range(n)]
+      cls, psi = classify(V)
+      if cls in ('nongeneric',): continue
+      T = 10**6
+      t = Lm * T
+      pat = {d for d in deltas if member(c, V, [t*omega[0], t*omega[1], t*omega[0] + Lm*d[0], t*omega[1] + Lm*d[1]])}
+      if cls in ('1', '2', '3'): ok = not pat
+      elif cls == '4':
+          half = {d for d in deltas if psi[0]*d[0] + psi[1]*d[1] > 0}
+          ok = (not pat) or pat == half
+      else: ok = False
+      key = cls + ('' if cls != '4' else ('-empty' if not pat else '-halfplane'))
+      if ok: stats[key] = stats.get(key, 0) + 1; checked += 1; continue
+      # mismatch: look for a diagonal point of L (then the hypothesis L cap Delta = empty fails, no contradiction)
+      found = None
+      for a in itertools.product(range(0, 25), repeat=r):
+          P = [c[i] + sum(a[j]*V[j][i] for j in range(r)) for i in range(n)]
+          if P[0] == P[2] and P[1] == P[3]: found = P; break
+      if found: stats[key + '-meetsDiag'] = stats.get(key + '-meetsDiag', 0) + 1
+      else:
+          mism += 1; print('MISMATCH (no diagonal point found)', cls, V, c, psi, sorted(pat))
+  print('Lm =', Lm if Lm < 10**6 else 'lcm(1..40)', 'omega =', omega, 'R =', R)
+  print('consistent sets by case:', dict(sorted(stats.items())))
+  print('unexplained mismatches:', mism)
+
+if __name__ == '__main__': main()
