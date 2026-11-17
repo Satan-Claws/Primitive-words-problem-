@@ -141,14 +141,18 @@ def ChildValid : CTree (NT G) → Prop
 
 variable {G}
 
+lemma mem_univ_filter {α : Type} [Fintype α] {p : α → Prop} {inst : DecidablePred p} {a : α} :
+    a ∈ @Finset.filter α p inst Finset.univ ↔ p a := by
+  simp
+
 lemma valid_relabel {X : NT G} {t : CTree (NT G)} (h1 : TopOK G X t) (h2 : ChildValid G t) :
     (cnf G).Valid (relabel X t) := by
   cases t with
   | leaf Y c =>
     show (X, c) ∈ (cnf G).term
-    exact Finset.mem_filter.2 ⟨Finset.mem_univ _, h1⟩
+    exact mem_univ_filter.2 h1
   | node Y l r =>
-    exact ⟨Finset.mem_filter.2 ⟨Finset.mem_univ _, h1⟩, h2.1, h2.2⟩
+    exact ⟨mem_univ_filter.2 h1, h2.1, h2.2⟩
 
 lemma topOK_mono {X Y : NT G} (h : ReflTransGen (U G) X Y) {t : CTree (NT G)}
     (ht : TopOK G Y t) : TopOK G X t := by
@@ -215,7 +219,7 @@ lemma binL_root {ts : List (Tree G.N)} {t} (h : binL G ts = some t) :
   | nil => simp [binL] at h
   | cons s ts =>
     simp only [binL] at h
-    split at h <;> simp at h <;> subst h <;> first | simp | simp [CTree.root]
+    split at h <;> simp at h <;> subst h <;> first | rfl | simp
 
 lemma yieldList_eq_nil {ts : List (Tree G.N)} (h : Tree.yieldList ts = []) :
     ∀ s ∈ ts, s.yield = [] := by
@@ -344,7 +348,8 @@ theorem realized_of_valid : ∀ t : CTree (NT G), (cnf G).Valid t → Realized t
   | .leaf X c, h => by
     have h' : ReflTransGen (U G) X (sym G (.inl c)) := by
       have : (X, c) ∈ (cnf G).term := h
-      exact (Finset.mem_filter.1 this).2
+      exact (mem_univ_filter (p := fun p : NT G × Bool =>
+        ReflTransGen (U G) p.1 (sym G (.inl p.2)))).1 this
     have base : Realized (CTree.leaf (sym G (.inl c)) c) :=
       Or.inl ⟨.leaf c, trivial, rfl⟩
     exact realized_chain h' base rfl
@@ -352,7 +357,8 @@ theorem realized_of_valid : ∀ t : CTree (NT G), (cnf G).Valid t → Realized t
     obtain ⟨hb, hl, hr⟩ := h
     have hb' : ∃ X', ReflTransGen (U G) X X' ∧ Own G X' l.root r.root := by
       have : (X, l.root, r.root) ∈ (cnf G).bin := hb
-      exact (Finset.mem_filter.1 this).2
+      exact (mem_univ_filter (p := fun p : NT G × NT G × NT G =>
+        ∃ X', ReflTransGen (U G) p.1 X' ∧ Own G X' p.2.1 p.2.2)).1 this
     obtain ⟨X', hX, x, γ, hsuf, rfl, hlr, hrr⟩ := hb'
     obtain ⟨s, hsr, hsv, hs⟩ := realized_sym (realized_of_valid l hl) hlr
     obtain ⟨ts, hγ, htv, hts⟩ := realized_lab (sufs_tail hsuf) (realized_of_valid r hr) hrr
@@ -366,7 +372,7 @@ end S1
 open S1 in
 /-- Every cycle-free grammar has a CNF grammar with the same non-empty words and no more trees on
 any word. -/
-theorem to_cnf (G : CFG) (hcf : G.CycleFree) :
+theorem to_cnf (G : CFG) (_hcf : G.CycleFree) :
     ∃ C : CNF, (∀ w, w ≠ [] → (C.Generates w ↔ G.Generates w)) ∧ (∀ w, C.amb w ≤ G.amb w) := by
   -- Every CNF derivation of `w` is the normal form of a `G`-derivation of `w`.
   have key : ∀ w t, (cnf G).IsDerivFrom (cnf G).start t w →
@@ -388,7 +394,7 @@ theorem to_cnf (G : CFG) (hcf : G.CycleFree) :
       have := norm_valid s hv t ht
       exact valid_relabel (by rw [norm_root ht]; exact this.1) this.2
     · exact (norm_root ht).trans (by rw [hroot]; rfl)
-    · rw [norm_yield ht, hy]
+    · exact (norm_yield ht).trans hy
   · unfold CNF.amb CFG.amb
     let f : Tree G.N → CTree (cnf G).N := fun s => (norm G s).getD (.leaf (cnf G).start false)
     calc {t | (cnf G).IsDerivFrom (cnf G).start t w}.encard
@@ -396,7 +402,7 @@ theorem to_cnf (G : CFG) (hcf : G.CycleFree) :
           apply Set.encard_le_encard
           intro t ht
           obtain ⟨s, hs, hn⟩ := key w t ht
-          exact ⟨s, hs, by simp [f, hn]⟩
+          exact ⟨s, hs, by show (norm G s).getD _ = t; rw [hn]; rfl⟩
       _ ≤ _ := Set.encard_image_le _ _
 
 end FA
