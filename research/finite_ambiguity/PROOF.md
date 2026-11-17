@@ -4,7 +4,7 @@
 More precisely, if G is k-ambiguous then L(G) ≠ Q; a witness slice is
 R_m = a(ab⁺)^{m−1} a (ab⁺)^{m−1} with m = 2k+1, where some word must have ≥ ⌈m/2⌉ > k trees.
 
-Status: proof written by the coordinator; under adversarial audit (see AUDIT.md once present).
+Status: §2–§3 audited — CORRECT WITH FIXES (F1–F4 applied; AUDIT_structure.md). §1, §4–§5 audit pending (AUDIT_geometry.md).
 
 ---
 
@@ -36,7 +36,10 @@ each other pairwise.
   trees off L(D).
 
 So if Q has a k-ambiguous grammar, then Q ∩ R_m has a reduced, state-annotated, k-ambiguous CNF
-grammar G_m, with every nonterminal (s,A,t) useful, for every m (same k).
+grammar G_m, with every nonterminal (s,A,t) useful, for every m (same k). [Audit fix F1] Concretely
+G_m := ((G'' × D_{R_m}) × D_n), reduced, where D_n is the DFA of (ab*)^n (states 0..n plus sink, b loops
+in states 1..n). Lemma 1.2 applied twice keeps all tree counts, and the outer annotation is by D_n,
+as Lemma 3 requires.
 
 ## 3. Structure lemma for finitely ambiguous grammars inside (ab*)^n (PROVED)
 
@@ -69,9 +72,14 @@ the first of them, so the sequence ε is read off the tree. Hence ≥ 2^N trees 
 N — contradiction. So each X ∈ C has exactly one first-return context. Consequences: each X ∈ C has
 exactly one rule with a child in C (two such rules give two first-return contexts differing at the
 root), so C is a simple directed cycle (a ring X_0 → ⋯ → X_{r−1} → X_0); every side child Z has
-exactly one derivation tree (two trees give two contexts); in particular side subtrees contain no
-repeated nonterminal on a path. Let v_C ∈ ℕ^n be the yield vector of one full turn of the ring
-(p b's in block s, q b's in block t); v_C ≠ 0 (CNF), supp v_C ⊆ {s,t}.
+exactly one derivation tree over all words (two trees give two contexts). [Audit fix F4] Every ring
+rule X → (child in C) starts some first-return context: follow a shortest path in C from the child
+back to X and fill the side positions with arbitrary trees. [Audit fix F3] A side child's unique tree
+contains no node W of a nontrivial SCC C', since inserting one turn of C' at W would give it a second
+tree; in particular it repeats no nonterminal on a path. Let v_C ∈ ℕ^n be the yield vector of one full turn of the ring
+(p b's in block s, q b's in block t); v_C ≠ 0 (CNF), supp v_C ⊆ {s,t}. [Audit fix F2] If s = 0 (no b
+is read in state 0, so p = 0), take the pair π := {t} instead; shrinking a pair cannot create a crossing,
+and §5 uses only supports.
 
 (d) **Skeletons.** In a tree, a maximal path of C-nodes enters the ring at some X_i and leaves at some
 X_j through an exit rule (both children outside C, or a terminal rule). Its length is
