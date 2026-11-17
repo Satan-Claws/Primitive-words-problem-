@@ -90,7 +90,7 @@ lemma CTree.yield_ne_nil {N : Type} : ∀ t : CTree N, t.yield ≠ []
 
 variable (G)
 
-/-- Normalisation of `G`-trees: delete ε-subtrees, contract unit nodes, binarise. -/
+-- Normalisation of `G`-trees: delete ε-subtrees, contract unit nodes, binarise.
 mutual
 def norm : Tree G.N → Option (CTree (NT G))
   | .leaf c => some (.leaf (sym G (.inl c)) c)
@@ -144,12 +144,9 @@ lemma valid_relabel {X : NT G} {t : CTree (NT G)} (h1 : TopOK G X t) (h2 : Child
   cases t with
   | leaf Y c =>
     show (X, c) ∈ (cnf G).term
-    simp only [cnf, Finset.mem_filter, Finset.mem_univ, true_and]
-    exact h1
+    exact Finset.mem_filter.2 ⟨Finset.mem_univ _, h1⟩
   | node Y l r =>
-    refine ⟨?_, h2.1, h2.2⟩
-    simp only [cnf, Finset.mem_filter, Finset.mem_univ, true_and]
-    exact h1
+    exact ⟨Finset.mem_filter.2 ⟨Finset.mem_univ _, h1⟩, h2.1, h2.2⟩
 
 lemma topOK_mono {X Y : NT G} (h : ReflTransGen (U G) X Y) {t : CTree (NT G)}
     (ht : TopOK G Y t) : TopOK G X t := by
@@ -168,7 +165,7 @@ theorem norm_spec : ∀ s : Tree G.N,
   | .node A ts => by
     rcases binL_spec ts with ⟨h1, h2⟩ | ⟨t, h1, h2⟩
     · left; simp [norm, h1, Tree.yield, h2]
-    · right; exact ⟨relabel _ t, by simp [norm, h1], by simp [Tree.yield, h2]⟩
+    · right; exact ⟨relabel (sym G (.inr A)) t, by simp [norm, h1], by simp [Tree.yield, h2]⟩
 theorem binL_spec : ∀ ts : List (Tree G.N),
     (binL G ts = none ∧ Tree.yieldList ts = []) ∨
       ∃ t, binL G ts = some t ∧ t.yield = Tree.yieldList ts
@@ -177,9 +174,12 @@ theorem binL_spec : ∀ ts : List (Tree G.N),
     rcases norm_spec s with ⟨h1, h2⟩ | ⟨l, h1, h2⟩ <;>
       rcases binL_spec ts with ⟨h3, h4⟩ | ⟨r, h3, h4⟩
     · left; simp [binL, h1, h3, Tree.yieldList, h2, h4]
-    · right; exact ⟨_, by simp [binL, h1, h3], by simp [Tree.yieldList, h2, h4]⟩
-    · right; exact ⟨_, by simp [binL, h1, h3], by simp [Tree.yieldList, h2, h4]⟩
-    · right; exact ⟨_, by simp [binL, h1, h3], by simp [Tree.yieldList, h2, h4, CTree.yield]⟩
+    · right; exact ⟨relabel (lab G ((s :: ts).map Tree.root)) r, by simp [binL, h1, h3],
+        by simp [Tree.yieldList, h2, h4]⟩
+    · right; exact ⟨relabel (lab G ((s :: ts).map Tree.root)) l, by simp [binL, h1, h3],
+        by simp [Tree.yieldList, h2, h4]⟩
+    · right; exact ⟨.node (lab G ((s :: ts).map Tree.root)) l r, by simp [binL, h1, h3],
+        by simp [Tree.yieldList, h2, h4, CTree.yield]⟩
 end
 
 lemma norm_yield {s : Tree G.N} {t} (h : norm G s = some t) : t.yield = s.yield := by
