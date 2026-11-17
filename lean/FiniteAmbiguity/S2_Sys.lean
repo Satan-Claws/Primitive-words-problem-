@@ -117,13 +117,13 @@ def Sys.shift (S : Sys) (p : ℕ → ℕ) : Sys := { S with c := S.c + p }
 lemma cnt_shift (m : ℕ) (S : Sys) (p x : ℕ → ℕ) :
     cnt m (S.shift p) x = shiftF m p (cnt m S) x := by
   have hv : ∀ (q : S.ι → ℕ) k, (S.shift p).val q k = S.val q k + p k := by
-    intro q k; show S.c k + p k + _ = S.c k + _ + p k; ring
+    intro q k; show S.c k + p k + _ = S.c k + _ + p k; rw [add_right_comm]; rfl
   unfold shiftF cnt
   split_ifs with h
   · congr 1
     refine Set.ext fun q => forall_congr' fun k => imp_congr_right fun hk => ?_
     show (S.shift p).val q k = x k ↔ S.val q k = (x - p) k
-    rw [hv, Pi.sub_apply]
+    rw [hv q k, Pi.sub_apply]
     have := h k hk
     omega
   · rw [Set.encard_eq_zero, Set.eq_empty_iff_forall_notMem]
@@ -132,7 +132,7 @@ lemma cnt_shift (m : ℕ) (S : Sys) (p x : ℕ → ℕ) :
     intro k hk
     have := hq k hk
     change (S.shift p).val q k = x k at this
-    rw [hv] at this
+    rw [hv q k] at this
     omega
 
 lemma rep_shift {m : ℕ} (p : ℕ → ℕ) {f : (ℕ → ℕ) → ℕ∞} (hf : Rep m f) : Rep m (shiftF m p f) := by
@@ -194,14 +194,23 @@ lemma cnt_conv (i l : ℕ) (S T : Sys) (hS : S.Within i) (x : ℕ → ℕ) :
       else if k = i then S.val (fun j => q (.inl j)) i + T.val (fun j => q (.inr j)) 0
       else T.val (fun j => q (.inr j)) (k - i) := by
     intro q k
-    simp only [Sys.val, Sys.conv, Fintype.sum_sum_type]
-    split_ifs with h1 h2
-    · have : ∀ j, (if i ≤ k then T.v j (k - i) else 0) = 0 := fun j => by simp; omega
-      simp [this]
-    · subst h2; simp; ring
-    · have : ∀ j, S.v j k = 0 := fun j => S.v_eq_zero_of_lt j k (by have := hS j; omega)
-      have h3 : i ≤ k := by omega
-      simp [this, h3]
+    have hs : (S.conv i T hS).val q k = (S.conv i T hS).c k + (∑ j : S.ι, q (.inl j) * S.v j k +
+        ∑ j : T.ι, q (.inr j) * (if i ≤ k then T.v j (k - i) else 0)) := by
+      show _ + _ = _ + _
+      congr 1
+      exact Fintype.sum_sum_type _
+    rw [hs]
+    rcases lt_trichotomy k i with h | h | h
+    · have e : ∀ j : T.ι, (if i ≤ k then T.v j (k - i) else 0) = 0 := fun j => if_neg (by omega)
+      simp only [e, mul_zero, Finset.sum_const_zero, add_zero, Sys.val, Sys.conv, if_pos h]
+    · subst h
+      have e : ∀ j : T.ι, (if k ≤ k then T.v j (k - k) else 0) = T.v j 0 := fun j => by simp
+      simp only [e, Sys.val, Sys.conv, lt_irrefl, if_false, if_true]; ring
+    · have e : ∀ j : T.ι, (if i ≤ k then T.v j (k - i) else 0) = T.v j (k - i) :=
+        fun j => if_pos (by omega)
+      have e2 : ∀ j, S.v j k = 0 := fun j => S.v_eq_zero_of_lt j k (by have := hS j; omega)
+      simp only [e, e2, mul_zero, Finset.sum_const_zero, zero_add, Sys.val, Sys.conv,
+        if_neg (show ¬ k < i by omega), if_neg (show k ≠ i by omega)]
   have hset : φ '' ((S.conv i T hS).fib (i + l) x) =
       ⋃ j ∈ range (x i + 1), S.fib i (Function.update x i j) ×ˢ T.fib l (zf i j x) := by
     ext ⟨q1, q2⟩
@@ -276,20 +285,19 @@ lemma rep_conv {i l : ℕ} {f g : (ℕ → ℕ) → ℕ∞} (hf : Rep i f) (hg :
   | nil => exact rep_congr (rep_zero (i + l)) (fun x => by simp [conv])
   | cons S L1 ih =>
     have hS := h1 S (by simp)
-    refine rep_congr (rep_add ?_ (ih fun S' h => h1 S' (by simp [h]))) (fun x => ?_)
-    · exact (fun x => conv i (cnt i S) (fun y => (L2.map fun S => cnt l S y).sum) x)
-    · clear ih
+    have hA : Rep (i + l) (conv i (cnt i S) (fun y => (L2.map fun S => cnt l S y).sum)) := by
+      clear ih
       induction L2 with
       | nil => exact rep_congr (rep_zero (i + l)) (fun x => by simp [conv])
       | cons T L2 ih2 =>
-        refine rep_congr (rep_add ?_ (ih2 fun S' h => h2 S' (by simp [h]))) (fun x => ?_)
-        · exact cnt (i + l) (S.conv i T hS)
-        · exact ⟨[S.conv i T hS], by simpa using Sys.conv_within i l S T hS (h2 T (by simp)),
-            by simp⟩
-        · simp only [List.map_cons, List.sum_cons]
-          rw [conv_add_right, cnt_conv]
-    · simp only [List.map_cons, List.sum_cons]
-      rw [conv_add_left]
+        have hT : Rep (i + l) (cnt (i + l) (S.conv i T hS)) :=
+          ⟨[S.conv i T hS], by simpa using Sys.conv_within i l S T hS (h2 T (by simp)), by simp⟩
+        refine rep_congr (rep_add hT (ih2 fun S' h => h2 S' (by simp [h]))) (fun x => ?_)
+        simp only [List.map_cons, List.sum_cons]
+        rw [conv_add_right, cnt_conv]
+    refine rep_congr (rep_add hA (ih fun S' h => h1 S' (by simp [h]))) (fun x => ?_)
+    simp only [List.map_cons, List.sum_cons]
+    rw [conv_add_left]
 
 end S2
 end FA
