@@ -16,3 +16,14 @@ full texts of Koechlin (FSTTCS 2022), his 2023/2025 slides and Bostan–Carayol�
   These are the parts that would be new.
 * **To do before any claim of novelty:** read Koechlin 2022 (Props 14, 17 and the interlacing criterion),
   his 2025 Flajolet-seminar slides, Ginsburg–Ullian 1966, and the Dömösi–Ito book (2014) in full.
+
+## Update: full texts read
+* Koechlin, FSTTCS 2022 (Dagstuhl PDF and HAL hal-03944635): on primitive words proves only
+  Prop. 17 — "not an unambiguous context-free language" (Petersen's result, new proof via the
+  slice {aⁿbaᵐbaᵖb : n≠m or m≠p}). Infinite-ambiguity criteria are applied to Shamir's language
+  and others, not to primitive words. Context-freeness of primitive words stated as open.
+* Lischke?, "Primitive words and roots of words", arXiv:1104.4427 (Acta Univ. Sapientiae 2011):
+  cites only Petersen (Thm 22, not unambiguous).
+* Leupold, "Primitive Words are Unavoidable for Context-Free Languages": mentions only that Q is
+  not unambiguous (or deterministic/linear).
+None of the three states or proves that Q is not finitely ambiguous.
