@@ -1,11 +1,11 @@
 # Lean formalisation brief (shared by all formalisation agents)
 
-Goal: remove every `sorry` from `lean/FiniteAmbiguity/`, so that
+Goal: remove every `sorry` from `finitely-ambiguous/lean/FiniteAmbiguity/`, so that
 `FA.primitive_not_finitelyAmbiguous` (in `Main.lean`) depends only on `propext`,
-`Classical.choice`, `Quot.sound`. The paper proof is `research/finite_ambiguity/PROOF.md`
+`Classical.choice`, `Quot.sound`. The paper proof is `finitely-ambiguous/PROOF.md`
 (read it, including the audit-fix sections and §7).
 
-## Layout (Lean 4.36.0, Mathlib v4.36.0; project root `lean/`)
+## Layout (Lean 4.36.0, Mathlib v4.36.0; project root `finitely-ambiguous/lean/`)
 | File | Content | Owner |
 |---|---|---|
 | `Defs.lean` | words, `IsPrimitive`, `CFG`, `Tree`, `amb`, `CycleFree`, `sliceWord`, `blockWord`, `LamLinSet`, `ply` | frozen |
@@ -29,7 +29,7 @@ Goal: remove every `sorry` from `lean/FiniteAmbiguity/`, so that
   except `lake build FiniteAmbiguity.<YourHelperFile>` when a file of yours must be imported by
   another file of yours (then build only that module).
 * Imports: `FiniteAmbiguity.*` and anything already built under
-  `lean/.lake/packages/mathlib/.lake/build/lib/lean/` (check that the `.olean` exists). Do not
+  `finitely-ambiguous/lean/.lake/packages/mathlib/.lake/build/lib/lean/` (check that the `.olean` exists). Do not
   trigger builds of new Mathlib modules.
 * Forbidden: `sorry` in final code, `axiom`, `native_decide`, `implemented_by`, `@[extern]`,
   `unsafe`, changing options that weaken checking. `decide` is fine.

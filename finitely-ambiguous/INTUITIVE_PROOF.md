@@ -7,7 +7,7 @@ than k derivation trees.
 (Whether the primitive words are context-free at all is still open. The theorem says: *if* they
 are, every grammar for them is infinitely ambiguous.)
 
-Formal versions: Lean proof in `lean/` (no `sorry`; axioms `propext`, `Classical.choice`,
+Formal versions: Lean proof in `finitely-ambiguous/lean/` (no `sorry`; axioms `propext`, `Classical.choice`,
 `Quot.sound`), detailed paper proof in `PROOF.md`.
 
 ---
@@ -118,7 +118,7 @@ k-ambiguous. Since k was arbitrary, no grammar for the primitive words is finite
 
 ---
 
-### Where each step is formalised (Lean, `lean/FiniteAmbiguity/`)
+### Where each step is formalised (Lean, `finitely-ambiguous/lean/FiniteAmbiguity/`)
 
 | Step | Lean |
 |---|---|

@@ -6,7 +6,7 @@
 - `PrimitivePDA_Negative.lean` compiles against Mathlib (Lean v4.36.0-rc2, built from source) with only the two intended `sorry` warnings. The full `import Mathlib` was replaced by the needed modules for the check.
 - The formalization was reviewed by hand and is faithful (finite PDA and Mathlib CFG). It has no loophole that makes it trivially true or false.
 
-## Agent results (red-teamed; see `research/reports/`)
+## Agent results (red-teamed; see `context-free/reports/`)
 - **scout**: literature map.
   - Kászonyi–Katsura conjecture (Q ∩ (ab*)^n is CF for all n): proved for n with at most 3 prime-power factors, and reportedly when Σ1/p < 4/5. n = 210 appears open.
   - Q satisfies Bar-Hillel, Ogden, Bader–Moura and the interchange lemma.
@@ -37,7 +37,7 @@ Any proof must exploit non-uniformity across lengths n, because each fixed lengt
 - finite ambiguity;
 - density statements for CFLs (Sin'ya's route).
 
-## Round 3: intermediate theorems (red-teamed in `research/reports/redteam2.md`)
+## Round 3: intermediate theorems (red-teamed in `context-free/reports/redteam2.md`)
 Goal: prove substantial intermediate steps toward the full conjecture.
 
 **Ambiguity (`ambiguity.md`). Confirmed by red team.**

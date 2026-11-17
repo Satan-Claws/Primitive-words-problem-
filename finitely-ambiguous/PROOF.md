@@ -29,7 +29,7 @@ So exp(Q ∩ R_m) ≅ NE_M := {(x,y) ∈ ℕ_{≥1}^M × ℕ_{≥1}^M : x ≠ y}
 Order of coordinates in the word: x_1 < ⋯ < x_M < y_1 < ⋯ < y_M. The "diagonal pairs" {x_i, y_i} cross
 each other pairwise.
 
-## 2. Reductions (PROVED; these are Lemmas 1.1, 1.2 of `research/reports/ambiguity.md`, audited)
+## 2. Reductions (PROVED; these are Lemmas 1.1, 1.2 of `context-free/reports/ambiguity.md`, audited)
 * Lemma 1.1: a cycle-free G yields a CNF G'' with L(G'') = L(G)∖{ε} and amb_{G''}(w) ≤ amb_G(w).
   (Cycle-freeness guarantees the unit graph after ε-removal is acyclic.)
 * Lemma 1.2: product of a CNF grammar with a complete DFA preserves tree counts on L(D), gives 0

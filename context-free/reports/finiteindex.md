@@ -1,7 +1,7 @@
 # Agent "finiteindex": report
 
 **Claim level: partial results plus barriers. The target (Q not metalinear / not of finite index) is NOT proved.**
-Scripts: `scratchpad/scripts/finiteindex/` (they reuse `arr2.py`, copied from `research/scripts/bounded/`).
+Scripts: `scratchpad/scripts/finiteindex/` (they reuse `arr2.py`, copied from `context-free/scripts/bounded/`).
 
 What is proved:
 1. **Structure lemma S (PROVED).** The linear / metalinear-width-k analogue of Ginsburg's theorem for block-bounded

@@ -178,7 +178,7 @@ No other closure property is used.
 * **F7 (Remark).** In §6, "2(m−1) half-space pieces, ply m−1" is consistent with the computation below
   (pieces ψ = ±δ_i). It is not part of the proof.
 
-## Computational checks (`research/finite_ambiguity/audit_geom/`)
+## Computational checks (`finitely-ambiguous/audit_geom/`)
 
 | script | what | result |
 |---|---|---|
