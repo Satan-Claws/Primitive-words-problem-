@@ -107,6 +107,9 @@ coded by `p = Fin.append x y : Fin (M + M) → ℕ` (x-blocks first, then y-bloc
 def sliceWord {M : ℕ} (p : Fin (M + M) → ℕ) : Word :=
   half (fun i => p (Fin.castAdd M i)) ++ half (fun i => p (Fin.natAdd M i))
 
+/-- The block word `a b^{e_0} a b^{e_1} ⋯ a b^{e_{n-1}}`. -/
+def blockWord {n : ℕ} (e : Fin n → ℕ) : Word := (List.ofFn fun i => ab (e i)).flatten
+
 /-! ## Laminar simple linear sets (the output of the structure lemma) -/
 
 /-- A linear set `c + ℕ v₁ + ⋯ + ℕ v_r ⊆ ℕⁿ` with injective parametrisation, each period supported

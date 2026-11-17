@@ -190,4 +190,14 @@ theorem slice_primitive_iff {M : ℕ} (p : Fin (M + M) → ℕ) (hp : ∀ i, 1 �
     have h3 := this.1.trans this.2.symm
     exact hxy (List.ofFn_injective (List.cons.inj h3).2)
 
+/-- If the two halves agree, the slice word is a square (for any block vector). -/
+theorem not_primitive_of_eq {M : ℕ} (p : Fin (M + M) → ℕ)
+    (hxy : (fun i => p (Fin.castAdd M i)) = (fun i => p (Fin.natAdd M i))) :
+    ¬ IsPrimitive (sliceWord p) := by
+  rintro ⟨-, hprim⟩
+  have : sliceWord p = pow (half fun i => p (Fin.castAdd M i)) 2 := by
+    change half _ ++ half _ = _
+    rw [← hxy]; simp [pow]
+  exact absurd (hprim _ _ this) (by omega)
+
 end FA
