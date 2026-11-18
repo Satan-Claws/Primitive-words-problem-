@@ -352,3 +352,10 @@ Dropped: audit4 (targets no longer load-bearing), foldbar (merged into cl5neg).
   density → 0. N_∞ density ≈ 0.947 (MC), sound n ≤ 19. Mixed-depth grammar is CF but unsound ((aab)^3).
   Gap: is N_∞ (or a positive-density CF part) CF? Obstacle: absolute level counts (second counter). Not a route to L(G) = Q
   alone (N_∞ misses ≈ 5%).
+- multitree (done): recombining trees of one word only yields derivations of G, so stays in L(G). Counterexample:
+  S → AB, A → a, B → BB | b: L = ab⁺ ⊆ Q, Catalan many trees. KEY FACT: any CFG can be made infinitely ambiguous
+  without changing its language (duplicate nonterminals), so 'sup amb = ∞' gives no leverage on L(G) by itself;
+  the negative subproblem is exactly 'Q is not CF'. Only ambiguity tied to the FA-proof slices could help.
+- recheck (done): all language-level barriers still apply under infinite ambiguity; uniform/r6 premise moot;
+  CL1–CL3 refutations stand (they bound languages, not ambiguity). Leverage candidates: Wich-type equal-yield loop
+  pairs (still cannot force a power alone); parse-count series dominating Q's indicator (needs excess bound).
