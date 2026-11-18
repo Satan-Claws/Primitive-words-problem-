@@ -120,3 +120,7 @@ Still unresolved, and no route unblocked. New proved results ([written proof], u
 - **Q1 at n = 36** (`poly_S2Z.md`, [computational], INCONCLUSIVE). A non-exhaustive search found no
   chain-valid tree for 400 of 400 sampled orders (node cap hit). This is weak evidence against Q1, so the
   low-ply blocking route for S_N is unconfirmed.
+- **Q1 not refuted by the fold argument** (`poly_S2Q.md`). A 6-vertex, 3-fibre chain-valid abstract tree
+  exists, so chain-validity forces no single-fibre restriction. The induction gives only π-monotonicity: f_u
+  vanishes on fibres π-before res(u). Q1 stays OPEN, and a negative answer must use the fixed supp μ_k and
+  non-crossing on ℤ_n.
