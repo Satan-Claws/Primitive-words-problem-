@@ -8,7 +8,7 @@ Started 2026-11-18 04:29 UTC. Wave 1: 9 independent agents (one slot kept for au
 | Bounded slices, Kászonyi–Katsura (n = 210 …) | kk | **stalled** (one-scale obstructions dead for all n) |
 | Density of CF subsets of Q | density4 | running |
 | Construction of a CFG/PDA (positive direction) | builder | running |
-| Rational-transduction reductions (correct direction) | transduce | running |
+| Rational-transduction reductions (correct direction) | transduce | **stalled** (barriers T1, T2, Prop D) |
 | Uniform-in-M upgrade of the finite-ambiguity slice argument | uniform | **blocked** (barrier) |
 | Periodicity / near-power witness families | periodic | open: candidate lemma CL1 (stronger than goal) |
 | Analytic / N-algebraic series obstructions | analytic | running |
@@ -53,3 +53,15 @@ counterexamples, strength of missing step, reopen condition).
    L2 false for |u| = 1.
 5. Stronger than Q ∉ CFL.
 6. Reopen: cross-derivation parity argument; or a CF L with F_ins ⊆ L ⊆ Q (refutes CL1).
+
+## transduce (done 1st wave)
+1. Aim: rational transduction τ and regular R with τ(Q ∩ R) provably not CF.
+2. Proved: T1 equality barrier (via closure.md Prop P): {ww}, {aⁿbⁿcⁿ}, {aⁿbᵐcⁿdᵐ}, MIX, {|w|_a=|w|_b},
+   {aⁿbaⁿb} are not images of Q; T2: every bounded image reduces to some Q ∩ B for a finite union of
+   bounded slices (generalised KK); Prop D: non-primitive exponent vectors on an r-block merge-free slice
+   lie in finitely many affine subspaces of dim ≤ ⌊r/2⌋; DIST3 = {aⁱbʲcᵏ pairwise distinct} and
+   CROSS≠ = {aⁱbʲcᵏdˡ : i≠k, j≠l} are not CF (open whether images of Q).
+3. Missing: a non-stratifiable merge-free slice (negation of generalised KK), or an unbounded Ogden image argument.
+4. Counterexamples: none to claims; boundary example limits Prop D's extension.
+5. Bounded missing step implies Q ∉ CFL, believed false; unbounded step not reduced.
+6. Reopen: non-stratifiable slice; DIST3 or CROSS≠ shown to be an image of Q.
