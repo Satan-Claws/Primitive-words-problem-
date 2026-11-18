@@ -348,3 +348,7 @@ Target: every cycle-free G with sup amb_G = ∞ has L(G) ≠ Q (negative), or ex
 Active: tower (positive density / construction), cl5neg (CL5 + fold-test barrier, merged with foldbar),
 audit6 (builder3 certificates), multitree (new: recombining competing trees), recheck (blocked routes vs ambiguity).
 Dropped: audit4 (targets no longer load-bearing), foldbar (merged into cl5neg).
+- tower (done): N_∞ = Cyc(L′), L′ = least set ⊇ E′ closed under σ and swap∘σ; L′ ⊆ Q (proved). Bounded depth ⇒
+  density → 0. N_∞ density ≈ 0.947 (MC), sound n ≤ 19. Mixed-depth grammar is CF but unsound ((aab)^3).
+  Gap: is N_∞ (or a positive-density CF part) CF? Obstacle: absolute level counts (second counter). Not a route to L(G) = Q
+  alone (N_∞ misses ≈ 5%).
