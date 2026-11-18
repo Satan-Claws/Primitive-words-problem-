@@ -252,3 +252,19 @@ Coordinator note: on the bounded slice a⁺b⁺a⁺b⁺, J ∩ B = {a^{p+1}b^q a
 4. Counterexamples: own earlier 'triangle' argument wrong (not used); unary-like families need (C).
 5. If true, R6 route closed (no step toward Q ∉ CFL).
 6. Reopen: counterexample to the Cover Lemma, or three coprime exponents (e.g. (a(ab⁺)⁺)^30).
+
+## f2 (done)
+1. Aim: prove CL3 (then CL4) via one grammar uniform in k.
+2. Proved: an independent, simpler CL3 refutation — linear 7-rule grammar for
+   {∏ a^{P_i} b a^{Q_i} b ab : k ≥ 2, P_1 = P_k + 1, P_i = P_{k+1−i} inner, Q_i free} ⊆ Q (checked ≤ 30);
+   marker criterion (one-class certificates primitive iff for every prime r | ℓ the classes divisible by ℓ/r
+   contain a marker class — exact for ℓ ≤ 6); adjacent-axis lemma (axes c, c−1 never give crossing chords);
+   coordinator's observation (ii) FAILS: power-free stratified realisations exist for every k.
+   CL4 barrier: Lemma W + corollary — if u has no unary run of length λ and no period ≤ 2mλ, replacing any
+   window of length ≤ m in a·u·u never yields a power; so local surgery needs windows Ω(n / log n).
+3. Missing: large-window interchange forcing a power (stronger than goal).
+   Coordinator note: single-length interchange is already blocked by rectangles.md (Q ∩ Σ^n is a union of
+   2⌈n/3⌉ rectangles inside Q, which also cover J ∩ Σ^n), so this missing step cannot hold at a single length.
+4. Counterexamples: to CL3 (second independent one); to observation (ii).
+5. Stronger than Q ∉ CFL.
+6. Reopen: a cross-length surgery principle for J.
