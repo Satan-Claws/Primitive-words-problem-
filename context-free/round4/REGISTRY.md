@@ -268,3 +268,15 @@ Coordinator note: on the bounded slice a⁺b⁺a⁺b⁺, J ∩ B = {a^{p+1}b^q a
 4. Counterexamples: to CL3 (second independent one); to observation (ii).
 5. Stronger than Q ∉ CFL.
 6. Reopen: a cross-length surgery principle for J.
+
+## fold (done, follow-up sent)
+1. Aim: CF fold-count line certificates with density ≫ n^{-1/2}.
+2. Proved: certificate G re-verified (p divides m_c and n, any parity); exact line targets per n mod 8;
+   union over axes U has density → 1 (PROVED for odd n via independence of different axes' mirror-pair
+   forests + Chebyshev, P(miss) ≤ C/√n; even n computer-checked: 0.925, 0.959, 0.968 at n = 18, 20, 22, MC ≥ 0.998
+   for n = 100..1012); fixed-axis languages Φ_R = {|w| − 4m = R} and F_r are NOT CF (Ginsburg on a^i b^j a^k,
+   homogeneity of f = i+j+k − 4 min(j, |i−k|)); even-linear fold languages with bounded matched−mismatched
+   have exponentially small density.
+3. Missing: is the rotation-closed union U itself CF? (Φ not CF does not imply Cyc(Φ) not CF.) A CF
+   L ⊆ Φ_{±1} with density ≥ n^{-1+δ} would already refute Q½.
+5. Stronger/equal: U CF ⇒ Q½ false (density route dead); U not CF ⇒ consistent with Q½.
