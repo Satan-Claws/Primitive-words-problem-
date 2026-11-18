@@ -10,7 +10,7 @@ Started 2026-11-18 04:29 UTC. Wave 1: 9 independent agents (one slot kept for au
 | Construction of a CFG/PDA (positive direction) | builder | open: reflection-dominance certificate (sound, CF, coverage → 0) |
 | Rational-transduction reductions (correct direction) | transduce | **stalled** (barriers T1, T2, Prop D) |
 | Uniform-in-M upgrade of the finite-ambiguity slice argument | uniform | **blocked** (barrier) |
-| Periodicity / near-power witness families | periodic, cl1 | CL1 **refuted**; CL2 open (being attacked) |
+| Periodicity / near-power witness families | periodic, cl1 | CL1, CL2 **refuted**; CL3 open |
 | Analytic / N-algebraic series obstructions | analytic | running |
 | Cross-length context × yield decompositions | crossing | **blocked** (missing step = full problem) |
 
@@ -154,3 +154,10 @@ New candidate CL2: every CFL containing {a·(a^m b a^{m+1} b a^{m+3} b)^k} conta
 - 04:29–04:47 UTC: wave 1 (9 agents) + follow-ups; usage limit hit at ~04:47, all running agents stopped.
 - 09:22 UTC: resumed r6, cl1 (CL2), thue, audit2, builder2, poles, dense. Active time so far ≈ 18 min;
   campaign continues to ≥ 1 h active (≈ 10:05 UTC), hard stop at 2 h active (≈ 11:05 UTC).
+
+## cl1 → CL2 (done)
+CL2 REFUTED (Theorem 3, proved + checked): for any base offset c0 of length ℓ, L(c0) = {(a*b)^+ : ℓ | K, K ≥ 2ℓ,
+x − Rx = v(c0) + e_1 − e_K} is linear CF, ⊆ Q, contains a·(m·1 + c0)^k. Generalises to several parameters
+whose directions share a reflection axis. Theorem 4 (proved): F_2 = {a(a^p b a^q b a b)^k} defeats the class 𝓡
+(finite unions of rotation-closures of 'x − Rx bounded by B') and all Parikh certificates.
+CL3 (conjectured, stronger than goal): every CFL ⊇ F_2 contains a non-primitive word.
