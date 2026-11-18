@@ -362,3 +362,6 @@ Dropped: audit4 (targets no longer load-bearing), foldbar (merged into cl5neg).
 - cl5neg (done): R1 (WLOG L ⊆ ODD, powers are odd), R2 (factor-count certificates force witnesses with unboundedly
   many runs), Lemma R (rigidity: periodic + sparse Δ is never a Q-th power when 0 < s < Q). CL5 and the fold-test
   barrier both still open; mirrored-loop attack on 1u^m0u^m fails by Lemma R.
+- audit6 (done): builder3's L*_ℓ, BGB, PAR sound (hand proofs) and CF (argument); no power accepted up to length 30.
+  Coverage of the full union at n = 21–25 not independently rebuilt; the two n = 26 misses confirmed primitive,
+  balanced, and rejected. (walk Lemmas 2–3 were already confirmed by audit5.)
