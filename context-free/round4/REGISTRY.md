@@ -5,7 +5,7 @@ Started 2026-11-18 04:29 UTC. Wave 1: 9 independent agents (one slot kept for au
 | Family | Agent | Status |
 |---|---|---|
 | Derivation-tree iteration / Ogden / multi-pump on unbounded slices | ogden | running |
-| Bounded slices, Kászonyi–Katsura (n = 210 …) | kk | running |
+| Bounded slices, Kászonyi–Katsura (n = 210 …) | kk | **stalled** (one-scale obstructions dead for all n) |
 | Density of CF subsets of Q | density4 | running |
 | Construction of a CFG/PDA (positive direction) | builder | running |
 | Rational-transduction reductions (correct direction) | transduce | running |
@@ -27,3 +27,15 @@ counterexamples, strength of missing step, reopen condition).
 4. Counterexamples: pump-to-equal-halves, bounded certificate-type counting, single-prime slices.
 5. Missing step is stronger than Q ∉ CFL (but sufficient).
 6. Reopen: an iteration lemma using square and cube certificates jointly on R6, or a grammar for Q ∩ R6.
+
+## kk (done 1st wave)
+1. Aim: find n with Q ∩ (ab*)^n not CF (Kászonyi–Katsura counterexample), or a barrier.
+2. Proved: Theorem A (reflection axes + CRT): for every n the near-constant region of E_n is covered by
+   stratified linear subsets of E_n (covers n = 210); Theorem B: same for every positive direction h.
+   So every one-scale Dickson obstruction (bounded.md L6 / finiteindex F) fails for every n.
+3. Missing: a two-scale ("flag") obstruction N·h + M·g + δ with g/h having no reflection axis compatible
+   with all primes, plus proof that it implies non-CF; must pass at n = 6 (known CF).
+4. Counterexamples: one-scale families for all n; near-constant arrangement search at n = 42, 60.
+5. Missing step concerns one n (narrower than Q ∉ CFL), but evidence now favours KK being true,
+   which would close the route.
+6. Reopen: a two-scale obstruction lemma, sound, that survives n = 6.
