@@ -196,3 +196,15 @@ CL3 (conjectured, stronger than goal): every CFL ⊇ F_2 contains a non-primitiv
 - CONFIRMED: builder Lemma D (reflection dominance) in all cases, grammar = predicate, density bound,
   missed family, n/6 bound; transduce T1 (closure.md Prop P re-audited), T2, Prop D, DIST3/CROSS≠ non-CF;
   crossing Lemmas 1, 2. Cyclic-shift citation: Hopcroft–Ullman 1979 Ex. 6.4(c), Oshiba 1972, Maslov 1973.
+
+## thue (done)
+1. Aim: cube-free near-power witnesses defeating the m-free-loop iteration theorem A′.
+2. Proved: L-UC (factor occurring once circularly ⇒ primitive), L-UF, L-PAR, L-PS (exact test whether a
+   loop-generated word σr can be a power, no length cut-off), L-μ (Thue–Morse morphism preserves primitivity
+   both ways).
+3. Missing: none attainable — Barrier E (conjectured): every primitive word with enough marks has an escaping
+   window with empty x_j, so A′ alone cannot prove Q ∉ CFL.
+4. Counterexamples: 19,771 instances (10 roots incl. 5 non-mirror-symmetric, all one-letter defects, all mark
+   intervals, m = 3): every instance has a certified escaping window.
+5. Missing step stronger than Q ∉ CFL; evidence says false.
+6. Reopen: an iteration theorem transplanting loops across words/contexts.

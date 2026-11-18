@@ -26,6 +26,7 @@ def prim(z):
     sq= z[0]==z[3] and z[1]==z[4] and z[2]==z[5]
     cu= z[0]==z[2]==z[4] and z[1]==z[3]==z[5]
     return not(sq or cu)
+if __name__!="__main__": raise SystemExit
 L=int(sys.argv[1]); slack=int(sys.argv[2]) if len(sys.argv)>2 else 0
 segs=[''.join(p) for n in range(1,L+1) for p in itertools.product('01',repeat=n)]
 # restrict to length vectors in V2+V3 (others covered by len)
