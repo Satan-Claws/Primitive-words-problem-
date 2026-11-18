@@ -1,0 +1,2 @@
+Q N= 14 classes 2536 fooling edges 0 max fooling set 1 ['abbabbabbbabbb']
+E' N= 14 classes 196 fooling edges 0 max fooling set 1 ['aaabbbaabbbab']

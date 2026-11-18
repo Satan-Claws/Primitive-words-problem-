@@ -10,7 +10,7 @@ Started 2026-11-18 04:29 UTC. Wave 1: 9 independent agents (one slot kept for au
 | Construction of a CFG/PDA (positive direction) | builder | running |
 | Rational-transduction reductions (correct direction) | transduce | running |
 | Uniform-in-M upgrade of the finite-ambiguity slice argument | uniform | **blocked** (barrier) |
-| Periodicity / near-power witness families | periodic | running |
+| Periodicity / near-power witness families | periodic | open: candidate lemma CL1 (stronger than goal) |
 | Analytic / N-algebraic series obstructions | analytic | running |
 | Cross-length context × yield decompositions | crossing | running |
 
@@ -39,3 +39,17 @@ counterexamples, strength of missing step, reopen condition).
 5. Missing step concerns one n (narrower than Q ∉ CFL), but evidence now favours KK being true,
    which would close the route.
 6. Reopen: a two-scale obstruction lemma, sound, that survives n = 6.
+
+## periodic (done 1st wave)
+1. Aim: CL1 — every CFL containing F_ins = {a(a^m b)^k : m ≥ 1, k ≥ 2} contains a non-primitive word.
+2. Proved: L1 (two distinct non-primitive words of equal length differ in ≥ 2 positions); Fact B
+   (word in (a*b)+ is a power iff cyclic block vector is shift-invariant); L2 partially (insertion
+   into u^k is primitive; proved for q ≥ 3, k ≥ 6, checked |u^k| ≤ 15); Bar1 (one-parameter slices of F_ins
+   lie in regular subsets of Q); Bar2 (no coprime semilinear set covers F_ins counts); Bar3 (classification
+   of exact-power pumps; case B only computer-checked); Bar4 (Ogden/Bader–Moura cannot force them);
+   'unique longest block' superset not CF.
+3. Missing: tree surgery combining derivations of a(a^m b)^k and a(a^{m+1}b)^k forcing a power-producing pump.
+4. Counterexamples: B-type merge pumps (odd k), k = 3 cube pump, first-vs-last block supersets contain powers,
+   L2 false for |u| = 1.
+5. Stronger than Q ∉ CFL.
+6. Reopen: cross-derivation parity argument; or a CF L with F_ins ⊆ L ⊆ Q (refutes CL1).
