@@ -158,10 +158,9 @@ and their rotation unions.
     k ≥ 2 pairs, and at most two blocks are touched by the e_1 perturbation.
   - So some entry of x′ − Rx′ has absolute value > B, for every rotation x′ of x.
   - Hence w lies in no member of the finite union once B exceeds all the bounds involved. ∎
-- **Parikh certificates fail trivially (PROVED).** a(a^4 b a b a b)^2 has Parikh vector (13, 6), which is coprime.
-  But a(a^2 b a^2 b a b)^2 = a·(aab aab ab)^2 has |w|_a = 11, coprime with 6, while
-  a(a^3 b a^1 b a b)^2 has |w|_a = 2·5+1 = 11 too. A non-coprime instance: p + q + 1 = 4, k = 2 gives (9, 6).
-  So any ψ^{-1}(S) ⊇ F_2 contains (a^3 b^2)^3.
+- **Parikh certificates fail trivially (PROVED).** ψ(a(a^p b a^q b a b)^k) = (k(p+q+1)+1, 3k).
+  For p = 2, q = 1, k = 2 the word a(aab ab ab)^2 has Parikh vector (9, 6), with gcd 3.
+  So any ψ^{-1}(S) ⊇ F_2 contains the power (aaabb)^3.
 
 **CL3 (CONJECTURED).** Every CFL containing F_2 contains a non-primitive word.
 - CL3 implies "Q not CF".

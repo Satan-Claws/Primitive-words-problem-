@@ -149,3 +149,8 @@ New candidate CL2: every CFL containing {a·(a^m b a^{m+1} b a^{m+3} b)^k} conta
    its k-gram variants.
 5. Stronger than Q ∉ CFL.
 6. Route dies if a CF L ⊆ Q of positive upper density is found.
+
+## Timeline
+- 04:29–04:47 UTC: wave 1 (9 agents) + follow-ups; usage limit hit at ~04:47, all running agents stopped.
+- 09:22 UTC: resumed r6, cl1 (CL2), thue, audit2, builder2, poles, dense. Active time so far ≈ 18 min;
+  campaign continues to ≥ 1 h active (≈ 10:05 UTC), hard stop at 2 h active (≈ 11:05 UTC).

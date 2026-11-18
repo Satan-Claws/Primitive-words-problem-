@@ -35,7 +35,7 @@ for lv in itertools.product(range(1,L+1),repeat=6):
     pools=[[s for s in segs if len(s)==n] for n in lv]
     size=1
     for p in pools: size*=len(p)
-    it = itertools.product(*pools) if size<=200000 else (tuple(random.choice(p) for p in pools) for _ in range(200000))
+    it = itertools.product(*pools) if size<=20000 else (tuple(random.choice(p) for p in pools) for _ in range(20000))
     for z in it:
         if not prim(z): continue
         tot+=1
