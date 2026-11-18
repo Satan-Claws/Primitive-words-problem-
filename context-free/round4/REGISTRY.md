@@ -12,7 +12,7 @@ Started 2026-11-18 04:29 UTC. Wave 1: 9 independent agents (one slot kept for au
 | Uniform-in-M upgrade of the finite-ambiguity slice argument | uniform | **blocked** (barrier) |
 | Periodicity / near-power witness families | periodic | open: candidate lemma CL1 (stronger than goal) |
 | Analytic / N-algebraic series obstructions | analytic | running |
-| Cross-length context × yield decompositions | crossing | running |
+| Cross-length context × yield decompositions | crossing | **blocked** (missing step = full problem) |
 
 Entries are filled in from each agent's report (exact aim, strongest lemma, missing step,
 counterexamples, strength of missing step, reopen condition).
@@ -78,3 +78,17 @@ counterexamples, strength of missing step, reopen condition).
 4. Counterexamples: none to claims; all tested instances (n ≤ 12, Thue–Morse ≤ 32) satisfied by Q.
 5. Stronger than Q ∉ CFL; evidence says false.
 6. Reopen: cube-free marked region with loop monoid forced to hit a power; cross-word iteration principle.
+
+## crossing (done 1st wave)
+1. Aim: cross-length context × yield (generalised rectangle) obstruction.
+2. Proved: Lemma 1 (rotation turns a context × yield rectangle into a product L_A·M_A ⊆ Q, M_A CF);
+   Theorem 1: Q CF ⇔ finitely many CF pairs (L_i, M_i) with L_i·M_i ⊆ Q cover a conjugate of every primitive
+   word — so the route's missing step equals the full problem; Theorem 3: 18 explicit (non-CF) product classes
+   inside Q covering all primitive words ≤ 19 up to conjugacy except ≤ 36 near-periodic classes per length;
+   Lemma 4 (cross-length fooling sets ≤ g; computationally max fooling set = 1 for n ≤ 14); Lemma 5.
+3. Missing: a structural lemma limiting CF L with L·M ⊆ Q (equal in strength to Q ∉ CFL).
+4. Counterexamples: no fooling pair for n ≤ 14; unsound 'predicted letter' class: (abbba)(bbb) = (abbb)².
+5. Equal to Q ∉ CFL.
+6. Reopen: Conjecture "finitely many arbitrary-set product classes cover Q" fails; or a structural lemma
+   restricting CF factors.
+Leftover hard words everywhere: near-periodic words (a^{n−1}b, (ab)^k and (aab)^k with a defect).
