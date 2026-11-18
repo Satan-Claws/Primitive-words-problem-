@@ -53,6 +53,9 @@ Lemma G\* plus Lemma 3P and Lemma G gives the negative resolution. It splits int
   realisation of that cover exists at any fixed generic base point (`poly_LAM.md` §2). What is open is
   uniformity over base points and non-generic points (`poly_LAM.md` §3). Laminarity is the only remaining source
   of superpolynomial ply.
+  `poly_GLAM.md` sharpens this to **G-LAM′**: for each u_k, is there an admissible facet μ_k with a non-crossing
+  bichromatic tree all of whose residue folds are nonzero with the sign of the top vertex? If yes, the √n·polylog
+  cover is global and the S_N candidate is BLOCKED. Forced blow-up from many incident chambers is refuted (lex rule).
 - **G3\*\*** (length): for some ply-set S, bound by poly(n)·K the apex of ∩(c_σ + A_σ), the covering radius of
   Λ_S = ∩ℤV_σ, and the inradius of ∩A_σ (`poly_G3.md` §4). Laminar chains {e_1, e_i + 2e_{i+1}} have index 2^ρ
   and are realisable by a fixed grammar fragment on any spaced slice (`poly_R3a.md`). No valid cover forcing

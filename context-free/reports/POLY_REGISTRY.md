@@ -70,3 +70,5 @@ Rules: entries ≤ few lines; always carry a status label; never paste report co
 
 ### Final synthesis (root)
 - No route unblocked. Stop report: POLY_FINAL.md. Strongest new result: Theorem P, A_G(L) = Ω(√(log L/log log L)) for every cycle-free G for Q [written proof, unaudited]. Remaining gap: Lemma G* = G-LAM (laminar ply uniformity) + G3** (short witnesses).
+- [GLAM, PROVED] Near U a laminar piece is the cone K_σ with lex rule; ply = Σ_u ∏_k ply_k, so per-component ply_k ≤ p_k^{O(1)} suffices; "many incident chambers ⇒ ply" (G-LAM (ii)) REFUTED as a mechanism (tilings have lex-ply 1). poly_GLAM.md §1–3.
+- [GLAM, OPEN] G-LAM reduced to G-LAM′: fold-dominant non-crossing bichromatic tree on supp μ_k (⇒ Ω_T ⊇ U_{>0}, global √n·polylog laminar cover), else ε-approx criterion with validity-ratio ρ_k ≤ poly. poly_GLAM.md §3(b,c), §4.
