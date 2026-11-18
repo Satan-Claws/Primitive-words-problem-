@@ -49,7 +49,7 @@ factor (any cyclic type of ≤ m lines is realised on the regular 2m-gon of norm
 | (d) | d | d | d+1 | proof |
 | (1,d) | d | d | — | proof (A(+),A(−) disjoint covers) |
 | (2,2) | 4 | **3** | 7 | ILP m=8, exact |
-| (2,2,2) | 8 | see registry line | | ILP m=3 (upper bd) |
+| (2,2,2) | 8 | ≤ **5** (≥ 2) | 28 found | ILP m=3,4, time limit hit: feasible, not proved optimal |
 | (3,3) | 9 | see registry line | | ILP, 14 normals/factor (upper bd) |
 Heuristic (`t2a_random.py`, random test points only, NOT exact): N=4, d=10: random 2400-piece cover, max ply 209
 vs ∏d = 10⁴; N=4, d=6: 126 vs 1296 — ply grows like Σd, as the theorem says.
