@@ -136,3 +136,16 @@ New candidate CL2: every CFL containing {a·(a^m b a^{m+1} b a^{m+3} b)^k} conta
 4. Counterexamples: to the counting-equivalence claim; to 'composite radii' and 'ternary' variants of A.
 5. Stronger than Q ∉ CFL.
 6. Reopen: structure theory for counts of ambiguous grammars; or a binary CFL refuting Conjecture A (kills route).
+
+## density4 (done 1st wave)
+1. Aim: every CFL of density 1 (or positive) contains a non-primitive word.
+2. Proved: Prop C (positive-density CF L ⊆ Q exists iff a CF L′ ⊆ Q meets ≥ c·2^n/n conjugacy classes per length);
+   Theorem P (barrier): any language defined by k-gram counts in a semilinear set with no proper power has
+   |L_n| = O(2^n n^{-1/2}), attained by E′. Literature (Koga 2022): density version for CFLs is open and noted to
+   imply the conjecture; Sin'ya's {|v|_a ≤ 2|v|_b} has density 1 but no positive-density regular sublanguage.
+3. Missing: (K*) every positive-density CFL contains x{t : D | |t|, V_k(t) ∈ full-rank linear set}z; or
+   (Q½) every CF L ⊆ Q has |L_n| = O(2^n n^{-1/2}). Both stronger than Q ∉ CFL.
+4. Counterexamples: L0 = {Δ(w) ∉ {0,1}} and L5 (DCFL, density → 1) refute 'dense CFL contains x(Σ^D)*z' and
+   its k-gram variants.
+5. Stronger than Q ∉ CFL.
+6. Route dies if a CF L ⊆ Q of positive upper density is found.
