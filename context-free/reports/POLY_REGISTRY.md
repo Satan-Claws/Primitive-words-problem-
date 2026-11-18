@@ -75,3 +75,5 @@ Rules: entries ≤ few lines; always carry a status label; never paste report co
 
 ## Session 2 (30 min), start
 - Live gaps: G-LAM′ (poly_GLAM.md), G3** (poly_G3.md §4), threshold ⌈m/2⌉ at poly length (poly_G4.md §4). Theorem P = current best (POLY_FINAL.md).
+- [S2R, PROVED] (a⁺b⁺)^n: structure lemma holds (DFA cycles = unary self-loops; insertions per side are one-letter powers ⇒ commute); rings may pump α_i & β_j, laminar in α_1<β_1<⋯. Run-vector identity: non-primitive = ∪_{d|n,d<n}V_{2d} = F_old(2n) for n even (odd n: only V_n lost).
+- [S2R, BLOCKED as new lever] (a⁺b⁺)^n (n even) ≡ (ab⁺)^{2n} as covering problem (same pieces, same laminarity); crossing (α_i,β_j) pairs are ordinary pairs of [2n]; two diagonals = Lemma X on 4M coords. poly_S2R.md.
