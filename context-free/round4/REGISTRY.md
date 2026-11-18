@@ -232,3 +232,11 @@ Next family J = {a·u·u : u ∈ (a*b)^+}; Prop 7: no finite union of L_ℓ cove
 CL4 (conjectured, stronger than goal): every CFL ⊇ J contains a non-primitive word.
 Coordinator note: on the bounded slice a⁺b⁺a⁺b⁺, J ∩ B = {a^{p+1}b^q a^p b^q} is covered by the CF set
 {a^{p+1}b^q a^p b^r} ⊆ Q, so fixed-shape slices of J do not suffice; any proof needs u with unboundedly many blocks.
+
+## audit3 (cl1 CL2, density4, dense, poles, thue, analytic)
+- CONFIRMED: cl1 Theorem 3 (CL2 refutation; K = 2ℓ edge case fine), Theorem 4 (restricted class only);
+  density4 Theorem P, Lemma AC, Prop C; dense W soundness + positive density, Theorem P^R (needs λ large so the
+  constant lies deep in the cone); poles Lemmas 1–3; thue L-UC, L-UF, L-PS and the exact procedure;
+  analytic Theorem 3.2 (2^{n−1} − d(n), non-algebraic).
+- GAP repaired: thue L-μ (case e = 2; repaired by odd-cycle 2-colouring argument). Statement true.
+- Nit: W should be restricted to Σ⁺.
