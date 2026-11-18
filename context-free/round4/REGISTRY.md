@@ -4,7 +4,7 @@ Started 2026-11-18 04:29 UTC. Wave 1: 9 independent agents (one slot kept for au
 
 | Family | Agent | Status |
 |---|---|---|
-| Derivation-tree iteration / Ogden / multi-pump on unbounded slices | ogden | running |
+| Derivation-tree iteration / Ogden / multi-pump on unbounded slices | ogden | **stalled** (Q satisfies all iteration lemmas tested; ceiling theorem) |
 | Bounded slices, Kászonyi–Katsura (n = 210 …) | kk | **stalled** (one-scale obstructions dead for all n) |
 | Density of CF subsets of Q | density4 | running |
 | Construction of a CFG/PDA (positive direction) | builder | running |
@@ -65,3 +65,16 @@ counterexamples, strength of missing step, reopen condition).
 4. Counterexamples: none to claims; boundary example limits Prop D's extension.
 5. Bounded missing step implies Q ∉ CFL, believed false; unbounded step not reduced.
 6. Reopen: non-stratifiable slice; DIST3 or CROSS≠ shown to be an image of Q.
+
+## ogden (done 1st wave)
+1. Aim: Q violates a strong iteration lemma valid for all CFLs.
+2. Proved: Theorem A (k nested independently iterable pumps under 2^{kN+1} marks); Theorem A′ (m loops at one
+   nonterminal, free monoid of pumpings); Theorem B (ceiling): L CF iff ∃N every word has a tree with ≤ N labels
+   whose rule set generates only words of L — so all such lemmas are weakenings of exactly "Q CF".
+   Inside unary runs loops can be chosen commuting, so near-powers survive every k; in cube-free regions
+   (Thue–Morse) ≥ 3 adjacent loops cannot pairwise commute.
+3. Missing: ∃m such that for every Ogden constant p some primitive word + marking defeats every m-free-loop
+   decomposition.
+4. Counterexamples: none to claims; all tested instances (n ≤ 12, Thue–Morse ≤ 32) satisfied by Q.
+5. Stronger than Q ∉ CFL; evidence says false.
+6. Reopen: cube-free marked region with loop monoid forced to hit a power; cross-word iteration principle.
