@@ -110,7 +110,7 @@ COMPUTER-CHECKED:
   - ">'s before <'s": baba;
   - "≤1 '>' and ≥2 '<'": ababab.
 - Sound but strictly weaker than D: "first two strict signs are <<, at most one '>'".
-Reason (PROVED, from the proof of Lemma D): a d-periodic word has a sign sequence that is d-periodic
+Reason (the first sentence is PROVED from the proof of Lemma D; the conclusion is IDEA): a d-periodic word has a sign sequence that is d-periodic
 and antisymmetric under i ↦ kd-1-i. Each '<' therefore comes with roughly p/2 forced '>' signs, and a
 finite automaton reading the fold cannot tell p, so the only threshold it can use is "zero '>' signs".
 
@@ -132,7 +132,7 @@ dominant. Each decoding preserves primitivity (prefix-closed code argument, PROV
 
 (d) **Length-agnostic certificates of other kinds**, all PROVED sound and CF, all of density → 0:
 - cyclic-additive functionals f (weighted counts of cyclic factors of bounded length, so
-  f(u^p) = p f(u)) with f(w) = ±1. These are one-counter languages; P(f = ±1) = O(n^{-1/2}).
+  f(u^p) = p f(u)) with f(w) = ±1. These are one-counter languages; P(f = ±1) = O(n^{-1/2}) (local-CLT sketch, for non-degenerate f).
 - "some factor of length ≤ K occurs exactly once cyclically". This is regular; for fixed K it has
   density → 0.
 A union of finitely many of these together with Cyc(L(S)) still has density → 0.
