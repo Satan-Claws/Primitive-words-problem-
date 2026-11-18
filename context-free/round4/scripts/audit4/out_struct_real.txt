@@ -1,0 +1,1 @@
+real 6 9 patterns exhaustive 10942 sampled 462 checked 174491395 uncovered 0 time 500

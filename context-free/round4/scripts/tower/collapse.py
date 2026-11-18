@@ -12,6 +12,7 @@ def run(u, mode):
         i = len(st) - 1; popped = 0
         while True:
             if i < 0:
+                if len(st) > len(u): break
                 st.insert(0, [0, False, 0]); i = 0
             r = st[i]; r[2] += 1
             if x == 1 and False: pass
