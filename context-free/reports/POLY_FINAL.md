@@ -112,3 +112,8 @@ Still unresolved, and no route unblocked. New proved results ([written proof], u
 - **Explicit cover for n = 6** (`poly_S2K.md`). 16 stratified pieces built from "rectangles"
   {i, i+A, i+A+B, i+B}. It covers Q ∩ (ab*)^6 with max ply ≤ 5 ([computational], entries ≤ 4). It appears to
   extend to squarefree pq with ply O(n) [conjecture], and fails as given for p^a q^b with a or b ≥ 2.
+- **TILE_k sharpened** (`poly_S2Y.md`). It suffices to have Q1 (a chain-valid tree T(π) for every order cone π)
+  and Q2 (each K_{T(π)} meets ≤ p_k^{O(1)} order cones). Together these block S_N geometrically. A lower bound
+  from cone width alone is impossible, since order cones are equally narrow yet tile with ply 1.
+
+**Final exact gap (session 2):** Lemma G\* = TILE_k (≡ Q1 ∧ Q2, or their failure) + G3\*\* (four height terms).
