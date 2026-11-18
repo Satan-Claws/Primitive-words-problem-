@@ -6,7 +6,7 @@ Started 2026-11-18 04:29 UTC. Wave 1: 9 independent agents (one slot kept for au
 |---|---|---|
 | Derivation-tree iteration / Ogden / multi-pump on unbounded slices | ogden | **stalled** (Q satisfies all iteration lemmas tested; ceiling theorem) |
 | Bounded slices, Kászonyi–Katsura (n = 210 …) | kk | **stalled** (one-scale obstructions dead for all n) |
-| Density of CF subsets of Q | density4, dense, walk, fold | **Q½ REFUTED** by walk (pending audit); positive density open |
+| Density of CF subsets of Q | density4, dense, walk, fold | **Q½ REFUTED** by walk (audit5 CONFIRMED); positive density open |
 | Construction of a CFG/PDA (positive direction) | builder | open: reflection-dominance certificate (sound, CF, coverage → 0) |
 | Rational-transduction reductions (correct direction) | transduce | **stalled** (barriers T1, T2, Prop D) |
 | Uniform-in-M upgrade of the finite-ambiguity slice argument | uniform, r6 | **blocked** (barrier; R6 evidence: CF) |
@@ -321,3 +321,12 @@ set is a union of orbits of odd size ≥ 3), but verifying the other n/2 − 1 a
   contains w^{2M+1}.
 - Open barrier: a CF property of the fold along the defect axis holding for (1,1)·Z·(0,0) (Z swap-reverse
   symmetric) but failing for every odd q-block fold (1,1)Y(0,0)Y…; conjectured that no regular fold test does it.
+
+## audit5 (walk.md) — Q½ refutation CONFIRMED
+- CONFIRMED: unique first-passage decomposition; CF closure (Hopcroft–Ullman Thm 6.2 substitution; Maslov 1973 /
+  Oshiba 1972 cyclic shift; swap homomorphism); T(M) ⊆ Q (only σ(M) ⊆ Q needed); exactly D rotations end at a
+  strict maximum and decode to the same type word up to rotation; literal construction = certificate (n ≤ 14);
+  no powers in E′, T, T², T³, G for n ≤ 20; exact count formula and c·2^n n^{-1/4} lower bound (odd n);
+  T^k(E′) CF and ⊆ Q; G CF and ⊆ Q.
+- GAP: asymptotic constant typo ((4/π)·2^{-3/4}·Γ(1/4)); T^k exponent α ↦ α/2 only outlined (reduced to a
+  change-of-measure argument; exact values agree); G density n^{-1/4} computer-checked only.
