@@ -5,7 +5,7 @@ Rules: entries ≤ few lines; always carry a status label; never paste report co
 
 ## Approach families (mechanism → status)
 - structural (ring/laminar, PROOF.md §3 transfer): OPEN (agent P/C)
-- restricted-class closure (T3: ring ⇒ finite-index/ultralinear/FR): OPEN (agent T3)
+- restricted-class closure (T3: ring ⇒ finite-index/ultralinear/FR): BLOCKED (poly_T3.md)
 - slice-ambiguity (T1: superpoly witnesses): OPEN (agent T1)
 - partition-function (T2): WAITING on T1
 - counting/analytic: BLOCKED (sandwich, §5); rectangles.md rate check: OPEN (agent WE)
@@ -22,3 +22,5 @@ Rules: entries ≤ few lines; always carry a status label; never paste report co
 ## Tables
 
 ## Round syntheses
+- [T3, REFUTED route] Poly (even un-)ambiguity forces no global restriction: D1·b (S→Tb, T→aTbT|ε) is unambiguous, branching, ⊆ Q, γ=2, ∉ FR (density.md Cor 2), infinite index (LITERATURE). See poly_T3.md.
+- [T3] Branching A⇒*uAvAw ≠ exponential; exp ⇔ two distinct trees A⇒+uAv same (u,v) (Wich 2005, LITERATURE). "poly-amb G for Q ⇒ FR" is equivalent to the target (uses L⊇Q only); not a reduction.
