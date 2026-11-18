@@ -15,6 +15,9 @@ Rules: entries ≤ few lines; always carry a status label; never paste report co
 - [root reading, assessment] PROOF.md §3(c) uses only that b-yields inside one block commute; the 2^N trees are for one word of length |w0|+O(N). No finite-ambiguity hypothesis used, so (c) holds under polynomial ambiguity on (ab*)^n slices. The Dyck caveat does not apply: both contexts insert only b's into fixed blocks s,t. (Agent P to confirm in one line.)
 
 ## Proved lemmas
+- [P, PROVED] §3(c),(d),(f) hold under poly amb (2^N trees on length O(N)); only (e) fails. Lemma 3P: amb(w)=Σ_σ P_σ(exp w−c_σ), P_σ = vector partition fn of laminar list V_σ; growth t^{d_F} on relint F, d_σ=#V_σ−rank V_σ ≤ k for all σ, all m. poly_P.md §1–2.
+- [P, PROVED] §5 cases 1–4 survive for supports c_σ+ℕV_σ (non-free monoids; facts Lat+Deep, Lemma X on face F∋(ω,ω)): some w∈Q∩R_m has amb ≥ ⌈m/2⌉; |w| uncontrolled, ≤ |w|/8 at best; capped by inherent amb(Q∩R_m) ≤ m−1 (=R_m-alone BLOCK). poly_P.md §3.
+- [P, OPEN] superlinear needs multi-period slices (∪_{d|n}Δ_d) + effective cover-ply lemma at ‖exp‖₁=poly(n); partition degree can't help (d_σ≤k). poly_P.md §4.
 
 ## Blocked routes
 - fixed-block-count slices; R_m alone; count sandwiches; non-CF of Q as intermediate goal.
