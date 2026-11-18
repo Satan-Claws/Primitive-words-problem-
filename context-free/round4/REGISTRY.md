@@ -7,7 +7,7 @@ Started 2026-11-18 04:29 UTC. Wave 1: 9 independent agents (one slot kept for au
 | Derivation-tree iteration / Ogden / multi-pump on unbounded slices | ogden | **stalled** (Q satisfies all iteration lemmas tested; ceiling theorem) |
 | Bounded slices, Kászonyi–Katsura (n = 210 …) | kk | **stalled** (one-scale obstructions dead for all n) |
 | Density of CF subsets of Q | density4, dense, walk, fold | **Q½ REFUTED** by walk (audit5 CONFIRMED); positive density open |
-| Construction of a CFG/PDA (positive direction) | builder | open: reflection-dominance certificate (sound, CF, coverage → 0) |
+| Construction of a CFG/PDA (positive direction) | builder, builder2, builder3 | CF 𝒰 ⊆ Q covers all primitive words of length ≤ 25 and 27; misses at 26, 28 |
 | Rational-transduction reductions (correct direction) | transduce | **stalled** (barriers T1, T2, Prop D) |
 | Uniform-in-M upgrade of the finite-ambiguity slice argument | uniform, r6 | **blocked** (barrier; R6 evidence: CF) |
 | Periodicity / near-power witness families | periodic, cl1 | CL1–CL3 **refuted**; CL4 ⇐ CL5 open |
@@ -330,3 +330,15 @@ set is a union of orbits of odd size ≥ 3), but verifying the other n/2 − 1 a
   T^k(E′) CF and ⊆ Q; G CF and ⊆ Q.
 - GAP: asymptotic constant typo ((4/π)·2^{-3/4}·Γ(1/4)); T^k exponent α ↦ α/2 only outlined (reduced to a
   change-of-measure argument; exact values agree); G density n^{-1/4} computer-checked only.
+
+## builder3 (done)
+1. Aim: patch missed necklaces; probe the obstruction.
+2. Proved (sound + CF, checked no power ≤ 24): L*_ℓ (cl1's L_ℓ, any axis, any mismatch size t, ℓ ≤ 8), BGB
+   (orbit-count on block vectors), PAR (gcd(|w|_a,|w|_b) = 1 on lines / small counts). With T(E′), T²(E′),
+   T³(E′), T²(E′ ∪ G): BASE union covers all primitive words n ≤ 24; 𝒰 = BASE ∪ T(BASE) ∪ T²(BASE) covers all
+   n ≤ 25 and n = 27; misses 2 necklaces at n = 26 and 60 at n = 28 (all balanced |w|_a = |w|_b).
+   MC up to n ≈ 830: 𝒰 certifies 0.96–0.98 (odd n), 0.81–0.90 (even n). Soundness relies on walk Lemmas 2–3
+   (confirmed by audit5).
+3. Missing: positive density appears to need the unbounded tower N_∞ (heuristically not CF).
+4. Trajectory: each patch closes all n up to some bound; misses reappear just above, changing type
+   (long-insertion near-powers → achiral → balanced).
