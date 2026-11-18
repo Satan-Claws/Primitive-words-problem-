@@ -23,6 +23,11 @@ Rules: entries ≤ few lines; always carry a status label; never paste report co
 - fixed-block-count slices; R_m alone; count sandwiches; non-CF of Q as intermediate goal.
 
 ## Tables
+- [AG, computational] walk.md/builder3.md not found anywhere; substitutes coPow_2 / length-dispatch: L Δ Q starts aaa / ababab, max amb linear (n/2, 2n/3). poly_AG.md
+| Q_n=(ab*)^n witness grammar | p^h | 6 | 10 | 12 | 15 |
+|---|---|---|---|---|---|
+| uncovered (adj, V=2) / max amb | 0 / n−n/p | 27(all) / 0 | 21 / 14 | 240 / 7 | 39 / 52 |
+- [AG] Witness-union breaks on coverage, not on ambiguity: with ≥2 primes, single-defect words always need shared-endpoint (3-way) comparisons.
 
 ## Round syntheses
 - [T3, REFUTED route] Poly (even un-)ambiguity forces no global restriction: D1·b (S→Tb, T→aTbT|ε) is unambiguous, branching, ⊆ Q, γ=2, ∉ FR (density.md Cor 2), infinite index (LITERATURE). See poly_T3.md.
