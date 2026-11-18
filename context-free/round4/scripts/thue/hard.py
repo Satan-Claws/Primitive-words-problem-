@@ -18,7 +18,7 @@ for (U, k, rho) in [(tm(8), 2, 6), (tm(8), 3, 6), (tm(8), 4, 6), (tm(6), 3, 6), 
         for cuts in windows(W, marks, 3, rho + 4):
             loops = [W[cuts[j]:cuts[j+1]] for j in range(3)]
             r = W[cuts[-1]:] + W[:cuts[0]]
-            s = bounded_attack(r, loops, min(2 * len(W), 40))
+            s = exact_attack(r, loops, 3 * len(W))
             if s is None:
                 allfail = False; esc = (cuts, loops); break
         print('  ', typ, d, W, 'R=', a0, 'defect in R' if inside else 'defect outside R',

@@ -138,3 +138,38 @@ def bounded_attack(r, loops, maxsig):
                     seen.add(t); nf.add(t)
         frontier = nf
     return None
+
+def in_monoid(w, loops):
+    ok = [False] * (len(w) + 1); ok[0] = True
+    for i in range(1, len(w) + 1):
+        ok[i] = any(len(v) <= i and ok[i - len(v)] and w[i - len(v):i] == v for v in loops)
+    return ok[-1]
+
+def factor_of_monoid(r, loops):
+    """is r a factor of some word of loops* ? (KMP states over the monoid)"""
+    A = KMP(r); seen = {0}; st = [0]
+    while st:
+        q = st.pop()
+        for v in loops:
+            q2, h = A.run(q, v)
+            if h: return True
+            if q2 not in seen: seen.add(q2); st.append(q2)
+    return False
+
+def exact_attack(r, loops, maxN):
+    """Exact: returns ('case2', sigma) for some sigma in M, |t|<|r|, sigma r = t^e (e>=2) with |sigma r|<=maxN;
+    'case1?' if r is a factor of M (long-t powers not excluded); None if neither (for |sigma r| <= maxN,
+    and case1 excluded for all lengths)."""
+    n = len(r)
+    for N in range(n, maxN + 1):
+        for e in range(2, N + 1):
+            if N % e: continue
+            P = N // e
+            if P >= n: continue
+            t = r[n - P:]
+            w = t * e
+            if w.endswith(r):
+                sig = w[:N - n]
+                if in_monoid(sig, loops): return ('case2', sig)
+    if factor_of_monoid(r, loops): return 'case1?'
+    return None

@@ -161,3 +161,14 @@ x − Rx = v(c0) + e_1 − e_K} is linear CF, ⊆ Q, contains a·(m·1 + c0)^k. 
 whose directions share a reflection axis. Theorem 4 (proved): F_2 = {a(a^p b a^q b a b)^k} defeats the class 𝓡
 (finite unions of rotation-closures of 'x − Rx bounded by B') and all Parikh certificates.
 CL3 (conjectured, stronger than goal): every CFL ⊇ F_2 contains a non-primitive word.
+
+## dense (done)
+1. Aim: CF L ⊆ Q with density ≫ n^{-1/2} (refuting Q½), else extend the n^{-1/2} barrier.
+2. Proved: W (cyclic walk-window certificate: D = Δ(w) ≥ 1 and some i with S_t ≤ S_i on (i, i+⌊n/2⌋], mirrored
+   for D ≤ −1, strict for D = 0) is sound and has positive density (Donsker; ≈0.66 by Monte Carlo) — but is
+   probably NOT CF (unproved). Theorem P^R: R ∩ {k-gram counts ∈ S} power-free ⇒ O(2^n n^{-1/2}), also for subsets.
+3. Missing: every CF L ⊆ Q agrees up to O(2^n n^{-1/2}) with a power-free regular ∩ count language
+   (stronger than goal). First concrete test: is W, or a positive-density variant of W, CF?
+4. Counterexamples: none for Q½; W shows soundness alone does not give n^{-1/2}.
+5. Stronger than Q ∉ CFL.
+6. A CF positive-density variant of W would kill the density route.
