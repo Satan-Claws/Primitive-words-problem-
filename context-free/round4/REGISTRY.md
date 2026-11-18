@@ -10,7 +10,7 @@ Started 2026-11-18 04:29 UTC. Wave 1: 9 independent agents (one slot kept for au
 | Construction of a CFG/PDA (positive direction) | builder | open: reflection-dominance certificate (sound, CF, coverage → 0) |
 | Rational-transduction reductions (correct direction) | transduce | **stalled** (barriers T1, T2, Prop D) |
 | Uniform-in-M upgrade of the finite-ambiguity slice argument | uniform, r6 | **blocked** (barrier; R6 evidence: CF) |
-| Periodicity / near-power witness families | periodic, cl1 | CL1, CL2, CL3 **refuted**; CL4 open |
+| Periodicity / near-power witness families | periodic, cl1 | CL1–CL3 **refuted**; CL4 ⇐ CL5 open |
 | Analytic / N-algebraic series obstructions | analytic | running |
 | Cross-length context × yield decompositions | crossing | **blocked** (missing step = full problem) |
 
@@ -292,3 +292,14 @@ Coordinator note: on the bounded slice a⁺b⁺a⁺b⁺, J ∩ B = {a^{p+1}b^q a
 3. Missing (density route): is there a CF L ⊆ Q with positive upper density? N_∞ (iterate until one letter)
    is sound with heuristic density → 1; CF status open.
 5. 'Every CF L ⊆ Q has density o(1)' still implies Q ∉ CFL and is stronger.
+
+## cl1 → CL4 (done)
+- P1 (proved): words of J have |w|_a odd, so CL4 ⇔ every CFL ⊇ J contains an odd power v^q (q ≥ 3).
+- P2: bounded level-set certificate C_O^B (reflection, level set of size s ≤ B with gcd(s, K) = 1; sound by
+  builder2's orbit lemma) covers 197–200 of 200 random J members but no fixed B covers J (needed s grows linearly).
+- P3 (proved): φ: 0 ↦ ab, 1 ↦ aab preserves primitivity both ways and φ(1y0y) = a·u·u, so CL5 ⇒ CL4:
+  CL5: every CFL containing T = {1y0y : y ∈ {0,1}*} contains a non-primitive word.
+  Up to rotation/swap, T = words at Hamming distance 1 from a square (exactly one antipodal mismatch pair).
+- Single-reflection finite-control barrier: conjectured, not proved.
+Coordinator note: 'exactly one antipodal mismatch' is a sound certificate (an odd power's antipodal mismatch
+set is a union of orbits of odd size ≥ 3), but verifying the other n/2 − 1 antipodal equalities is copy-like.

@@ -51,19 +51,43 @@ static int cert_L(const int*w,int n){ int x[MAXN]; for(int one=0;one<2;one++){ i
 static int cert_BGB(const int*w,int n){ int x[MAXN]; for(int one=0;one<2;one++){ int K=blocks(w,n,one,x); if(K<2)continue;
   for(int s=0;s<K;s++){ int mm=0; for(int i=0;i<K;i++) if(x[i]>x[((s-i)%K+K)%K])mm++; int r=K-2*mm; if(mm>=1&&(mm<=B||r<=B)&&gcd(mm,r)==1)return 1; } } return 0; }
 
+
+/* ---- walk.md T-operator: first-passage pieces (a=+1,b=-1). level0 = E' (|Delta|=1) or (useG) G-weights ---- */
+static int pieces(const int*w,int n,int*typ,int*first){ /* returns D>=1 after swap if needed; typ[j]=0 if piece=='a', 1 if starts 'ba', 2 if starts 'bb' */
+  int D=0; for(int i=0;i<n;i++)D+=w[i]?-1:1; int sw=0; if(D==0)return 0; if(D<0){sw=1;D=-D;}
+  int S=0,best=0,ts=0; for(int t=1;t<n;t++){ S+=((w[t-1]^sw)?-1:1); if(S>best){best=S;ts=t;} }
+  int lev=0,cur=0,len=0,f0=-1,f1=-1; int np=0;
+  for(int j=0;j<n;j++){ int c=w[(ts+j)%n]^sw; if(len==0)f0=c; else if(len==1)f1=c; len++; cur+=c?-1:1;
+    if(cur>lev){ lev=cur; typ[np++]= (len==1)?0:(f1==0?1:2); len=0; } }
+  (void)first; return np; }
+static int inG(const int*w,int n){ int typ[MAXN]; int D=pieces(w,n,typ,0); if(!D)return 0; int g=0; for(int j=0;j<D;j++) g+= typ[j]==0?1:(typ[j]==1?-2:0); return g==1||g==-1; }
+static int inT(const int*w,int n,int k,int useG){
+  if(useG&&inG(w,n))return 1;
+  if(k==0) return cert_EP(w,n);
+  int typ[MAXN]; int D=pieces(w,n,typ,0); if(!D)return 0; int v[MAXN]; for(int j=0;j<D;j++)v[j]=typ[j]?1:0; return inT(v,D,k-1,useG); }
+static int cert_T1(const int*w,int n){ return inT(w,n,1,0); }
+static int cert_T2(const int*w,int n){ return inT(w,n,2,0); }
+static int cert_T3(const int*w,int n){ return inT(w,n,3,0); }
+static int cert_TG2(const int*w,int n){ return inT(w,n,2,1); }
+
+static int cert_BASE(const int*w,int n){ return cert_D(w,n)||cert_GB(w,n)||cert_RD(w,n)||cert_RGB(w,n)||cert_EP(w,n)||cert_PAR(w,n)||cert_L(w,n)||cert_BGB(w,n)||inG(w,n); }
+static int TAK=2;
+static int inTA(const int*w,int n,int k){ if(n<=0)return 0; if(cert_BASE(w,n))return 1; if(k==0)return 0;
+  int typ[MAXN]; int D=pieces(w,n,typ,0); if(!D||D==n)return 0; int v[MAXN]; for(int j=0;j<D;j++)v[j]=typ[j]?1:0; return inTA(v,D,k-1); }
+static int cert_TA(const int*w,int n){ return inTA(w,n,TAK); }
 typedef int (*cf)(const int*,int);
-#define NC 8
-static const char*NAMES[NC]={"D","GB","RD","RGB","EP","PAR","L","BGB"};
-static cf CERTS[NC]={cert_D,cert_GB,cert_RD,cert_RGB,cert_EP,cert_PAR,cert_L,cert_BGB};
+#define NC 13
+static const char*NAMES[NC]={"D","GB","RD","RGB","EP","PAR","L","BGB","T1","T2","T3","TG2","TA"};
+static cf CERTS[NC]={cert_D,cert_GB,cert_RD,cert_RGB,cert_EP,cert_PAR,cert_L,cert_BGB,cert_T1,cert_T2,cert_T3,cert_TG2,cert_TA};
 
 static int isprim(const int*w,int n){ for(int d=1;d<n;d++) if(n%d==0){ int ok=1; for(int i=d;i<n;i++) if(w[i]!=w[i-d]){ok=0;break;} if(ok)return 0;} return 1; }
 
-static int n_glob; static long tot, miss[NC], missU0, missU;
+static int n_glob; static long missTA; static long tot, miss[NC], missU0, missU, missUT;
 static FILE*dump;
 static void visit(const int*w,int n){ /* w Lyndon */
   tot++; int r[NC]; for(int k=0;k<NC;k++){ r[k]=CERTS[k](w,n); if(!r[k])miss[k]++; }
   int u0=r[0]||r[1]||r[2]||r[3]; if(!u0)missU0++;
-  int u=u0||r[4]||r[5]||r[6]||r[7]; if(!u){ missU++; if(dump){ for(int i=0;i<n;i++)fputc("ab"[w[i]],dump); fputc('\n',dump);} }
+  int ut=u0||r[8]||r[9]||r[10]||r[11]; if(!ut)missUT++; int u=ut||r[4]||r[5]||r[6]||r[7]; if(!r[12])missTA++; if(!u){ missU++; if(dump){ for(int i=0;i<n;i++)fputc("ab"[w[i]],dump); fputc('\n',dump);} }
 }
 static int a[MAXN+1];
 static void lyn(int n){ /* FKM iterative */
@@ -73,12 +97,12 @@ static void lyn(int n){ /* FKM iterative */
   while(L>0){ buf[L-1]++; m=L; if(m==n){ visit(buf,n);} while(L<n){ buf[L]=buf[L-m]; L++; } while(L>0&&buf[L-1]==1)L--; }
   (void)i;(void)len;(void)w;
 }
-int main(int argc,char**argv){ const char*mode=argv[1]; int N0=atoi(argv[2]),N1=atoi(argv[3]); if(argc>4)B=atoi(argv[4]); if(argc>5)LMAX=atoi(argv[5]); if(argc>6)ANYT=atoi(argv[6]);
-  if(!strcmp(mode,"mc")){ int S=atoi(argv[7]); srand(12345); static int w[MAXN]; for(int n=N0;n<=N1;n+=(n<40?6:(n<100?20:50))){ long hit[NC]={0}; long u0=0,u=0,prim=0;
+int main(int argc,char**argv){ const char*mode=argv[1]; int N0=atoi(argv[2]),N1=atoi(argv[3]); if(argc>4)B=atoi(argv[4]); if(argc>5)LMAX=atoi(argv[5]); if(argc>6)ANYT=atoi(argv[6]); if(argc>8)TAK=atoi(argv[8]);
+  if(!strcmp(mode,"mc")){ int S=atoi(argv[7]); srand(12345); static int w[MAXN]; for(int n=N0;n<=N1;n=(n<40?n+6:(n<100?n+20:n*2+1))){ long hit[NC]={0}; long u0=0,u=0,ut=0,prim=0;
       for(int t=0;t<S;t++){ for(int i=0;i<n;i++)w[i]=(rand()>>7)&1; if(!isprim(w,n))continue; prim++; int r[NC]; for(int k=0;k<NC;k++){r[k]=CERTS[k](w,n); hit[k]+=r[k];}
-        int a0=r[0]||r[1]||r[2]||r[3]; u0+=a0; u+= a0||r[4]||r[5]||r[6]||r[7]; }
-      printf("n=%d S=%ld",n,prim); for(int k=0;k<NC;k++)printf(" %s:%.3f",NAMES[k],(double)hit[k]/prim); printf(" | CFU(b2):%.3f CFU+:%.3f\n",(double)u0/prim,(double)u/prim); fflush(stdout);} return 0; }
+        int a0=r[0]||r[1]||r[2]||r[3]; u0+=a0; int at=a0||r[8]||r[9]||r[10]||r[11]; ut+=at; u+= at||r[4]||r[5]||r[6]||r[7]; }
+      printf("n=%d S=%ld",n,prim); for(int k=0;k<NC;k++)printf(" %s:%.3f",NAMES[k],(double)hit[k]/prim); printf(" | CFU(b2):%.3f CFU+T:%.3f ALL:%.3f\n",(double)u0/prim,(double)ut/prim,(double)u/prim); fflush(stdout);} return 0; }
   if(!strcmp(mode,"sound")){ int w[MAXN]; for(int n=1;n<=N1;n++){ long bad=0; for(long x=0;x<(1L<<n);x++){ for(int i=0;i<n;i++)w[i]=(x>>i)&1; if(isprim(w,n))continue; for(int k=0;k<NC;k++) if(CERTS[k](w,n)){ bad++; fprintf(stderr,"UNSOUND %s n=%d x=%lx\n",NAMES[k],n,x);} } printf("n=%d unsound=%ld\n",n,bad); fflush(stdout);} return 0; }
-  for(int n=N0;n<=N1;n++){ tot=0; memset(miss,0,sizeof miss); missU0=missU=0; char fn[64]; sprintf(fn,"miss_%d.txt",n); dump=fopen(fn,"w"); lyn(n); fclose(dump);
-    printf("n=%d nk=%ld",n,tot); for(int k=0;k<NC;k++)printf(" %s:%ld",NAMES[k],miss[k]); printf(" | CFU(b2):%ld  CFU+:%ld\n",missU0,missU); fflush(stdout); }
+  for(int n=N0;n<=N1;n++){ tot=0; memset(miss,0,sizeof miss); missU0=missU=missUT=missTA=0; char fn[64]; sprintf(fn,"miss_%d.txt",n); dump=fopen(fn,"w"); lyn(n); fclose(dump);
+    printf("n=%d nk=%ld",n,tot); for(int k=0;k<NC;k++)printf(" %s:%ld",NAMES[k],miss[k]); printf(" | CFU(b2):%ld CFU+T:%ld ALL:%ld\n",missU0,missUT,missU); fflush(stdout); }
 }

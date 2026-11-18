@@ -296,3 +296,79 @@ blocks, dominance misses 200/200, and dominance together with L_1..L_4 misses 17
 6. **What would reopen the route:** a CF certificate for J. Its idea would have to compare antipodal blocks through a
    single stack, which would be strong evidence toward Q being CF. Or a proof that any CFG containing J yields, by
    pumping inside one copy of u while the other copy is fixed, a word u′ a u′′ that is a power.
+
+---
+
+# CL4 (fourth task): not refuted. Reductions, a covering certificate, and the core family
+
+Scripts: `scripts/cl1/cl4_hs.py`, `scripts/cl1/cl4_O.py`, `scripts/cl1/cl4_O2.py` (each runs in under 3 min).
+J = {a·u·u : u ∈ (a*b)^+}. Its block vector is x = c^2 + e_0, with K = 2ℓ blocks and c = β(u) ∈ N^ℓ.
+**Result: I could not refute CL4, and I did not prove the single-reflection barrier.** What I have:
+
+**P1 (PROVED). Only odd powers matter.** Every member of J has |w|_a = 2|u|_a + 1, which is odd. So for any CFL L ⊇ J,
+the language L ∩ {|w|_a odd} is CF and contains J. Its non-primitive words are v^q with q odd ≥ 3, because an even
+power has an even a-count. So CL4 is equivalent to: every CFL containing J contains an odd power v^q, q ≥ 3.
+Equivalently, the even powers are killed by a regular condition for free.
+
+**P2 (PROVED sound and CF; coverage partly PROVED, partly COMPUTER-CHECKED). Bounded level-set certificate.**
+C_O^B = { w ∈ (a*b)^+ : for some reflection ρ(i) = c − i of Z_K and some value v with |v| ≤ V, the count
+s = #{i : x_i − x_{ρ(i)} = v} satisfies 1 ≤ s ≤ B and gcd(s, K) = 1 }.
+- **Sound:** this is builder2's Lemma O at block level. If w is a power, every level set of D is a union of orbits of
+  size p′ > 1 with p′ | K.
+- **CF:** Cyc of a finite union of linear fold grammars, covering both fold types. The finite control holds the count
+  capped at B and K mod lcm(1..B).
+- **Covers (PROVED):** every a·u·u with c_i − c_{−i} ≠ 1 for all i ≢ 0 (mod ℓ). Use the axis ρ(i) = −i, which maps
+  0 to its antipode ℓ. Then {D = 1} = {0}, so s = 1.
+- **Data:** soundness is exhaustive for all words of length ≤ 18: 244935 certified words, all primitive. C_O^7 covers
+  197–200 of 200 random J members with block lengths in [0,30], [0,8], [0,2] or [1,2] and ℓ ≤ 20.
+- **But it does not scale (`cl4_O2.py`).** Take c ∈ {1,2}^ℓ and allow values v ∈ {1,2,3}. When c_0 = 1, so that
+  x_0 = 2 is not a unique block value, the smallest coprime level-set size over all axes grows linearly: about 7–13 at
+  ℓ = 40, 19–29 at ℓ = 80, 51–63 at ℓ = 160. So no fixed B covers J.
+
+**P3 (PROVED). Reduction to a binary core family.** Let φ be the morphism 0 ↦ ab, 1 ↦ aab, a prefix code. Then
+φ(1y0y) = a·u·u with u = φ(0y) (checked in `cl4_hs.py`). φ preserves and reflects primitivity: a root of a word in
+φ({0,1}^+) ⊆ (a*b)^+ ends in b, so it is a product of codewords, and φ is injective. CFLs are closed under inverse
+morphism. Hence:
+- **CL5 ⇒ CL4**, where **CL5:** every CFL containing T = {1y0y : y ∈ {0,1}*} contains a non-primitive word.
+- Cyc(T ∪ swap(T)) = HS, the set of words at Hamming distance 1 from a square. HS ⊆ Q by periodic.md L1.
+  COMPUTER-CHECKED: the 1023 members with |y| ≤ 9 are primitive.
+- CL5 is at least as strong as CL4. The P2 data says T-type members (bounded blocks, c_0 = 1) are exactly the
+  members of J that escape bounded certificates. So T, the Hamming-1 neighbours of squares, is the natural core.
+- Builder's letter-level dominance covers 771/1023 of T for |y| ≤ 9, but 15/300 at |y| = 20 and 0/300 at |y| = 40.
+
+**What a refutation of CL4 (or CL5) must do (IDEA, consistent with builder2's coprimality barrier).**
+- By P1, it must exclude odd powers v^q with q unbounded and q | ℓ.
+- On the escaping members, every single-reflection level set of bounded value has size growing linearly in ℓ.
+- A single-reflection certificate with finite control can only test such sizes against K modulo fixed numbers. So it
+  would need either a CF test of gcd(count, K) = 1 for unbounded counts, or a comparison of antipodal blocks
+  i ↔ i + K/2. The latter is a matching that crosses the reflection matching.
+- builder2's Lemma S (semilinear sets of coprime pairs are thin) suggests the first is impossible as a Parikh-type
+  test. Nothing here is a theorem.
+
+**Why the barrier proof did not close.** The natural class is: label automaton A over pair labels
+(exact offset |δ| ≤ B / ≥ δ / ≤ δ / free, residues mod N), plus Cyc and finite unions. This class contains C_O^B, the
+L_ℓ, the L(c0) and builder2's RGB. Two strategies failed:
+- Building a power y with the same label sequence fails on the residue labels. The J residue vector
+  r(z)^2 + e_j is never periodic mod N ≥ 2, by the e_j − e_{j+ℓ} argument.
+- Changing labels needs a pumping loop of A that contains the perturbed pair, and pigeonhole does not guarantee one.
+A proof would have to choose u so that the label language is forced into a loop around the perturbation. I conjecture
+J (and T) escapes the class, but I leave it open.
+
+## Registry entry (CL4)
+1. **Aimed at:** refute CL4 (J = {a·u·u}), or prove J escapes single-reflection finite-control certificates.
+2. **Proved:**
+   - P1: reduction to odd powers.
+   - P2: C_O^B is sound and CF, and covers all a·u·u without a mirrored ±1 coincidence.
+   - P3: CL5 ⇒ CL4 via the code φ; T and HS (Hamming-1 neighbours of squares) are the core.
+3. **Missing step:**
+   - Negative side: CL5, or the barrier "no finite union of label-automaton reflection certificates covers T".
+   - Positive side: a CF certificate covering T, which would need a coprimality-type or antipodal mechanism.
+4. **Counterexamples found:** none to CL4.
+   - Bounded level-set certificates cover generic J members; this is proved for the "no mirrored ±1" subfamily.
+   - They fail on T-type members, with linear growth (computer data only).
+5. **Strength:** CL5 ⇒ CL4 ⇒ "Q not CF". Both are stronger than the target. The barrier would be strictly weaker.
+6. **What would reopen the route:**
+   - A CF test certifying gcd(s, K) = 1 for an unbounded reflection count s. That would refute CL5 and be strong
+     positive-side evidence.
+   - A pumping argument showing that every finite-state label run on 1y0y can be re-used on some (v)^q, which would
+     prove the barrier.
