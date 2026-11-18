@@ -303,3 +303,11 @@ Coordinator note: on the bounded slice a⁺b⁺a⁺b⁺, J ∩ B = {a^{p+1}b^q a
 - Single-reflection finite-control barrier: conjectured, not proved.
 Coordinator note: 'exactly one antipodal mismatch' is a sound certificate (an odd power's antipodal mismatch
 set is a union of orbits of odd size ≥ 3), but verifying the other n/2 − 1 antipodal equalities is copy-like.
+
+## fold follow-up (done)
+- Lemma H (proved): m_c ≤ min(|w|_a, |w|_b), so U ⊆ H = {both counts ≳ n/4}.
+- Lemma NC (proved): on every slice (a*b*)^K, every asymptotic direction of H is covered by non-crossing
+  2-coordinate periods — the Ginsburg cone argument cannot show U (or Cyc(Φ_R)) non-CF on any bounded slice.
+- Computer: on 4- and 6-block slices U agrees with H except for congruence (parity-skip) gaps, which are semilinear.
+- Conjectured: U ∩ every bounded slice is CF; deciding U needs an unbounded obstruction. If U is CF it is a
+  density-1 CF subset of Q (refutes Q½, not a resolution).

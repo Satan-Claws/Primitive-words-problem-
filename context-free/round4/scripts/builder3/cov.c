@@ -87,7 +87,7 @@ static FILE*dump;
 static void visit(const int*w,int n){ /* w Lyndon */
   tot++; int r[NC]; for(int k=0;k<NC;k++){ r[k]=CERTS[k](w,n); if(!r[k])miss[k]++; }
   int u0=r[0]||r[1]||r[2]||r[3]; if(!u0)missU0++;
-  int ut=u0||r[8]||r[9]||r[10]||r[11]; if(!ut)missUT++; int u=ut||r[4]||r[5]||r[6]||r[7]; if(!r[12])missTA++; if(!u){ missU++; if(dump){ for(int i=0;i<n;i++)fputc("ab"[w[i]],dump); fputc('\n',dump);} }
+  int ut=u0||r[8]||r[9]||r[10]||r[11]; if(!ut)missUT++; int u=ut||r[4]||r[5]||r[6]||r[7]; if(!r[12])missTA++; if(!u)missU++; if(!u&&!r[12]){ if(dump){ for(int i=0;i<n;i++)fputc("ab"[w[i]],dump); fputc('\n',dump);} }
 }
 static int a[MAXN+1];
 static void lyn(int n){ /* FKM iterative */
@@ -104,5 +104,5 @@ int main(int argc,char**argv){ const char*mode=argv[1]; int N0=atoi(argv[2]),N1=
       printf("n=%d S=%ld",n,prim); for(int k=0;k<NC;k++)printf(" %s:%.3f",NAMES[k],(double)hit[k]/prim); printf(" | CFU(b2):%.3f CFU+T:%.3f ALL:%.3f\n",(double)u0/prim,(double)ut/prim,(double)u/prim); fflush(stdout);} return 0; }
   if(!strcmp(mode,"sound")){ int w[MAXN]; for(int n=1;n<=N1;n++){ long bad=0; for(long x=0;x<(1L<<n);x++){ for(int i=0;i<n;i++)w[i]=(x>>i)&1; if(isprim(w,n))continue; for(int k=0;k<NC;k++) if(CERTS[k](w,n)){ bad++; fprintf(stderr,"UNSOUND %s n=%d x=%lx\n",NAMES[k],n,x);} } printf("n=%d unsound=%ld\n",n,bad); fflush(stdout);} return 0; }
   for(int n=N0;n<=N1;n++){ tot=0; memset(miss,0,sizeof miss); missU0=missU=missUT=missTA=0; char fn[64]; sprintf(fn,"miss_%d.txt",n); dump=fopen(fn,"w"); lyn(n); fclose(dump);
-    printf("n=%d nk=%ld",n,tot); for(int k=0;k<NC;k++)printf(" %s:%ld",NAMES[k],miss[k]); printf(" | CFU(b2):%ld CFU+T:%ld ALL:%ld\n",missU0,missUT,missU); fflush(stdout); }
+    printf("n=%d nk=%ld",n,tot); for(int k=0;k<NC;k++)printf(" %s:%ld",NAMES[k],miss[k]); printf(" | CFU(b2):%ld CFU+T:%ld ALL:%ld TAmiss:%ld\n",missU0,missUT,missU,missTA); fflush(stdout); }
 }

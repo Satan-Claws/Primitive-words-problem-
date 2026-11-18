@@ -135,3 +135,44 @@ This covers builder2's GB (bounded m) and all "regular-control fold" certificate
 6. **What would reopen the route:**
    - a CF mechanism that tests fold balance using the same stack as the fold, e.g. via nonlinear derivations that re-pair positions;
    - on the negative side, a Theorem-P-style anti-concentration bound for CF subsets of Φ_R.
+
+## 5. Follow-up: is the axis-union U (= LU) context-free? (answer: UNDECIDED; bounded slices give no obstruction)
+
+U is rotation-closed and sound, and has density → 1 (§2). Theorem F does not transfer to U.
+
+Scripts and outputs in `scripts/fold/`:
+- `slice4.py`, `slice4b.py`, with output `out_slice4b.txt`;
+- `slice4c.py`, with outputs `out_slice4c_K2.txt` and `out_slice4c_K3.txt`.
+
+**Lemma H (PROVED).** m_c ≤ min(|w|_a, |w|_b) for every axis c, since each mismatched pair holds one a and one b. Hence
+U ⊆ H := {w : min(|w|_a, |w|_b) ≥ min T(|w|)}, where min T(n) = n/4 − O(1).
+
+**Lemma NC (PROVED): no asymptotic Ginsburg obstruction exists on any slice (a*b*)^K.** The recession region of H on the slice is
+{x ∈ R^{2K}_{≥0} : Σ x_a-blocks ≥ |x|/4 and Σ x_b-blocks ≥ |x|/4}. Every point of it is a nonnegative combination of 2-support vectors (one a-block, one b-block, ratio in [1/3, 3]) whose supports are pairwise non-crossing.
+
+*Proof.*
+1. Scale the b-masses by r = |x|_a/|x|_b ∈ [1/3, 3], so that the a-mass and the scaled b-mass have equal totals.
+2. Cancel an adjacent a-block/b-block pair repeatedly. A sequence with equal totals of two kinds of mass in linear order always has adjacent blocks of opposite letters until it is exhausted.
+3. Each cancellation gives an edge between a nonempty a-block and a nonempty b-block, with ratio exactly r.
+4. Adjacent cancellation produces a planar (nested) edge family, so the edges are non-crossing. ∎
+
+Consequence for the method. The obstruction used in Theorem F (§3) and in the earlier non-CF proofs needs a region of exponent space whose directions avoid every cone spanned by stratified periods. That obstruction is impossible for U ∩ (a*b*)^K, because U ⊆ H and every recession direction of H is covered. A non-CF proof for U via bounded slices would therefore have to use the lower-dimensional or congruence ("gap") structure. It cannot use the shape of the cone.
+
+**What the gaps look like (COMPUTER-CHECKED).** On a^i b^j a^k b^l, with all (i,j,k,l) for n ≤ 40, and on random samples of 4- and 6-block slices up to n = 960:
+- **Interval rule.** The interval rule "min_c m_c ≤ t ≤ max_c m_c for some t ∈ T(n)" agreed with H on every sample.
+- **Exact pattern for n ≤ 40.** U equals the interval rule except on 843 words. 575 of these have i = k or j = l, i.e. they are reflection-symmetric or periodic. The other 268 are parity gaps: m_c takes only even values near the target. One example is (4,5,6,7) at n = 22, where the m_c values are {…, 4, 6, 7, …} and 5 is missing.
+- **Odd n.** For 4 blocks, U ∩ slice = H ∩ slice in all samples (n = 121, 481). For 6 blocks there is a residue of about 0.3%.
+- **Even n.** There is a stable 1–2% gap region. In it, m_c is piecewise linear in c with slopes in {−4, …, 4}, so the gaps are congruence conditions on the block lengths, which are semilinear.
+
+All of this is consistent with U ∩ (every bounded slice) being CF: H minus congruence-defined and lower-dimensional pieces. I did not prove stratification of those pieces.
+
+**Status of the decisive question (CONJECTURED, not proved).**
+- U ∩ (a*b*)^K is CF for every K. A bounded-slice certificate of non-CF-ness for U, or for Cyc(Φ_R), would need Ginsburg's theorem applied to thin or congruence pieces.
+- Whether U is CF is open. If U is CF, then Q½ is false: U is a density-1 CF subset of Q. If U is not CF, the proof needs an unbounded (non-slice) obstruction.
+
+The same applies to Cyc(Φ_R) for a single R. Its recession region is also H, by Lemma H, and it has density → 1 for odd n (Theorem U).
+
+Registry addendum:
+- (2) Lemmas H and NC were added.
+- (3) The new missing step is either "U is not CF (unbounded obstruction)" or "U ∩ slice has a non-stratified thin piece".
+- (5) "U is CF" is stronger than refuting Q½ and still does not give Q ∈ CF. "U is not CF" is weaker than "Q is not CF" and does not imply it.
