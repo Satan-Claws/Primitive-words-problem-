@@ -6,7 +6,7 @@ Started 2026-11-18 04:29 UTC. Wave 1: 9 independent agents (one slot kept for au
 |---|---|---|
 | Derivation-tree iteration / Ogden / multi-pump on unbounded slices | ogden | **stalled** (Q satisfies all iteration lemmas tested; ceiling theorem) |
 | Bounded slices, Kászonyi–Katsura (n = 210 …) | kk | **stalled** (one-scale obstructions dead for all n) |
-| Density of CF subsets of Q | density4 | running |
+| Density of CF subsets of Q | density4, dense, walk, fold | **Q½ REFUTED** by walk (pending audit); positive density open |
 | Construction of a CFG/PDA (positive direction) | builder | open: reflection-dominance certificate (sound, CF, coverage → 0) |
 | Rational-transduction reductions (correct direction) | transduce | **stalled** (barriers T1, T2, Prop D) |
 | Uniform-in-M upgrade of the finite-ambiguity slice argument | uniform, r6 | **blocked** (barrier; R6 evidence: CF) |
@@ -280,3 +280,15 @@ Coordinator note: on the bounded slice a⁺b⁺a⁺b⁺, J ∩ B = {a^{p+1}b^q a
 3. Missing: is the rotation-closed union U itself CF? (Φ not CF does not imply Cyc(Φ) not CF.) A CF
    L ⊆ Φ_{±1} with density ≥ n^{-1+δ} would already refute Q½.
 5. Stronger/equal: U CF ⇒ Q½ false (density route dead); U not CF ⇒ consistent with Q½.
+
+## walk (done) — Q½ REFUTED (pending audit5)
+1. Aim: CF variant of the walk-window certificate W with density ≫ n^{-1/2}.
+2. Proved: T-operator. P = first-passage pieces z·a (z ∈ B, Dyck with b opening); σ: a ↦ a, b ↦ {z·a : z ∈ B∖ε};
+   T(M) = Cyc(σ(M)) ∪ swap(Cyc(σ(M))). Lemma: M CF, M ⊆ Q ⇒ T(M) CF and ⊆ Q (unique first-passage decomposition
+   of a word ending at a strict maximum; a power x^p decodes to Φ(x)^p). T(E′) has exact count formula and
+   |T(E′)_n| ≥ c·2^n n^{-1/4} for odd n (PROVED). T^k(E′) CF, sound, density ≍ n^{-2^{-(k+1)}} (outline + MC:
+   0.135, 0.567, 0.867 at n = 100001 for k = 1, 2, 3). Weighted variant covers even n at n^{-1/4}.
+   Consequences: Q½ FALSE; dense.md's CRH FALSE; Theorems P, P^R do not extend to all CF L ⊆ Q.
+3. Missing (density route): is there a CF L ⊆ Q with positive upper density? N_∞ (iterate until one letter)
+   is sound with heuristic density → 1; CF status open.
+5. 'Every CF L ⊆ Q has density o(1)' still implies Q ∉ CFL and is stronger.
