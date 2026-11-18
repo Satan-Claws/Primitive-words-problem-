@@ -9,7 +9,7 @@ Started 2026-11-18 04:29 UTC. Wave 1: 9 independent agents (one slot kept for au
 | Density of CF subsets of Q | density4 | running |
 | Construction of a CFG/PDA (positive direction) | builder | open: reflection-dominance certificate (sound, CF, coverage → 0) |
 | Rational-transduction reductions (correct direction) | transduce | **stalled** (barriers T1, T2, Prop D) |
-| Uniform-in-M upgrade of the finite-ambiguity slice argument | uniform | **blocked** (barrier) |
+| Uniform-in-M upgrade of the finite-ambiguity slice argument | uniform, r6 | **blocked** (barrier; R6 evidence: CF) |
 | Periodicity / near-power witness families | periodic, cl1 | CL1, CL2, CL3 **refuted**; CL4 open |
 | Analytic / N-algebraic series obstructions | analytic | running |
 | Cross-length context × yield decompositions | crossing | **blocked** (missing step = full problem) |
@@ -240,3 +240,15 @@ Coordinator note: on the bounded slice a⁺b⁺a⁺b⁺, J ∩ B = {a^{p+1}b^q a
   analytic Theorem 3.2 (2^{n−1} − d(n), non-algebraic).
 - GAP repaired: thue L-μ (case e = 2; repaired by odd-cycle 2-colouring argument). Statement true.
 - Nit: W should be restricted to Σ⁺.
+
+## r6 (done)
+1. Aim: decide whether Q ∩ R6 (two primes 2, 3, unboundedly many blocks) is CF.
+2. Proved: Q ∩ R6 is CF IF the Cover Lemma holds (every primitive w ∈ R6 has a count certificate (C) —
+   per-segment count tuples neither 2- nor 3-periodic; CF via the n = 6 KK slice (LITERATURE, not re-verified) —
+   or a non-crossing two-arc certificate (N)); square and cube mismatch arcs sharing no segment always cross,
+   sharing a segment they can be ordered; Cover Lemma proved when all six segments have equal length.
+3. Missing: Cover Lemma for unequal segment lengths with both count vectors periodic (0 failures among
+   49,332,000 tuples with segment length ≤ 5, and all 26,900 R6 words of length ≤ 26).
+4. Counterexamples: own earlier 'triangle' argument wrong (not used); unary-like families need (C).
+5. If true, R6 route closed (no step toward Q ∉ CFL).
+6. Reopen: counterexample to the Cover Lemma, or three coprime exponents (e.g. (a(ab⁺)⁺)^30).
