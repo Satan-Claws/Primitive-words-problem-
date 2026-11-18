@@ -117,3 +117,6 @@ Still unresolved, and no route unblocked. New proved results ([written proof], u
   from cone width alone is impossible, since order cones are equally narrow yet tile with ply 1.
 
 **Final exact gap (session 2):** Lemma G\* = TILE_k (≡ Q1 ∧ Q2, or their failure) + G3\*\* (four height terms).
+- **Q1 at n = 36** (`poly_S2Z.md`, [computational], INCONCLUSIVE). A non-exhaustive search found no
+  chain-valid tree for 400 of 400 sampled orders (node cap hit). This is weak evidence against Q1, so the
+  low-ply blocking route for S_N is unconfirmed.
