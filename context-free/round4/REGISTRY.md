@@ -7,7 +7,7 @@ Started 2026-11-18 04:29 UTC. Wave 1: 9 independent agents (one slot kept for au
 | Derivation-tree iteration / Ogden / multi-pump on unbounded slices | ogden | **stalled** (Q satisfies all iteration lemmas tested; ceiling theorem) |
 | Bounded slices, Kászonyi–Katsura (n = 210 …) | kk | **stalled** (one-scale obstructions dead for all n) |
 | Density of CF subsets of Q | density4 | running |
-| Construction of a CFG/PDA (positive direction) | builder | running |
+| Construction of a CFG/PDA (positive direction) | builder | open: reflection-dominance certificate (sound, CF, coverage → 0) |
 | Rational-transduction reductions (correct direction) | transduce | **stalled** (barriers T1, T2, Prop D) |
 | Uniform-in-M upgrade of the finite-ambiguity slice argument | uniform | **blocked** (barrier) |
 | Periodicity / near-power witness families | periodic | open: candidate lemma CL1 (stronger than goal) |
@@ -92,3 +92,16 @@ counterexamples, strength of missing step, reopen condition).
 6. Reopen: Conjecture "finitely many arbitrary-set product classes cover Q" fails; or a structural lemma
    restricting CF factors.
 Leftover hard words everywhere: near-periodic words (a^{n−1}b, (ab)^k and (aab)^k with a defect).
+
+## builder (done 1st wave)
+1. Aim: explicit CFG/PDA for Q (positive resolution), or the obstruction a negative proof must capture.
+2. Proved: reflection dominance — if for a reflection τ(i) = c − i of the n-cycle and a half-arc H,
+   w_i ≤ w_{τ(i)} on H (a < b) with one strict pair, then w is primitive. CF grammar
+   S → Y | XY, X → a|b, Y → aYa | bYb | aZb, Z → aZa | bZb | aZb | X | ε; its cyclic closure is a CF subset of Q
+   covering all primitive necklaces of lengths 2–8, 10; misses grow (18.5% at n = 20); coverage → 0 (proved
+   bound 2n·2^n·(3/4)^⌊(n−1)/2⌋). Missed family bb a^m bab a^m (all m ≥ 2). Half-imbalance certificate (n/6, tight).
+3. Missing: a finite union of CF certificate languages whose cyclic closure covers Q; or the lemma
+   'every CF L ⊆ Q misses ≥ ε·2^n conjugacy classes infinitely often' (equivalent to Q ∉ CFL).
+4. Counterexamples: sign-pattern variants (ababab, abab, baba); Sturmian decoding rescues few words.
+5. Missing lemma equal to Q ∉ CFL (the coverage-→-0 version is stronger).
+6. Reopen: a new sound CF certificate type covering a positive share of words of highly composite lengths.
