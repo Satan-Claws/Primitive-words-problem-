@@ -1,0 +1,86 @@
+# Polynomial ambiguity of Q: stop report (no route unblocked)
+
+Session 2026-11-18, 15:07–~16:00 UTC, three rounds of agents. The problem is **not resolved**: neither
+resolution of §3 of the task is proved. Supporting notes: `poly_*.md` in this directory; log: `POLY_REGISTRY.md`.
+Nothing below has been through a gated audit (no candidate claimed to close a named gap).
+
+## 1. Strongest rigorously proved statements (all [written proof], unaudited)
+
+**Theorem P (quantitative lower bound on the ambiguity function).** For every cycle-free CFG G with
+L(G) = Q, A_G(L) = Ω(√(log L / log log L)).
+
+The proof is the chain below.
+- *Exponential case:* if G is exponentially ambiguous (Wich's C_exp, [published] DLT'99 Thm 4.4), then
+  A_G(L) = 2^{Θ(L)}.
+- *Polynomial case:*
+  1. CNF conversion and the DFA product with R_m [Lean-checked].
+  2. Structure part (c) holds without finite ambiguity (`poly_P.md` §1). Its 2^N trees sit on one word of
+     length O(N). The Dyck caveat does not apply, because both contexts insert b's only into fixed blocks.
+  3. **Lemma 3P** (`poly_P.md` §2): amb(w) = Σ_σ P_σ(exp w − c_σ), where P_σ is the vector partition function
+     of a laminar, pair-supported period list. Its degree is d_σ = #V_σ − rank V_σ ≤ k, uniformly over all
+     slice grammars.
+  4. The §5 argument survives with these supports (`poly_P.md` §3), giving a word of Q ∩ R_m with ≥ ⌈m/2⌉ trees.
+  5. Skeleton bounds with a constant K of G (`poly_T2b.md` §1): ‖v_π‖ ≤ K, ‖c_σ‖ ≤ nK,
+     #skeletons ≤ exp(O(n)).
+  6. Lemmas C and G, effective ply (`poly_G3.md` §1).
+  7. **Lemma F**, face restriction (`poly_G4.md`): fixing all but r diagonal pairs to 1 keeps a valid cover with
+     the same K. Hence some word has ply ≥ p at length 2m + exp(O(p² log pK)).
+  8. Choosing p ≈ √(log L / log log L) gives the bound.
+
+This strictly quantifies the Lean-checked "not finitely ambiguous" result. It is far from superpolynomial.
+
+**Further proved lemmas used or discovered:**
+- **Theorem E:** some word of Q ∩ R_m has ≥ ⌈m/2⌉ trees and length ≤ exp(O(m² log mK)), via Papadimitriou's
+  small-solution bound (`poly_T2b.md`).
+- **T1-P1:** on any slice of (ab*)^n, the part outside W_n = Σ_{p|n} V_p has a grammar with ambiguity ≤ φ(n).
+  Hence prime-power n slices are at most linearly ambiguous.
+- **T1-P2:** the slice (ab+abb)* is equivalent to the whole problem (`poly_T1.md`).
+- **Lemma O:** {r#a − s#b = ±1} is a DCFL contained in Q (`poly_L.md`).
+- **M1:** GF(Q ∩ (ab⁺)*) is not algebraic. **M2:** on a slice with non-algebraic GF, the marked preimage is not
+  unique infinitely often (`poly_M.md`).
+- **Reformulation** ([published] Wich MFCS'01): a polynomially ambiguous grammar for Q exists iff Q = h(L) with
+  L an unambiguous CFL and h erasing boundedly many marker symbols.
+
+## 2. Exact remaining gap (one lemma)
+
+**Lemma G\* (open).** There are slices (ab*)^{n_N} and constants such that every family of laminar pair-supported
+linear pieces with data ≤ K that covers the primitive exponent vectors (with multiplicity ≥ 1) and avoids the
+non-primitive ones has a point of ply ≥ n_N^{ω(1)} and ℓ¹-norm ≤ n_N^{o(log n_N/log log n_N)}.
+
+Lemma G\* plus Lemma 3P and Lemma G gives the negative resolution. It splits into:
+- **G-LAM** (ply): the S_N = (ab*)^{P_N²} product region. The pure convex geometry has a cover of ply
+  √n·polylog n (`poly_T2a.md` §2, VC-dimension sampling), which refutes the conjectured ply lemma G1. A laminar
+  realisation of that cover exists at any fixed generic base point (`poly_LAM.md` §2). What is open is
+  uniformity over base points and non-generic points (`poly_LAM.md` §3). Laminarity is the only remaining source
+  of superpolynomial ply.
+- **G3\*\*** (length): for some ply-set S, bound by poly(n)·K the apex of ∩(c_σ + A_σ), the covering radius of
+  Λ_S = ∩ℤV_σ, and the inradius of ∩A_σ (`poly_G3.md` §4). Laminar chains {e_1, e_i + 2e_{i+1}} have index 2^ρ
+  and are realisable by a fixed grammar fragment on any spaced slice (`poly_R3a.md`). No valid cover forcing
+  exponential length is known (`poly_G4.md` §4).
+
+## 3. Approach families
+
+| family | status | where and why it stalled |
+|---|---|---|
+| restricted class (T3) | BLOCKED | D1·b is unambiguous, branching, inside Q, and not in FR or finite index; "poly-ambiguous ⇒ FR" is the target restated (`poly_T3.md`) |
+| counting: rectangles.md rate (E) | BLOCKED | only limsup e_G(n)^{1/n} > 1 is proved; rate ≤ 2 under polynomial ambiguity |
+| counting: Wich marker projection (M) | BLOCKED | M2; intersections of PCFLs not CF; the marker variable is trivial; reduces to the sandwich (`poly_M.md`) |
+| global pumping / Wich collision (L) | BLOCKED | Lemma O: test families inside letter-count DCFLs admit finitely ambiguous grammars (`poly_L.md`) |
+| structural transfer (P) | DONE | Lemma 3P; R_m caps at linear in m with uncontrolled length |
+| slice family (T1) | candidate S_N, reduced to G-LAM | squarefree n caps at φ(n); nested R_m gives L^{<1} |
+| cover-ply geometry (T2a) | G1 REFUTED | VC sampling gives ply √n·polylog n; the Lemma X analogue fails for class size > 2 |
+| laminar ply (LAM) | locally BLOCKED, uniform version open | merge-tree lemma realises low-ply facets |
+| witness length (T2b, G3, R3a, G4) | reduced to G3\*\* | N! trick fatal; averaging blocked; slice congruences blocked (Lemma B); spacers blocked; constant ply at poly length proved (Cor F) |
+| constructive (AG, A2) | no polynomial construction | one-witness-per-prime fails on coverage; canonical laminar choice impossible (Lemma A) |
+
+## 4. Witness families and counterexamples
+- D1·b: unambiguous, non-finite-index sublanguage of Q with γ = 2. L_{r,s,±1}: DCFL sublanguages of Q.
+- Laminar chain {e_1} ∪ {e_i + 2e_{i+1}}: lattice index 2^ρ; realised by Y → bYbb | T on every spaced slice.
+- L₁ ∩ L₂ = ℕ(1, 2, …, 2^ρ): two laminar pieces whose common points are exponentially large.
+- d = (2,2): 7 product pieces with max ply 3 < ∏d_k = 4 (exact ILP, [computational]), refuting the product ply
+  lower bound.
+- Near-grammars G_A (coPow₂) and G_B (length dispatch): linear max ambiguity, errors from aaa, bbb / a, b, ababab
+  ([computational], `poly_AG.md`).
+- Multi-prime n: single-defect words (all exponents equal except one) defeat one-witness-per-prime grammars;
+  at n = 36, witness-system counts ≈ 5·m₂·m₃ ([computational], `poly_A2.md`).
+- `walk.md` and `builder3.md` are not present in the repository, so they were not measured.

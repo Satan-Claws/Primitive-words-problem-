@@ -64,3 +64,9 @@ Rules: entries ≤ few lines; always carry a status label; never paste report co
 - [G4, PROVED] Lemma F (face restriction): fixing all but r diagonal pairs to 1 maps any valid NE_M-cover to a valid NE_r-cover, same K (= spaced slice b¹, R3a Lemma I). Cor: ply ≥ p at norm ≤ 2m + exp(O(p² log pK)); ply 2 at 2m+K^{O(1)}, ply Ω(√(log m/loglog m)) at poly(m). So "ply ≥ 2 only far" (G4 alt. A) is FALSE. poly_G4.md §2.
 - [G4, PROVED] Lemma T: type-4 facet normal ν lives on the unique non-full component C₀=∪_{I₀}{x_i,y_i}, alternating multiplicative potential on a non-crossing tree, ψ_σ(δ)=Σ_{I₀} ν_{y_i}δ_i; heights ≤ K^{|C₀|}. poly_G4.md §3.
 - [G4, OPEN] Threshold ⌈m/2⌉: neither a far-ply cover (A) nor poly(m) bound (B); Minkowski allows λ₁(Λ_S) ≤ √n·K^{|S|} only; parity/φ-mod-2^ρ certificates violate K=O(1) (need c·e_M with c ≥ 2^ρ). poly_G4.md §4.
+- [LAM, PROVED] Narrow facets (touching ≤ s fibres mod P_N) force ply ≥ (P_N/2s)^N; natural pair-witness grammar has ply ≥ (P_N/2)^N. poly_LAM.md §1.
+- [LAM, PROVED] Any u_k ∈ E_k* is a facet μ_k=(1−T^{n/p_k})∏_{j≠k}(1−T^{P_N p_j})ν_k of a laminar full component with all other coordinates >0 at a given generic ω (merge-tree lemma); nested components give globally valid pieces ∏{⟨u_k,e_k⟩>0}. ⇒ T2a √n·polylog cover is laminarly realizable at fixed ω: laminarity route BLOCKED locally. poly_LAM.md §2.
+- [LAM, OPEN] Residue G-LAM = ω-uniformity: poly-overlap cover of U_{>0} by cones with one tree per piece, plus non-generic base points. poly_LAM.md §3.
+
+### Final synthesis (root)
+- No route unblocked. Stop report: POLY_FINAL.md. Strongest new result: Theorem P, A_G(L) = Ω(√(log L/log log L)) for every cycle-free G for Q [written proof, unaudited]. Remaining gap: Lemma G* = G-LAM (laminar ply uniformity) + G3** (short witnesses).
