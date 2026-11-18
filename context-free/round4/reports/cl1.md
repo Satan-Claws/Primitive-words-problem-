@@ -372,3 +372,93 @@ J (and T) escapes the class, but I leave it open.
      positive-side evidence.
    - A pumping argument showing that every finite-state label run on 1y0y can be re-used on some (v)^q, which would
      prove the barrier.
+
+---
+
+# CL5 (fifth task): not refuted. Antipodal certificates and a closure barrier
+
+Script: `scripts/cl1/cl5.py`, which runs in under 1 min. T = {1y0y : y ∈ {0,1}*} over a binary alphabet.
+Write n = |w| (even), m = n/2, and take indices mod n.
+
+**P4 (PROVED; COMPUTER-CHECKED n ≤ 20). The antipodal mismatch kills every period dividing m, and windows
+kill short odd roots.** Let
+
+  W_N = { w : n even, w_0 ≠ w_m, and w_j = w_{m+j} for all 0 < |j| < N }.
+
+- **T ⊆ W_N for every N:** in 1y0y every antipodal pair agrees except (0, m).
+- **W_N is linear CF.** The grammar pairs position j with n−j (M → cMc′). The outer and inner windows are fixed-size
+  (the first/last N−1 letters and the N−1 letters each side of the middle), so they sit in the finite control.
+- **Non-primitive words of W_N** are exactly the v^q with q odd ≥ 3, |v| even and |v| ≥ 2N.
+  *Proof.* Let w = v^q and d = |v|.
+  - If q is even, then d | m and w_0 = w_m. Contradiction. So q is odd, d is even (since n is), and m ≡ d/2 (mod d).
+  - If d/2 < N, take j = d/2: w_{d/2} = w_{m+d/2} = w_d = w_0. But w_{d/2} = w_m ≠ w_0. Contradiction.
+  - Conversely, the windows can be placed in any v of even length d ≥ 2N. ∎
+  - Data (`cl5.py`): for N = 1, 2, 3 the minimum root lengths are exactly 2, 4, 6.
+
+So for each N there is a CF L_N ⊇ T whose only non-primitive words are odd powers with root length ≥ 2N. The
+coordinator's remark checks out: a mismatch at one antipodal pair kills all periods dividing n/2. A bounded window
+cannot reach the remaining odd powers with long roots.
+
+**P5 (PROVED). The walk.md T-operator cannot produce the balanced core.** T(M) ⊆ {Δ ≠ 0}, where Δ = |w|_1 − |w|_0.
+But Δ(1y0y) = 2Δ(y), so T_0 = {1y0y : |y|_0 = |y|_1} is infinite and disjoint from every T(M). Also, T-words never have
+Δ = ±1, so they are disjoint from the certificate T(E′). At most T ∖ T_0 could come from a T-operator image.
+
+**Theorem 9 (PROVED). Barrier for antipodal-window + count certificates.**
+Let 𝓦 be the class of languages of the form
+  { w : n even, ∃p: (n mod M, |w|_1 mod M, w[p−N..p+N], w[p+m−N..p+m+N]) ∈ Rel },
+for N, M ≥ 1 and any finite relation Rel. The windows are cyclic, and 𝓦 is closed under finite unions. Then:
+- every L ∈ 𝓦 is closed under w ↦ w^q for every odd q ≡ 1 (mod M);
+- hence every nonempty L ∈ 𝓦, in particular every L ∈ 𝓦 containing T, contains a non-primitive word.
+
+*Proof.* Let n′ = qn and m′ = qm. Then:
+- m′ ≡ m (mod n), because q is odd;
+- the windows of w^q at p and p+m′ equal those of w at p and p+m;
+- qn ≡ n and q|w|_1 ≡ |w|_1 (mod M).
+So w^q satisfies the same Rel tuple. Take q = 2M+1 ≥ 3. ∎
+
+𝓦 contains W_N, all antipodal-mismatch tests at bounded distance from the defect, and all parity or modular letter
+counts. So no certificate built only from local antipodal information plus counting works. T forces **global**
+information.
+
+**Where the barrier stops (why the mixed class stays open).** The sound certificates known in round 4 all use global
+information along one reflection: builder's dominance, builder2's Lemma O level-set counts, and cl1's L_ℓ. Such
+conditions are **not** preserved by w ↦ w^q. For example, a level-set count s becomes qs, and "s = 1" is lost. So
+Theorem 9 does not extend to "reflection fold-regular ∧ antipodal windows".
+- I tried to build, inside T, a word whose fold (along the axis through both defects) equals the fold of some (1y0y)^q.
+  Then fold-regularity would transfer membership.
+- This fails. The fold of (1y0y)^q is (1,1) Y (0,0) Y (1,1) ⋯ Y (0,0), with Y = fold′(y) (the pairs (y_j, y_{|y|−1−j})).
+  Its interior separators alternate in the order (0,0),(1,1),…, while the fold of any T-word must be
+  "swap-reverse-symmetric". The separator order breaks that symmetry, so no T-word has this fold. I checked this by
+  hand: it is consistent with T ⊆ Q.
+
+**What a refutation of CL5 must look like (IDEA).** Use P4 to kill every period dividing m. Then exclude the odd powers
+v^q with long even roots, using reflection-global data that every T-word satisfies. On T-words the fold along the
+defect axis is (1,1) fold′(y) (0,0), and fold′(y) is an arbitrary swap-reverse-symmetric pair word. On v^q the fold is
+the q-fold alternating concatenation above. So a refutation needs a CF (fold-regular, or more) property of pair words
+that:
+- holds for every (1,1) Z (0,0) with Z swap-reverse-symmetric;
+- fails for every (1,1) Y (0,0) Y (1,1) ⋯ Y (0,0) with q odd ≥ 3, where Y is swap-reverse-symmetric;
+- and does the same for every other axis choice.
+
+Pair words of the second kind are themselves swap-reverse-symmetric only when the separator pattern is, so a
+*regular* test on the fold would have to tell "one central block" from "q blocks" without counting the blocks. I
+conjecture this is impossible, which would be the next barrier. It is not proved.
+
+## Registry entry (CL5)
+1. **Aimed at:** refute CL5, or give the strongest barrier.
+2. **Proved:**
+   - P4: L_N = W_N ⊇ T is linear CF, and its non-primitive words are exactly odd powers with root length ≥ 2N.
+   - P5: walk.md's T-operator misses the balanced core T_0.
+   - Theorem 9: no certificate built from bounded antipodal windows plus modular counts covers T. The class is closed
+     under odd powers ≡ 1 mod M.
+3. **Missing step:** extend Theorem 9 to certificates that also impose a fold-regular condition along one reflection.
+   The precise target: for every regular M over pair words and every axis family, if M accepts the folds of all
+   T-words then it accepts the fold of some odd power. This is open, and I conjecture it is true.
+4. **Counterexamples found:** none to CL5.
+   - W_N is not ⊆ Q (it contains (v)^3 with |v| = 2N).
+   - The fold-transfer attempt fails, as explained above.
+5. **Strength:** CL5 ⇒ CL4 ⇒ "Q not CF". The fold-regular barrier would be strictly weaker than CL5.
+6. **What would reopen the route:**
+   - A proof of the fold-regular barrier, by pumping the fold automaton inside the q-block structure.
+   - Or a CF certificate distinguishing one swap-symmetric block from q alternately separated copies. That would refute
+     CL5 and kill the near-power program altogether.

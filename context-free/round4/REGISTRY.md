@@ -311,3 +311,13 @@ set is a union of orbits of odd size ≥ 3), but verifying the other n/2 − 1 a
 - Computer: on 4- and 6-block slices U agrees with H except for congruence (parity-skip) gaps, which are semilinear.
 - Conjectured: U ∩ every bounded slice is CF; deciding U needs an unbounded obstruction. If U is CF it is a
   density-1 CF subset of Q (refutes Q½, not a resolution).
+
+## cl1 → CL5 attack (done; CL5 survives)
+- P4 (proved): W_N = {even length, w_0 ≠ w_m, w_j = w_{m+j} for 0 < |j| < N} is linear CF, ⊇ T, and its only
+  non-primitive words are odd powers v^q with |v| even, |v| ≥ 2N (exact for N ≤ 3). Powers never vanish.
+- P5 (proved): walk.md's T-operator images have |w|_1 ≠ |w|_0, but T has infinitely many balanced words.
+- Theorem 9 (proved, closure barrier): every language defined by bounded windows at two antipodal positions
+  plus length/letter counts mod M is closed under w ↦ w^q for odd q ≡ 1 (mod M); so any such language ⊇ T
+  contains w^{2M+1}.
+- Open barrier: a CF property of the fold along the defect axis holding for (1,1)·Z·(0,0) (Z swap-reverse
+  symmetric) but failing for every odd q-block fold (1,1)Y(0,0)Y…; conjectured that no regular fold test does it.

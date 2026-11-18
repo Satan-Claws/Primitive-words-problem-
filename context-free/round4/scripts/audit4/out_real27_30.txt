@@ -1,0 +1,5 @@
+words 805146 count-periodic primitive checked 636 uncovered 0
+
+real	0m1.063s
+user	0m1.030s
+sys	0m0.012s
