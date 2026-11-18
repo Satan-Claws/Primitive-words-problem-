@@ -39,3 +39,13 @@ Rules: entries ≤ few lines; always carry a status label; never paste report co
 - [root, from Wich MFCS'01 abstract, published] Reformulation: Q has a poly-ambiguous grammar ⇔ Q = h(L), L ∈ UCFL over Σ∪Γ, every γ∈Γ Parikh-bounded in L (≤ c occurrences), h erases Γ. Splitting by marker pattern: Q = ∪_p {u_0⋯u_r : u_0γ_{p1}u_1⋯γ_{pr}u_r ∈ L_p}, finitely many unambiguous L_p, r ≤ c "cut points". Counting d_n = Σ_p F_p(z,1) stays inside the blocked sandwich; any use must exploit the marker variable t or the cut structure.
 - [M, PROVED] GF(Q∩(ab⁺)*) = Σ μ(d)·z^{2d}/(1−z^d−z^{2d}) not algebraic (poles |z|=φ^{-1/d}, distinct d). Lemma M2: for any Q=h(L) and any R with non-algebraic GF(Q∩R), amb(w)≥2 for infinitely many w∈Q∩R (else Σ amb·z^{|w|} algebraic). poly_M.md.
 - [M, BLOCKED] Wich route (i) "forced unique cut placement + inclusion–exclusion": uniqueness refuted by M2 exactly where transcendence holds; ∩ of PCFLs not CF; P=1 WLOG (disjoint marker alphabets), marker-count t is t^r; residue = sandwich. Only open residue: cut-POSITION variable B_R(z,t) (algebraic), needs structural input.
+- [T1] PROVED: off-W_n part of any slice has amb ≤ φ(n); prime-power n slices linear; nested R_m gives L^{<1}; (ab+abb)^* slice = h(Q), so "all slices poly" ⇔ main target (T1-impossibility not separately provable).
+- [T1] PROVED: conjunctive (product) configs ⊕E_k have ∏dim = (n/rad n)^{ω(n)}φ(rad n): ≤ n for squarefree n (primorial idea BLOCKED), ≥ n^{N/2} for n = P_N².
+- [T1] CONJECTURED candidate: S_N=(ab*)^{P_N²}, amb ≥ ∏(d_k+1)/2^N; gaps G1 (product ply lemma), G2 (Lemma X for classes >2), G3 (length/T2). No upper grammar. See poly_T1.md.
+
+### Round 1 synthesis (root, 15:15)
+- BLOCKED: T3 restricted class (D1·b counterexample); E rectangles rate ≤ 2; global Ogden/loop collision (Lemma O); marker-projection analytic route (M1, M2); test grammars (walk.md/builder3.md absent; near-grammars linear).
+- PROVED: §3(c) survives; Lemma 3P, amb = Σ_σ P_σ with laminar periods and d_σ = #V_σ − rank ≤ k; §5 gives only ⌈m/2⌉ with uncontrolled length. T1-P1: off W_n = Σ_p V_p, ambiguity ≤ φ(n), so all extra ambiguity lives in Q ∩ W_n. P2: the bounded-exponent slice (ab+abb)* is equivalent to the full problem.
+- LIVE CANDIDATE [conjecture]: S_N = (ab*)^{n}, n = P_N² (P_N = N-th primorial), product region ⊕E_k ⊆ W_n where primitive ⇔ all e_k ≠ 0; natural ply ∏ d_k ≥ n^{N/2}.
+- KEY OBSERVATION [root]: since N → ∞, it suffices that the witness length is n^{O(1)}, or even n^{o(N)}. Exponential-in-n length (from the N! / det trick of PROOF.md §5) is fatal.
+- Round 2: T2a cover-ply geometry (G1, G2, restriction to the subspace ⊕E_k); T2b effective witness length (G3); A2 upper-bound attack on the candidate.
