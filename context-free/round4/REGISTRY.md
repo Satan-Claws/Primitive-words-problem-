@@ -114,3 +114,11 @@ insertions into any power whose block vector is a palindrome up to rotation.
 Lesson: near-power witnesses need a base power with no mirror symmetry.
 New candidate CL2: every CFL containing {a·(a^m b a^{m+1} b a^{m+3} b)^k} contains a non-primitive word
 (stronger than Q ∉ CFL).
+
+## audit1 (adversarial audit of uniform + kk)
+- uniform Lemma 1.1, grammar G* = coPow₂, Prop 2.1 (gcd barrier), Q ∩ R6 identity: CONFIRMED.
+- uniform Cor 2.2 wording FALSE: gcd E(R) = 1 does not imply two coprime exponents (E = {6,10,15}).
+  Correct form: gcd E(R) = 1 is necessary for a slice proof.
+- kk Theorem A, Lemmas A1–A2, Cor A3: CONFIRMED (stratified, inside E_n; 13 003 + 1080 checks).
+- kk Theorem B: only "the one-scale criterion never holds" is confirmed; explicit stratified covers for
+  non-constant h are NOT built (n = 6 counterexample to the naive piece). Rotation remark: informal GAP.
