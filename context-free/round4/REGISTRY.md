@@ -359,3 +359,6 @@ Dropped: audit4 (targets no longer load-bearing), foldbar (merged into cl5neg).
 - recheck (done): all language-level barriers still apply under infinite ambiguity; uniform/r6 premise moot;
   CL1–CL3 refutations stand (they bound languages, not ambiguity). Leverage candidates: Wich-type equal-yield loop
   pairs (still cannot force a power alone); parse-count series dominating Q's indicator (needs excess bound).
+- cl5neg (done): R1 (WLOG L ⊆ ODD, powers are odd), R2 (factor-count certificates force witnesses with unboundedly
+  many runs), Lemma R (rigidity: periodic + sparse Δ is never a Q-th power when 0 < s < Q). CL5 and the fold-test
+  barrier both still open; mirrored-loop attack on 1u^m0u^m fails by Lemma R.
