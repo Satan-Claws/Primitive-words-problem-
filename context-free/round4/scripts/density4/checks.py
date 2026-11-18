@@ -156,19 +156,20 @@ def part_c(trials=200, seed=1):
     print("  constructed s^q in M:",okc,"skipped (rank-deficient):",skipped)
 
 def part_d():
-    print("(d) L5: for all |x|,|z|<=2 and (A,B) with A in 4..9, B in [A-1,A+3]: exists t, Parikh(t)=(A,B), xtz notin L5")
+    print("(d) L5: for all |x|,|z|<=2, A in [3|xz|+3, 3|xz|+6], B in [A+1,A+4]: exists t, Parikh(t)=(A,B), xtz notin L5")
     fails=0; tot=0
     W=[''.join(t) for L in range(3) for t in itertools.product('ab',repeat=L)]
     for x in W:
         for z in W:
-            for A in range(4,10):
-                for B in range(A-1,A+4):
+            m=3*len(x+z)+3
+            for A in range(m,m+4):
+                for B in range(A+1,A+5):
                     tot+=1
                     hit=False
-                    for pos in itertools.combinations(range(A+B),A):
-                        t=['b']*(A+B)
-                        for p in pos: t[p]='a'
-                        if not inL5(x+''.join(t)+z): hit=True; break
+                    for j in range(A):   # the explicit witness of the proof: b a^{j+1} (b a)^{A-j-1} b^{rest}
+                        t='b'+'a'*(j+1)+'ba'*(A-j-1)+'b'*(B-(A-j))
+                        assert t.count('a')==A and t.count('b')==B
+                        if not inL5(x+t+z): hit=True; break
                     if not hit: fails+=1; print("  FAIL",x,z,A,B)
     print("  cases",tot,"fails",fails)
 

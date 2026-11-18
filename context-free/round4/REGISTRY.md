@@ -10,7 +10,7 @@ Started 2026-11-18 04:29 UTC. Wave 1: 9 independent agents (one slot kept for au
 | Construction of a CFG/PDA (positive direction) | builder | open: reflection-dominance certificate (sound, CF, coverage → 0) |
 | Rational-transduction reductions (correct direction) | transduce | **stalled** (barriers T1, T2, Prop D) |
 | Uniform-in-M upgrade of the finite-ambiguity slice argument | uniform | **blocked** (barrier) |
-| Periodicity / near-power witness families | periodic | open: candidate lemma CL1 (stronger than goal) |
+| Periodicity / near-power witness families | periodic, cl1 | CL1 **refuted**; CL2 open (being attacked) |
 | Analytic / N-algebraic series obstructions | analytic | running |
 | Cross-length context × yield decompositions | crossing | **blocked** (missing step = full problem) |
 
@@ -105,3 +105,12 @@ Leftover hard words everywhere: near-periodic words (a^{n−1}b, (ab)^k and (aab
 4. Counterexamples: sign-pattern variants (ababab, abab, baba); Sturmian decoding rescues few words.
 5. Missing lemma equal to Q ∉ CFL (the coverage-→-0 version is stronger).
 6. Reopen: a new sound CF certificate type covering a positive share of words of highly composite lengths.
+
+## cl1 (done)
+CL1 REFUTED (PROVED; coordinator checked the proof). L = a·P, P = words of (a*b)* with palindromic block
+vector, is linear CF (T → aS, S → Nb | Ab | ε, N → aNa | bS, A → aA | ε), contains F_ins, and L ⊆ Q because
+x − Rx = e_1 − e_k is never shift-invariant. Cyclic closure covers single-a insertions anywhere; Theorem 2:
+insertions into any power whose block vector is a palindrome up to rotation.
+Lesson: near-power witnesses need a base power with no mirror symmetry.
+New candidate CL2: every CFL containing {a·(a^m b a^{m+1} b a^{m+3} b)^k} contains a non-primitive word
+(stronger than Q ∉ CFL).
