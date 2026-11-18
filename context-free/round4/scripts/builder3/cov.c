@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define MAXN 64
+#define MAXN 512
 static int B = 3; static int ANYT=0;
 static int gcd(int a,int b){ if(a<0)a=-a; if(b<0)b=-b; while(b){int t=a%b;a=b;b=t;} return a; }
 
@@ -74,6 +74,10 @@ static void lyn(int n){ /* FKM iterative */
   (void)i;(void)len;(void)w;
 }
 int main(int argc,char**argv){ const char*mode=argv[1]; int N0=atoi(argv[2]),N1=atoi(argv[3]); if(argc>4)B=atoi(argv[4]); if(argc>5)LMAX=atoi(argv[5]); if(argc>6)ANYT=atoi(argv[6]);
+  if(!strcmp(mode,"mc")){ int S=atoi(argv[7]); srand(12345); static int w[MAXN]; for(int n=N0;n<=N1;n+=(n<40?6:(n<100?20:50))){ long hit[NC]={0}; long u0=0,u=0,prim=0;
+      for(int t=0;t<S;t++){ for(int i=0;i<n;i++)w[i]=(rand()>>7)&1; if(!isprim(w,n))continue; prim++; int r[NC]; for(int k=0;k<NC;k++){r[k]=CERTS[k](w,n); hit[k]+=r[k];}
+        int a0=r[0]||r[1]||r[2]||r[3]; u0+=a0; u+= a0||r[4]||r[5]||r[6]||r[7]; }
+      printf("n=%d S=%ld",n,prim); for(int k=0;k<NC;k++)printf(" %s:%.3f",NAMES[k],(double)hit[k]/prim); printf(" | CFU(b2):%.3f CFU+:%.3f\n",(double)u0/prim,(double)u/prim); fflush(stdout);} return 0; }
   if(!strcmp(mode,"sound")){ int w[MAXN]; for(int n=1;n<=N1;n++){ long bad=0; for(long x=0;x<(1L<<n);x++){ for(int i=0;i<n;i++)w[i]=(x>>i)&1; if(isprim(w,n))continue; for(int k=0;k<NC;k++) if(CERTS[k](w,n)){ bad++; fprintf(stderr,"UNSOUND %s n=%d x=%lx\n",NAMES[k],n,x);} } printf("n=%d unsound=%ld\n",n,bad); fflush(stdout);} return 0; }
   for(int n=N0;n<=N1;n++){ tot=0; memset(miss,0,sizeof miss); missU0=missU=0; char fn[64]; sprintf(fn,"miss_%d.txt",n); dump=fopen(fn,"w"); lyn(n); fclose(dump);
     printf("n=%d nk=%ld",n,tot); for(int k=0;k<NC;k++)printf(" %s:%ld",NAMES[k],miss[k]); printf(" | CFU(b2):%ld  CFU+:%ld\n",missU0,missU); fflush(stdout); }
