@@ -64,7 +64,7 @@ if __name__ == '__main__':
         for n in range(1, 25):
             best = max(f(''.join(t)) for t in itertools.product('ab', repeat=n)) if n <= 20 else None
             if best is None:
-                best = n // 2 if n % 2 == 0 else (2 * n // 3 if n % 3 == 0 else 1)
+                best = f('a' * (n // 2) + 'b' * (n - n // 2)) if n % 2 == 0 else f(('a' * (n // 3) + 'b' * (n // 3)) + 'a' * (n - 2 * (n // 3)))
             ext = [ ''.join(t) for t in itertools.product('ab', repeat=n) if f(''.join(t)) == best][:1] if n <= 14 else ['-']
             row.append((n, best, ext[0]))
         print(name, 'maxamb', row)
