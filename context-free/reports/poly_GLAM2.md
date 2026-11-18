@@ -32,7 +32,7 @@ cover must use ω-dependent trees.
 | toy P=2, n=4 (μ forced by u) | 12 NC trees × 4 roots, 3 random u | 0 |
 | toy P=3, n=9 (μ forced by u) | 43263 NC trees × 9 roots, 3 random u | 0 (93–171 bichromatic) |
 | N=2, P_N=6, n=36 | admissible dims 18 (k=1), 24 (k=2); E_k fibre ranks 1^6 (6), 2^6 (12) | decided by Lemma: NO |
-(Abstract m = 6: see registry line / script run; Lemma covers all m.)
+(m = 6: `python3 glam2_search.py 6`, ~263k LPs, not completed in budget; the Lemma covers all m.)
 
 ## 4. Status
 G-LAM′: REFUTED (hand proof, generalizes to all N). Fold-dominance route to kill the candidate: DEAD.
