@@ -122,3 +122,17 @@ New candidate CL2: every CFL containing {a·(a^m b a^{m+1} b a^{m+3} b)^k} conta
 - kk Theorem A, Lemmas A1–A2, Cor A3: CONFIRMED (stratified, inside E_n; 13 003 + 1080 checks).
 - kk Theorem B: only "the one-scale criterion never holds" is confirmed; explicit stratified covers for
   non-constant h are NOT built (n = 6 counterexample to the naive piece). Rotation remark: informal GAP.
+
+## analytic (done 1st wave)
+1. Aim: an analytic/algebraic obstruction valid for ambiguous CFLs.
+2. Proved: supports of N-algebraic series = CFLs (literature), so the supports route is circular; commutative
+   images reduce to semilinear data; exact series of Q ∩ (ab*)^+ is Σ_d μ(d) t^d/(1−y^d−t^d) and its pole data is
+   matched by a linear CFL; 'every CFL is counting-equivalent to an unambiguous CFL' is FALSE
+   (L1 = (a*b)*{a^i b a^j b : i≠j}(a*b)* has 2^{n−1} − d(n) words, non-algebraic series); for every d a binary CFL
+   with poles at z^{dj} = 1/2 for almost all j; for regular codes X, series built from L_X have poles of
+   modulus 2^{-1/p} for only finitely many primes p.
+3. Missing: Conjecture A — a binary CFL with meromorphic series in |z| < 1 has poles of modulus 2^{-1/p}
+   for only finitely many primes p. (Q has them for all primes.)
+4. Counterexamples: to the counting-equivalence claim; to 'composite radii' and 'ternary' variants of A.
+5. Stronger than Q ∉ CFL.
+6. Reopen: structure theory for counts of ambiguous grammars; or a binary CFL refuting Conjecture A (kills route).
