@@ -172,3 +172,16 @@ CL3 (conjectured, stronger than goal): every CFL ⊇ F_2 contains a non-primitiv
 4. Counterexamples: none for Q½; W shows soundness alone does not give n^{-1/2}.
 5. Stronger than Q ∉ CFL.
 6. A CF positive-density variant of W would kill the density route.
+
+## poles (done)
+1. Aim: refute or prove Conjecture A (binary CFL with meromorphic series has poles of modulus 2^{-1/p} for
+   only finitely many primes p).
+2. Proved: Lemma 1 (seed lemma) — for any binary code X with meromorphic series, primes p giving poles of
+   modulus 2^{-1/p} in L_X = X⁺ \ {x^k} already come from X or X⁺ (McMillan: no code has a pole at modulus 1/2);
+   Lemma 2: {a^k b v : v ≠ u^k for u ∈ Y} is not CF when Y contains all powers of a primitive word;
+   Lemma 3: excess-e words that are e-th powers = {u^t : excess(u) = 1}; series Σ_t E₁(z^t) (branch points).
+3. Missing: a theorem that poles of modulus 2^{-1/p} (large p) in any CFG's series come only from repetitions
+   over a code / regular block set (≥ A in strength).
+4. Counterexamples: none to A; natural candidate killed by Lemma 2.
+5. Stronger than Q ∉ CFL.
+6. Reopen: structure theory for counting series of ambiguous CFGs; a CF complement for Lemma 3's S.
