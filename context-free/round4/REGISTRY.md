@@ -342,3 +342,9 @@ set is a union of orbits of odd size ≥ 3), but verifying the other n/2 − 1 a
 3. Missing: positive density appears to need the unbounded tower N_∞ (heuristically not CF).
 4. Trajectory: each patch closes all n up to some bound; misses reappear just above, changing type
    (long-insertion near-powers → achiral → balanced).
+
+## Round 5 (infinite-ambiguity subproblem), started 14:39 UTC
+Target: every cycle-free G with sup amb_G = ∞ has L(G) ≠ Q (negative), or explicit G with L(G) = Q (positive).
+Active: tower (positive density / construction), cl5neg (CL5 + fold-test barrier, merged with foldbar),
+audit6 (builder3 certificates), multitree (new: recombining competing trees), recheck (blocked routes vs ambiguity).
+Dropped: audit4 (targets no longer load-bearing), foldbar (merged into cl5neg).
