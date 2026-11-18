@@ -87,3 +87,25 @@ Lemma G\* plus Lemma 3P and Lemma G gives the negative resolution. It splits int
 - Multi-prime n: single-defect words (all exponents equal except one) defeat one-witness-per-prime grammars;
   at n = 36, witness-system counts ≈ 5·m₂·m₃ ([computational], `poly_A2.md`).
 - `walk.md` and `builder3.md` are not present in the repository, so they were not measured.
+
+## 5. Session 2 addendum (2026-11-18, 22:15–22:45 UTC)
+
+Still unresolved, and no route unblocked. New proved results ([written proof], unaudited):
+- **G-LAM′ refuted** (`poly_GLAM2.md`). Fold-dominance forces single-fibre support, so trees that are uniform in
+  ω have one-fibre facets. **Corollary:** a cover by ω-uniform pieces has ply ≥ (P_N/2)^N = n^{ω(1)}. This
+  partly revives the ply side of the S_N candidate.
+- **Symmetric base point** (`poly_S2W.md`). ω = 𝟙 does not force one-fibre facets: laminar low-ply covers exist
+  at any single base point.
+- **Patching** (`poly_S2P.md`). ply ≤ ply_VC·∏_k q_k, and walls are not double-counted. The question reduces
+  exactly to **TILE_k**: do trees exist whose validity cones K_T cover the base-point region with ply
+  ≤ p_k^{O(1)}? If yes, S_N is blocked geometrically. If no, S_N survives on ply. The n = 36 computation is
+  inconclusive ([computational], `poly_S2X.md`).
+- **Witness length.** Lemma S2T and Lemma S2T′ (`poly_S2T.md`, `poly_S2L.md`): polynomial facet heights,
+  quotient exponents, Deep constants and genericity-hyperplane count together give poly-length witnesses.
+  c-locality cannot be forced (star cover). The hyperplane count is a fourth exponential source for G3\*\*
+  (Siegel).
+- **Slices (a⁺b⁺)^n** (`poly_S2R.md`): the same covering problem as (ab⁺)^{2n}. No new lever.
+- **Devil region n = 6, 12** (`poly_S2D.md`). A non-CF proof is impossible here (Kászonyi–Katsura, cited in
+  devil.md). Lemma U: one non-crossing matching cannot cover the region.
+
+**Updated exact gap:** Lemma G\* = **TILE_k** (ply) + **G3\*\*** with the hyperplane-count term (length).
