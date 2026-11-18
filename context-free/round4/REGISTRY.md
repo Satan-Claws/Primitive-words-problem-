@@ -208,3 +208,17 @@ CL3 (conjectured, stronger than goal): every CFL ⊇ F_2 contains a non-primitiv
    intervals, m = 3): every instance has a certified escaping window.
 5. Missing step stronger than Q ∉ CFL; evidence says false.
 6. Reopen: an iteration theorem transplanting loops across words/contexts.
+
+## builder2 (done)
+1. Aim: CF L ⊆ Q with Cyc(L) = Q via generalised reflection certificates.
+2. Proved: orbit-count lemma (w d-periodic ⇒ D = w − w∘ρ d-periodic for every reflection ρ); certificate G:
+   some axis with gcd(m, n) = 1 (m = number of mismatched mirror pairs) ⇒ primitive; RG on run-lengths;
+   CF fragments GB, RGB (contains cl1's languages), RD; Cyc(D ∪ GB ∪ RD ∪ RGB) is a CF subset of Q containing
+   EVERY primitive word of length ≤ 17 (misses 57, 4, 50 necklaces at n = 18, 19, 20), but density → 0
+   (proved for D, GB; sketched RD, RGB). G itself (non-CF) certifies 100% of samples for n ≥ 36.
+   Barrier: coprime semilinear sets are finite unions of points and single-period lines (Lemma S); fixed-cut
+   'gcd(mismatch count, n) = 1' is not CF (Prop N).
+3. Missing: CF control of the coprimality in G; target 'every CF subset of Q has density → 0'.
+4. Counterexamples: all 'for all pairs on a half-arc' dominance variants have density e^{−Ω(n)}.
+5. Target is stronger than Q ∉ CFL.
+6. Reopen: a CF way to certify gcd(m, n) = 1 for a positive share of words (e.g. lines n = 4m + r).
