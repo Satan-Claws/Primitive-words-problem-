@@ -185,3 +185,14 @@ CL3 (conjectured, stronger than goal): every CFL ⊇ F_2 contains a non-primitiv
 4. Counterexamples: none to A; natural candidate killed by Lemma 2.
 5. Stronger than Q ∉ CFL.
 6. Reopen: structure theory for counting series of ambiguous CFGs; a CF complement for Lemma 3's S.
+
+## audit2 (builder, cl1, crossing, transduce)
+- FALSE: cl1.md coverage remark after Theorem 2 ('every one-a insertion into u^k with reflection-symmetric
+  block vector up to rotation, in particular ≤ 2 blocks') — counterexamples baabbab, aaabbaabb; 60/60 small
+  cases fail. Cause: only reflection i ↦ k+1−i used; fix: also allow i ↦ k−i (not re-verified).
+  The CL1 refutation itself (Theorem 1) and Theorem 2's L ⊆ Q are CONFIRMED.
+- FALSE as stated: crossing Lemma 4 (fooling bound) — L = Σ⁺, F = {a, b}; correct for words of length ≥ 2.
+- GAPs (trivial): crossing Theorem 1(ii) needs length ≥ 2; builder coverage claim omits a, b.
+- CONFIRMED: builder Lemma D (reflection dominance) in all cases, grammar = predicate, density bound,
+  missed family, n/6 bound; transduce T1 (closure.md Prop P re-audited), T2, Prop D, DIST3/CROSS≠ non-CF;
+  crossing Lemmas 1, 2. Cyclic-shift citation: Hopcroft–Ullman 1979 Ex. 6.4(c), Oshiba 1972, Maslov 1973.

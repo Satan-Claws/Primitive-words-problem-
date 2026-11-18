@@ -82,11 +82,10 @@ def cert_RG(w):  # run orbit-count ceiling: some value class of D has count copr
         if any(gcd(v, K) == 1 for v in cnt.values()): return True
     return False
 
-def cert_RGB(w, B=3):  # CF bounded: #mismatched run pairs s <= B, and one value count coprime: use s
+def cert_RGB(w, B=3):  # CF bounded run-level: mm = #mismatched run pairs; {D>0} has size mm
     for K, cnt in run_counts(w):
-        s0 = cnt.get(0, 0); mm = (K - s0) // 2
-        if 1 <= mm <= B and any(gcd(v, K) == 1 for x, v in cnt.items() if x != 0): return True
-        if K - 2 * mm <= B and gcd(mm, K) == 1 and mm > 0: return True
+        mm = (K - cnt.get(0, 0)) // 2; r = K - 2 * mm
+        if mm >= 1 and (mm <= B or r <= B) and gcd(mm, r) == 1: return True
     return False
 
 CERTS = dict(D=cert_D, G=cert_G, GB=cert_GB, RD=cert_RD, RG=cert_RG, RGB=cert_RGB)

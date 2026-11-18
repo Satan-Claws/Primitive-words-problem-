@@ -173,3 +173,39 @@ def exact_attack(r, loops, maxN):
                 if in_monoid(sig, loops): return ('case2', sig)
     if factor_of_monoid(r, loops): return 'case1?'
     return None
+
+def periods(r):
+    n = len(r)
+    return [P for P in range(1, n) if r[P:] == r[:n - P]]
+
+def full_escape(r, loops):
+    """EXACT decision: is sigma r primitive for every sigma in loops*?  (x_j = eps window)
+    Case 1 (|t| >= |r|) needs r in Fact(M).  Case 2 (|t| = P < |r|): P period of r, sigma = prefix of
+    t^infinity (t = last P letters of r) of length eP-n, e>=2.  Decided by BFS over (pos mod P, pos>=2P-n flag)
+    at loop boundaries.  Returns True iff no sigma works (so r not in Fact(M) is required here; if r is in
+    Fact(M) we return None = undecided)."""
+    n = len(r)
+    for P in periods(r):
+        t = r[n - P:]
+        # positions pos along t^omega; sigma = text[0:pos] must parse; need pos = eP - n, e >= 2
+        start = (0, 0 >= 2 * P - n)
+        seen = {start}; st = [(0, start[1])]
+        # need actual pos to know flag; store pos capped at 2P - n
+        cap = max(0, 2 * P - n)
+        seen = {(0, min(0, cap))}; st = [0]
+        while st:
+            pos = st.pop()
+            if pos >= 2 * P - n and (pos + n) % P == 0:
+                if not primitive((t * ((pos + n) // P + 1))[:pos] + r):
+                    return False
+            for v in loops:
+                ok = all(t[(pos + i) % P] == v[i] for i in range(len(v)))
+                if ok:
+                    p2 = pos + len(v)
+                    key = (p2 % P, min(p2, cap) if p2 < cap else cap) if cap > 0 else (p2 % P, 0)
+                    # state: residue and whether below cap (if below cap, exact pos)
+                    key = (p2 % P, p2 if p2 < cap else -1)
+                    if key not in seen:
+                        seen.add(key); st.append(p2)
+    if factor_of_monoid(r, loops): return None
+    return True
