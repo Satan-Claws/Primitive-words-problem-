@@ -10,7 +10,7 @@ Started 2026-11-18 04:29 UTC. Wave 1: 9 independent agents (one slot kept for au
 | Construction of a CFG/PDA (positive direction) | builder | open: reflection-dominance certificate (sound, CF, coverage → 0) |
 | Rational-transduction reductions (correct direction) | transduce | **stalled** (barriers T1, T2, Prop D) |
 | Uniform-in-M upgrade of the finite-ambiguity slice argument | uniform | **blocked** (barrier) |
-| Periodicity / near-power witness families | periodic, cl1 | CL1, CL2 **refuted**; CL3 open |
+| Periodicity / near-power witness families | periodic, cl1 | CL1, CL2, CL3 **refuted**; CL4 open |
 | Analytic / N-algebraic series obstructions | analytic | running |
 | Cross-length context × yield decompositions | crossing | **blocked** (missing step = full problem) |
 
@@ -222,3 +222,13 @@ CL3 (conjectured, stronger than goal): every CFL ⊇ F_2 contains a non-primitiv
 4. Counterexamples: all 'for all pairs on a half-arc' dominance variants have density e^{−Ω(n)}.
 5. Target is stronger than Q ∉ CFL.
 6. Reopen: a CF way to certify gcd(m, n) = 1 for a positive share of words (e.g. lines n = 4m + r).
+
+## cl1 → CL3 (done)
+CL3 REFUTED (Theorems 5, 6; checked exhaustively ≤ 20–21 for ℓ ≤ 6). L_ℓ: words of (a*b)^+ with ℓ | K, K ≥ 2ℓ,
+D = x − Rx (R a block reflection fixing one or two residue classes mod ℓ) equal to +1/−1 at the inserted block
+and its mirror on the fixed class f, 0 on the other fixed class, and sign-constant on each swapped pair of
+classes. Linear CF, ⊆ Q, and Cyc(L_ℓ) covers every one-a insertion into u^k with |u|_b = ℓ.
+Next family J = {a·u·u : u ∈ (a*b)^+}; Prop 7: no finite union of L_ℓ covers J.
+CL4 (conjectured, stronger than goal): every CFL ⊇ J contains a non-primitive word.
+Coordinator note: on the bounded slice a⁺b⁺a⁺b⁺, J ∩ B = {a^{p+1}b^q a^p b^q} is covered by the CF set
+{a^{p+1}b^q a^p b^r} ⊆ Q, so fixed-shape slices of J do not suffice; any proof needs u with unboundedly many blocks.
