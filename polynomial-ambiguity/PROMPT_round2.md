@@ -1,28 +1,20 @@
-# Open problem: is there a polynomially ambiguous grammar for the primitive words?
 
 You are a theoretical computer science researcher working on an open problem in formal language theory.
-Work in the repository branch `claude/magical-allen-ch9hzl`. All paths below are relative to its root.
+
+# Open problem: is there a polynomially ambiguous grammar for the primitive words?
+## 0. Kickoff (do this first)
+
+
+Clone https://github.com/ajax711/Primitive-words-problem-
+
+
+Work in the repository branch `claude/magical-allen-ch9hzl`. All paths below are relative to its root
+
 
 **Path prefixes**
 - `PA/` = `polynomial-ambiguity/claude_2026-11-18_to_11-19/reports/` (the previous polynomial-ambiguity campaign)
 - `R4/` = `infinite-ambiguity/claude_round4-5_2026-11-18/reports/`
 - `RESULTS_INDEX.md` lists every result in the repository with its file and status.
-
----
-
-## 0. Kickoff (do this first)
-
-After reading this prompt and before launching any agent, reply to the user with:
-1. what you understood, in at most 15 lines:
-   - the exact target statement;
-   - which results you will rely on and their status;
-   - the main obstruction;
-   - your planned first round of tasks (one line each);
-2. any questions, or any files or information you want.
-
-Then **wait for the user's answer**. Do not start the search until the user confirms.
-
----
 
 ## 1. The problem in one paragraph
 
@@ -36,8 +28,6 @@ The conjectured answer is **no**.
 The finitely ambiguous case is already settled: **no finitely ambiguous grammar generates the primitive words**
 (Lean-checked). The next step is to show that no polynomially ambiguous grammar does either. It is still not
 known whether the primitive words are context-free at all.
-
----
 
 ## 2. Notation and definitions
 
@@ -101,10 +91,9 @@ Do **not** replace the target by:
 - "Q is not finitely ambiguous" (already proved);
 - "amb_G grows at least like |w|^k for one fixed k";
 - "the total excess is exponential";
-- "Q is not context-free". That would suffice, but it is a strictly harder open problem and is not the goal.
+- "Q is not context-free". That would absolutely suffice and if you believe you can do it , do it but do not put any resources specifically towards it because it is a strictly harder open problem and is not the goal.
 
 ---
-
 ## 4. What is known
 
 Status labels, to be kept in every output:
@@ -386,9 +375,8 @@ citation. Do not search for a solution to this exact problem.
 
 ## 9. How to use agents
 
-Up to **5** concurrent agents.
+Up to **6** agressive concurrent agents.
 
-**Discipline (overrides any instruction to "use agents aggressively")**
 - **Concise, distinct tasks.** Each agent targets one precise lemma, obstruction, construction or audit. Never give
   two agents the same question.
 - **No repeated background.** Pass file paths and section references, not file contents or this prompt's
@@ -457,7 +445,7 @@ Up to **5** concurrent agents.
 
 Return when the problem is completely resolved in the sense of §3 and the argument has survived a gated audit.
 
-Spend at least **30** minutes before considering stopping. If after **1** hour no route has been unblocked, stop
+Spend at least **1** hour before considering stopping. If after **2** hour no route has been unblocked, stop
 and return:
 1. the strongest rigorously proved statement, with proof and status label;
 2. the exact remaining gap, as one precise lemma with all notation defined;
