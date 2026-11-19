@@ -91,3 +91,6 @@ Rules: entries ≤ few lines; always carry a status label; never paste report co
 - [S2Y, PROVED/REDUCED] K_T = {ω>0: sgn(top u)⟨fold(μ|S_u),ω⟩>0}; order-cone O_π ⊆ K_T ⇔ T chain-valid (weak top-sign for μ·1_{A_j}, A_j initial segments of π). Width-only lower bound INVALID (order cones tile). Open Q1 (chain-valid trees exist?) + Q2 (each meets ≤p^{O(1)} order cones) ⇒ TILE_k. poly_S2Y.md
 - [S2Z, computational/INCONCLUSIVE] S2Y Q1 at n=36: DFS (node limit 4k) over NC contraction trees finds NO chain-valid T(π) for 0/400 sampled (π, μ_k) (p=2,3; 2 seeds); not exhaustive; weak evidence against Q1; Q2 untested. poly_S2Z.md, scripts/poly/s2z_chain.py
 - [S2Q, PROVED] Chain-validity does NOT force ≤2 fibres: explicit abstract 3-fibre chain-valid tree; GLAM2 induction yields only π-monotonicity (f_u = 0 on fibres π-before res u). Q1 not refuted by linear algebra; any NO needs fixed supp/NC of μ_k. Order-cone route OPEN. poly_S2Q.md
+
+## Session 3 (30 min), start
+- Live: TILE_k = Q1 (chain-valid trees, poly_S2Y/S2Q) + Q2; G3** incl. hyperplane-count term (poly_S2L).
