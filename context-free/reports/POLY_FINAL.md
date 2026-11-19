@@ -147,3 +147,6 @@ Still unresolved, and no route unblocked.
 
 **Exact gap (unchanged in form):** a lower bound on overlap for fans of tree-validity cones (TILE_k in its
 general form, beyond order-cone selection), together with G3\*\* (three height terms).
+- **TILE_k exact-cone test at n = 36** (`poly_S3T.md`, [computational], INCONCLUSIVE). Covers need ply 2 once
+  the training set is large. Fresh max ply is 3 for both p = 2 and p = 3 (a weak hint that q_k = O(1), i.e.
+  towards blocking S_N). Coverage reached only 51–92%, with gaps near faces and vertices.
