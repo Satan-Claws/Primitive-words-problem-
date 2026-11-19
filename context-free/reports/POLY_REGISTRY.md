@@ -108,3 +108,4 @@ Rules: entries ≤ few lines; always carry a status label; never paste report co
 
 ## Session 4 (30 min, diverse/random), start
 - Mandate: new mechanisms incl. affirmative. Mechanisms: SAT grammar synthesis; cyclic-closure transversal reformulation; bounded-entry support rank; morphic self-similarity amplification.
+- [S4R, PROVED barrier] Bounded-entry support rank route DEAD: M=Σ_{j,c}1_{R_{j,c}} (Thm A) = Hamming distance d_H(z,π(y)), exact Q-support, entries in [1,⌈n/3⌉], nonneg rank 2⌈n/3⌉; all spans via Cor 2.4 + Thm B with poly(n). No sub-pattern (Hadamard/Forster) can help. poly_S4R.md
