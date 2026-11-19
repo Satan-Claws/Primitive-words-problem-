@@ -1,0 +1,4 @@
+15 primnecklaces 2182 CFU-miss 0 G-miss 0 unsound {'D': 0, 'GB': 0, 'RD': 0, 'RGB': 0, 'G': 0, 'RG': 0}
+16 primnecklaces 4080 CFU-miss 0 G-miss 0 unsound {'D': 0, 'GB': 0, 'RD': 0, 'RGB': 0, 'G': 0, 'RG': 0}
+17 primnecklaces 7710 CFU-miss 0 G-miss 0 unsound {'D': 0, 'GB': 0, 'RD': 0, 'RGB': 0, 'G': 0, 'RG': 0}
+18 primnecklaces 14532 CFU-miss 57 G-miss 334 unsound {'D': 0, 'GB': 0, 'RD': 0, 'RGB': 0, 'G': 0, 'RG': 0}

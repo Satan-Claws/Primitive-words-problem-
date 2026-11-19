@@ -1,0 +1,2 @@
+n 60 ds [30, 20, 12] mod-p: died structures used 14
+   exact rational verification with 14 structures: died (no hard delta)
