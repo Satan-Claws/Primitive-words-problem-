@@ -109,3 +109,4 @@ Rules: entries ≤ few lines; always carry a status label; never paste report co
 ## Session 4 (30 min, diverse/random), start
 - Mandate: new mechanisms incl. affirmative. Mechanisms: SAT grammar synthesis; cyclic-closure transversal reformulation; bounded-entry support rank; morphic self-similarity amplification.
 - [S4R, PROVED barrier] Bounded-entry support rank route DEAD: M=Σ_{j,c}1_{R_{j,c}} (Thm A) = Hamming distance d_H(z,π(y)), exact Q-support, entries in [1,⌈n/3⌉], nonneg rank 2⌈n/3⌉; all spans via Cor 2.4 + Thm B with poly(n). No sub-pattern (Hadamard/Forster) can help. poly_S4R.md
+- [S4W, PROVED obstruction / OPEN globally] Forcing Wich Cor 3.20/3.21 on fixed slices impossible: Q∩a+b+a+b+ = {i≠k}∪{j≠l} has a 2-ambiguous grammar; pumping loops (block1,3),(block2,4) interleave (distinct nonterminals), primitivity forces 1:1 (proportional) ratios; slice transfer + Wich Thm 4.4 kills any fixed-slice argument. Global version ≥ original problem. poly_S4W.md
