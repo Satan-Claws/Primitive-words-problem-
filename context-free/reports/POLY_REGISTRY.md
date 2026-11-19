@@ -94,3 +94,4 @@ Rules: entries ≤ few lines; always carry a status label; never paste report co
 
 ## Session 3 (30 min), start
 - Live: TILE_k = Q1 (chain-valid trees, poly_S2Y/S2Q) + Q2; G3** incl. hyperplane-count term (poly_S2L).
+- [S3D, BLOCKED (PROVED)] "Force a piece of degree d_σ > k": impossible at cover level — Ito/E–S disjoint refinement turns any valid laminar cover into d_σ = 0 pieces (periods ⊆ V_σ, same union, ply ≤ amb). poly_S3D.md.
