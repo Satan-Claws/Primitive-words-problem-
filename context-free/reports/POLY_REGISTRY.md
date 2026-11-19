@@ -95,3 +95,4 @@ Rules: entries ≤ few lines; always carry a status label; never paste report co
 ## Session 3 (30 min), start
 - Live: TILE_k = Q1 (chain-valid trees, poly_S2Y/S2Q) + Q2; G3** incl. hyperplane-count term (poly_S2L).
 - [S3D, BLOCKED (PROVED)] "Force a piece of degree d_σ > k": impossible at cover level — Ito/E–S disjoint refinement turns any valid laminar cover into d_σ = 0 pieces (periods ⊆ V_σ, same union, ply ≤ amb). poly_S3D.md.
+- [S3Q, PROVED] S2Y Q2 as posed FALSE: every chain-valid K_T contains 1 in its interior (s_u μ(S_u) > 0), so meets all P_N! order cones; order-cone-selection ply = D = #distinct trees T(π) exactly; D ≥ 2; Q2 → Q2′: ≤ p^{O(1)} trees whose chain-validity sets cover S_P (OPEN). poly_S3Q.md
