@@ -157,3 +157,34 @@ general form, beyond order-cone selection), together with G3\*\* (three height t
 
 **Session 3 end:** no route unblocked. Best unconditional result is still Theorem P. Exact gap: general fan
 ply (TILE_k beyond order-cone selection) + G3\*\* (three height terms) for S_N.
+
+## 7. Session 4 addendum (2026-11-19, 11:43–~12:00 UTC; diverse mechanisms, incl. affirmative)
+
+Still unresolved, and no route unblocked. All items are new mechanisms.
+- **Communication / support rank: DEAD** (`poly_S4R.md`, [written proof]). For any single split, Q's matrix
+  already has a nonnegative decomposition into 2s rectangles with entries in [1, s] (Hamming distance to the
+  periodic continuation). So rank-type bounds cap at O(n); an argument must link different spans.
+- **Wich Cor 3.20/3.21 (non-proportional loops): cannot be forced on fixed slices** (`poly_S4W.md`).
+  Primitivity forces proportional loops. Forcing it globally is the target itself.
+- **Morphic self-similarity: DEAD** (`poly_S4M.md`). amb_{G_h}(w) = amb_G(h(w)) exactly, in both directions,
+  so there is no amplification.
+- **Reduction to known inherently exponentially ambiguous CFLs: BLOCKED** (`poly_S4I.md`). By Fine–Wilf and
+  conjugacy, defects do not survive insertion of non-commuting factors. ∀p∃ has only ω(n) conjuncts, so
+  exponential ambiguity is the wrong target anyway.
+- **Cyclic-closure reformulation** (`poly_S4C.md`, [written proof + computational check]). There is an exact
+  grammar with amb_{G′}(w) = Σ_{rotations} amb_G(rot_j w). So Q is poly-ambiguous iff some CF L ⊆ Q meets every
+  conjugacy class with polynomial class mass. Coprime-count classes have an unambiguous one-counter transversal
+  for each fixed ratio. Lyndon words are not CF (Berstel–Boasson 1997). gcd ≥ 2 classes reduce to the same
+  problem.
+- **Balanced slice ≡ Q** (`poly_S4N.md`). Q ∩ {#a = #b} ≅ Prim over the Dyck-prime code. The morphism
+  x ↦ ab, y ↦ aabb transfers lower bounds, so the balanced case is at least as hard.
+- **SAT synthesis** (`poly_S4S.md`, [computational]). Grammars with N ≤ 5 nonterminals match Q only up to
+  length 5, certified by UNSAT; N = 6, 7 reach ≥ 6, ≥ 7. Each nonterminal buys about one length, and the
+  ambiguity of the grammars found grows exponentially. No hint of a small grammar for Q.
+- **Three primes, n = 30** (`poly_S4T.md`, `poly_S4U.md`, [computational]). The "cube" certificate is not
+  laminar (support-4 extreme rays). Chord-only covers miss 60 sparse primitive vectors. For the first such
+  vector, a laminar piece containing it and a neighbourhood exists, so this is not a non-CF certificate. No
+  finite global cover was built.
+
+**Net:** every diverse route either collapses to the known core (slice covers with laminar pieces, i.e.
+TILE_k + G3\*\*) or is provably dead. Theorem P remains the best unconditional result.
