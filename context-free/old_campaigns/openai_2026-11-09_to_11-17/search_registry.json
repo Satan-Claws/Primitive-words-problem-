@@ -1,0 +1,69 @@
+{
+  "problem": "Exact context-freeness of the primitive words over every finite nontrivial alphabet",
+  "resolution": null,
+  "families": {
+    "pumping-type": {
+      "status": "blocked",
+      "result": "Defect-only markings admit an explicit pump that preserves primitivity at every exponent",
+      "missing": "A new forcing mechanism valid for every admissible decomposition",
+      "notes": "closure_notes.md"
+    },
+    "closure-reduction": {
+      "status": "finite-cover-audit",
+      "result": "A proposed finite stratified cover for fixed scalar 2q-run slices is being audited; no reduction to a non-CFL",
+      "missing": "A valid closure chain yielding a proved non-CFL",
+      "notes": "closure_notes.md"
+    },
+    "analytic-generating-function": {
+      "status": "blocked",
+      "result": "Dense CFL counterexamples to nonalgebraicity and natural-boundary criteria",
+      "missing": "An applicable ambiguity-independent criterion",
+      "notes": "analytic_obstruction.md"
+    },
+    "size-lower-bound": {
+      "status": "blocked",
+      "result": "Polynomial unrestricted balanced-interval rectangle covers",
+      "missing": "A lower bound that exploits recursively compatible grammar factors",
+      "notes": "structural_notes.md"
+    },
+    "structural-derivation-tree": {
+      "status": "blocked",
+      "result": "SCC countermodels, sharp O(2^n/sqrt(n)) bound for coprime-count-only CFLs, and prior puncturing lemmas",
+      "missing": "A restriction applying to order-dependent general ambiguous CFGs",
+      "notes": "structural_notes.md"
+    },
+    "constructive": {
+      "status": "blocked",
+      "result": "Audited exact cyclic two-unbordered-factor characterization; ordered Lyndon intermediary non-CF; repeated-extrema restrictions retain the full question",
+      "missing": "A finite recognizer for the unbounded certificate language, or another exact construction",
+      "notes": [
+        "constructive_witness_notes.md",
+        "recursive_constructive_notes.md"
+      ]
+    },
+    "finite-computation": {
+      "status": "completed-finite-experiments",
+      "role": "Counterexample search and verification only",
+      "enumeration_max_length": 20,
+      "cnf_nonterminal_minima_for_cutoffs_1_through_5": [
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "solver_caveat": "UNSAT answers were not exported as independently checkable proof certificates"
+    }
+  },
+  "audit": {
+    "required": "L(P)=Q exactly",
+    "accepted_complete_proofs": 0,
+    "new_checked_results": [
+      "cyclic two-unbordered-factor characterization",
+      "unbordered splitting",
+      "Lyndon/comparator non-CF",
+      "SCC countermodels and restricted density theorem"
+    ]
+  },
+  "continued_on": "2026-11-10"
+}

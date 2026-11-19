@@ -1,0 +1,25 @@
+/tmp/claude-5714/-home-shobhit--claude-spares-spare-fauO4P/6f48459d-5790-4a18-bccc-eabb8efc4544/scratchpad/sizebounds/cover_verify.py:1: SyntaxWarning: invalid escape sequence '\{'
+  """Exhaustive verification (binary alphabet) of the O(n) balanced-rectangle cover
+n= 2 D=[1] M1=0 M2=0 lam=1 s=1 windows=2 rects=6 sound=True complete=True |Q_n|=2
+n= 3 D=[1] M1=1 M2=0 lam=2 s=1 windows=3 rects=3 sound=True complete=True |Q_n|=6
+n= 4 D=[1, 2] M1=1 M2=0 lam=2 s=1 windows=4 rects=20 sound=True complete=True |Q_n|=12
+n= 5 D=[1] M1=1 M2=0 lam=3 s=2 windows=3 rects=3 sound=True complete=True |Q_n|=30
+n= 6 D=[1, 2, 3] M1=2 M2=1 lam=4 s=2 windows=3 rects=15 sound=True complete=True |Q_n|=54
+n= 7 D=[1] M1=1 M2=0 lam=4 s=3 windows=3 rects=3 sound=True complete=True |Q_n|=126
+n= 8 D=[1, 2, 4] M1=2 M2=1 lam=5 s=3 windows=3 rects=21 sound=True complete=True |Q_n|=240
+n= 9 D=[1, 3] M1=3 M2=1 lam=6 s=3 windows=3 rects=3 sound=True complete=True |Q_n|=504
+n=10 D=[1, 2, 5] M1=2 M2=1 lam=6 s=4 windows=3 rects=27 sound=True complete=True |Q_n|=990
+n=11 D=[1] M1=1 M2=0 lam=7 s=6 windows=2 rects=2 sound=True complete=True |Q_n|=2046
+n=12 D=[1, 2, 3, 4, 6] M1=4 M2=3 lam=8 s=2 windows=6 rects=54 sound=True complete=True |Q_n|=4020
+n=13 D=[1] M1=1 M2=0 lam=8 s=7 windows=2 rects=2 sound=True complete=True |Q_n|=8190
+n=14 D=[1, 2, 7] M1=2 M2=1 lam=9 s=7 windows=2 rects=22 sound=True complete=True |Q_n|=16254
+n=15 D=[1, 3, 5] M1=5 M2=3 lam=10 s=3 windows=5 rects=5 sound=True complete=True |Q_n|=32730
+n=16 D=[1, 2, 4, 8] M1=4 M2=2 lam=10 s=5 windows=4 rects=52 sound=True complete=True |Q_n|=65280
+n=17 D=[1] M1=1 M2=0 lam=11 s=10 windows=2 rects=2 sound=True complete=True |Q_n|=131070
+n=18 D=[1, 2, 3, 6, 9] M1=6 M2=3 lam=12 s=4 windows=5 rects=65 sound=True complete=True |Q_n|=261576
+n=19 D=[1] M1=1 M2=0 lam=12 s=11 windows=2 rects=2 sound=True complete=True |Q_n|=524286
+n=20 D=[1, 2, 4, 5, 10] M1=5 M2=4 lam=13 s=5 windows=4 rects=60 sound=True complete=True |Q_n|=1047540
+n=21 D=[1, 3, 7] M1=7 M2=3 lam=14 s=5 windows=5 rects=5 sound=True complete=True |Q_n|=2097018
+n=22 D=[1, 2, 11] M1=2 M2=1 lam=14 s=12 windows=2 rects=34 sound=True complete=True |Q_n|=4192254
+n=23 D=[1] M1=1 M2=0 lam=15 s=14 windows=2 rects=2 sound=True complete=True |Q_n|=8388606
+n=24 D=[1, 2, 3, 4, 6, 8, 12] M1=8 M2=6 lam=16 s=3 windows=8 rects=136 sound=True complete=True |Q_n|=16772880

@@ -1,0 +1,15 @@
+/home/shobhit/work/Open_automata_problem/Primitive_words/OpenAI/proof-audit-20261117/Verify.lean:93:2: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+'FA.primitive_not_finitelyAmbiguous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FA.Audit.primitive_not_finitelyAmbiguous_unrestricted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FA.Audit.no_finitely_ambiguous_grammar_for_Q' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FA.Audit.arbitrarily_many_parses' depends on axioms: [propext, Classical.choice, Quot.sound]
+FA.Audit.no_finitely_ambiguous_grammar_for_Q :
+  ¬∃ G, (∀ (w : FA.Word), G.Generates w ↔ FA.IsPrimitive w) ∧ G.FinitelyAmbiguous
+FA.Audit.arbitrarily_many_parses (G : FA.CFG) (hlang : ∀ (w : FA.Word), G.Generates w ↔ FA.IsPrimitive w) (k : ℕ) :
+  ∃ w, FA.IsPrimitive w ∧ ↑k < G.amb w

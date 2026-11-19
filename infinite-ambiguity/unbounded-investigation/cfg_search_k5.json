@@ -1,0 +1,271 @@
+{
+  "k": 5,
+  "max_length": 12,
+  "outcome": "unsat_on_finite_examples",
+  "elapsed_seconds": 9.27532097499352,
+  "examples": [
+    "a",
+    "b",
+    "aa",
+    "ab",
+    "ba",
+    "bb",
+    "aaa",
+    "aba",
+    "abb",
+    "baa",
+    "bab",
+    "bbb",
+    "aaaa",
+    "aaab",
+    "aaba",
+    "aabb",
+    "abaa",
+    "abab",
+    "abbb",
+    "baaa",
+    "baab",
+    "baba",
+    "babb",
+    "bbab",
+    "aaaab",
+    "aabab",
+    "abaab",
+    "ababa",
+    "ababb",
+    "abbab",
+    "baaaa",
+    "baaab",
+    "baaba",
+    "babaa",
+    "babab",
+    "babba",
+    "bbaba",
+    "aabaab",
+    "abaaba",
+    "ababab",
+    "abbabb",
+    "baabaa",
+    "bababa",
+    "babbab",
+    "bbabba"
+  ],
+  "candidate": {
+    "terminals": [
+      [
+        true,
+        true
+      ],
+      [
+        true,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        true
+      ]
+    ],
+    "binary_rules": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        0,
+        1,
+        4
+      ],
+      [
+        0,
+        2,
+        1
+      ],
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        0,
+        3,
+        1
+      ],
+      [
+        0,
+        3,
+        2
+      ],
+      [
+        0,
+        4,
+        1
+      ],
+      [
+        0,
+        4,
+        3
+      ],
+      [
+        2,
+        1,
+        3
+      ],
+      [
+        2,
+        2,
+        2
+      ],
+      [
+        2,
+        4,
+        1
+      ],
+      [
+        3,
+        1,
+        4
+      ],
+      [
+        3,
+        2,
+        1
+      ],
+      [
+        4,
+        4,
+        4
+      ]
+    ]
+  },
+  "history": [
+    {
+      "round": 1,
+      "examples": 10,
+      "checked": 30,
+      "first_bad_length": 4,
+      "counterexamples": [
+        "abab",
+        "baba"
+      ],
+      "rules": 18,
+      "elapsed": 0.188
+    },
+    {
+      "round": 2,
+      "examples": 12,
+      "checked": 14,
+      "first_bad_length": 3,
+      "counterexamples": [
+        "abb",
+        "baa"
+      ],
+      "rules": 7,
+      "elapsed": 0.279
+    },
+    {
+      "round": 3,
+      "examples": 14,
+      "checked": 30,
+      "first_bad_length": 4,
+      "counterexamples": [
+        "aaab",
+        "aaba",
+        "aabb",
+        "abbb",
+        "baab",
+        "babb",
+        "bbab"
+      ],
+      "rules": 9,
+      "elapsed": 0.334
+    },
+    {
+      "round": 4,
+      "examples": 21,
+      "checked": 62,
+      "first_bad_length": 5,
+      "counterexamples": [
+        "aabab",
+        "abaab",
+        "ababa",
+        "baaba",
+        "babaa"
+      ],
+      "rules": 13,
+      "elapsed": 0.566
+    },
+    {
+      "round": 5,
+      "examples": 26,
+      "checked": 126,
+      "first_bad_length": 6,
+      "counterexamples": [
+        "aabaab",
+        "abaaba",
+        "ababab",
+        "abbabb",
+        "baabaa",
+        "bababa",
+        "babbab",
+        "bbabba"
+      ],
+      "rules": 15,
+      "elapsed": 0.689
+    },
+    {
+      "round": 6,
+      "examples": 34,
+      "checked": 30,
+      "first_bad_length": 4,
+      "counterexamples": [
+        "aaaa"
+      ],
+      "rules": 12,
+      "elapsed": 1.126
+    },
+    {
+      "round": 7,
+      "examples": 35,
+      "checked": 30,
+      "first_bad_length": 4,
+      "counterexamples": [
+        "abaa",
+        "baaa"
+      ],
+      "rules": 14,
+      "elapsed": 1.212
+    },
+    {
+      "round": 8,
+      "examples": 37,
+      "checked": 62,
+      "first_bad_length": 5,
+      "counterexamples": [
+        "aaaab",
+        "ababb",
+        "abbab",
+        "baaaa",
+        "baaab",
+        "babab",
+        "babba",
+        "bbaba"
+      ],
+      "rules": 15,
+      "elapsed": 1.492
+    }
+  ]
+}

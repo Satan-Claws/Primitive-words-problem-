@@ -1,0 +1,726 @@
+{
+  "k": 7,
+  "max_length": 12,
+  "outcome": "timeout",
+  "elapsed_seconds": 1800.0061572149862,
+  "examples": [
+    "a",
+    "b",
+    "aa",
+    "ab",
+    "ba",
+    "bb",
+    "aaa",
+    "aab",
+    "aba",
+    "abb",
+    "baa",
+    "bab",
+    "bba",
+    "bbb",
+    "aaaa",
+    "aaab",
+    "aaba",
+    "aabb",
+    "abaa",
+    "abab",
+    "abba",
+    "abbb",
+    "baaa",
+    "baab",
+    "baba",
+    "babb",
+    "bbaa",
+    "bbab",
+    "bbba",
+    "bbbb",
+    "aaaaa",
+    "aaaab",
+    "aaaba",
+    "aabaa",
+    "aabab",
+    "aabbb",
+    "abaaa",
+    "abaab",
+    "ababa",
+    "ababb",
+    "abbaa",
+    "abbab",
+    "abbba",
+    "abbbb",
+    "baaaa",
+    "baaab",
+    "baaba",
+    "baabb",
+    "babaa",
+    "babab",
+    "babba",
+    "babbb",
+    "bbaba",
+    "bbabb",
+    "bbbab",
+    "bbbba",
+    "bbbbb",
+    "aabaab",
+    "aababb",
+    "aabbaa",
+    "aabbab",
+    "abaaab",
+    "abaaba",
+    "abaabb",
+    "ababab",
+    "ababbb",
+    "abbaab",
+    "abbaba",
+    "abbabb",
+    "abbbab",
+    "baaaba",
+    "baabaa",
+    "baabab",
+    "baabba",
+    "babaaa",
+    "babaab",
+    "bababa",
+    "bababb",
+    "babbaa",
+    "babbab",
+    "babbba",
+    "bbaaba",
+    "bbaabb",
+    "bbabaa",
+    "bbabab",
+    "bbabba",
+    "bbabbb",
+    "bbbaba",
+    "bbbabb",
+    "aabaaab",
+    "aabbaaa",
+    "aabbbaa",
+    "abaaaba",
+    "ababaab",
+    "abababa",
+    "ababbbb",
+    "abbaaba",
+    "abbbbbb",
+    "baabaaa",
+    "bababaa",
+    "bababab",
+    "bababbb",
+    "babbbba",
+    "bbaabaa",
+    "bbababa",
+    "bbabbab",
+    "bbbabba",
+    "bbbbabb",
+    "aaabaaab",
+    "aabaaaba",
+    "aabbaabb",
+    "abaaabaa",
+    "abababab",
+    "abbaabba",
+    "abbbabbb",
+    "baaabaaa",
+    "baabbaab",
+    "babababa",
+    "babbbabb",
+    "bbaabbaa",
+    "bbabbbab",
+    "bbbabbba",
+    "aabaabaab",
+    "abaabaaba",
+    "abbabbabb",
+    "baabaabaa",
+    "babbabbab",
+    "bbabbabba"
+  ],
+  "last_candidate": {
+    "terminals": [
+      [
+        true,
+        true
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        true
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        true,
+        false
+      ]
+    ],
+    "binary_rules": [
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        0,
+        2,
+        6
+      ],
+      [
+        0,
+        3,
+        1
+      ],
+      [
+        0,
+        3,
+        6
+      ],
+      [
+        0,
+        4,
+        2
+      ],
+      [
+        0,
+        4,
+        5
+      ],
+      [
+        0,
+        5,
+        4
+      ],
+      [
+        0,
+        6,
+        2
+      ],
+      [
+        1,
+        2,
+        4
+      ],
+      [
+        1,
+        6,
+        4
+      ],
+      [
+        1,
+        6,
+        6
+      ],
+      [
+        3,
+        2,
+        2
+      ],
+      [
+        3,
+        2,
+        5
+      ],
+      [
+        3,
+        2,
+        6
+      ],
+      [
+        3,
+        6,
+        2
+      ],
+      [
+        3,
+        6,
+        5
+      ],
+      [
+        4,
+        1,
+        2
+      ],
+      [
+        4,
+        1,
+        6
+      ],
+      [
+        4,
+        2,
+        6
+      ],
+      [
+        4,
+        6,
+        2
+      ],
+      [
+        4,
+        6,
+        6
+      ],
+      [
+        5,
+        2,
+        2
+      ],
+      [
+        5,
+        3,
+        2
+      ],
+      [
+        5,
+        3,
+        6
+      ]
+    ]
+  },
+  "last_candidate_status": "rejected_or_stale_not_a_solution",
+  "history": [
+    {
+      "round": 1,
+      "examples": 10,
+      "checked": 30,
+      "first_bad_length": 4,
+      "counterexamples": [
+        "abab",
+        "abbb",
+        "baba",
+        "babb",
+        "bbaa",
+        "bbab",
+        "bbba"
+      ],
+      "rules": 33,
+      "elapsed": 0.309
+    },
+    {
+      "round": 2,
+      "examples": 17,
+      "checked": 14,
+      "first_bad_length": 3,
+      "counterexamples": [
+        "abb"
+      ],
+      "rules": 26,
+      "elapsed": 1.083
+    },
+    {
+      "round": 3,
+      "examples": 18,
+      "checked": 14,
+      "first_bad_length": 3,
+      "counterexamples": [
+        "baa"
+      ],
+      "rules": 21,
+      "elapsed": 1.096
+    },
+    {
+      "round": 4,
+      "examples": 19,
+      "checked": 30,
+      "first_bad_length": 4,
+      "counterexamples": [
+        "aaaa"
+      ],
+      "rules": 21,
+      "elapsed": 1.108
+    },
+    {
+      "round": 5,
+      "examples": 20,
+      "checked": 62,
+      "first_bad_length": 5,
+      "counterexamples": [
+        "ababa"
+      ],
+      "rules": 19,
+      "elapsed": 1.191
+    },
+    {
+      "round": 6,
+      "examples": 21,
+      "checked": 126,
+      "first_bad_length": 6,
+      "counterexamples": [
+        "aabaab",
+        "abaaba",
+        "ababab",
+        "abbabb",
+        "baabaa",
+        "bababa",
+        "babbab",
+        "bbabba"
+      ],
+      "rules": 20,
+      "elapsed": 1.301
+    },
+    {
+      "round": 7,
+      "examples": 29,
+      "checked": 30,
+      "first_bad_length": 4,
+      "counterexamples": [
+        "baab"
+      ],
+      "rules": 17,
+      "elapsed": 3.277
+    },
+    {
+      "round": 8,
+      "examples": 30,
+      "checked": 62,
+      "first_bad_length": 5,
+      "counterexamples": [
+        "abaab",
+        "ababb",
+        "abbab",
+        "baaab",
+        "baaba",
+        "babaa",
+        "babab",
+        "babba",
+        "bbaba"
+      ],
+      "rules": 18,
+      "elapsed": 3.3
+    },
+    {
+      "round": 9,
+      "examples": 39,
+      "checked": 30,
+      "first_bad_length": 4,
+      "counterexamples": [
+        "aaab",
+        "aaba",
+        "abaa",
+        "abba",
+        "baaa"
+      ],
+      "rules": 16,
+      "elapsed": 4.067
+    },
+    {
+      "round": 10,
+      "examples": 44,
+      "checked": 62,
+      "first_bad_length": 5,
+      "counterexamples": [
+        "baabb"
+      ],
+      "rules": 10,
+      "elapsed": 4.387
+    },
+    {
+      "round": 11,
+      "examples": 45,
+      "checked": 62,
+      "first_bad_length": 5,
+      "counterexamples": [
+        "aabab",
+        "abbaa",
+        "abbbb",
+        "babbb",
+        "bbabb",
+        "bbbab",
+        "bbbba"
+      ],
+      "rules": 12,
+      "elapsed": 4.602
+    },
+    {
+      "round": 12,
+      "examples": 52,
+      "checked": 14,
+      "first_bad_length": 3,
+      "counterexamples": [
+        "aab"
+      ],
+      "rules": 21,
+      "elapsed": 5.448
+    },
+    {
+      "round": 13,
+      "examples": 53,
+      "checked": 14,
+      "first_bad_length": 3,
+      "counterexamples": [
+        "bba"
+      ],
+      "rules": 22,
+      "elapsed": 6.416
+    },
+    {
+      "round": 14,
+      "examples": 54,
+      "checked": 30,
+      "first_bad_length": 4,
+      "counterexamples": [
+        "aabb",
+        "bbbb"
+      ],
+      "rules": 28,
+      "elapsed": 9.032
+    },
+    {
+      "round": 15,
+      "examples": 56,
+      "checked": 62,
+      "first_bad_length": 5,
+      "counterexamples": [
+        "aabaa"
+      ],
+      "rules": 23,
+      "elapsed": 9.255
+    },
+    {
+      "round": 16,
+      "examples": 57,
+      "checked": 62,
+      "first_bad_length": 5,
+      "counterexamples": [
+        "aaaaa"
+      ],
+      "rules": 22,
+      "elapsed": 9.298
+    },
+    {
+      "round": 17,
+      "examples": 58,
+      "checked": 62,
+      "first_bad_length": 5,
+      "counterexamples": [
+        "aaaab",
+        "abbba",
+        "baaaa"
+      ],
+      "rules": 29,
+      "elapsed": 11.139
+    },
+    {
+      "round": 18,
+      "examples": 61,
+      "checked": 126,
+      "first_bad_length": 6,
+      "counterexamples": [
+        "aabbab",
+        "abaaab",
+        "abaabb",
+        "ababbb",
+        "abbaab",
+        "abbaba",
+        "abbbab",
+        "baaaba",
+        "baabba",
+        "babaaa",
+        "babaab",
+        "bababb",
+        "babbaa",
+        "babbba",
+        "bbaaba",
+        "bbabaa",
+        "bbabab",
+        "bbbaba"
+      ],
+      "rules": 23,
+      "elapsed": 11.559
+    },
+    {
+      "round": 19,
+      "examples": 79,
+      "checked": 254,
+      "first_bad_length": 7,
+      "counterexamples": [
+        "aabaaab",
+        "ababaab",
+        "abababa",
+        "abbaaba",
+        "baabaaa",
+        "bababaa",
+        "bababab",
+        "bbaabaa",
+        "bbababa",
+        "bbabbab",
+        "bbbabba"
+      ],
+      "rules": 18,
+      "elapsed": 17.867
+    },
+    {
+      "round": 20,
+      "examples": 90,
+      "checked": 62,
+      "first_bad_length": 5,
+      "counterexamples": [
+        "aaaba"
+      ],
+      "rules": 15,
+      "elapsed": 24.621
+    },
+    {
+      "round": 21,
+      "examples": 91,
+      "checked": 62,
+      "first_bad_length": 5,
+      "counterexamples": [
+        "abaaa"
+      ],
+      "rules": 14,
+      "elapsed": 24.761
+    },
+    {
+      "round": 22,
+      "examples": 92,
+      "checked": 126,
+      "first_bad_length": 6,
+      "counterexamples": [
+        "aababb",
+        "baabab"
+      ],
+      "rules": 23,
+      "elapsed": 34.361
+    },
+    {
+      "round": 23,
+      "examples": 94,
+      "checked": 62,
+      "first_bad_length": 5,
+      "counterexamples": [
+        "bbbbb"
+      ],
+      "rules": 31,
+      "elapsed": 35.412
+    },
+    {
+      "round": 24,
+      "examples": 95,
+      "checked": 126,
+      "first_bad_length": 6,
+      "counterexamples": [
+        "aabbaa",
+        "bbaabb"
+      ],
+      "rules": 11,
+      "elapsed": 43.812
+    },
+    {
+      "round": 25,
+      "examples": 97,
+      "checked": 254,
+      "first_bad_length": 7,
+      "counterexamples": [
+        "ababbbb",
+        "abbbbbb",
+        "bababbb",
+        "babbbba"
+      ],
+      "rules": 22,
+      "elapsed": 67.881
+    },
+    {
+      "round": 26,
+      "examples": 101,
+      "checked": 126,
+      "first_bad_length": 6,
+      "counterexamples": [
+        "bbabbb",
+        "bbbabb"
+      ],
+      "rules": 20,
+      "elapsed": 74.18
+    },
+    {
+      "round": 27,
+      "examples": 103,
+      "checked": 254,
+      "first_bad_length": 7,
+      "counterexamples": [
+        "bbbbabb"
+      ],
+      "rules": 23,
+      "elapsed": 74.373
+    },
+    {
+      "round": 28,
+      "examples": 104,
+      "checked": 510,
+      "first_bad_length": 8,
+      "counterexamples": [
+        "aaabaaab",
+        "aabaaaba",
+        "aabbaabb",
+        "abaaabaa",
+        "abababab",
+        "abbaabba",
+        "abbbabbb",
+        "baaabaaa",
+        "baabbaab",
+        "babababa",
+        "babbbabb",
+        "bbaabbaa",
+        "bbabbbab",
+        "bbbabbba"
+      ],
+      "rules": 23,
+      "elapsed": 74.689
+    },
+    {
+      "round": 50,
+      "examples": 118,
+      "checked": 62,
+      "first_bad_length": 5,
+      "counterexamples": [
+        "aabbb"
+      ],
+      "rules": 14,
+      "elapsed": 1341.623
+    },
+    {
+      "round": 51,
+      "examples": 119,
+      "checked": 254,
+      "first_bad_length": 7,
+      "counterexamples": [
+        "aabbaaa",
+        "aabbbaa",
+        "abaaaba"
+      ],
+      "rules": 15,
+      "elapsed": 1341.795
+    },
+    {
+      "round": 56,
+      "examples": 122,
+      "checked": 1022,
+      "first_bad_length": 9,
+      "counterexamples": [
+        "aabaabaab",
+        "abaabaaba",
+        "abbabbabb",
+        "baabaabaa",
+        "babbabbab",
+        "bbabbabba"
+      ],
+      "rules": 25,
+      "elapsed": 1586.636
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "n": 12,
+  "periods": [
+    4,
+    6
+  ],
+  "matchings": 132,
+  "result": "unsat",
+  "meaning": "Existence of primitive real tuple with no safe perfect-matching affine span",
+  "limitation": "Does not quantify over all stratified period sets"
+}
