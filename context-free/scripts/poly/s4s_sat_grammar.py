@@ -151,6 +151,7 @@ def run(N, LMAX, TO, t_total):
         reach = (n - 1) if n else max(LMAX + 2, L + 2)
         best = (rules, term, reach, n, bad, nb)
         print(f"  N={N}: agrees through L={reach} (#samples {len(e.D)}), first disagree len {n}: {bad[:4]} (#{nb})", flush=True)
+        print(show(N, rules, term), flush=True)
         L = reach + 1
     return best, L, 'LMAX'
 
