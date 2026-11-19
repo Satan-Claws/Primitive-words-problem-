@@ -124,3 +124,26 @@ Still unresolved, and no route unblocked. New proved results ([written proof], u
   exists, so chain-validity forces no single-fibre restriction. The induction gives only π-monotonicity: f_u
   vanishes on fibres π-before res(u). Q1 stays OPEN, and a negative answer must use the fixed supp μ_k and
   non-crossing on ℤ_n.
+
+## 6. Session 3 addendum (2026-11-19, 10:52–~11:20 UTC)
+
+Still unresolved, and no route unblocked.
+- **Degree route BLOCKED** (`poly_S3D.md`, [written proof]). Ito / Eilenberg–Schützenberger refinement makes
+  every piece degree 0 without raising ply, so no covering requirement can force d_σ > k.
+- **Q2 false as posed** (`poly_S3Q.md`). Every chain-valid tree is valid at ω = 𝟙, so the right measure is
+  D_k, the number of distinct trees. For abstract μ, **D ∈ {P−1, P}** (`poly_S3E.md`, `poly_S3L.md`). This is far
+  above the p_k^{O(1)} needed to block S_N, so the order-cone selection cannot block the candidate.
+- **Q1 false at n = 36** ([computational], exhaustive interval DP over all non-crossing trees, `poly_S3A.md`).
+  There are 0 chain-valid trees for 20 targets × 720 orders.
+- **Near-vertex base points** (`poly_S3V.md`). At any single ω, valid trees exist for every u_k
+  ([written proof]). For M ≥ poly(n), no tree is valid near two different vertices (fold-dominance ⇒ |F| = 1;
+  data [computational]). This forces D_k ≥ 2 but no overlap, since fans remain possible.
+- **Length.**
+  - The hyperplane-count term folds into the inradius (Lemma H, `poly_S3H.md`), so G3\*\* is back to its three
+    height terms.
+  - Conditional **Theorem P′** (`poly_S3P.md`): with polynomial facet heights and lattice exponents on one
+    (2p−1)-face, A_G(L) = Ω(log L / log log L).
+  - The p² in Theorem P comes from heights K^{Θ(p)} and from the lcm of p quotient exponents.
+
+**Exact gap (unchanged in form):** a lower bound on overlap for fans of tree-validity cones (TILE_k in its
+general form, beyond order-cone selection), together with G3\*\* (three height terms).
