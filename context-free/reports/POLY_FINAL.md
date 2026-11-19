@@ -150,3 +150,10 @@ general form, beyond order-cone selection), together with G3\*\* (three height t
 - **TILE_k exact-cone test at n = 36** (`poly_S3T.md`, [computational], INCONCLUSIVE). Covers need ply 2 once
   the training set is large. Fresh max ply is 3 for both p = 2 and p = 3 (a weak hint that q_k = O(1), i.e.
   towards blocking S_N). Coverage reached only 51–92%, with gaps near faces and vertices.
+- **Far-ply covers impossible at ply 2** (`poly_S3F.md`, [written proof] + [computational] for M = 2).
+  Indices are ≤ K^{2M}, and Lemma F to a 2-pair face gives a ply-2 point at norm 2(M−2) + K^{O(1)}. The M = 2
+  ILP gives min ply-2 norm 9 for forced ℤ/2^ρ pieces, ρ = 0..3. Option (A) of G4 fails at constant ply; the
+  ⌈m/2⌉ threshold stays open.
+
+**Session 3 end:** no route unblocked. Best unconditional result is still Theorem P. Exact gap: general fan
+ply (TILE_k beyond order-cone selection) + G3\*\* (three height terms) for S_N.
