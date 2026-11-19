@@ -31,7 +31,7 @@ of w in G′ biject with pairs (j, T) where T is a G-tree of rot_{−j}(w). ∎
 G′ has no unit rules. To remove the ε-rule, add [A] → C and [A] → C′ for each rule with [S] on the right-hand side.
 This keeps the count, because [S] ⇒ ε uniquely. So G′ becomes a cycle-free ε-free CFG with the same amb.
 
-*Check:* `scripts/poly/s4c_cyc.py` takes 40 random 3-nonterminal CNF grammars and all words of length ≤ 7. It
+*Check:* `context-free/scripts/poly/s4c_cyc.py` takes 40 random 3-nonterminal CNF grammars and all words of length ≤ 7. It
 compared both sides on 10160 words and found 0 mismatches.
 
 **Corollary C1.** Suppose L(G) ⊆ Q and G meets every primitive class. Then L(G′) = cyc(L(G)) = Q. Rotations of a
