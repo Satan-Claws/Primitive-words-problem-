@@ -1,0 +1,8 @@
+   bounded-above: {'a': 0, 'b': 2} D const = 1/2
+   bounded-above: {'a': 2, 'b': 0} D const = -1/2
+   bounded-above: {'aa': 0, 'ab': 1, 'ba': 1, 'bb': 2} D const = 1
+   bounded-above: {'aa': 2, 'ab': 1, 'ba': 1, 'bb': 0} D const = -1
+(1) polish grammars tried=18746 critical=3194 D-bounded-above=4 of which nonconstant D=0
+(2) words/derivations: 12:0.952 14:0.930 16:0.929 18:0.905 20:0.868 22:0.843 24:0.824 26:0.793
+(2) n, distinct words, ratio |L_n|/|L_{n-2}| (->4 iff radius 1/2):
+12:80:3.478 14:240:3.000 16:755:3.146 18:2566:3.399 20:8610:3.355 22:28869:3.353 24:99261:3.438 26:342671:3.452

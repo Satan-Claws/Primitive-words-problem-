@@ -101,7 +101,7 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
   <div class="pills">
     <span class="pill">Status: open</span>
     <span class="pill">Conjectured answer: no</span>
-    <span class="pill">14 rounds · ≈57 agents · 9 gated audits</span>
+    <span class="pill">15 rounds · ≈60 agents · 9 gated audits</span>
   </div>
 </div></header>
 
@@ -174,41 +174,50 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
   </div>
   <div class="card" style="border-top:4px solid var(--sc)">
     <h3><span class="tag t-sc">satan-claws</span> &nbsp;This session, fork <code>Satan-Claws/Primitive-words-problem-</code></h3>
-    <p class="m" style="background:none;padding:0;color:var(--muted)">24 Nov 2026 · 38+ commits · rounds 2–6 of the polynomial-ambiguity campaign</p>
+    <p class="m" style="background:none;padding:0;color:var(--muted)">24 Nov 2026 · 78 commits · rounds 2–15 of the polynomial-ambiguity campaign · ≈60 agents · 9 gated audits</p>
     <ul>
-      <li>Round 2: <b>audited</b> results that block the S_N slice route (ply-1 transport tiling; bounded-data pair facets)</li>
-      <li>Reconstruction of the ajax-era foundations (Lemma 3P confirmed, Lemma F repaired)</li>
-      <li>Round 3: uniformity theorems (W, X, R), Lemma I2 (audited), uniform grammars for single primes</li>
-      <li>Round 4: <b>strategy change</b>: bottom-up coverage loop, literature check, Prop H (audited)</li>
-      <li>Round 5: <b>interval-fold certificate</b> (Lemma F, density ≈ 0.61) and density barriers</li>
-      <li>Round 6 (running): FOLD-COUNTER</li>
+      <li><b>Rounds 2–3:</b> the slice route is blocked by audited results (ply-1 transport tiling, bounded-data pair facets, Lemma I2); foundations reconstructed; uniformity obstructions (Theorems W, X, R)</li>
+      <li><b>Round 4:</b> <b>strategy change</b> to bottom-up, word-level work; literature verified; Prop H reduction chain (audited)</li>
+      <li><b>Rounds 5–7:</b> the interval-fold certificate (audited), rotation into G⁻ (audited), and the reduction to one <i>length coupling</i>; self-similarity</li>
+      <li><b>Rounds 8–10:</b> dead ends ruled out rigorously (Prop S circular, Theorem N/N2 kill row arguments, no self-similar amplification)</li>
+      <li><b>Round 12:</b> consolidated 831-line <code>RESEARCH_NOTE.md</code> + RESULTS_INDEX §11</li>
+      <li><b>Rounds 13–15:</b> <b>padding rigidity PR2</b> (audited), the first real negative theorem on the fold route; closing the last three pieces of T8_unamb</li>
     </ul>
   </div>
 </div>
 <div class="card soft">
   <h3>Commit share</h3>
-  <div class="bar"><div style="flex:143;background:var(--ajax)">ajax · 143</div><div style="flex:38;background:var(--sc)">satan-claws · 38+</div></div>
+  <div class="bar"><div style="flex:143;background:var(--ajax)">ajax · 143</div><div style="flex:78;background:var(--sc)">satan-claws · 78</div></div>
   <p style="font-size:.88rem;color:var(--muted)">satan-claws builds directly on ajax's toolkit. Every round-2+ result either uses, tests or overturns something from the original repository.</p>
 </div>
 </section>
 
 <!-- IDEA -->
 <section id="idea">
-<h2>3. What the idea is<small>The mechanism behind both directions</small></h2>
+<h2>3. What the idea is<small>How the picture evolved, and where it stands now</small></h2>
 <div class="card">
   <h3>Primitivity is a "for every prime" statement</h3>
-  <p>A word w is not primitive exactly when <b>w = vᵖ for a prime p dividing gcd(#a, #b)</b>. So a proof that w is primitive must, <b>for every such prime p</b>, show that w is not a p-th power.</p>
-  <p>For <i>one</i> fixed prime this is easy for a grammar: point to one mismatch between positions i and i + n/p. The grammar enforces the distance with an outside:inside length ratio of (p−1):1. Ambiguity is linear.</p>
+  <p>A word w is not primitive exactly when <b>w = vᵖ for a prime p dividing gcd(#a, #b)</b>. So a proof that w is primitive must, <b>for every such prime p</b>, show that w is not a p-th power.
+  For <i>one</i> fixed prime this is easy for a grammar: point to a single mismatch between positions i and i + n/p (linear ambiguity). The difficulty is doing it for <b>all primes at once, with one grammar, for every length</b>.</p>
 </div>
 <div class="grid3">
-  <div class="card"><span class="tag t-ajax">ajax's plan</span><h3>Force a blow-up on slices</h3><p>Pick special families of words, slices <code>(ab*)ⁿ</code> with n = (product of first N primes)², where certifying every prime seems to need superpolynomially many overlapping parse trees.</p></div>
-  <div class="card"><span class="tag t-sc">round 2 finding</span><h3>Slices don't blow up</h3><p>Those slices <b>can</b> be covered with overlap 1 (transport tiling), using pieces a fixed grammar could produce. The slice route cannot prove "no". <span class="tag t-aud">audited</span></p></div>
-  <div class="card"><span class="tag t-sc">rounds 3–5 finding</span><h3>The crux is uniformity</h3><p>The real constraint is that <b>one grammar must work for every length</b>. A grammar can't expose certificates for two primes, or for a varying prime. The words that are actually hard are <b>typical random words</b>.</p></div>
+  <div class="card"><span class="tag t-ajax">phase 1 · ajax</span><h3>Force a blow-up on slices</h3><p>Pick structured word families (slices with n = product of primes squared) where certifying every prime seemed to need many overlapping parse trees.</p></div>
+  <div class="card"><span class="tag t-sc">phase 2 · rounds 2–4</span><h3>Slices are fine; typical words are hard</h3><p>The slices <b>can</b> be covered with overlap 1 (audited). The real constraint is <b>uniformity</b>. Every simple certificate a grammar can check covers a vanishing fraction (~n<sup>−1/2</sup>) of <i>random</i> words.</p></div>
+  <div class="card"><span class="tag t-sc">phase 3 · rounds 5–15</span><h3>The fold, and why it resists grammars</h3><p>One certificate covers almost every word: the <b>interval fold</b>, made rotation-friendly as <b>G⁻</b>. Turning it into a grammar needs a length coupling across the centre. The current work is proving no unambiguous grammar can supply it.</p></div>
+</div>
+<div class="card">
+  <h3>The fold certificate in one picture</h3>
+  <p>Fold the word in half. Compare the number of a's in the first k letters with the number in the last k letters, for every k up to n/2.</p>
+  <ul>
+    <li>If w = uᵖ, the prefix and suffix of length ⌊p/2⌋·n/p are <i>identical</i>, so the counts are equal there. That position always lies between n/3 and n/2, for every prime p.</li>
+    <li>So <b>"the counts differ at every k in [n/3, n/2]"</b> proves primitivity, for all primes at once (Lemma F, audited). About 61% of words pass directly.</li>
+    <li>After a canonical rotation, almost every primitive word satisfies the stronger condition <b>G⁻</b>: prefix count &lt; suffix count for <i>every</i> k ≤ n/2 (Lemma A, audited). Rotations cost nothing for grammars, since cyclic closure is exact.</li>
+  </ul>
 </div>
 <div class="callout g">
-  <b>Current working picture.</b> Every certificate a context-free grammar can obviously check (letter-count relations, factor counts, folds) covers only a <b>vanishing fraction</b> (~n<sup>−1/2</sup>) of words.
-  The single exception found is the <b>interval-fold certificate</b>: it compares the a-counts of the prefix and suffix of the same length k. If w = uᵖ, at k = ⌊p/2⌋·n/p the prefix and suffix are equal, and ⌊p/2⌋/p always lies in [1/3, 1/2]. So <b>one window checks every prime at once</b> and covers about 61% of words.
-  But it needs a counter running along a fold, which may be beyond context-free grammars. Whether it can be made context-free is the question everything now turns on.
+  <b>Current working picture (after round 14).</b> A grammar can generate the fold as nested letter pairs. What it can't obviously do is <i>count along the fold</i>. Lemma SA shows G⁻ is exactly a Dyck-type prefix times an a-heavy suffix, <b>coupled by one length condition</b>. Without that coupling, powers sneak in. Removing them is the original problem again, one level down (U1–U3).
+  The negative programme now attacks the coupling directly. <b>PR2 (audited)</b> proves that a large class of unambiguous grammars cannot stay inside G⁻ while covering enough words. It even rules out ambiguity below n<sup>1/6</sup>, using a "measure squeeze": the words such a grammar is forced to make are too rare (n<sup>−2/3</sup>) for it to be injective.
+  The one-sided case is now closed too (PR1s). Two pieces remain before this is a full theorem (T8_unamb).
 </div>
 </section>
 
@@ -232,7 +241,7 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
   <div class="it s"><div class="h">Round 12 <span class="tag t-sc">satan-claws</span></div><div class="d">~13:40–14:40</div><b>Consolidation:</b> an 831-line research note and 49 new rows in RESULTS_INDEX. <b>FSC rigidity:</b> blocks with high excursions are ruled out (Lemma SF). For Dyck-shaped blocks, swapping high and low excursions provably can't break G⁻ (No-go 4). Remaining gap: "padding rigidity".</div>
   <div class="it s"><div class="h">Round 13 <span class="tag t-sc">satan-claws</span></div><div class="d">~14:40–15:40</div><b>Audit:</b> Theorems N, N2 and the fold lemmas all survive. <b>Padding rigidity proved for two-sided models (PR2)</b> by a "measure squeeze": long level blocks force a valley shape, valley words inside G⁻ are rarer (n<sup>−2/3</sup> vs n<sup>−1/2</sup>), and an injective grammar needs more mass than that allows. It also rules out multiplicity below n<sup>1/6</sup>, the first quantitative step past unambiguity. Open: "steep" models.</div>
   <div class="it s"><div class="h">Round 14 <span class="tag t-sc">satan-claws</span></div><div class="d">~15:40–16:40</div><b>Audit: PR1/PR2 SURVIVE.</b> The wedge exponent 2/3 was confirmed independently by exact DP. <b>Steep models:</b> every heavy block contains a self-branching component and is "level" on both sides up to log slack, and PR2 survives that slack. T8_unamb is down to three pieces: side mismatch, heavier tails, and the one-sided step.</div>
-  <div class="it s"><div class="h">Round 15 <span class="tag t-sc">satan-claws</span> <span class="tag t-open">running</span></div><div class="d">now</div>One agent per remaining piece of T8_unamb.</div>
+  <div class="it s"><div class="h">Round 15 <span class="tag t-sc">satan-claws</span> <span class="tag t-open">running</span></div><div class="d">now</div>One agent per remaining piece of T8_unamb. <b>One-sided case closed</b> (Thm PR1s: Lemma CM + Lemma J squeeze, mass O(N<sup>5/12</sup>) against c√N). Side mismatch and heavier tails still running.</div>
 </div>
 </section>
 
@@ -263,6 +272,7 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
 <tr><td>Lemma RG / A1–A2</td><td>The √n block reduction is exact; it can't amplify ambiguity, and each depth-k certificate is equivalent to Q</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
 <tr><td>Theorem N2</td><td>A grammar with ambiguity ≤ |w| contains all coprime-count words and is sound on rows #a ∈ P ∪ 2P ∪ 2<sup>ℕ</sup></td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> (checked |w| ≤ 40)</td></tr>
 <tr><td>Thm PR2 (padding rigidity)</td><td>Two-sided level-block models can't be injective inside G⁻ with infinite measure; also rules out multiplicity O(n<sup>1/6−ε</sup>)</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> (two-sided case; cites Denisov–Wachtel; exponent 2/3 independently confirmed)</td></tr>
+<tr><td>Thm PR1s (one-sided)</td><td>A U-level block on one tape alone already forces ambiguity inside G⁻</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span> (cites Denisov–Wachtel)</td></tr>
 <tr><td>Coverage loop</td><td>Uniform gadgets cover all primitive words of length ≤ 28 except a few thousand</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-comp">computational</span> + <span class="tag t-aud">soundness audited</span></td></tr>
 </table>
 </div>
@@ -304,88 +314,102 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
 
 <!-- OPEN -->
 <section id="open">
-<h2>7. Open questions<small>Ranked by how directly they move the problem</small></h2>
+<h2>7. Open questions<small>Current state after round 14, ranked by how directly they move the problem</small></h2>
 
-<details open><summary><span class="n">1</span>FOLD-COUNTER: can one grammar make the length coupling work?<span class="tag t-open" style="margin-left:auto">sharpened in round 6</span></summary><div class="body">
-<p>After round 6 the question is very specific. A rotation of almost every primitive word lies in <b>G⁻</b> = {prefix a-count &lt; suffix a-count for every k ≤ n/2}, which is inside Q. Exact cyclic closure turns any grammar for a part of G⁻ into one for all its rotations.
-G⁻ splits as a <b>Dyck-type prefix</b> times an <b>a-heavy suffix</b>, glued by one length condition |x| ≥ |y|. Each half is easy for a grammar; the coupling is the whole problem. Dropping it lets squares like <code>baa·baa</code> through. Finite-memory checks provably fail (Prop K), and the coupled language L_A is not context-free (Prop N). Whether some <i>dense</i> polynomially ambiguous sublanguage exists is open. The negative side needs "Lemma Q", a density bound inside shifted meanders.</p>
-<div class="yn"><div class="y"><b>If yes:</b> sound polynomial grammars cover most typical words. The "generic words are hard" heuristic dies, and the remaining difficulty is the structured exceptions. That moves the problem toward "yes".</div><div class="no"><b>If no, for a robust reason</b> ("fold + counter is never CF on dense sets"): the strongest negative lead so far. It explains why every known certificate stays at density → 0.</div></div>
+<details open><summary><span class="n">1</span>T8_unamb: no unambiguous grammar inside G⁻ is rotation-dense<span class="tag t-open" style="margin-left:auto">round 15 running</span></summary><div class="body">
+<p>The sharpest live target. Any unambiguous grammar covering a positive share of rotations inside G⁻ must contain a <i>critical, heavy-tailed</i> block structure (Thm M, Lemma Bot). <b>PR2</b> (audited) rules out the two-sided "level" case, and Prop HL shows every heavy block is level up to log slack. Three pieces remain:</p>
+<ul>
+  <li><b>Side mismatch:</b> a block could be level only on the "wrong" side. The approach is a zero-drift (cosh-tilt) argument.</li>
+  <li><b>Heavier tails</b> (exponent −1 − 2<sup>−k</sup>): the squeeze is too weak here, N<sup>1/4</sup> against N<sup>1/3</sup>.</li>
+  <li><b>The one-sided case:</b> <span class="ok">closed in round 15</span> (Thm PR1s, written proof: Lemma CM truncates at √(m log m) and uses Hoeffding).</li>
+</ul>
+<div class="yn"><div class="y"><b>If T8_unamb fails</b> (an explicit counterexample): an unambiguous grammar certifies most words, and the affirmative fold route revives.</div><div class="no"><b>If T8_unamb holds:</b> a new theorem, and the first rigorous evidence that the dense fold certificate is beyond grammars. The next step would be lifting it from unambiguous to polynomial ambiguity, where PR2 already reaches n<sup>1/6</sup>.</div></div>
 </div></details>
 
-<details><summary><span class="n">2</span>P_cop: the minimal sandwich</summary><div class="body">
-<p>Is there a polynomially ambiguous language that contains <b>every</b> word whose letter counts are coprime and contains only primitive words? By Prop H (audited) this is the weakest statement in the chain:</p>
-<p class="m" style="background:none;padding:0">grammar for Q ⇒ Q∩{gcd = prime power} ⇒ Q∩{gcd = p} ⇒ P_cop</p>
-<div class="yn"><div class="y"><b>If P_cop holds:</b> nothing follows directly. It is a necessary condition only.</div><div class="no"><b>If P_cop fails:</b> the problem is solved as <b>no</b>. The proof must use the ambiguity bound, since pumping alone would prove Q isn't CF.</div></div>
+<details><summary><span class="n">2</span>EQ-2q: match Q exactly on the rows #a = 2q</summary><div class="body">
+<p>Is there a polynomially ambiguous grammar that agrees <i>exactly</i> with Q on every row with 2q a's (q prime)? If not, the problem is solved as "no". On these rows the only bad words are squares and q-th powers of two-a words. Lemma S characterises the good ones exactly via a gap invariant D. Theorem T shows no finite-automaton sorter works. Pumping b's keeps words on their row, which is the advantage, but the argument still needs the ambiguity bound to enter.</p>
 </div></details>
 
-<details><summary><span class="n">3</span>L₆: the smallest two-prime test</summary><div class="body">
-<p>Words of length 6m that are neither squares nor cubes. Each condition alone has a linear-ambiguity grammar; together, no grammar is known. Its generating function is rational, so counting arguments can't decide it.</p>
-<div class="yn"><div class="y"><b>If L₆ has a polynomial grammar:</b> it gives a template for combining primes, the core affirmative mechanism.</div><div class="no"><b>If not:</b> a clean obstruction, though it doesn't transfer to Q automatically (L₆ ≠ Q ∩ lengths 6ℕ).</div></div>
+<details><summary><span class="n">3</span>P_cop: the minimal sandwich (now known to contain core 1)</summary><div class="body">
+<p>Is there a polynomially ambiguous language containing every coprime-count word and only primitive words? Prop H (audited) makes it the weakest statement in the chain <span class="m" style="background:none">P(Q) ⇒ … ⇒ P_cop</span>.
+Theorems N and N2 (both audited) show that "row" arguments (prime rows, rows 2q in containment form) can never refute it. So any proof that P_cop fails must also handle typical words.</p>
 </div></details>
 
-<details><summary><span class="n">4</span>NONUNIF: can one grammar realise the slice covers for every length?</summary><div class="body">
-<p>Every slice has a low-overlap cover (audited), but the covers we know are built separately for each n. Whether a single finite grammar can produce them for all n is equivalent to the slice-based negative statement. Two attempts (Theorem R, forbidden exchange) collapsed to known routes.</p>
+<details><summary><span class="n">4</span>Lifting to polynomial ambiguity</summary><div class="body">
+<p>Every negative tool so far works best for <i>unambiguous</i> grammars. PR2's squeeze already tolerates multiplicity up to n<sup>1/6−ε</sup>. A full lift needs either a better squeeze, or Wich's structure theory to control where ambiguity can sit (at most k·log n disjoint ambiguous nodes per tree).</p>
 </div></details>
 
-<details><summary><span class="n">5</span>SPREAD-JOINT: the last per-slice gap</summary><div class="body">
-<p>A family of spread facets whose witness chords don't cross, covering mixed-type defects. It would finish blocking S_N completely, but can't resolve the problem alone.</p>
+<details><summary><span class="n">5</span>Older open forms (lower priority)</summary><div class="body">
+<ul>
+<li><b>L₆:</b> words of length 6m that are neither squares nor cubes. Its generating function is rational, so counting can't decide it.</li>
+<li><b>Uniformity in depth k:</b> the self-similar block reduction is exact but doesn't amplify.</li>
+<li><b>SPREAD-JOINT / NONUNIF:</b> the last per-slice gaps. They can't resolve the problem alone.</li>
+</ul>
 </div></details>
 </section>
 
 <!-- PATH -->
 <section id="path">
-<h2>8. How this leads to a solution<small>Two routes, one decision point</small></h2>
+<h2>8. How this leads to a solution<small>The routes as they stand now</small></h2>
 <div class="card soft">
-<svg viewBox="0 0 900 380" role="img" aria-label="Roadmap">
+<svg viewBox="0 0 900 470" role="img" aria-label="Roadmap">
   <defs>
     <marker id="a2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#5b726d"/></marker>
   </defs>
   <g font-size="13">
-    <rect x="330" y="10" width="240" height="58" rx="12" fill="#0f8b8d"/>
-    <text x="450" y="35" text-anchor="middle" font-weight="700" fill="#fff">FOLD-COUNTER</text>
-    <text x="450" y="54" text-anchor="middle" fill="#e0f7f7">dense fold certificate in CF?</text>
+    <rect x="300" y="8" width="300" height="56" rx="12" fill="#e3f4ee" stroke="#9fd6b9"/>
+    <text x="450" y="31" text-anchor="middle" font-weight="700" fill="#15603f">DONE: fold certificate + rotation</text>
+    <text x="450" y="50" text-anchor="middle" fill="#15603f">G⁻ covers almost every primitive word (audited)</text>
+    <line x1="450" y1="66" x2="450" y2="92" stroke="#5b726d" marker-end="url(#a2)"/>
 
-    <line x1="390" y1="70" x2="200" y2="120" stroke="#5b726d" marker-end="url(#a2)"/>
-    <line x1="510" y1="70" x2="700" y2="120" stroke="#5b726d" marker-end="url(#a2)"/>
-    <text x="270" y="92" fill="#1f7a52" font-weight="600">yes</text>
-    <text x="610" y="92" fill="#0b6466" font-weight="600">no (robustly)</text>
+    <rect x="290" y="94" width="320" height="58" rx="12" fill="#0f8b8d"/>
+    <text x="450" y="118" text-anchor="middle" font-weight="700" fill="#fff">Can a grammar realise G⁻ densely?</text>
+    <text x="450" y="138" text-anchor="middle" fill="#e0f7f7">one length coupling across the centre</text>
 
-    <rect x="40" y="122" width="320" height="64" rx="10" fill="#e6f5ec" stroke="#9fd6b9"/>
-    <text x="200" y="148" text-anchor="middle" font-weight="600" fill="#15603f">Most words certified by one grammar</text>
-    <text x="200" y="168" text-anchor="middle" fill="#15603f">remaining: structured exceptions</text>
+    <line x1="350" y1="154" x2="190" y2="196" stroke="#5b726d" marker-end="url(#a2)"/>
+    <line x1="550" y1="154" x2="710" y2="196" stroke="#5b726d" marker-end="url(#a2)"/>
+    <text x="240" y="172" fill="#1f7a52" font-weight="600">yes (counterexample)</text>
+    <text x="600" y="172" fill="#0b6466" font-weight="600">no</text>
 
-    <rect x="540" y="122" width="320" height="64" rx="10" fill="#e0f2f3" stroke="#b5dfe1"/>
-    <text x="700" y="148" text-anchor="middle" font-weight="600" fill="#0b6466">Dense certificates are beyond CF</text>
-    <text x="700" y="168" text-anchor="middle" fill="#0b6466">hard core = typical words</text>
+    <rect x="30" y="198" width="320" height="62" rx="10" fill="#e6f5ec" stroke="#9fd6b9"/>
+    <text x="190" y="223" text-anchor="middle" font-weight="600" fill="#15603f">A dense grammar certifies typical words</text>
+    <text x="190" y="243" text-anchor="middle" fill="#15603f">remaining: rare structured exceptions</text>
 
-    <line x1="200" y1="188" x2="200" y2="226" stroke="#5b726d" marker-end="url(#a2)"/>
-    <line x1="700" y1="188" x2="700" y2="226" stroke="#5b726d" marker-end="url(#a2)"/>
+    <rect x="550" y="198" width="320" height="62" rx="10" fill="#e0f2f3" stroke="#b5dfe1"/>
+    <text x="710" y="217" text-anchor="middle" font-weight="600" fill="#0b6466">T8_unamb (round 15)</text>
+    <text x="710" y="235" text-anchor="middle" fill="#0b6466">PR2 ✓ · one-sided ✓ · side mismatch · tails</text>
+    <text x="710" y="252" text-anchor="middle" fill="#0b6466">→ lift to polynomial ambiguity (n^{1/6} so far)</text>
 
-    <rect x="40" y="228" width="320" height="64" rx="10" fill="#fff" stroke="#9fd6b9"/>
-    <text x="200" y="254" text-anchor="middle" font-weight="600" fill="#15603f">Handle exceptions: L₆-type two-prime</text>
-    <text x="200" y="274" text-anchor="middle" fill="#15603f">combination + covers already known on slices</text>
+    <line x1="190" y1="262" x2="190" y2="296" stroke="#5b726d" marker-end="url(#a2)"/>
+    <line x1="710" y1="262" x2="710" y2="296" stroke="#5b726d" marker-end="url(#a2)"/>
 
-    <rect x="540" y="228" width="320" height="64" rx="10" fill="#fff" stroke="#b5dfe1"/>
-    <text x="700" y="254" text-anchor="middle" font-weight="600" fill="#0b6466">Lift to ambiguity: any poly grammar for Q</text>
-    <text x="700" y="274" text-anchor="middle" fill="#0b6466">must cover typical words ⇒ contradiction (via P_cop)</text>
+    <rect x="30" y="298" width="320" height="62" rx="10" fill="#fff" stroke="#9fd6b9"/>
+    <text x="190" y="322" text-anchor="middle" font-weight="600" fill="#15603f">Patch the exceptions with known gadgets</text>
+    <text x="190" y="342" text-anchor="middle" fill="#15603f">(tie family, two-prime cases like L₆)</text>
 
-    <line x1="200" y1="294" x2="200" y2="318" stroke="#5b726d" marker-end="url(#a2)"/>
-    <line x1="700" y1="294" x2="700" y2="318" stroke="#5b726d" marker-end="url(#a2)"/>
+    <rect x="550" y="298" width="320" height="62" rx="10" fill="#fff" stroke="#b5dfe1"/>
+    <text x="710" y="322" text-anchor="middle" font-weight="600" fill="#0b6466">Show EVERY grammar for Q must contain</text>
+    <text x="710" y="342" text-anchor="middle" fill="#0b6466">a dense fold-type part (via P_cop / EQ-2q)</text>
 
-    <rect x="60" y="320" width="280" height="50" rx="10" fill="#2e9e6b"/>
-    <text x="200" y="350" text-anchor="middle" font-weight="700" fill="#fff">YES: explicit grammar (refutes 1991 conj.)</text>
-    <rect x="560" y="320" width="280" height="50" rx="10" fill="#0f8b8d"/>
-    <text x="700" y="350" text-anchor="middle" font-weight="700" fill="#fff">NO: every grammar exponentially ambiguous</text>
+    <line x1="190" y1="362" x2="190" y2="400" stroke="#5b726d" marker-end="url(#a2)"/>
+    <line x1="710" y1="362" x2="710" y2="400" stroke="#5b726d" marker-end="url(#a2)"/>
+
+    <rect x="50" y="402" width="280" height="54" rx="10" fill="#2e9e6b"/>
+    <text x="190" y="425" text-anchor="middle" font-weight="700" fill="#fff">YES: explicit grammar</text>
+    <text x="190" y="444" text-anchor="middle" fill="#e6f5ec">would also refute the 1991 conjecture</text>
+    <rect x="570" y="402" width="280" height="54" rx="10" fill="#0f8b8d"/>
+    <text x="710" y="425" text-anchor="middle" font-weight="700" fill="#fff">NO: every grammar</text>
+    <text x="710" y="444" text-anchor="middle" fill="#e0f7f7">is exponentially ambiguous</text>
   </g>
 </svg>
 </div>
 <div class="grid2">
   <div class="card"><h3 style="color:var(--green-d)">Route to "yes"</h3>
-    <ol><li>Make a dense part of the fold certificate context-free (FOLD-COUNTER).</li><li>Combine primes without exposing witnesses (L₆ is the test case).</li><li>Union with the uniform single-prime grammars and the known covers; prove L(G) = Q for <i>all</i> lengths and bound the trees.</li></ol>
-    <p style="font-size:.88rem;color:var(--muted)">A "yes" would show Q is context-free, refuting a 35-year-old conjecture, so it would need extreme scrutiny.</p></div>
+    <ol><li>Find an unambiguous or polynomially ambiguous grammar inside G⁻ covering a positive share of rotations (this would refute T8_unamb).</li><li>Patch the rare exceptions: the tie family, and two-prime cases such as L₆.</li><li>Union with the uniform single-prime grammars; prove L(G) = Q for <i>all</i> lengths and bound the trees.</li></ol>
+    <p style="font-size:.88rem;color:var(--muted)">Evidence so far points the other way: 240k-grammar searches and every construction failed at the length coupling.</p></div>
   <div class="card"><h3 style="color:var(--teal-d)">Route to "no"</h3>
-    <ol><li>Prove dense fold-type certificates are not context-free, for a reason that generalises.</li><li>Use polynomial ambiguity (Wich's structure theory) to show any grammar for Q must contain such a certificate on typical words.</li><li>Conclude via P_cop: no polynomially ambiguous sandwich exists.</li></ol>
-    <p style="font-size:.88rem;color:var(--muted)">Step 2 is the hardest. Any argument that ignores ambiguity would prove Q isn't context-free, which is harder and not the target.</p></div>
+    <ol><li>Finish T8_unamb (two pieces left: side mismatch, heavier tails).</li><li>Lift it to polynomial ambiguity (PR2 already reaches multiplicity n<sup>1/6</sup>).</li><li>The hardest step: show any polynomially ambiguous grammar for Q must contain a dense fold-type sublanguage, or close P_cop / EQ-2q directly.</li></ol>
+    <p style="font-size:.88rem;color:var(--muted)">Step 3 is where the full difficulty lives. An argument that ignored ambiguity would prove Q isn't context-free, which is harder and not the target.</p></div>
 </div>
 </section>
 

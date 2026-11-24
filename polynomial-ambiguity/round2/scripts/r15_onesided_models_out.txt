@@ -1,0 +1,3 @@
+a*b|{a,b}    tokens=44 seqs=2796203 best (p,w,q) survives to length 11: ('bb', 'aa', 'aa', (12, 'not in G-', 'bbaaaabaabaa'))
+a*|{b,ab}    tokens=63 seqs=2396745 best (p,w,q) survives to length 9: ('bb', 'ba', 'aa', (10, 'not in G-', 'bbaaababaa'))
+D-|{a,b}     tokens=63 seqs=187520 best (p,w,q) survives to length 9: ('bb', 'aa', 'aa', (10, 'collision', 'bbababaaaa'))

@@ -348,3 +348,6 @@ T8_unamb remaining: (1) side mismatch (U-side block only V-level); (2) heavier t
 | Side mismatch (zero-drift / cosh-tilt) | R15-A, `R2/r15_side.md` |
 | Heavier tails −1−2^{−k} | R15-B, `R2/r15_tails.md` |
 | One-sided conditional-moment step | R15-C, `R2/r15_onesided.md` |
+- R15-C `reports/r15_onesided.md`: **Thm PR1s** (one-sided padding: U-level block + π(v≠ε)>0 + (T½) + G⁻ ⇒ ambiguous), written proof modulo the same DW survival bound as PR2; the conditional-moment step (Lemma CM, E[(s_m+1);τ_W>m] = O(m^{−1/6}√log m)) is proved by truncation plus Hoeffding, with no DW conditional limit. Also: one-tape U-level-only models (§4).
+- R15-C checks: `scripts/r15_onesided_moment.py` (DP m ≤ 128: M1·m^{1/6} → 0.35, J·m^{1/6}K^{1/2} ≈ 0.355, stable); `scripts/r15_onesided_models.py` (3 one-sided families, all (p,w,q) with |·| ≤ 2: each fails by n ≤ 12). Closes r13 §6.3 / audit_r14 C1. T8_unamb is still OPEN.
+- R15-A side (`reports/r15_side.md`): **side mismatch CLOSED [written proof]**. Thm SM: if D ≤ M on L(Y) (Y in critical nonlinear SCC), potential h makes every C*-rule slack 0 (slack rule ⇒ radius >½ by PF-strict + Hoeffding), so e=0 is attained; hence U-side heavy ⇒ U-(log-)level, mirror V. Checks: all 18,746 Polish grammars (4 bounded ⇒ D const). Open: one-sided, tails, T8_unamb.
