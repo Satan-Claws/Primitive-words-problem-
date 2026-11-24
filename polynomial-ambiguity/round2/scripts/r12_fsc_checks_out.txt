@@ -1,0 +1,7 @@
+A: pointwise max attained (unique) for E_l, D_l, l<=20: True; xhat_8=bbababaa
+B: monotone reduction, 23814 (s,t,l) triples, mismatches=0, safe triples=3622
+C: contexts (|s|,|t|<=5) with s(E u E+)_l t in G- for all l<=14: 0
+D: (p,w,q)=(b,,a) N<=20: words=2057 G-violations=0 ambiguous words=2055 max mult=17
+D: (p,w,q)=(bb,ab,aa) N<=20: words=1244 G-violations=0 ambiguous words=562 max mult=6
+D: (p,w,q)=(b,b,a) N<=20: words=2056 G-violations=0 ambiguous words=1429 max mult=8
+D: (p,w,q)=(bb,aab,aa) N<=20: words=562 G-violations=0 ambiguous words=74 max mult=3

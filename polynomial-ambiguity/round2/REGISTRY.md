@@ -307,3 +307,10 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 | FSC rigidity (CF-shaped pair models) | R12-A, `R2/r12_fsc.md` |
 | Consolidated research note (rounds 2-11) + RESULTS_INDEX update | R12-B, `round2/RESEARCH_NOTE.md` |
 - R12-B (`round2/RESEARCH_NOTE.md`, 831 lines): consolidated note for rounds 2–11 (statements with unchanged labels, three open cores, blocked routes, data, errata incl. 10 name collisions §6.8); `RESULTS_INDEX.md` §11 added (+ pointers in two existing rows). [assessment] no new results.
+- R12-A FSC rigidity (`reports/r12_fsc.md`): NOT proved, no counterexample. Lemma SF [proof]: blocks with a realised context are fold-oriented (E⁺/high excursions impossible). Lemma Env+Ori ⇒ No-go 4 [proof + check]: for Dyck-oriented blocks (E, D⁻) substitution ≡ one flat word, so the high/low lever is void and G⁻ sees only block lengths.
+  Prop HS [proof + check N≤20]: height-coupled FSC models (e.g. {(bEⁱ,Eʲa)}, No-go 2) are ambiguous via centre slide (≤ n+1 parses). Exact gap: "padding rigidity" for couplings richer than additive height. Script `scripts/r12_fsc_checks.py`.
+
+**Round 12 synthesis (root).** Consolidated note written (`round2/RESEARCH_NOTE.md`, RESULTS_INDEX §11).
+FSC rigidity (`R2/r12_fsc.md`): Lemma SF (self-fold) kills blocks with high excursions; No-go 4 (Env + Ori): for Dyck-oriented blocks, G⁻ membership depends
+only on block lengths, so swapping high/low excursions cannot violate it; Prop HS: additive-height couplings are ambiguous (≤ n+1 parses, no poly lift).
+Exact gap: "padding rigidity" (non-injectivity when the coupling carries more than additive height). T8_unamb still open.
