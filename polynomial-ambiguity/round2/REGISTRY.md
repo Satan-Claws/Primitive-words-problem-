@@ -306,3 +306,4 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 |---|---|
 | FSC rigidity (CF-shaped pair models) | R12-A, `R2/r12_fsc.md` |
 | Consolidated research note (rounds 2-11) + RESULTS_INDEX update | R12-B, `round2/RESEARCH_NOTE.md` |
+- R12-B (`round2/RESEARCH_NOTE.md`, 831 lines): consolidated note for rounds 2–11 (statements with unchanged labels, three open cores, blocked routes, data, errata incl. 10 name collisions §6.8); `RESULTS_INDEX.md` §11 added (+ pointers in two existing rows). [assessment] no new results.
