@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Primitive Words Campaign</title>
+<style>
+:root{
+  --bg:#ffffff; --bg2:#f3faf8; --fg:#10302b; --muted:#5b726d; --line:#d5e9e4;
+  --teal:#0f8b8d; --teal-d:#0b6466; --green:#2e9e6b; --green-d:#1f7a52; --mint:#e3f4ee; --aqua:#dff3f4;
+  --ajax:#2e9e6b; --ajax-bg:#e6f5ec; --sc:#0f8b8d; --sc-bg:#e0f2f3;
+  --warn:#b7791f; --warn-bg:#fdf5e6; --bad:#c0392b; --bad-bg:#fbeceb;
+  --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --shadow: 0 1px 2px rgba(16,48,43,.05), 0 4px 16px rgba(16,48,43,.05);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif}
+a{color:var(--teal-d)}
+.hero{background:linear-gradient(135deg,#0f8b8d 0%,#2e9e6b 100%);color:#fff;padding:44px 16px 36px}
+.hero .in{max-width:1000px;margin:0 auto}
+.hero h1{margin:0 0 8px;font-size:2rem;line-height:1.2;letter-spacing:-.01em}
+.hero p{margin:6px 0;opacity:.95;max-width:760px}
+.hero .pills{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.hero .pill{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:3px 12px;font-size:.85rem}
+nav{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav .in{max-width:1000px;margin:0 auto;padding:8px 16px;display:flex;gap:4px;overflow-x:auto}
+nav a{white-space:nowrap;text-decoration:none;color:var(--muted);font-size:.9rem;padding:6px 10px;border-radius:8px}
+nav a:hover{background:var(--mint);color:var(--teal-d)}
+main{max-width:1000px;margin:0 auto;padding:8px 16px 72px}
+section{scroll-margin-top:56px}
+h2{font-size:1.4rem;margin:44px 0 6px;color:var(--teal-d)}
+h2 small{display:block;font-size:.9rem;font-weight:400;color:var(--muted);margin-top:2px}
+h3{font-size:1.05rem;margin:14px 0 6px}
+p{margin:8px 0}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:12px 0;box-shadow:var(--shadow)}
+.soft{background:var(--bg2)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:760px){.grid2,.grid3{grid-template-columns:1fr}}
+code,.m{font-family:var(--mono);font-size:.9em;background:var(--mint);padding:1px 5px;border-radius:4px}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap;vertical-align:middle}
+.t-ajax{background:var(--ajax-bg);color:var(--green-d);border:1px solid #bfe5cf}
+.t-sc{background:var(--sc-bg);color:var(--teal-d);border:1px solid #b5dfe1}
+.t-aud{background:#e3f4ee;color:var(--green-d)}
+.t-wp{background:var(--warn-bg);color:var(--warn)}
+.t-lean{background:#d7f0e3;color:#15603f}
+.t-open{background:var(--bad-bg);color:var(--bad)}
+.t-comp{background:#eef2f1;color:var(--muted)}
+.callout{border-left:4px solid var(--teal);background:var(--aqua);padding:12px 16px;border-radius:0 10px 10px 0;margin:12px 0}
+.callout.g{border-color:var(--green);background:var(--mint)}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.03em}
+.scroll{overflow-x:auto}
+ul,ol{margin:6px 0 6px 20px;padding:0} li{margin:4px 0}
+/* timeline */
+.tl{position:relative;margin:16px 0 0 8px;padding-left:22px;border-left:2px solid var(--line)}
+.tl .it{position:relative;margin:0 0 18px}
+.tl .it::before{content:"";position:absolute;left:-30px;top:6px;width:14px;height:14px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--line)}
+.tl .it.a::before{background:var(--ajax)} .tl .it.s::before{background:var(--sc)}
+.tl .h{font-weight:650}
+.tl .d{color:var(--muted);font-size:.85rem}
+/* bars */
+.bar{display:flex;height:26px;border-radius:8px;overflow:hidden;border:1px solid var(--line);margin:8px 0}
+.bar div{display:flex;align-items:center;justify-content:center;color:#fff;font-size:.78rem;font-weight:600;white-space:nowrap}
+/* open questions */
+details{border:1px solid var(--line);border-radius:12px;margin:10px 0;background:#fff;box-shadow:var(--shadow)}
+summary{cursor:pointer;padding:14px 16px;font-weight:600;list-style:none;display:flex;gap:10px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary .n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-size:.85rem}
+details[open] summary{border-bottom:1px solid var(--line)}
+details .body{padding:12px 16px}
+.yn{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+@media (max-width:640px){.yn{grid-template-columns:1fr}}
+.yn div{border-radius:10px;padding:10px 12px;font-size:.92rem}
+.yn .y{background:var(--mint)} .yn .no{background:var(--aqua)}
+/* demo */
+.demo input{width:100%;font:1rem var(--mono);padding:10px 12px;border:1px solid var(--line);border-radius:10px;outline:none}
+.demo input:focus{border-color:var(--teal);box-shadow:0 0 0 3px var(--aqua)}
+.demo .row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.demo button{font:inherit;font-size:.85rem;border:1px solid var(--line);background:var(--bg2);color:var(--teal-d);border-radius:8px;padding:5px 10px;cursor:pointer}
+.demo button:hover{background:var(--mint)}
+.verdicts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media (max-width:640px){.verdicts{grid-template-columns:1fr}}
+.verdicts div{border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:.9rem}
+.verdicts b{display:block;font-size:1.05rem}
+.ok{color:var(--green-d)} .bad{color:var(--bad)}
+#chart{width:100%;height:auto;display:block}
+.word{font-family:var(--mono);letter-spacing:.1em;overflow-wrap:anywhere}
+.foot{color:var(--muted);font-size:.85rem;margin-top:48px;border-top:1px solid var(--line);padding-top:14px}
+svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif}
+</style>
+</head>
+<body>
+
+<header class="hero"><div class="in">
+  <h1>Primitive words and polynomially ambiguous grammars</h1>
+  <p>Can a context-free grammar generate exactly the primitive words while giving every word only polynomially many parse trees?</p>
+  <p style="opacity:.85;font-size:.92rem">Status snapshot · 24 Nov 2026 · round 6 in progress</p>
+  <div class="pills">
+    <span class="pill">Status: open</span>
+    <span class="pill">Conjectured answer: no</span>
+    <span class="pill">6 rounds · ≈35 agents · 5 gated audits</span>
+  </div>
+</div></header>
+
+<nav><div class="in">
+  <a href="#problem">Problem</a><a href="#who">Who did what</a><a href="#idea">The idea</a><a href="#timeline">Timeline</a>
+  <a href="#results">Results</a><a href="#demo">Fold demo</a><a href="#open">Open questions</a><a href="#path">Path to solution</a><a href="#files">Files</a>
+</div></nav>
+
+<main>
+
+<!-- PROBLEM -->
+<section id="problem">
+<h2>1. The problem<small>What exactly is being asked</small></h2>
+<div class="grid2">
+  <div class="card">
+    <h3>Primitive words</h3>
+    <p>A word is <b>primitive</b> if it is not a repetition of a shorter word.</p>
+    <ul>
+      <li><code>aab</code>, <code>abaab</code>: primitive</li>
+      <li><code>abab</code> = (ab)², <code>aaa</code> = a³: not primitive</li>
+    </ul>
+    <p><b>Q</b> = the set of primitive words over {a, b}. Almost every word is primitive; the non-primitive ones are rare but structured.</p>
+  </div>
+  <div class="card">
+    <h3>Ambiguity</h3>
+    <p>A grammar may derive one word in many ways. G is <b>polynomially ambiguous</b> if every word w has ≤ C·|w|ᵏ parse trees, for constants C and k of the grammar.</p>
+    <p><b>Question:</b> is there such a G with L(G) = Q?</p>
+    <p class="m" style="background:none;padding:0;color:var(--muted)">Wich's dichotomy: every grammar is either polynomially or exponentially ambiguous, so "no" means "every grammar for Q is exponentially ambiguous".</p>
+  </div>
+</div>
+<div class="callout">
+  <b>Context.</b> Whether Q is context-free <i>at all</i> is a famous open problem (Dömösi–Horváth–Ito, 1991). Known: Q is not unambiguous (Petersen 1996), and not finitely ambiguous (proved in this repo, Lean-checked).
+  Polynomial ambiguity is the next rung on that ladder: it is strictly harder to rule out than finite ambiguity, and strictly easier than settling context-freeness.
+</div>
+<div class="card soft">
+  <h3>The ladder</h3>
+  <svg viewBox="0 0 900 120" role="img" aria-label="Ambiguity ladder">
+    <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#5b726d"/></marker></defs>
+    <g font-size="13">
+      <rect x="5" y="30" width="160" height="56" rx="10" fill="#d7f0e3" stroke="#9fd6b9"/><text x="85" y="54" text-anchor="middle" font-weight="600" fill="#15603f">unambiguous</text><text x="85" y="73" text-anchor="middle" fill="#15603f">ruled out (1996)</text>
+      <rect x="190" y="30" width="170" height="56" rx="10" fill="#d7f0e3" stroke="#9fd6b9"/><text x="275" y="54" text-anchor="middle" font-weight="600" fill="#15603f">finitely ambiguous</text><text x="275" y="73" text-anchor="middle" fill="#15603f">ruled out (Lean)</text>
+      <rect x="385" y="22" width="200" height="72" rx="10" fill="#0f8b8d"/><text x="485" y="52" text-anchor="middle" font-weight="700" fill="#fff">polynomially ambiguous</text><text x="485" y="72" text-anchor="middle" fill="#e0f7f7">THIS PROBLEM: open</text>
+      <rect x="610" y="30" width="130" height="56" rx="10" fill="#fff" stroke="#d5e9e4"/><text x="675" y="54" text-anchor="middle" font-weight="600">exponentially</text><text x="675" y="73" text-anchor="middle" fill="#5b726d">ambiguous</text>
+      <rect x="765" y="30" width="130" height="56" rx="10" fill="#fff" stroke="#d5e9e4" stroke-dasharray="4 3"/><text x="830" y="54" text-anchor="middle" font-weight="600">context-free?</text><text x="830" y="73" text-anchor="middle" fill="#5b726d">open since 1991</text>
+      <line x1="167" y1="58" x2="186" y2="58" stroke="#5b726d" marker-end="url(#ar)"/>
+      <line x1="362" y1="58" x2="381" y2="58" stroke="#5b726d" marker-end="url(#ar)"/>
+      <line x1="587" y1="58" x2="606" y2="58" stroke="#5b726d" marker-end="url(#ar)"/>
+      <line x1="742" y1="58" x2="761" y2="58" stroke="#5b726d" marker-end="url(#ar)"/>
+      <text x="450" y="114" text-anchor="middle" fill="#5b726d" font-size="12">each step to the right allows more ambiguous grammars; ruling out a rung is harder the further right it is</text>
+    </g>
+  </svg>
+</div>
+</section>
+
+<!-- WHO -->
+<section id="who">
+<h2>2. Who did what<small>Based on the git history of the repository and the fork</small></h2>
+<div class="grid2">
+  <div class="card" style="border-top:4px solid var(--ajax)">
+    <h3><span class="tag t-ajax">ajax</span> &nbsp;Original repository <code>ajax711/Primitive-words-problem-</code></h3>
+    <p class="m" style="background:none;padding:0;color:var(--muted)">15–19 Nov 2026 · 143 commits (137 from Claude agent sessions, 6 by shobhit)</p>
+    <ul>
+      <li>Context-free campaigns: briefing, agent reports, a Lean statement of the conjecture</li>
+      <li><b>Finite ambiguity resolved</b>: no finitely ambiguous grammar for Q, with a complete <b>Lean 4 proof</b> and audits</li>
+      <li>LIPIcs / LICS manuscript of the finite-ambiguity theorem</li>
+      <li>Infinite-ambiguity investigations (Codex; Claude rounds 4–5)</li>
+      <li>First polynomial-ambiguity campaign: <b>Theorem P</b>, the slice candidate <b>S_N</b>, Lemma 3P and the "core toolkit"</li>
+      <li><code>RESULTS_INDEX.md</code> and the round-2 brief <code>prompt.md</code></li>
+    </ul>
+  </div>
+  <div class="card" style="border-top:4px solid var(--sc)">
+    <h3><span class="tag t-sc">satan-claws</span> &nbsp;This session, fork <code>Satan-Claws/Primitive-words-problem-</code></h3>
+    <p class="m" style="background:none;padding:0;color:var(--muted)">24 Nov 2026 · 38+ commits · rounds 2–6 of the polynomial-ambiguity campaign</p>
+    <ul>
+      <li>Round 2: <b>audited</b> results that block the S_N slice route (ply-1 transport tiling; bounded-data pair facets)</li>
+      <li>Reconstruction of the ajax-era foundations (Lemma 3P confirmed, Lemma F repaired)</li>
+      <li>Round 3: uniformity theorems (W, X, R), Lemma I2 (audited), uniform grammars for single primes</li>
+      <li>Round 4: <b>strategy change</b>: bottom-up coverage loop, literature check, Prop H (audited)</li>
+      <li>Round 5: <b>interval-fold certificate</b> (Lemma F, density ≈ 0.61) and density barriers</li>
+      <li>Round 6 (running): FOLD-COUNTER</li>
+    </ul>
+  </div>
+</div>
+<div class="card soft">
+  <h3>Commit share</h3>
+  <div class="bar"><div style="flex:143;background:var(--ajax)">ajax · 143</div><div style="flex:38;background:var(--sc)">satan-claws · 38+</div></div>
+  <p style="font-size:.88rem;color:var(--muted)">satan-claws builds directly on ajax's toolkit. Every round-2+ result either uses, tests or overturns something from the original repository.</p>
+</div>
+</section>
+
+<!-- IDEA -->
+<section id="idea">
+<h2>3. What the idea is<small>The mechanism behind both directions</small></h2>
+<div class="card">
+  <h3>Primitivity is a "for every prime" statement</h3>
+  <p>A word w is not primitive exactly when <b>w = vᵖ for a prime p dividing gcd(#a, #b)</b>. So a proof that w is primitive must, <b>for every such prime p</b>, show that w is not a p-th power.</p>
+  <p>For <i>one</i> fixed prime this is easy for a grammar: point to one mismatch between positions i and i + n/p. The grammar enforces the distance with an outside:inside length ratio of (p−1):1. Ambiguity is linear.</p>
+</div>
+<div class="grid3">
+  <div class="card"><span class="tag t-ajax">ajax's plan</span><h3>Force a blow-up on slices</h3><p>Pick special families of words, slices <code>(ab*)ⁿ</code> with n = (product of first N primes)², where certifying every prime seems to need superpolynomially many overlapping parse trees.</p></div>
+  <div class="card"><span class="tag t-sc">round 2 finding</span><h3>Slices don't blow up</h3><p>Those slices <b>can</b> be covered with overlap 1 (transport tiling), using pieces a fixed grammar could produce. The slice route cannot prove "no". <span class="tag t-aud">audited</span></p></div>
+  <div class="card"><span class="tag t-sc">rounds 3–5 finding</span><h3>The crux is uniformity</h3><p>The real constraint is that <b>one grammar must work for every length</b>. A grammar can't expose certificates for two primes, or for a varying prime. The words that are actually hard are <b>typical random words</b>.</p></div>
+</div>
+<div class="callout g">
+  <b>Current working picture.</b> Every certificate a context-free grammar can obviously check (letter-count relations, factor counts, folds) covers only a <b>vanishing fraction</b> (~n<sup>−1/2</sup>) of words.
+  The single exception found is the <b>interval-fold certificate</b>: it compares the a-counts of the prefix and suffix of the same length k. If w = uᵖ, at k = ⌊p/2⌋·n/p the prefix and suffix are equal, and ⌊p/2⌋/p always lies in [1/3, 1/2]. So <b>one window checks every prime at once</b> and covers about 61% of words.
+  But it needs a counter running along a fold, which may be beyond context-free grammars. Whether it can be made context-free is the question everything now turns on.
+</div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+<h2>4. Timeline<small>Green dots = ajax, teal dots = satan-claws</small></h2>
+<div class="tl">
+  <div class="it a"><div class="h">Context-free campaigns <span class="tag t-ajax">ajax</span></div><div class="d">15–17 Nov</div>Agent investigations of whether Q is context-free; red-team reviews; Q is not linear and not in FR; exponential total excess.</div>
+  <div class="it a"><div class="h">Finite ambiguity resolved <span class="tag t-ajax">ajax</span> <span class="tag t-lean">Lean-checked</span></div><div class="d">17–18 Nov</div>No finitely ambiguous grammar generates Q; a word in slice R_m needs ≥ ⌈m/2⌉ trees. Full Lean 4 proof; LICS manuscript.</div>
+  <div class="it a"><div class="h">Polynomial ambiguity, campaign 1 <span class="tag t-ajax">ajax</span></div><div class="d">18–19 Nov</div>Theorem P (ambiguity ≥ Ω(√(log L/log log L))); Lemma 3P (slice structure); candidate S_N; reduced to TILE_k + G3**.</div>
+  <div class="it s"><div class="h">Round 2: test the slice plan <span class="tag t-sc">satan-claws</span></div><div class="d">24 Nov, 00:11–01:36 UTC</div>TILE_k holds with ply 1 <span class="tag t-aud">audited</span>; bounded-data version <span class="tag t-aud">audited</span>; no other slice family escapes; foundations reconstructed.</div>
+  <div class="it s"><div class="h">Round 3: uniformity <span class="tag t-sc">satan-claws</span></div><div class="d">01:46–02:40</div>Lemma I2 <span class="tag t-aud">audited</span>; Theorems W, X; uniform grammars for single primes and G_fold; L₆ has a rational generating function.</div>
+  <div class="it s"><div class="h">Round 4: strategy change <span class="tag t-sc">satan-claws</span></div><div class="d">~02:50–03:40</div>Bottom-up coverage loop: the hard core is generic words. Literature verified (per-n only). Prop H reduction chain <span class="tag t-aud">audited</span>.</div>
+  <div class="it s"><div class="h">Round 5: dense certificates <span class="tag t-sc">satan-claws</span></div><div class="d">03:17–~04:00</div>Interval-fold certificate (density ≈ 0.61, a variant gets close to 1). Count-based certificates capped at O(n<sup>−1/2</sup>).</div>
+  <div class="it s"><div class="h">Round 6: FOLD-COUNTER <span class="tag t-sc">satan-claws</span> <span class="tag t-open">running</span></div><div class="d">now</div>One agent builds a context-free dense fold certificate; one tries to prove none exists.</div>
+</div>
+</section>
+
+<!-- RESULTS -->
+<section id="results">
+<h2>5. Results scoreboard<small>Status labels follow the repo's convention</small></h2>
+<div class="card scroll">
+<table>
+<tr><th>Result</th><th>What it says</th><th>By</th><th>Status</th></tr>
+<tr><td>Not finitely ambiguous</td><td>Every grammar for Q has unbounded ambiguity</td><td><span class="tag t-ajax">ajax</span></td><td><span class="tag t-lean">Lean-checked</span></td></tr>
+<tr><td>Theorem P</td><td>Ambiguity ≥ Ω(√(log L / log log L))</td><td><span class="tag t-ajax">ajax</span></td><td><span class="tag t-wp">written proof</span> (reconstructed)</td></tr>
+<tr><td>Lemma 3P</td><td>On a slice, a grammar = a laminar cover by vector-partition pieces</td><td><span class="tag t-ajax">ajax</span></td><td><span class="tag t-wp">written proof</span> (confirmed)</td></tr>
+<tr><td>TILE_k with ply 1</td><td>Slice regions tile with overlap exactly 1 (min-cost transport)</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
+<tr><td>Pair facets (K = 2)</td><td>…using pieces a fixed grammar could produce</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> near U</td></tr>
+<tr><td>Lemma I2</td><td>≤ 2N non-adjacent witness positions cover all primes</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
+<tr><td>Prop H</td><td>A grammar for one fixed-prime class ⇒ coprime sandwich P_cop</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
+<tr><td>Theorems W, X, R, V</td><td>Exposed certificates for 2 primes, or a varying prime, are impossible</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
+<tr><td>NonPow<sub>p</sub> grammar</td><td>"Not a p-th power" with exactly linear ambiguity, one grammar for all lengths</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
+<tr><td>Theorem U</td><td>No unambiguous language between the coprime words and Q</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
+<tr><td>Prop P / Theorem P_K</td><td>Count-based CF certificates cover ≤ O(n<sup>−1/2</sup>) of words</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
+<tr><td>Lemma F (interval fold)</td><td>Sound certificate, density ≈ 0.61 (variant → 1)</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span>; CF-ness <span class="tag t-open">open</span></td></tr>
+<tr><td>Coverage loop</td><td>Uniform gadgets cover all primitive words of length ≤ 28 except a few thousand</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-comp">computational</span> + <span class="tag t-aud">soundness audited</span></td></tr>
+</table>
+</div>
+
+<div class="card">
+  <h3>Coverage of random words by the uniform gadget library</h3>
+  <p style="font-size:.9rem;color:var(--muted)">Fraction of random words of length n that some known uniform, sound certificate covers (Monte Carlo, round 4). It falls like n<sup>−1/2</sup>. The interval fold (dashed) stays near 0.61, but isn't yet known to be context-free.</p>
+  <svg id="cov" viewBox="0 0 640 260" role="img" aria-label="Coverage chart">
+    <g font-size="11" fill="#5b726d">
+      <line x1="50" y1="220" x2="620" y2="220" stroke="#d5e9e4"/>
+      <line x1="50" y1="20" x2="50" y2="220" stroke="#d5e9e4"/>
+      <text x="44" y="224" text-anchor="end">0</text><text x="44" y="124" text-anchor="end">0.5</text><text x="44" y="24" text-anchor="end">1</text>
+      <line x1="50" y1="120" x2="620" y2="120" stroke="#eef6f4"/>
+    </g>
+    <g id="covg"></g>
+  </svg>
+</div>
+</section>
+
+<!-- DEMO -->
+<section id="demo">
+<h2>6. Try the fold certificate<small>Type a word over {a, b}. Everything is computed locally in your browser.</small></h2>
+<div class="card demo">
+  <input id="w" value="aababbabab" spellcheck="false" autocomplete="off" aria-label="word">
+  <div class="row">
+    <button data-w="abab">abab</button><button data-w="abaababaab">abaababaab</button><button data-w="aababbabab">aababbabab</button>
+    <button data-w="aabaabaab">aabaabaab</button><button data-w="abbabaabbaba">abbabaabbaba</button><button id="rnd">random (n=40)</button>
+  </div>
+  <div class="verdicts">
+    <div>Primitive?<b id="vp">–</b></div>
+    <div>Fold certificate (F_K)<b id="vf">–</b></div>
+    <div>Length · gcd(#a,#b)<b id="vg">–</b></div>
+  </div>
+  <svg id="chart" viewBox="0 0 640 220" role="img" aria-label="d_k chart"></svg>
+  <p style="font-size:.88rem;color:var(--muted)">The chart plots d<sub>k</sub> = #a(first k letters) − #a(last k letters) for k = 1…⌊n/2⌋. The teal band is the window [n/3, n/2]. The certificate accepts if d<sub>k</sub> never hits 0 inside the band.
+  It is sound: for w = uᵖ, d<sub>k</sub> = 0 at k = ⌊p/2⌋·n/p, which always lies in the band. It is not complete: some primitive words cross zero in the band and must be certified some other way.</p>
+</div>
+</section>
+
+<!-- OPEN -->
+<section id="open">
+<h2>7. Open questions<small>Ranked by how directly they move the problem</small></h2>
+
+<details open><summary><span class="n">1</span>FOLD-COUNTER: is a dense part of the fold certificate context-free?<span class="tag t-open" style="margin-left:auto">round 6</span></summary><div class="body">
+<p>Is there a polynomially ambiguous CFG L ⊆ Q covering a positive fraction of words, built from the interval-fold idea? A grammar can generate the fold (pairs of letters from both ends) and run a finite automaton over the pairs for free. The obstacle is the <i>counter</i>: "d<sub>k</sub> ≠ 0 across the window" needs unbounded memory alongside the fold.</p>
+<div class="yn"><div class="y"><b>If yes:</b> sound polynomial grammars cover most typical words. The "generic words are hard" heuristic dies, and the remaining difficulty is the structured exceptions. That moves the problem toward "yes".</div><div class="no"><b>If no, for a robust reason</b> ("fold + counter is never CF on dense sets"): the strongest negative lead so far. It explains why every known certificate stays at density → 0.</div></div>
+</div></details>
+
+<details><summary><span class="n">2</span>P_cop: the minimal sandwich</summary><div class="body">
+<p>Is there a polynomially ambiguous language that contains <b>every</b> word whose letter counts are coprime and contains only primitive words? By Prop H (audited) this is the weakest statement in the chain:</p>
+<p class="m" style="background:none;padding:0">grammar for Q ⇒ Q∩{gcd = prime power} ⇒ Q∩{gcd = p} ⇒ P_cop</p>
+<div class="yn"><div class="y"><b>If P_cop holds:</b> nothing follows directly. It is a necessary condition only.</div><div class="no"><b>If P_cop fails:</b> the problem is solved as <b>no</b>. The proof must use the ambiguity bound, since pumping alone would prove Q isn't CF.</div></div>
+</div></details>
+
+<details><summary><span class="n">3</span>L₆: the smallest two-prime test</summary><div class="body">
+<p>Words of length 6m that are neither squares nor cubes. Each condition alone has a linear-ambiguity grammar; together, no grammar is known. Its generating function is rational, so counting arguments can't decide it.</p>
+<div class="yn"><div class="y"><b>If L₆ has a polynomial grammar:</b> it gives a template for combining primes, the core affirmative mechanism.</div><div class="no"><b>If not:</b> a clean obstruction, though it doesn't transfer to Q automatically (L₆ ≠ Q ∩ lengths 6ℕ).</div></div>
+</div></details>
+
+<details><summary><span class="n">4</span>NONUNIF: can one grammar realise the slice covers for every length?</summary><div class="body">
+<p>Every slice has a low-overlap cover (audited), but the covers we know are built separately for each n. Whether a single finite grammar can produce them for all n is equivalent to the slice-based negative statement. Two attempts (Theorem R, forbidden exchange) collapsed to known routes.</p>
+</div></details>
+
+<details><summary><span class="n">5</span>SPREAD-JOINT: the last per-slice gap</summary><div class="body">
+<p>A family of spread facets whose witness chords don't cross, covering mixed-type defects. It would finish blocking S_N completely, but can't resolve the problem alone.</p>
+</div></details>
+</section>
+
+<!-- PATH -->
+<section id="path">
+<h2>8. How this leads to a solution<small>Two routes, one decision point</small></h2>
+<div class="card soft">
+<svg viewBox="0 0 900 380" role="img" aria-label="Roadmap">
+  <defs>
+    <marker id="a2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#5b726d"/></marker>
+  </defs>
+  <g font-size="13">
+    <rect x="330" y="10" width="240" height="58" rx="12" fill="#0f8b8d"/>
+    <text x="450" y="35" text-anchor="middle" font-weight="700" fill="#fff">FOLD-COUNTER</text>
+    <text x="450" y="54" text-anchor="middle" fill="#e0f7f7">dense fold certificate in CF?</text>
+
+    <line x1="390" y1="70" x2="200" y2="120" stroke="#5b726d" marker-end="url(#a2)"/>
+    <line x1="510" y1="70" x2="700" y2="120" stroke="#5b726d" marker-end="url(#a2)"/>
+    <text x="270" y="92" fill="#1f7a52" font-weight="600">yes</text>
+    <text x="610" y="92" fill="#0b6466" font-weight="600">no (robustly)</text>
+
+    <rect x="40" y="122" width="320" height="64" rx="10" fill="#e6f5ec" stroke="#9fd6b9"/>
+    <text x="200" y="148" text-anchor="middle" font-weight="600" fill="#15603f">Most words certified by one grammar</text>
+    <text x="200" y="168" text-anchor="middle" fill="#15603f">remaining: structured exceptions</text>
+
+    <rect x="540" y="122" width="320" height="64" rx="10" fill="#e0f2f3" stroke="#b5dfe1"/>
+    <text x="700" y="148" text-anchor="middle" font-weight="600" fill="#0b6466">Dense certificates are beyond CF</text>
+    <text x="700" y="168" text-anchor="middle" fill="#0b6466">hard core = typical words</text>
+
+    <line x1="200" y1="188" x2="200" y2="226" stroke="#5b726d" marker-end="url(#a2)"/>
+    <line x1="700" y1="188" x2="700" y2="226" stroke="#5b726d" marker-end="url(#a2)"/>
+
+    <rect x="40" y="228" width="320" height="64" rx="10" fill="#fff" stroke="#9fd6b9"/>
+    <text x="200" y="254" text-anchor="middle" font-weight="600" fill="#15603f">Handle exceptions: L₆-type two-prime</text>
+    <text x="200" y="274" text-anchor="middle" fill="#15603f">combination + covers already known on slices</text>
+
+    <rect x="540" y="228" width="320" height="64" rx="10" fill="#fff" stroke="#b5dfe1"/>
+    <text x="700" y="254" text-anchor="middle" font-weight="600" fill="#0b6466">Lift to ambiguity: any poly grammar for Q</text>
+    <text x="700" y="274" text-anchor="middle" fill="#0b6466">must cover typical words ⇒ contradiction (via P_cop)</text>
+
+    <line x1="200" y1="294" x2="200" y2="318" stroke="#5b726d" marker-end="url(#a2)"/>
+    <line x1="700" y1="294" x2="700" y2="318" stroke="#5b726d" marker-end="url(#a2)"/>
+
+    <rect x="60" y="320" width="280" height="50" rx="10" fill="#2e9e6b"/>
+    <text x="200" y="350" text-anchor="middle" font-weight="700" fill="#fff">YES: explicit grammar (refutes 1991 conj.)</text>
+    <rect x="560" y="320" width="280" height="50" rx="10" fill="#0f8b8d"/>
+    <text x="700" y="350" text-anchor="middle" font-weight="700" fill="#fff">NO: every grammar exponentially ambiguous</text>
+  </g>
+</svg>
+</div>
+<div class="grid2">
+  <div class="card"><h3 style="color:var(--green-d)">Route to "yes"</h3>
+    <ol><li>Make a dense part of the fold certificate context-free (FOLD-COUNTER).</li><li>Combine primes without exposing witnesses (L₆ is the test case).</li><li>Union with the uniform single-prime grammars and the known covers; prove L(G) = Q for <i>all</i> lengths and bound the trees.</li></ol>
+    <p style="font-size:.88rem;color:var(--muted)">A "yes" would show Q is context-free, refuting a 35-year-old conjecture, so it would need extreme scrutiny.</p></div>
+  <div class="card"><h3 style="color:var(--teal-d)">Route to "no"</h3>
+    <ol><li>Prove dense fold-type certificates are not context-free, for a reason that generalises.</li><li>Use polynomial ambiguity (Wich's structure theory) to show any grammar for Q must contain such a certificate on typical words.</li><li>Conclude via P_cop: no polynomially ambiguous sandwich exists.</li></ol>
+    <p style="font-size:.88rem;color:var(--muted)">Step 2 is the hardest. Any argument that ignores ambiguity would prove Q isn't context-free, which is harder and not the target.</p></div>
+</div>
+</section>
+
+<!-- FILES -->
+<section id="files">
+<h2>9. Where things live</h2>
+<div class="card">
+<table>
+<tr><th>What</th><th>Path (in the repo)</th></tr>
+<tr><td>Summary of rounds 2–5</td><td><code>polynomial-ambiguity/round2/STOP_REPORT.md</code></td></tr>
+<tr><td>Running log + syntheses</td><td><code>polynomial-ambiguity/round2/REGISTRY.md</code></td></tr>
+<tr><td>Agent reports and audits</td><td><code>polynomial-ambiguity/round2/reports/</code></td></tr>
+<tr><td>Campaign brief (ajax)</td><td><code>polynomial-ambiguity/round2/prompt.md</code></td></tr>
+<tr><td>Index of all earlier results (ajax)</td><td><code>RESULTS_INDEX.md</code></td></tr>
+<tr><td>Lean proof of finite ambiguity (ajax)</td><td><code>finitely-ambiguous/lean/</code></td></tr>
+</table>
+<p style="font-size:.88rem;color:var(--muted)">Local clone: <code>~/Desktop/Test4/Primitive-words-problem-</code> · branch <code>claude/magical-allen-ch9hzl</code> · pushed to fork <code>Satan-Claws/Primitive-words-problem-</code></p>
+</div>
+<p class="foot">Labels: <span class="tag t-lean">Lean-checked</span> machine-verified · <span class="tag t-aud">audited</span> written proof plus an independent red-team audit · <span class="tag t-wp">written proof</span> not audited · <span class="tag t-comp">computational</span> evidence only · <span class="tag t-open">open</span> unresolved.
+Attribution is based on the commit history: the ajax711 repository up to 19 Nov, and this session's commits pushed to the Satan-Claws fork.</p>
+</section>
+
+</main>
+
+<script>
+(function(){
+  // coverage chart
+  var pts=[[256,.84],[1024,.56],[4096,.34],[16384,.20],[65536,.095]];
+  var g=document.getElementById('covg'); var ns='http://www.w3.org/2000/svg';
+  function X(n){var a=Math.log2(256),b=Math.log2(65536);return 70+(Math.log2(n)-a)/(b-a)*530;}
+  function Y(v){return 220-v*200;}
+  var d='';pts.forEach(function(p,i){d+=(i?'L':'M')+X(p[0])+','+Y(p[1]);});
+  var path=document.createElementNS(ns,'path');path.setAttribute('d',d);path.setAttribute('fill','none');path.setAttribute('stroke','#0f8b8d');path.setAttribute('stroke-width','3');g.appendChild(path);
+  var fl=document.createElementNS(ns,'line');fl.setAttribute('x1',X(256));fl.setAttribute('x2',X(65536));fl.setAttribute('y1',Y(.608));fl.setAttribute('y2',Y(.608));fl.setAttribute('stroke','#2e9e6b');fl.setAttribute('stroke-width','2');fl.setAttribute('stroke-dasharray','6 5');g.appendChild(fl);
+  var ft=document.createElementNS(ns,'text');ft.setAttribute('x',X(65536)-4);ft.setAttribute('y',Y(.608)-8);ft.setAttribute('text-anchor','end');ft.setAttribute('font-size','11');ft.setAttribute('fill','#1f7a52');ft.textContent='interval fold ≈ 0.61 (CF?)';g.appendChild(ft);
+  pts.forEach(function(p){
+    var c=document.createElementNS(ns,'circle');c.setAttribute('cx',X(p[0]));c.setAttribute('cy',Y(p[1]));c.setAttribute('r','4.5');c.setAttribute('fill','#fff');c.setAttribute('stroke','#0f8b8d');c.setAttribute('stroke-width','2');g.appendChild(c);
+    var t=document.createElementNS(ns,'text');t.setAttribute('x',X(p[0]));t.setAttribute('y',238);t.setAttribute('text-anchor','middle');t.setAttribute('font-size','11');t.setAttribute('fill','#5b726d');t.textContent='n='+p[0];g.appendChild(t);
+    var v=document.createElementNS(ns,'text');v.setAttribute('x',X(p[0]));v.setAttribute('y',Y(p[1])-10);v.setAttribute('text-anchor','middle');v.setAttribute('font-size','11');v.setAttribute('fill','#0b6466');v.textContent=p[1];g.appendChild(v);
+  });
+  var lt=document.createElementNS(ns,'text');lt.setAttribute('x',X(1024)+6);lt.setAttribute('y',Y(.56)+22);lt.setAttribute('font-size','11');lt.setAttribute('fill','#0b6466');lt.textContent='all known CF certificates';g.appendChild(lt);
+
+  // demo
+  var inp=document.getElementById('w'), chart=document.getElementById('chart');
+  function gcd(a,b){while(b){var t=a%b;a=b;b=t;}return a;}
+  function primitive(w){ if(!w.length) return false; return (w+w).indexOf(w,1)===w.length; }
+  function render(){
+    var w=inp.value.replace(/[^ab]/g,''); if(w!==inp.value) inp.value=w;
+    var n=w.length, vp=document.getElementById('vp'), vf=document.getElementById('vf'), vg=document.getElementById('vg');
+    while(chart.firstChild) chart.removeChild(chart.firstChild);
+    if(n<2){vp.textContent='–';vf.textContent='–';vg.textContent='–';return;}
+    var pr=primitive(w); vp.textContent=pr?'yes':'no'; vp.className=pr?'ok':'bad';
+    var na=0; for(var i=0;i<n;i++) if(w[i]==='a') na++;
+    vg.textContent=n+' · '+gcd(na,n-na);
+    var half=Math.floor(n/2), lo=Math.ceil(n/3), d=[0], pa=0, sa=0;
+    for(var k=1;k<=half;k++){ if(w[k-1]==='a')pa++; if(w[n-k]==='a')sa++; d.push(pa-sa); }
+    var cert = lo<=half; for(k=lo;k<=half;k++) if(d[k]===0){cert=false;break;}
+    vf.textContent=cert?'accepts (primitive certified)':'no certificate'; vf.className=cert?'ok':'';
+    var W=640,H=220,L=40,R=620,T=15,B=195, mx=1; d.forEach(function(v){mx=Math.max(mx,Math.abs(v));});
+    function x(k){return L+(half?k/half:0)*(R-L);} function y(v){return (T+B)/2-v/mx*((B-T)/2);}
+    function el(t,a){var e=document.createElementNS(ns,t);for(var q in a)e.setAttribute(q,a[q]);chart.appendChild(e);return e;}
+    if(lo<=half) el('rect',{x:x(lo),y:T,width:Math.max(2,x(half)-x(lo)),height:B-T,fill:'#dff3f4'});
+    el('line',{x1:L,x2:R,y1:y(0),y2:y(0),stroke:'#9fb8b2'});
+    var s=''; for(k=0;k<=half;k++) s+=(k?'L':'M')+x(k)+','+y(d[k]);
+    el('path',{d:s,fill:'none',stroke:'#2e9e6b','stroke-width':2.5});
+    for(k=1;k<=half;k++){ var inb=k>=lo; el('circle',{cx:x(k),cy:y(d[k]),r:(half>30?2:3.5),fill:(inb&&d[k]===0)?'#c0392b':(inb?'#0f8b8d':'#2e9e6b')}); }
+    var t1=el('text',{x:L,y:212,'font-size':11,fill:'#5b726d'}); t1.textContent='k = 1';
+    var t2=el('text',{x:R,y:212,'font-size':11,fill:'#5b726d','text-anchor':'end'}); t2.textContent='k = '+half+' (n/2)';
+    if(lo<=half){var t3=el('text',{x:x(lo)+4,y:T+12,'font-size':11,fill:'#0b6466'}); t3.textContent='window [n/3, n/2]';}
+    var t4=el('text',{x:L-6,y:y(0)+4,'font-size':11,fill:'#5b726d','text-anchor':'end'}); t4.textContent='0';
+  }
+  inp.addEventListener('input',render);
+  document.querySelectorAll('[data-w]').forEach(function(b){b.addEventListener('click',function(){inp.value=b.getAttribute('data-w');render();});});
+  document.getElementById('rnd').addEventListener('click',function(){var s='';for(var i=0;i<40;i++)s+=Math.random()<.5?'a':'b';inp.value=s;render();});
+  render();
+})();
+</script>
+</body>
+</html>
