@@ -1,0 +1,4 @@
+(1) MS^in bookkeeping: 49663 checks, 0 violations
+(2) n=256: M=4: n*d/sqrt(M)=5.105; M=16: n*d/sqrt(M)=4.402; M=64: n*d/sqrt(M)=3.452
+(2) n=1024: M=4: n*d/sqrt(M)=5.273; M=16: n*d/sqrt(M)=4.798; M=64: n*d/sqrt(M)=4.418
+(2) n=4096: M=4: n*d/sqrt(M)=5.317; M=16: n*d/sqrt(M)=4.910; M=64: n*d/sqrt(M)=4.781
