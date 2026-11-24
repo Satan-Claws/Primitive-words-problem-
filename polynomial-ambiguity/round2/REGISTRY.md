@@ -266,3 +266,9 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 - Packing (`R2/r9_packing.md`): the unambiguous T8 reduces to the HEAVY-BLOCK LEMMA (a critical linear SCC fed by a heavy-tailed Dyck-like block
   language cannot keep every word in G⁻). Polynomial ambiguity needs a separate word-level argument (ambiguity-collapse example).
 - Most concrete targets: heavy-block lemma (would give a clean new theorem: no unambiguous CFL inside G⁻ is rotation-dense); the 2q-row question.
+
+## Round 10 (started 07:05 UTC). Reports `R2/r10_*.md`.
+| task | owner / file |
+|---|---|
+| Heavy-block lemma (unambiguous T8) | R10-A, `R2/r10_heavy.md` |
+| Rows #a = 2q: poly-ambiguous L ⊇ Cop agreeing with Q there? | R10-B, `R2/r10_2q.md` |

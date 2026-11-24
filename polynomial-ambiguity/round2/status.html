@@ -97,11 +97,11 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
 <header class="hero"><div class="in">
   <h1>Primitive words and polynomially ambiguous grammars</h1>
   <p>Can a context-free grammar generate exactly the primitive words while giving every word only polynomially many parse trees?</p>
-  <p style="opacity:.85;font-size:.92rem">Status snapshot · 24 Nov 2026 · round 9 in progress</p>
+  <p style="opacity:.85;font-size:.92rem">Status snapshot · 24 Nov 2026 · after round 9</p>
   <div class="pills">
     <span class="pill">Status: open</span>
     <span class="pill">Conjectured answer: no</span>
-    <span class="pill">8 rounds · ≈44 agents · 7 gated audits</span>
+    <span class="pill">9 rounds · ≈47 agents · 7 gated audits</span>
   </div>
 </div></header>
 
@@ -226,7 +226,7 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
   <div class="it s"><div class="h">Round 6: FOLD-COUNTER <span class="tag t-sc">satan-claws</span></div><div class="d">~04:00–06:30</div>Rotated fold certificates cover <b>all</b> primitive words up to length 30. Lemma A: one canonical rotation lands in G⁻ (prefix a-count &lt; suffix a-count for every k ≤ n/2). Prop K: finite-memory fold certificates can't be sound and dense. Lemma SA: the whole question reduces to <b>one length coupling</b> between two one-counter halves. Still open in both directions.</div>
   <div class="it s"><div class="h">Round 7: the length coupling <span class="tag t-sc">satan-claws</span></div><div class="d">~06:30–07:30</div>Uncoupling fails: without the length condition the excluded words are <i>all</i> powers of a-heavy words, so removing them is the original problem (U1). In cycle-lemma form the problem is <b>self-similar</b> on Dyck blocks of length ~√n (U3). Negative tool: Prop S. Remaining gaps G1 (uniformity over spines) and G2 (polynomial ambiguity).</div>
   <div class="it s"><div class="h">Round 8: closing Prop S <span class="tag t-sc">satan-claws</span></div><div class="d">~07:30–08:30</div>Audit: Prop S and U1–U3 hold as statements. But Theorem C shows per-spine counts add up exactly to the total, so Prop S never really used the fold structure: the route is circular. One small gain (cone-exit rectangles). Exact gap: a <i>cross-spine packing</i> lemma.</div>
-  <div class="it s"><div class="h">Round 9: one agent per core <span class="tag t-sc">satan-claws</span> <span class="tag t-open">running</span></div><div class="d">~08:40–</div><b>P_cop core:</b> Theorem N, an explicit linear-ambiguity grammar that matches Q on every prime row, so no "Theorem U"-style argument can work, and P_cop is not independent of the typical-word core. <b>Self-similarity:</b> no amplification. All transfers are exact, so both directions return to Q itself (Lemma RG: a recursion would need two independent copies at scale √n). Packing agent still running.</div>
+  <div class="it s"><div class="h">Round 9: one agent per core <span class="tag t-sc">satan-claws</span></div><div class="d">~08:40–09:40</div><b>P_cop core:</b> Theorem N, an explicit linear-ambiguity grammar that matches Q on every prime row, so no "Theorem U"-style argument can work, and P_cop is not independent of the typical-word core. <b>Self-similarity:</b> no amplification. All transfers are exact, so both directions return to Q itself (Lemma RG: a recursion would need two independent copies at scale √n). <b>Packing:</b> the unambiguous fold question reduces to one <i>heavy-block lemma</i>. Among 240,000 random grammars, the best unambiguous language inside G⁻ is Catalan, far too thin.</div>
 </div>
 </section>
 
