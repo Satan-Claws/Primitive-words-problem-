@@ -474,3 +474,10 @@ Goal: any polynomially ambiguous G with L(G) = Q must contain a structure to whi
   Open: window folds F_K (one-partner, ⊄G⁻), UMR_cyc (seam merges), unique-factor certificates. `R2/r20_dense.md`, `scripts/r20_dense_{ties,lyndon_fold}.py`.
 | R20-A result | `R2/r20_stable.md`: mechanism FAILS. Positive-fraction stability ⇒ only √n ambiguity (Prop F); T8 needs closure, salvage = (CONE) (Prop PF). Explicit H_R (cyclic closure of Raney/Dyck words, ⊆ Q, amb ≤ 3R, H₁ unambiguous) has substitution-closed, G⁻-unstable derivations |
 | | ⇒ instability forces no ambiguity; H_R covers ≍ c_R/√n of G⁻ at odd n, 0 at n = 2ʲ. Reduction: any contradiction must come from completeness on the gcd ≥ 2 balanced core; G⁻ is irrelevant there. Scripts `r20_stable_{raney,profile}.py` |
+
+**Round 20 synthesis (root): the bridge.** Not closed; all four mechanisms converge on one location.
+- Near-powers (`R2/r20_nearpow.md`): collapse; near-powers are witness-poor (Lemma WP), so multiplicity must come from witness-rich words.
+- Regions (`R2/r20_region.md`): Lemma 0 (forced + squeezable region ⇔ ¬P(Q)); Theorem NG: a bridge must use power-exclusion L(G) ∩ P = ∅ essentially in the forcing step; T8_poly extends to G⁺.
+- Dense certificates (`R2/r20_dense.md`): Prop E ("dense sound ⇒ fold" ⇔ ¬DENSE-SOUND); Theorem ET (partner principle): no CF Lyndon / leading-max-run set is rotation-dense, any ambiguity (audit running).
+- Stable sub-structure (`R2/r20_stable.md`): fails (Prop F, PF); explicit low-ambiguity sound grammar H_R (cyclic Raney) covers ~1/√n of G⁻ at odd n, none at n = 2^j.
+- Convergence: any contradiction must come from COMPLETENESS on balanced / gcd ≥ 2 words together with POWER EXCLUSION (cf. cyclic.md T1, P_cop). That is the original hard core.
