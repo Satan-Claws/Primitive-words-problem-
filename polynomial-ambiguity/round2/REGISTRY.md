@@ -421,3 +421,11 @@ R17b-audit_t8: r17_oh_level (Lemma L, MS^in, Lemma D, Thm OH) **SURVIVES**, no f
   Lemma Bot's missing line. Denisov–Wachtel's "uniform in start" bound is NOT in the paper, so PR2/PR1s/PR2^β/Lemma QW carry a citation caveat; T8_unamb avoids it (ballot only).
 - Counterexample search (215,820 grammars): none. Lift (T8_poly): squeeze ceiling (r17_lift); Prop P (r17_gstruct); G-word + Thm G-geo (r17_gword, r17_gwordp);
   G-trunk reduced to (AM): average exit-slide multiplicity o(N^{β₀}) (r17_gtrunk); G-end (stacked critical SCCs). Bridge = whole problem (r17_bridge).
+
+## Round 18 (started 10:06 UTC, 4 parallel agents). Reports `R2/r18_*.md`.
+| task | owner / file |
+|---|---|
+| (AM): average exit-slide multiplicity o(N^{β₀}) | A, `R2/r18_am.md` |
+| G-end: stacked critical SCCs | B, `R2/r18_gend.md` |
+| Clean write-up THEOREM_T8.md with all audit fixes | C, `round2/THEOREM_T8.md` |
+| Repair D–W citation in PR2/PR1s/PR2^β/QW (ballot-only proofs or mark superseded) | D, `R2/r18_dwfix.md` |
