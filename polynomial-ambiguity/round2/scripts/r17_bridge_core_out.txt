@@ -1,0 +1,5 @@
+32 sqrt(n)*dens(G-)=0.396 n*dens(core,C=2)=1.973 core/G-=0.8813 sqrt(n)*core/G-=4.985
+64 sqrt(n)*dens(G-)=0.397 n*dens(core,C=2)=2.391 core/G-=0.7522 sqrt(n)*core/G-=6.018
+128 sqrt(n)*dens(G-)=0.398 n*dens(core,C=2)=2.724 core/G-=0.6046 sqrt(n)*core/G-=6.840
+256 sqrt(n)*dens(G-)=0.399 n*dens(core,C=2)=2.948 core/G-=0.4623 sqrt(n)*core/G-=7.397
+512 sqrt(n)*dens(G-)=0.399 n*dens(core,C=2)=3.079 core/G-=0.3413 sqrt(n)*core/G-=7.723
