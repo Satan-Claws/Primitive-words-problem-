@@ -10,12 +10,12 @@ Agents: append at most a few lines to the section that fits. Do not rewrite othe
 
 | family | mechanism | status | owner / file |
 |---|---|---|---|
-| TILE_k (ply of tree-validity fans on S_N) | ply / covering | open | W1-A, `R2/tile.md` |
-| G3** (apex, covering radius, inradius) | length / lattice | open | W1-B, `R2/g3.md` |
-| Lemma 3P + Lemma F reconstruction | structural | open | W1-C, `R2/recon.md` |
-| Laminar covers of n = 30 / S_2 slices | constructive | open | W1-D, `R2/construct.md` |
-| R4 walk / builder3 ambiguity growth | constructive / measurement | open | W1-E, `R2/testgram.md` |
-| Cyclic-closure class mass, gcd >= 2 | reformulation | open | W1-F, `R2/cyclic.md` |
+| TILE_k (ply of tree-validity fans on S_N) | ply / covering | ply 1 claimed (transport rule), AUDIT pending; Lemma C open for N>=5 | W1-A, W1-H, `R2/tile.md`, `R2/tile2.md` |
+| G3** (apex, covering radius, inradius) | length / lattice | reduced to G-rho (density) + G-h (facet height); ray-transfer false | W1-B, W1-I, `R2/g3.md`, `R2/finv.md` |
+| Lemma 3P + Lemma F reconstruction | structural | 3P confirmed; F repaired (offsets <= 2mK) | W1-C, `R2/recon.md` |
+| Laminar covers of n = 30 / S_2 slices | constructive | n=pq ply <= n+phi(n) proved; n=30 open (60 vectors) | W1-D, W2-J, `R2/construct.md`, `R2/construct2.md` |
+| R4 walk / builder3 ambiguity growth | constructive / measurement | DONE: neither generates Q | W1-E, `R2/testgram.md` |
+| Cyclic-closure class mass, gcd >= 2 | reformulation | gcd>=2 = full problem; P_cop open; Thm U (unamb.) | W1-F, W1-G, `R2/cyclic.md`, `R2/pcop.md` |
 
 ## Proved lemmas (with labels)
 - [written proof] n=pq squarefree: rectangle family R_i covers E∩W_n (w±u = 2Δb, 2Δa; I_a, I_b classes mod A, B, gcd(A,B)=1 ⇒ meet); Q∩(ab*)^{pq} ply ≤ n+φ(n). Fails for p^a q^b exactly when witness fibres mod n/(pq) are disjoint (n=36). `R2/construct.md` §2.
@@ -46,3 +46,14 @@ Agents: append at most a few lines to the section that fits. Do not rewrite othe
 ## Round syntheses (root, <= 15 lines each)
 - [written proof] `R2/finv.md` §3: CRT pieces (chain {2e_j+e_{j+1}} + e_0+e_t, D_t=2^t−1, K=3, full rank, laminar) added to any valid cover give f = f₀+Θ(m/log m) far out but f ≤ f₀+O(1+log R/m) on R-ball ⇒ "asymptotic (lim-sup/QP pointwise) ply ⇒ near ply" is FALSE, refinement-invariantly.
 - [written proof] `R2/finv.md` §4 Lemma D: asymptotic DENSITY ρ(ω)=Σ1/idx (refinement-invariant) ≥ q ⇒ f ≥ q at norm poly(m,K,q,‖ω‖)·h, h = facet height at ω of the coarsest representation; lcm/covering radius drop out. Gap: density-TILE + h. QP onset (Szenes–Vergne) not a bottleneck.
+
+**Wave 1 synthesis (root, 00:37 UTC).**
+- Foundations hold: Structure (c) and Lemma 3P reconstructed; Lemma F needs offsets <= 2mK (Cor F'); Theorem P intact.
+- Ply side: TILE_k appears to hold with ply 1 (min-cost transport tree selection, `R2/tile2.md`), which would BLOCK S_N
+  geometrically (ply <= sqrt(n) polylog). Under gated audit; Lemma C (arc-genericity of actual mu_k) checked N <= 4 only.
+- Length side: ray-asymptotic ply does not transfer (CRT); density does (Lemma D). Gap = G-rho + G-h.
+- Constructive: n = pq slices have laminar covers of ply <= n + phi(n); n = 30 leaves a 60-vector fibre obstruction.
+- Reformulations: gcd>=2 classes carry the whole problem; Theorem U (no unambiguous CFL between coprime words and Q).
+- Test grammars walk/builder3: neither generates Q; closed.
+- Net: no route unblocked. If the audit passes, the S_N candidate dies and wave 2 must find slice families where
+  the transport tiling fails (balanced arcs, non-pair-supported structure, deeper prime powers) or a non-slice mechanism.
