@@ -1,0 +1,27 @@
+unif  n=    60 S= 2000 miss: F_K=0.3875 F_max=0.2010 RotF_K=0.0000 RotF_Kft=0.0000 RotF_max=0.0000 RotF_maxft=0.0000 F_.1=0.3425 RotF_.1=0.0000 F_W=0.3875 RotF_W=0.0000
+g6|   n=    60 S= 2000 miss: F_K=0.4210 F_max=0.2925 RotF_K=0.0000 RotF_Kft=0.0000 RotF_max=0.0000 RotF_maxft=0.0000 F_.1=0.3775 RotF_.1=0.0000 F_W=0.4210 RotF_W=0.0000
+unif  n=   120 S= 2000 miss: F_K=0.4115 F_max=0.1655 RotF_K=0.0000 RotF_Kft=0.0000 RotF_max=0.0000 RotF_maxft=0.0000 F_.1=0.3430 RotF_.1=0.0000 F_W=0.4115 RotF_W=0.0000
+g6|   n=   120 S= 2000 miss: F_K=0.4085 F_max=0.2175 RotF_K=0.0000 RotF_Kft=0.0000 RotF_max=0.0000 RotF_maxft=0.0000 F_.1=0.3480 RotF_.1=0.0000 F_W=0.4085 RotF_W=0.0000
+unif  n=   210 S= 2000 miss: F_K=0.3820 F_max=0.1315 RotF_K=0.0000 RotF_Kft=0.0000 RotF_max=0.0000 RotF_maxft=0.0000 F_.1=0.3190 RotF_.1=0.0000 F_W=0.3820 RotF_W=0.0000
+g6|   n=   210 S= 2000 miss: F_K=0.4065 F_max=0.1690 RotF_K=0.0000 RotF_Kft=0.0000 RotF_max=0.0000 RotF_maxft=0.0000 F_.1=0.3455 RotF_.1=0.0000 F_W=0.4065 RotF_W=0.0000
+unif  n=   256 S= 2000 miss: F_K=0.3765 F_max=0.0455 RotF_K=0.0000 RotF_Kft=0.0000 RotF_max=0.0000 RotF_maxft=0.0000 F_.1=0.2920 RotF_.1=0.0000 F_W=0.2920 RotF_W=0.0000
+unif  n=   360 S= 2000 miss: F_K=0.4050 F_max=0.0950 RotF_K=0.0000 RotF_Kft=0.0000 RotF_max=0.0000 RotF_maxft=0.0000 F_.1=0.3240 RotF_.1=0.0000 F_W=0.4050 RotF_W=0.0000
+g6|   n=   360 S= 2000 miss: F_K=0.3915 F_max=0.1390 RotF_K=0.0000 RotF_Kft=0.0000 RotF_max=0.0000 RotF_maxft=0.0000 F_.1=0.3230 RotF_.1=0.0000 F_W=0.3915 RotF_W=0.0000
+unif  n=  1024 S= 2000 miss: F_K=0.3925 F_max=0.0300 RotF_K=0.0000 RotF_Kft=0.0000 RotF_max=0.0000 RotF_maxft=0.0000 F_.1=0.2915 RotF_.1=0.0000 F_W=0.2915 RotF_W=0.0000
+unif  n=  2310 S= 2000 miss: F_K=0.3935 F_max=0.0360 RotF_K=0.0000 RotF_Kft=0.0000 RotF_max=0.0000 RotF_maxft=0.0000 F_.1=0.3030 RotF_.1=0.0000 F_W=0.3935 RotF_W=0.0000
+g6|   n=  2310 S= 2000 miss: F_K=0.3890 F_max=0.0575 RotF_K=0.0000 RotF_Kft=0.0000 RotF_max=0.0000 RotF_maxft=0.0000 F_.1=0.3010 RotF_.1=0.0000 F_W=0.3890 RotF_W=0.0000
+unif  n=  4096 S=  500 miss: F_K=0.3920 F_max=0.0160 RotF_K=0.0000 RotF_Kft=0.0000 RotF_max=0.0000 RotF_maxft=0.0000 F_.1=0.2920 RotF_.1=0.0000 F_W=0.2920 RotF_W=0.0000
+unif  n=  9240 S=  500 miss: F_K=0.4180 F_max=0.0120 RotF_K=0.0000 RotF_Kft=0.0000 RotF_max=0.0000 RotF_maxft=0.0000 F_.1=0.3220 RotF_.1=0.0000 F_W=0.4180 RotF_W=0.0000
+g6|   n=  9240 S=  500 miss: F_K=0.4020 F_max=0.0340 RotF_K=0.0000 RotF_Kft=0.0000 RotF_max=0.0000 RotF_maxft=0.0000 F_.1=0.3080 RotF_.1=0.0000 F_W=0.4020 RotF_W=0.0000
+unif  n= 10000 S=  500 miss: F_K=0.3940 F_max=0.0100 RotF_K=0.0000 RotF_Kft=0.0000 RotF_max=0.0000 RotF_maxft=0.0000 F_.1=0.3060 RotF_.1=0.0000 F_W=0.3060 RotF_W=0.0000
+
+(d) n  S  miss(RotF_K)  miss(RotF_K | g has >=2 prime factors)  P(#argmax>=2 & #argmin>=2)  [Lemma A: RotF_K miss => both]
+     24 200000  3.30e-04  5.80e-04 (S=50000, #a=12)  4.736e-02
+     30 200000  7.50e-05  8.00e-05 (S=50000, #a=12)  4.343e-02
+     36 200000  5.00e-06  4.00e-05 (S=50000, #a=18)  3.619e-02
+     48 200000  0.00e+00  0.00e+00 (S=50000, #a=24)  3.005e-02
+     60 200000  0.00e+00  0.00e+00 (S=50000, #a=30)  2.694e-02
+     90 200000  0.00e+00  0.00e+00 (S=50000, #a=48)  2.175e-02
+    120 200000  0.00e+00  0.00e+00 (S=50000, #a=60)  1.863e-02
+    210  50000  0.00e+00  0.00e+00 (S=12500, #a=108)  1.292e-02
+    420  50000  0.00e+00  0.00e+00 (S=12500, #a=210)  9.900e-03

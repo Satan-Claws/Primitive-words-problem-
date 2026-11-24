@@ -190,3 +190,5 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 |---|---|
 | Build a CF positive-density subset of F_delta (affirmative) | R6-A, `R2/r6_build.md` |
 | Prove no dense subset of F_K-type folds is CF / poly-amb (negative) | R6-B, `R2/r6_nofold.md` |
+- [written proof + exh n≤30 + MC n≤10⁴] R6 `R2/r6_miss.md`: Lemma M (F_K sound ⇔ K meets (n/p)ℤ ∀p|n; [1/3,1/2] is the unique all-n window; residue windows give .69–.76). Rotations are free: |E_n| = 0 for n ≤ 30 (Rot F_K misses ≤ 3·10⁻⁵, only near-powers with g ≥ 2). Lemma R: Rot(F_max) = Q at prime-power n.
+- R6 Lemma A: the rotation at the unique argmax of T(i) = n·#a(w[0,i)) − i·#a(w) lies in G⁻ = {d_k < 0 ∀ 1≤k≤n/2} ⊆ Q, so Rot(G⁻) has density ≥ 1 − P(tie) ≈ 1 − 0.43/√n (MC). Leftover = the tie family ⊆ {g ≥ 2}. Sharpened target ROT-FOLD-BALLOT (CF L ⊆ G⁻, rotation-dense): OPEN.
