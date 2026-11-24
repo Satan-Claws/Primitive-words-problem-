@@ -1,0 +1,6 @@
+MC n=64 S=4000 missLA=0.3740 missLB=0.3740 missCh=0.0208  (sqrt(n)*missCh=0.166)
+MC n=257 S=4000 missLA=0.3267 missLB=0.3267 missCh=0.0000  (sqrt(n)*missCh=0.000)
+MC n=1000 S=4000 missLA=0.3575 missLB=0.3575 missCh=0.0070  (sqrt(n)*missCh=0.221)
+MC n=1024 S=4000 missLA=0.3723 missLB=0.3723 missCh=0.0057  (sqrt(n)*missCh=0.184)
+MC n=4096 S=4000 missLA=0.3752 missLB=0.3752 missCh=0.0040  (sqrt(n)*missCh=0.256)
+MC n=10000 S=4000 missLA=0.3458 missLB=0.3458 missCh=0.0018  (sqrt(n)*missCh=0.175)

@@ -215,3 +215,15 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 - R7-B (`round2/reports/r7_lemmaQ.md`): Lemma Q is false as stated (quotient depends on the paired window, density 1 at h = 1). Lemma R: centre rectangles X×Y ⊆ G⁻ have size ≤ C log²n·2ⁿ/n, exactly the rotation threshold (KMT + Prékopa).
 - Prop S: for unambiguous L ⊆ G⁻, each fixed centre spine carries O_s(2ⁿn^{−3/2}), via uncoupled-length closure + algebraic regular variation. So rotation-dense ⇒ spines escape to infinity.
 - Gaps: G1 uniformity in the spine (correct form of Lemma Q); G2 ambiguity: the disjointness step loses nᵏ, so Prop S is vacuous for poly-ambiguity k ≥ 1/2 without Lemma-M-type distinctness.
+| R7-A result: uncoupled D_b·P = P (closed under powers), so (A) carries no information; L_A = P ∩ {h≤0 on first half}, Rot L_A = Rot L_B with L_B = {H≥1, h≤0 on first half} ⊆ Q (not CF) | `reports/r7_uncouple.md` [proof + exh n≤24] |
+| R7-A: rotation normal forms cannot remove the coupling (N(u^p) is always a power); in P-form this is block-sequence aperiodicity, where every sound certificate is one-vs-rest/each; no CF candidate, OPEN | `reports/r7_uncouple.md` [proof/sketch; MC n≤10⁴: Rot L_A misses ≈0.35] |
+
+**Round 7 synthesis (root).** Still open. The fold route turns out to reproduce the problem one level down.
+- U1: without the coupling the Dyck prefix is useless (D_b·P = P), and PS ∩ NonPrim = {u^p : u ∈ P}; excluding it IS the original problem.
+- U3: rotation choices can't remove the coupling (u^p ↦ a power). In cycle-lemma form, P ∩ Q = primitive block sequences over the infinite
+  alphabet D_b: the problem is SELF-SIMILAR at length ~√n. Every sound certificate found compares one block against the rest (`R2/r7_uncouple.md`).
+- Negative tools (`R2/r7_lemmaQ.md`): Lemma Q as stated is false (Q0). Centre rectangles sit exactly at the threshold (Lemma R).
+  Prop S: an UNAMBIGUOUS L ⊆ G⁻ carries O_s(2^n n^{-3/2}) per fixed centre spine, so dense L needs unboundedly many spines.
+  Gaps: G1 (uniform constants over spines), G2 (polynomial ambiguity loses n^k).
+- Most promising concrete route now: the negative side via Prop S + G1 + G2, which would show no poly-ambiguous CF L ⊆ G⁻ is rotation-dense.
+  Caveat: that kills the FOLD route only, not the affirmative in general.

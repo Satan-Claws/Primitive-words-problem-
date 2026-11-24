@@ -1,0 +1,16 @@
+n=16 X0 Y0: members=6435 nonprim=35 maxsplits=8 rootNotMember=0 memberRootPowerNot=0 notP=0
+n=16 X0 Y1: members=11440 nonprim=56 maxsplits=8 rootNotMember=0 memberRootPowerNot=0 notP=0
+n=16 X1 Y0: members=7512 nonprim=35 maxsplits=8 rootNotMember=0 memberRootPowerNot=5 notP=0
+n=16 X1 Y1: members=12288 nonprim=56 maxsplits=8 rootNotMember=0 memberRootPowerNot=1 notP=0
+n=16 X2 Y0: members=8527 nonprim=35 maxsplits=8 rootNotMember=0 memberRootPowerNot=6 notP=0
+n=16 X2 Y1: members=12730 nonprim=56 maxsplits=8 rootNotMember=0 memberRootPowerNot=1 notP=0
+n=16 X3 Y0: members=7462 nonprim=26 maxsplits=7 rootNotMember=0 memberRootPowerNot=6 notP=0
+n=16 X3 Y1: members=10714 nonprim=41 maxsplits=7 rootNotMember=0 memberRootPowerNot=1 notP=0
+n=24 X0 Y0: members=1352078 nonprim=494 maxsplits=12 rootNotMember=0 memberRootPowerNot=0 notP=0
+n=24 X0 Y1: members=2496144 nonprim=844 maxsplits=12 rootNotMember=0 memberRootPowerNot=0 notP=0
+n=24 X1 Y0: members=1573729 nonprim=494 maxsplits=12 rootNotMember=0 memberRootPowerNot=83 notP=0
+n=24 X1 Y1: members=2721014 nonprim=844 maxsplits=12 rootNotMember=0 memberRootPowerNot=44 notP=0
+n=24 X2 Y0: members=1918545 nonprim=504 maxsplits=12 rootNotMember=0 memberRootPowerNot=119 notP=0
+n=24 X2 Y1: members=2949772 nonprim=845 maxsplits=12 rootNotMember=0 memberRootPowerNot=54 notP=0
+n=24 X3 Y0: members=1738770 nonprim=405 maxsplits=11 rootNotMember=0 memberRootPowerNot=119 notP=0
+n=24 X3 Y1: members=2604976 nonprim=666 maxsplits=11 rootNotMember=0 memberRootPowerNot=54 notP=0
