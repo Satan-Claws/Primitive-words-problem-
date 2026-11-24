@@ -429,3 +429,5 @@ R17b-audit_t8: r17_oh_level (Lemma L, MS^in, Lemma D, Thm OH) **SURVIVES**, no f
 | G-end: stacked critical SCCs | B, `R2/r18_gend.md` |
 | Clean write-up THEOREM_T8.md with all audit fixes | C, `round2/THEOREM_T8.md` |
 | Repair D–W citation in PR2/PR1s/PR2^β/QW (ballot-only proofs or mark superseded) | D, `R2/r18_dwfix.md` |
+- **R18-D (dwfix):** all D–W uses repaired. Lemma K, CM, J, PR1s need only the pointwise Thm 1 (fixed start). PR2ˡᵒᵍ, QW and PR2^β use new **Lemma U** (elementary, uniform start, 3π/4 wedge, (log m)^{5/3} loss; written proof). All of them are off the T8 path (PR2⁺/OH).
+  Exact DP over all starts: sup m^{2/3}P/(1+|z|)^{4/3} saturates near 0.59. Files: `R2/r18_dwfix.md`, `scripts/r18_dwfix_dp.py`.
