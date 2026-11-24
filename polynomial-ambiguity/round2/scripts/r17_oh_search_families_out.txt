@@ -1,0 +1,21 @@
+Y variants: 960, unambiguous to length 20: 52; pass single-token pad-6 G- filter: 22  (12.7s)
+  kept Y: ['Dm:YaYabDm', 'Dm:aYabDmY', 'Dm:abDmYaY', 'Dm:YaYbDma', 'Dm:aYbDmaY', 'Dm:YabDmYa', 'Dm:DmabYbY', 'Dm:YDmabYb', 'Dm:bDmaYaY', 'Dm:bYaYaDm', 'Dm:YbYaDma', 'Dm:bYaDmaY', 'Dm:YbDmaYa', 'Dm:bDmaYbY', 'Dm:YbYDmab', 'Dm:bYDmabY', 'Dm:YbDmaYb', 'Dm:bDmbYaY', 'Dm:DmbYbYa', 'Dm:YbYbDma', 'Dm:bYbDmaY', 'Dm:YbDmbYa']
+critical token sets (<=2 tokens, or 3 tokens with |letters|<=2 each; >=1 H-token; q_V>0 OR one-tape): 1962, of which one-tape (q_V=0): 166
+X grammars: ambiguous(<= 13) 210182, unambiguous 5638  (141.1s)
+survivors (some pad with no G- exit for |x| <= 13): 833
+histogram of max x-length survived: [(6, 646), (7, 679), (8, 1337), (9, 321), (10, 712), (11, 146), (12, 784), (13, 180), (14, 833)]
+112 Dm YaYabDm | (Ha, e)  [ONE-TAPE q_V=0] | w = 'a'
+112 Dm YaYabDm | (Hb, a) | (bHa, e) | w = 'ab'
+112 Dm YaYabDm | (Hb, a) | (bHa, e) | w = 'ba'
+112 Dm YaYabDm | (bHa, e) | (b, e)  [ONE-TAPE q_V=0] | w = 'a'
+112 Dm YaYabDm | (bHa, e) | (b, e)  [ONE-TAPE q_V=0] | w = 'ab'
+112 Dm YaYabDm | (bHa, e) | (b, e)  [ONE-TAPE q_V=0] | w = 'ba'
+112 Dm YaYabDm | (Hb, a) | (, ab) | (a, a) | w = 'ba'
+112 Dm YaYabDm | (Hb, a) | (a, a) | (b, b) | w = 'ba'
+112 Dm YaYabDm | (Hb, a) | (b, b) | (ba, e) | w = 'ab'
+112 Dm YaYabDm | (Hb, a) | (b, b) | (ba, e) | w = 'ba'
+112 Dm YaYabDm | (bHa, e) | (b, a) | (b, b) | w = 'ab'
+112 Dm YaYabDm | (bHa, e) | (b, a) | (b, b) | w = 'ba'
+112 Dm aYabDmY | (Ha, e)  [ONE-TAPE q_V=0] | w = 'a'
+112 Dm aYabDmY | (Hb, a) | (bHa, e) | w = 'ab'
+112 Dm aYabDmY | (Hb, a) | (bHa, e) | w = 'ba'

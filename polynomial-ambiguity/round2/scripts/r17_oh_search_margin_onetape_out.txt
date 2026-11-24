@@ -1,0 +1,44 @@
+=== X: [('b', 'Y', 'X'), ('b', 'a')]  Y: [(), ('b', 'Y', 'b', 'Dm', 'a', 'Y')]
+   exact max_{x in X_n} M(x), n=0..21: [None, None, -1, -1, -1, -1, -1, -1, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3]
+   n=40: uniform sample of 300: median M = -1, max M = 4, frac(M>=4) = 0.00
+   n=80: uniform sample of 300: median M = -1, max M = 6, frac(M>=4) = 0.02
+   n=160: uniform sample of 300: median M = -1, max M = 10, frac(M>=4) = 0.04
+   n=320: uniform sample of 300: median M = -1, max M = 15, frac(M>=4) = 0.09
+   n=400: uniform sample of 300: median M = -1, max M = 13, frac(M>=4) = 0.10
+   witness |x|=400, M=13: b^13 x a^13 in G-? False
+   witness |x|=400, M=13: b^15 x a^11 in G-? True
+   witness |x|=400, M=13: b^11 x a^15 in G-? False
+   witness x = bbbabbbabbbbbbbaabaabbbbbbbababbaaabbbbaababbbaababaabbabababbbbbbbbbbabaaabbbbbbaaabbbaaaabaabababaabbababbbbaaababaaaa...
+=== X: [('b', 'Y', 'X'), ('a',)]  Y: [(), ('b', 'Y', 'b', 'Dm', 'a', 'Y')]
+   exact max_{x in X_n} M(x), n=0..21: [None, -1000000000, -1, -1, -1, -1, -1, -1, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3]
+   n=40: uniform sample of 300: median M = -1, max M = 4, frac(M>=4) = 0.00
+   n=80: uniform sample of 300: median M = -1, max M = 5, frac(M>=4) = 0.02
+   n=160: uniform sample of 300: median M = -1, max M = 9, frac(M>=4) = 0.04
+   n=320: uniform sample of 300: median M = -1, max M = 11, frac(M>=4) = 0.09
+   n=400: uniform sample of 300: median M = -1, max M = 17, frac(M>=4) = 0.12
+   witness |x|=400, M=17: b^17 x a^17 in G-? False
+   witness |x|=400, M=17: b^19 x a^15 in G-? True
+   witness |x|=400, M=17: b^15 x a^19 in G-? False
+   witness x = bbbbbbbbabbaaaabaabbbabbabbabbaabbabbabbbbbbabbbabaabaababaaabbbbaababbababababbbbbaaabbbbbaabaaaaabaabaabaababbbbabaabb...
+=== X: [('b', 'Y', 'X'), ('b', 'a')]  Y: [(), ('b', 'Dm', 'b', 'Y', 'a', 'Y')]
+   exact max_{x in X_n} M(x), n=0..21: [None, None, -1, -1, -1, -1, -1, -1, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3]
+   n=40: uniform sample of 300: median M = -1, max M = 5, frac(M>=4) = 0.01
+   n=80: uniform sample of 300: median M = -1, max M = 6, frac(M>=4) = 0.02
+   n=160: uniform sample of 300: median M = -1, max M = 10, frac(M>=4) = 0.07
+   n=320: uniform sample of 300: median M = -1, max M = 14, frac(M>=4) = 0.12
+   n=400: uniform sample of 300: median M = 0, max M = 12, frac(M>=4) = 0.16
+   witness |x|=400, M=12: b^12 x a^12 in G-? False
+   witness |x|=400, M=12: b^14 x a^10 in G-? False
+   witness |x|=400, M=12: b^10 x a^14 in G-? False
+   witness x = bbbbbbabbabbabbababbabaaaaaababaaababbbbababbbbababbbbbaaababbbaaabbbbabbababababbbabababbbbabbbaabbbababbababbaabbbbbbb...
+=== X: [('b', 'Y', 'X'), ('a',)]  Y: [(), ('b', 'Dm', 'b', 'Y', 'a', 'Y')]
+   exact max_{x in X_n} M(x), n=0..21: [None, -1000000000, -1, -1, -1, -1, -1, -1, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3]
+   n=40: uniform sample of 300: median M = -1, max M = 3, frac(M>=4) = 0.00
+   n=80: uniform sample of 300: median M = -1, max M = 8, frac(M>=4) = 0.02
+   n=160: uniform sample of 300: median M = -1, max M = 13, frac(M>=4) = 0.06
+   n=320: uniform sample of 300: median M = -1, max M = 10, frac(M>=4) = 0.11
+   n=400: uniform sample of 300: median M = -1, max M = 13, frac(M>=4) = 0.10
+   witness |x|=400, M=13: b^13 x a^13 in G-? False
+   witness |x|=400, M=13: b^15 x a^11 in G-? True
+   witness |x|=400, M=13: b^11 x a^15 in G-? True
+   witness x = bbbbabbaabbbaaabbbabbaababbabbabaabaaaabbabaabbabbaababbaabbbaabaabbababbababbaabbbabbabbabbaababaaabbbbbabbabbabaaaaaba...

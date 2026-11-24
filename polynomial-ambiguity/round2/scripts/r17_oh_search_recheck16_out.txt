@@ -1,0 +1,15 @@
+833 stage-2 survivors; re-check to |x| <= 16
+Counter({'G- exit': 456, 'ambiguous': 247, 'SURVIVES': 130}) (3s)
+histogram of |x| at kill: [(14, 385), (15, 163), (16, 155), (99, 130)]
+(99, 'surv', 'Dm', 'bDmaYaY', '(Ha, e)  [ONE-TAPE q_V=0]', 'a') 
+(99, 'surv', 'Dm', 'bDmaYaY', '(Hb, a) | (Hba, e)', 'b') 
+(99, 'surv', 'Dm', 'bDmaYaY', '(Hb, a) | (Hba, e)', 'ab') 
+(99, 'surv', 'Dm', 'bDmaYaY', '(Hb, a) | (Hba, e)', 'ba') 
+(99, 'surv', 'Dm', 'bDmaYaY', '(Hb, a) | (aHb, e)', '') 
+(99, 'surv', 'Dm', 'bDmaYaY', '(Hb, a) | (aHb, e)', 'a') 
+(99, 'surv', 'Dm', 'bDmaYaY', '(Hb, a) | (aHb, e)', 'b') 
+(99, 'surv', 'Dm', 'bDmaYaY', '(Hb, a) | (aHb, e)', 'ab') 
+(99, 'surv', 'Dm', 'bDmaYaY', '(Hb, a) | (aHb, e)', 'ba') 
+(99, 'surv', 'Dm', 'bDmaYaY', '(bH, a) | (baH, e)', 'b') 
+(99, 'surv', 'Dm', 'bDmaYaY', '(bH, a) | (baH, e)', 'ab') 
+(99, 'surv', 'Dm', 'bDmaYaY', '(bH, a) | (baH, e)', 'ba') 

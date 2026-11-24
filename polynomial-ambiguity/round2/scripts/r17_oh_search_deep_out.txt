@@ -1,0 +1,58 @@
+=== Y: Dm YbYbDma | tokens (bH, a) | (bH, b) | w = 'ba'
+   grammar X: [('b', 'Y', 'X', 'a'), ('b', 'Y', 'X', 'b'), ('b', 'a')]  Y: [(), ('Y', 'b', 'Y', 'b', 'Dm', 'a')]
+   unambiguous up to |x| <= 23: True (first ambiguous length None)  [0s]
+   pad (b^0, a^0): first exit n=4 (|x|=4) word bbab at k=1
+   pad (b^0, a^1): first exit n=12 (|x|=11) word bbbabbbabbba at k=4
+   pad (b^0, a^2): first exit n=17 (|x|=15) word bbbbabaabbbabbbaa at k=8
+   pad (b^0, a^3): first exit n=20 (|x|=17) word bbbbbbaaaabbbabbbaaa at k=10
+   pad (b^0, a^4): first exit n=25 (|x|=21) word bbbbabbabaaabbbbabbbbaaaa at k=12
+   pad (b^1, a^0): first exit n=5 (|x|=4) word bbbab at k=1
+   pad (b^1, a^1): first exit n=15 (|x|=13) word bbbbbaabbbabbba at k=7
+   pad (b^1, a^2): first exit n=18 (|x|=15) word bbbbbabaabbbabbbaa at k=9
+   pad (b^1, a^3): first exit n=23 (|x|=19) word bbbbbbbaaaabbbbabbbbaaa at k=11
+   pad (b^1, a^4): first exit n=26 (|x|=21) word bbbbbabbabaaabbbbabbbbaaaa at k=13
+   pad (b^2, a^0): first exit n=6 (|x|=4) word bbbbab at k=1
+   pad (b^2, a^1): first exit n=16 (|x|=13) word bbbbbbaabbbabbba at k=8
+   pad (b^2, a^2): first exit n=21 (|x|=17) word bbbbbbbaaabbbbabbbbaa at k=10
+   pad (b^2, a^3): first exit n=24 (|x|=19) word bbbbbbbbaaaabbbbabbbbaaa at k=12
+   pad (b^2, a^4): first exit n=29 (|x|=23) word bbbbbbabbabaaabbbbbabbbbbaaaa at k=14
+   pad (b^3, a^0): first exit n=7 (|x|=4) word bbbbbab at k=1
+   pad (b^3, a^1): first exit n=19 (|x|=15) word bbbbbbbaabbbbabbbba at k=9
+   pad (b^3, a^2): first exit n=22 (|x|=17) word bbbbbbbbaaabbbbabbbbaa at k=11
+   pad (b^3, a^3): first exit n=27 (|x|=21) word bbbbbbbbaabaabbbbbabbbbbaaa at k=13
+   pad (b^3, a^4): first exit n=30 (|x|=23) word bbbbbbbabbabaaabbbbbabbbbbaaaa at k=15
+   pad (b^4, a^0): first exit n=8 (|x|=4) word bbbbbbab at k=1
+   pad (b^4, a^1): first exit n=20 (|x|=15) word bbbbbbbbaabbbbabbbba at k=10
+   pad (b^4, a^2): first exit n=25 (|x|=19) word bbbbbbbbabaabbbbbabbbbbaa at k=12
+   pad (b^4, a^3): first exit n=28 (|x|=21) word bbbbbbbbbaabaabbbbbabbbbbaaa at k=14
+   pad (b^4, a^4): NO G- exit for |x| <= 23
+   |X_n| n/2^n (float DP; = word count only if unambiguous): n=50: 0.1907, n=100: 0.2072, n=200: 0.2343, n=400: 0.2708, n=800: 0.3166
+=== Y: Dm bYbDmaY | tokens (bH, a) | (bH, b) | w = 'ba'
+   grammar X: [('b', 'Y', 'X', 'a'), ('b', 'Y', 'X', 'b'), ('b', 'a')]  Y: [(), ('b', 'Y', 'b', 'Dm', 'a', 'Y')]
+   unambiguous up to |x| <= 23: True (first ambiguous length None)  [0s]
+   pad (b^0, a^0): first exit n=4 (|x|=4) word bbab at k=1
+   pad (b^0, a^1): first exit n=12 (|x|=11) word bbbabbbabbba at k=4
+   pad (b^0, a^2): first exit n=17 (|x|=15) word bbbbabaabbbabbbaa at k=8
+   pad (b^0, a^3): first exit n=20 (|x|=17) word bbbbbbaaaabbbabbbaaa at k=10
+   pad (b^0, a^4): first exit n=25 (|x|=21) word bbbbabbabaaabbbbabbbbaaaa at k=12
+   pad (b^1, a^0): first exit n=5 (|x|=4) word bbbab at k=1
+   pad (b^1, a^1): first exit n=15 (|x|=13) word bbbbbaabbbabbba at k=7
+   pad (b^1, a^2): first exit n=18 (|x|=15) word bbbbbabaabbbabbbaa at k=9
+   pad (b^1, a^3): first exit n=23 (|x|=19) word bbbbbbbaaaabbbbabbbbaaa at k=11
+   pad (b^1, a^4): first exit n=26 (|x|=21) word bbbbbabbabaaabbbbabbbbaaaa at k=13
+   pad (b^2, a^0): first exit n=6 (|x|=4) word bbbbab at k=1
+   pad (b^2, a^1): first exit n=16 (|x|=13) word bbbbbbaabbbabbba at k=8
+   pad (b^2, a^2): first exit n=21 (|x|=17) word bbbbbbbaaabbbbabbbbaa at k=10
+   pad (b^2, a^3): first exit n=24 (|x|=19) word bbbbbbbbaaaabbbbabbbbaaa at k=12
+   pad (b^2, a^4): first exit n=29 (|x|=23) word bbbbbbabbabaaabbbbbabbbbbaaaa at k=14
+   pad (b^3, a^0): first exit n=7 (|x|=4) word bbbbbab at k=1
+   pad (b^3, a^1): first exit n=19 (|x|=15) word bbbbbbbaabbbbabbbba at k=9
+   pad (b^3, a^2): first exit n=22 (|x|=17) word bbbbbbbbaaabbbbabbbbaa at k=11
+   pad (b^3, a^3): first exit n=27 (|x|=21) word bbbbbbbbaabaabbbbbabbbbbaaa at k=13
+   pad (b^3, a^4): first exit n=30 (|x|=23) word bbbbbbbabbabaaabbbbbabbbbbaaaa at k=15
+   pad (b^4, a^0): first exit n=8 (|x|=4) word bbbbbbab at k=1
+   pad (b^4, a^1): first exit n=20 (|x|=15) word bbbbbbbbaabbbbabbbba at k=10
+   pad (b^4, a^2): first exit n=25 (|x|=19) word bbbbbbbbabaabbbbbabbbbbaa at k=12
+   pad (b^4, a^3): first exit n=28 (|x|=21) word bbbbbbbbbaabaabbbbbabbbbbaaa at k=14
+   pad (b^4, a^4): NO G- exit for |x| <= 23
+   |X_n| n/2^n (float DP; = word count only if unambiguous): n=50: 0.1907, n=100: 0.2072, n=200: 0.2343, n=400: 0.2708, n=800: 0.3166

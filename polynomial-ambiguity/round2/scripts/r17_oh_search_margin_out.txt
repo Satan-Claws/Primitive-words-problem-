@@ -1,0 +1,22 @@
+=== X: [('b', 'Y', 'X', 'a'), ('b', 'Y', 'X', 'b'), ('b', 'a')]  Y: [(), ('Y', 'b', 'Y', 'b', 'Dm', 'a')]
+   exact max_{x in X_n} M(x), n=0..21: [None, None, -1, None, 0, None, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3]
+   n=40: uniform sample of 300: median M = 0, max M = 3, frac(M>=4) = 0.00
+   n=80: uniform sample of 300: median M = 0, max M = 5, frac(M>=4) = 0.02
+   n=160: uniform sample of 300: median M = 0, max M = 9, frac(M>=4) = 0.03
+   n=320: uniform sample of 300: median M = 0, max M = 10, frac(M>=4) = 0.09
+   n=400: uniform sample of 300: median M = 0, max M = 26, frac(M>=4) = 0.13
+   witness |x|=400, M=26: b^26 x a^26 in G-? False
+   witness |x|=400, M=26: b^28 x a^24 in G-? False
+   witness |x|=400, M=26: b^24 x a^28 in G-? False
+   witness x = bbbbbaabbabbbbbbbbabababababbabababbbababbabbababaaaabababababbaaabababbbabaabbbabbabbaaaaabbbabbaaabbbbbabbabaaaabaabab...
+=== X: [('b', 'Y', 'X', 'a'), ('b', 'Y', 'X', 'b'), ('b', 'a')]  Y: [(), ('b', 'Y', 'b', 'Dm', 'a', 'Y')]
+   exact max_{x in X_n} M(x), n=0..21: [None, None, -1, None, 0, None, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3]
+   n=40: uniform sample of 300: median M = 0, max M = 4, frac(M>=4) = 0.01
+   n=80: uniform sample of 300: median M = 0, max M = 7, frac(M>=4) = 0.01
+   n=160: uniform sample of 300: median M = 0, max M = 7, frac(M>=4) = 0.04
+   n=320: uniform sample of 300: median M = 0, max M = 13, frac(M>=4) = 0.10
+   n=400: uniform sample of 300: median M = 0, max M = 14, frac(M>=4) = 0.12
+   witness |x|=400, M=14: b^14 x a^14 in G-? False
+   witness |x|=400, M=14: b^16 x a^12 in G-? False
+   witness |x|=400, M=14: b^12 x a^16 in G-? False
+   witness x = bbbbbbabbaaabbbbbbaabbabbaabbbbbbaabababaaabbbbbabaababababbaaabbbaabaabbbbaababbbbabaaaabbaabababbbbaababababababbbabab...

@@ -1,0 +1,15 @@
+833 stage-2 survivors; re-check to |x| <= 20
+Counter({'G- exit': 430, 'ambiguous': 401, 'SURVIVES': 2}) (24s)
+histogram of |x| at kill: [(14, 319), (15, 149), (16, 135), (17, 59), (18, 66), (19, 78), (20, 25), (99, 2)]
+(99, 'surv', 'Dm', 'YbYbDma', '(bH, a) | (bH, b)', 'ba') 
+(99, 'surv', 'Dm', 'bYbDmaY', '(bH, a) | (bH, b)', 'ba') 
+(20, 'amb', 'Dm', 'YbYaDma', '(aH, a) | (bbH, e)', 'ab') 
+(20, 'amb', 'Dm', 'YbYaDma', '(aH, a) | (bbH, e)', 'ba') 
+(20, 'amb', 'Dm', 'YbYaDma', '(bHa, e) | (bHb, e)  [ONE-TAPE q_V=0]', 'ab') 
+(20, 'amb', 'Dm', 'YbYaDma', '(bHa, e) | (bHb, e)  [ONE-TAPE q_V=0]', 'ba') 
+(20, 'amb', 'Dm', 'YbYaDma', '(Hb, a) | (b, b) | (ab, e)', 'a') 
+(20, 'amb', 'Dm', 'bYaDmaY', '(aH, a) | (bbH, e)', 'ab') 
+(20, 'amb', 'Dm', 'bYaDmaY', '(aH, a) | (bbH, e)', 'ba') 
+(20, 'amb', 'Dm', 'bYaDmaY', '(bHa, e) | (bHb, e)  [ONE-TAPE q_V=0]', 'ab') 
+(20, 'amb', 'Dm', 'bYaDmaY', '(bHa, e) | (bHb, e)  [ONE-TAPE q_V=0]', 'ba') 
+(20, 'amb', 'Dm', 'bYaDmaY', '(Hb, a) | (b, b) | (ab, e)', 'a') 

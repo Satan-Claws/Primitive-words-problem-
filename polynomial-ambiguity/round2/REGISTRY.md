@@ -391,6 +391,8 @@ one-sided HEAVY models (U-level only, q_V > 0, β₀ ≤ 1/4); PR1s assumes (T½
 | One-sided heavy: computational counterexample search | D, `R2/r17_oh_search.md` |
 | Lift T8 from unambiguous to polynomial ambiguity | E, `R2/r17_lift.md` |
 | Bridge: every poly-ambiguous grammar for Q contains a dense fold-type part? | F, `R2/r17_bridge.md` |
+- R17b-D oh_search (`R2/r17_oh_search.md`) [computational]: 215,820 critical one-sided-heavy pair grammars (Y-level β₀=¼ block, light V, incl. one-tape q_V=0): all ambiguous or out of G⁻ by |x|≤20 except 2; those 2 (X→bYXa|bYXb|ba) need pad M(x) growing linearly (M=26 at n=400) ⇒ out. No counterexample.
+- R17b-D mechanism: every deep kill = trailing run of light tokens (or V=bʳ) drives B below −C while an early level block freezes A — i.e. the MS⁺(b) floor; criticality forces such tokens (heuristic).
 
 R17b-A audit_r17: MS⁺ / quadrant c/n / PR2⁺ **SURVIVE** (0 violations brute force, exact DP). Caveats: state the log-level form (Q_n(C+c log n), mass log³N); the open one-sided heavy case also includes one-tape q_V=0 (r15_onesided §4 needs T½). `R2/audit_r17.md`
 R17b-E r17_lift: T8_poly **NOT proved**. Wich route fails at c=1: L1 (markers never on critical loops/their lower blocks) ⇒ loss = junction re-placement ≤ (n+1)^c, already > n^{β₀}. PR2⁺ gives only amb ≥ N^{β₀}/log N. All T8_unamb gaps polynomial; two-sided word-level gap is CONSTANT (Q_n(C) = rotation cross-section); ceiling: count squeezes can't exclude amb ≳ n/log n.
