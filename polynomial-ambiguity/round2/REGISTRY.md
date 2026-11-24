@@ -162,3 +162,10 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 - Strategic consequence: an affirmative construction needs a uniform certificate for TYPICAL words (gcd(#a,#b) with ≥ 2 varying primes),
   exactly what Theorems V, W and X forbid in exposed form. A negative proof should target generic words, not slices.
 - New target DENSE-SOUND: is there a poly-ambiguous CFL L ⊆ Q of positive density? ¬DENSE-SOUND ⇒ main negative (a stronger statement).
+
+## Round 5 (started 03:17 UTC). Reports `R2/r5_*.md`.
+| task | owner / file |
+|---|---|
+| Negative: generic words vs Wich structure ("bounded linear invariants") | R5-A, `R2/r5_generic.md` |
+| Affirmative: hidden uniform certificate of positive density (DENSE-SOUND) | R5-B, `R2/r5_dense.md` |
+| Audit: Prop H + soundness of coverage-loop gadgets | R5-C, `R2/audit_r4.md` |
