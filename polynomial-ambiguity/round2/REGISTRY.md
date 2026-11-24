@@ -51,6 +51,7 @@ Agents: append at most a few lines to the section that fits. Do not rewrite othe
 **Wave 1 synthesis (root, 00:37 UTC).**
 - Foundations hold: Structure (c) and Lemma 3P reconstructed; Lemma F needs offsets <= 2mK (Cor F'); Theorem P intact.
 - Ply side: TILE_k appears to hold with ply 1 (min-cost transport tree selection, `R2/tile2.md`), which would BLOCK S_N
+- [written proof + computational, exact] `R2/lemmaC.md`: Lemma C (cyclic, audit C1) ⇔ BLOCK(N,k), a statement about block-unions of h=(1−X^{P/p_k})∏_{j≠k}(1−X^{p_j}) mod X^P−1 (fine→coarse decoupling + shift-difference). Holds for all k, N≤45 (`lemmaC_blocks.py`); for all N given H (zero-runs of ∏_{j≠k}(1−X^{p_j}); checked 10≤N≤45), with `lemmaC_ends.py`. No counterexample; the choice of ν is not needed for generic u_k.
   geometrically (ply <= sqrt(n) polylog). Under gated audit; Lemma C (arc-genericity of actual mu_k) checked N <= 4 only.
 - Length side: ray-asymptotic ply does not transfer (CRT); density does (Lemma D). Gap = G-rho + G-h.
 - Constructive: n = pq slices have laminar covers of ply <= n + phi(n); n = 30 leaves a 60-vector fibre obstruction.
