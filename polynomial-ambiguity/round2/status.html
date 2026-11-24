@@ -108,7 +108,7 @@ details .body{padding:12px 16px}
     <span class="pill">Status: open</span>
     <span class="pill">Conjectured answer: no</span>
     <span class="pill">✅ T8_unamb: fully audited theorem</span>
-    <span class="pill">17 rounds · ≈80 agents · 15 gated audits</span>
+    <span class="pill">18 rounds · ≈88 agents · 16 gated audits</span>
   </div>
 </div></header>
 
@@ -347,6 +347,7 @@ details .body{padding:12px 16px}
 <p><b>G-trunk reduced (round 17):</b> the only remaining multiplicity is the exit sliding inside the critical component. It needs only the <i>average</i> multiplicity to be small, condition (AM): E[m] = o(N<sup>β₀</sup>). The worst case can be larger (Example S has ~N trees on one word), and the ceiling lemma doesn't apply to averages. Lemma NR (two different parses never re-synchronise) is the starting point.</p>
 <p><b>Round 18 on (AM):</b> a weaker sufficient condition (Prop AM′) is proved. Its exact gap: ruling out an alternative parse that matches every continuation forever. Every critical grammar with slides found so far turned out to be exponentially ambiguous, which supports a conjecture (CR). But one candidate, <b>SH6</b>, has growing multiplicity and no exponential-ambiguity witness up to length 21. An exact decision procedure is now being run on it. If SH6 is truly polynomially ambiguous, it refutes (AM) as stated, but not T8_poly unless its words also stay inside G⁻.</p>
 <p><b>Round 18 on G-end:</b> proved for grammars whose words stay in the quadrant set Q(C), at any polynomial ambiguity, by counting word prefixes rather than measuring derivations, so stacking never matters. For the real target (inside G⁻), it reduces to one configuration: the top critical component, with light material on the left and heavy material on the right. If both sides are light, this ties back to (AM).</p>
+<p><b>Audit (round 18):</b> G-word, G-geo, Prop P (with Lemmas IF, SU and the Trunk Lemma) and G-end for Q(C) all <b>survive</b>, with two small repairs. The polynomial-ambiguity version is therefore <b>audited for grammars inside the quadrant set Q(C)</b>. What remains for G⁻ is the light-left / heavy-right configuration, plus the SH6 question.</p>
 </div></details>
 <details><summary><span class="n">3</span>EQ-2q: match Q exactly on rows with 2q a's</summary><div class="body">
 <p>Is there a polynomially ambiguous grammar that agrees <i>exactly</i> with Q on every row with 2q a's (q prime)? If not, the problem is solved as "no". The bad words there are only squares and q-th powers of two-a words; Lemma S characterises the good ones exactly. The missing piece is making the ambiguity bound enter.</p>
@@ -377,10 +378,10 @@ details .body{padding:12px 16px}
 <tr><td>Lemma SA, Prop K, U1–U3</td><td>G⁻ = two easy halves plus one length coupling; finite memory fails; uncoupling recreates the problem</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> (U1–U3) / <span class="tag t-wp">written proof</span></td></tr>
 <tr><td>PR1, PR2</td><td>Measure squeeze for one-tape and two-sided light-tailed grammars</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> (citation repaired in round 18: pointwise D–W suffices; also superseded by PR2⁺)</td></tr>
 <tr><td>PR1s, Theorem SM, PR2<sup>β</sup></td><td>One-sided square-root tails; side mismatch impossible; balanced heavy tails</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
-<tr><td>G-end for Q(C)</td><td>Polynomially ambiguous grammars inside the quadrant set are never rotation-dense, even with stacked components</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
-<tr><td>Thm G-geo (G-word′)</td><td>T8 at any polynomial ambiguity, for grammars with two-sided flat loops and geometric context; tolerates context up to n/log n</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
-<tr><td>Lemma FR (G-word)</td><td>Set-level bound for any ambiguity: bounded-context insertable words have density ~n<sup>−3/2</sup>, so they are not rotation-dense</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
-<tr><td>Prop P (+ Lemmas IF, SU, Trunk)</td><td>T8 extends to polynomial ambiguity unless the critical component sits fully on an ambiguous trunk</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
+<tr><td>G-end for Q(C)</td><td>Polynomially ambiguous grammars inside the quadrant set are never rotation-dense, even with stacked components</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
+<tr><td>Thm G-geo (G-word′)</td><td>T8 at any polynomial ambiguity, for grammars with two-sided flat loops and geometric context; tolerates context up to n/log n</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
+<tr><td>Lemma FR (G-word)</td><td>Set-level bound for any ambiguity: bounded-context insertable words have density ~n<sup>−3/2</sup>, so they are not rotation-dense</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
+<tr><td>Prop P (+ Lemmas IF, SU, Trunk)</td><td>T8 extends to polynomial ambiguity unless the critical component sits fully on an ambiguous trunk</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
 <tr><td><b>T8_unamb</b></td><td><b>No unambiguous CFL inside G⁻ contains a rotation of a positive fraction of all words (for all large n)</b></td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> (all cases + foundations)</td></tr>
 <tr><td>Lemma L + MS<sup>in</sup> (Thm OH)</td><td>The last case of T8_unamb: one-sided heavy models are ambiguous for every tail</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
 <tr><td>MS⁺ / PR2⁺</td><td>All two-sided cases via a quadrant of density c/n (elementary)</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
