@@ -103,7 +103,7 @@ details .body{padding:12px 16px}
 <header class="hero"><div class="in">
   <h1>Primitive words and polynomially ambiguous grammars</h1>
   <p>Can one context-free grammar generate exactly the words that are not repetitions, while giving every word only polynomially many parse trees?</p>
-  <p style="opacity:.88;font-size:.93rem">Status snapshot · 24 Nov 2026 · after round 19: T8_unamb and T8_poly proved and audited</p>
+  <p style="opacity:.88;font-size:.93rem">Status snapshot · 24 Nov 2026 · after round 19 · round 20 (the bridge) running</p>
   <div class="pills">
     <span class="pill">Status: open</span>
     <span class="pill">Conjectured answer: no</span>
@@ -359,6 +359,13 @@ details .body{padding:12px 16px}
 </div></details>
 <details open><summary><span class="n">1</span>The bridge: every grammar for Q (now the main target)</summary><div class="body">
 <p>T8_poly rules out polynomially ambiguous grammars that stay <i>inside G⁻</i>. A grammar for Q doesn't have to. Round 17 proved that "every polynomially ambiguous grammar for Q contains a dense part inside G⁻" is <b>equivalent to the whole problem</b>. Regular filtering can't do it, and the weakest property that would let T8 apply is exactly what T8 forbids. A proof must use <b>completeness</b> (the grammar generates <i>every</i> primitive word) together with ambiguity. No mechanism for that is known yet.</p>
+<p><b>Round 20 (running): four parallel attacks on the bridge, each using completeness differently.</b></p>
+<ul>
+<li><b>Stable sub-structure:</b> show a grammar for Q must contain a critical part whose substitutions mostly stay inside G⁻, so that T8_poly applies.</li>
+<li><b>Other regions:</b> look for a certificate region other than G⁻ that every grammar for Q is forced into <i>and</i> that the squeeze can handle, or prove no such region exists (which would describe the shape a hypothetical grammar must have).</li>
+<li><b>Near-powers:</b> a grammar must generate every word one letter away from a power, but never the power itself. Across all exponents p, its loops have to "remember" where the defect is, which may force exponential ambiguity.</li>
+<li><b>Dense sound certificates:</b> does every dense, sound, polynomially ambiguous language secretly use the fold? If so, T8_poly settles the problem as "no". Otherwise, find the non-fold certificate.</li>
+</ul>
 </div></details>
 <details><summary><span class="n">3</span>EQ-2q: match Q exactly on rows with 2q a's</summary><div class="body">
 <p>Is there a polynomially ambiguous grammar that agrees <i>exactly</i> with Q on every row with 2q a's (q prime)? If not, the problem is solved as "no". The bad words there are only squares and q-th powers of two-a words; Lemma S characterises the good ones exactly. The missing piece is making the ambiguity bound enter.</p>
@@ -459,6 +466,7 @@ details .body{padding:12px 16px}
   <div class="it s"><div class="h">Round 17 (≈12 parallel agents)</div><b>T8_unamb fully audited</b> (last case + foundations + citations). Lift ceiling found; bridge shown equivalent to the whole problem.</div>
   <div class="it s"><div class="h">Round 18</div>D–W citations repaired; THEOREM_T8.md written; G-end, light-left/heavy-right, Theorem LL; SH6 (not in G⁻) refutes (AM) as stated.</div>
   <div class="it s"><div class="h">Round 19</div>M1/M1′ closed by a tree count; link repairs; <b>T8_poly complete</b> (final end-to-end audit).</div>
+  <div class="it s"><div class="h">Round 20 (running)</div>Four parallel attacks on the bridge: stable sub-structure, other regions, near-powers, dense sound certificates.</div>
 </div>
 </div></details>
 </section>
