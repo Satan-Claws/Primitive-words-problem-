@@ -184,3 +184,9 @@ design gadgets for them or extract a word-level negative family. Split the diffi
   certificates have density O(n^{-1/2}). UMR relaxations are unsound (Prop U).
 - Decisive open question: FOLD-COUNTER. Does F_δ have a positive-density subset that is CF with polynomial ambiguity? A yes kills the
   "generic words are the hard core" heuristic; a no with a robust reason (fold + counter is non-CF on dense sets) is the best negative lead.
+
+## Round 6 (started 03:59 UTC): FOLD-COUNTER. Reports `R2/r6_*.md`.
+| task | owner / file |
+|---|---|
+| Build a CF positive-density subset of F_delta (affirmative) | R6-A, `R2/r6_build.md` |
+| Prove no dense subset of F_K-type folds is CF / poly-amb (negative) | R6-B, `R2/r6_nofold.md` |
