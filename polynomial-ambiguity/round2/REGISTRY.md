@@ -321,3 +321,16 @@ Exact gap: "padding rigidity" (non-injectivity when the coupling carries more th
 | Padding rigidity | R13-A, `R2/r13_padding.md` |
 | Audit: Theorems N, N2; interval-fold Lemma F (r5); Lemma A (r6) | R13-B, `R2/audit_r13.md` |
 - R13-B audit (`reports/audit_r13.md`): Thm N + L_P2, Thm N2 (G₂, L**), Lemmas F/M/A all **SURVIVE**. Own exact tree counts for all |w| ≤ 20 and semantic checks on non-primitive words |w| ≤ 40; Lemma M checked for every K with n ≤ 24; Lemma A checked for all words with n ≤ 20. 0 failures. Caveats: N2(c) is vacuous for |w| ≤ 16 (shortest extra has length 18; tested at 20/40); r6 drops the factor n in d_k; ε must be excluded at n = 0; N1 relies on the unaudited U′.
+- R13-A padding rigidity (`reports/r13_padding.md`): Thm PR2 [proof mod Denisov–Wachtel cone bound]: under square-root block tails (T½), any critical FSC SCC with "level" blocks on both tapes (e.g. E, D⁻) and L ⊆ G⁻ is ambiguous (avg mult ≥ n^{1/6−ε}). Mechanism = measure squeeze: lag freedom (Lemma MS) ⇒ valley shape ⇒ wedge 3π/4 density n^{−2/3} (num. exp −0.666) vs renewal mass ≥ c√N (Lemma R, U(x) ≥ x/m(x)). PR1 [proof]: one-tape models likewise. One-sided case: sketch.
+- R13-A gap: "steep" models (no level block words on either tape) and block tails heavier than ℓ^{−3/2}; T8_unamb still OPEN. No counterexample.
+
+**Round 13 synthesis (root).** Audit: Theorems N, N2, Lemmas F, M, A SURVIVE (`R2/audit_r13.md`).
+Padding rigidity (`R2/r13_padding.md`): Thm PR2 (two-sided level blocks), a measure squeeze: valley shape (Lemma MS) + 3π/4 wedge density O(n^{-2/3})
+(Lemma K, cites Denisov–Wachtel) vs injective mass ≥ c√N (Lemma R) ⇒ contradiction; also rules out multiplicity O(n^{1/6−ε}). Thm PR1 (one-tape).
+Open: steep models, tails heavier than ℓ^{-3/2}, one-sided conditional-moment step. First quantitative step beyond unambiguity on the fold route.
+
+## Round 14 (started 08:32 UTC).
+| task | owner / file |
+|---|---|
+| Gated audit of PR1/PR2 (+ Lemma K citation) | R14-A, `R2/audit_r14.md` |
+| Steep models + heavier tails (remaining PR gap) | R14-B, `R2/r14_steep.md` |
