@@ -244,3 +244,10 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 - Gain: cone-exit rectangles ≲ 4^N N^{-4/3} (vs N^{-1}). Exact remaining gap: a cross-spine packing lemma (§4 of the report).
 - Assessment after 8 rounds: every route reduces to one of three cores: (i) uniform certification of typical words (fold coupling /
   self-similar block sequences), (ii) ¬P_cop via the ambiguity bound, (iii) cross-spine packing. None is close to closed.
+
+## Round 9 (started 06:53 UTC): one agent per core. Reports `R2/r9_*.md`.
+| task | owner / file |
+|---|---|
+| Core (ii): not-P_cop via Wich structure (fresh eyes) | R9-A, `R2/r9_pcop.md` |
+| Core (iii): cross-spine packing lemma | R9-B, `R2/r9_packing.md` |
+| Core (i): exploit the self-similar block reduction (both directions) | R9-C, `R2/r9_selfsim.md` |
