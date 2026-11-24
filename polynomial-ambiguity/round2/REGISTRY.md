@@ -233,3 +233,4 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 |---|---|
 | Prop S gaps G1 (uniform over spines) + G2 (polynomial ambiguity) | R8-A, `R2/r8_propS.md` |
 | Audit: Prop S, Q0, Lemma R; U1-U3 | R8-B, `R2/audit_r7.md` |
+- R8-B audit (`R2/audit_r7.md`): r7_lemmaQ SURVIVES (Q0, Lemma R, Prop S ok; caveat: Prop S step 2 needs the general non-strongly-connected N-algebraic residue-class asymptotics, cited loosely; spine must record child index). r7_uncouple SURVIVES (U1–U3 brute-forced n≤18, 0 errors; non-CF claims are sketches).
