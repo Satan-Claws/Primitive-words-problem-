@@ -234,3 +234,13 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 | Prop S gaps G1 (uniform over spines) + G2 (polynomial ambiguity) | R8-A, `R2/r8_propS.md` |
 | Audit: Prop S, Q0, Lemma R; U1-U3 | R8-B, `R2/audit_r7.md` |
 - R8-B audit (`R2/audit_r7.md`): r7_lemmaQ SURVIVES (Q0, Lemma R, Prop S ok; caveat: Prop S step 2 needs the general non-strongly-connected N-algebraic residue-class asymptotics, cited loosely; spine must record child index). r7_uncouple SURVIVES (U1–U3 brute-forced n≤18, 0 errors; non-CF claims are sketches).
+- R8-A (`reports/r8_propS.md`): T8 OPEN. Thm C [proof]: for unambiguous G, Σ_s slice_{s,a} = |L_n| for every a, so Prop S/S′ never use G⁻ (r7's "not count-only" is wrong) and any G1 uniformity is a tautology. G2 is moot; word distinctness fails inside G⁻ (amb ≍ n example).
+- R8-A: positive items: |G⁻_n| ~ 2ⁿ/√(2πn) (DP); anchored spine rectangles ≲ 4^N N^{−4/3} via a 3π/4 cone (DP −1.329 at m = 800). Remaining gap: cross-spine packing (spine-local arguments cannot give T8).
+
+**Round 8 synthesis (root).** The Prop S route is circular; T8 remains open even for unambiguous grammars.
+- Audit (`R2/audit_r7.md`): Prop S, Q0, Lemma R, U1–U3 SURVIVE as statements (Prop S modulo non-strongly-connected asymptotics).
+- Theorem C (`R2/r8_propS.md`): Σ_s |X_{s,a}||Y_{s,n−1−a}| = |L_n| exactly for unambiguous G, so Prop S does not use G⁻ (it is count-only, §6),
+  and uniform per-spine bounds (G1) are tautological. G2 fails: shifted copies are distinct trees, not distinct words.
+- Gain: cone-exit rectangles ≲ 4^N N^{-4/3} (vs N^{-1}). Exact remaining gap: a cross-spine packing lemma (§4 of the report).
+- Assessment after 8 rounds: every route reduces to one of three cores: (i) uniform certification of typical words (fold coupling /
+  self-similar block sequences), (ii) ¬P_cop via the ambiguity bound, (iii) cross-spine packing. None is close to closed.
