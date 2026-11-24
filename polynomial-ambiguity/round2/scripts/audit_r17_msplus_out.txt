@@ -1,0 +1,12 @@
+Test1 (b): words W with W' in G-: 10173 violations of B_W>=-C_V: 0
+  sample (min B over admissible W, C_V): [(None, 6), (None, 7), (None, 3), (None, 5), (-1, 9), (-1, 7), (None, 10), (None, 5)]
+Test2 (a): tested 11445 violations of A_W<=C_U: 0
+n=8 C=0 brute n*dens=1.1250 DP=1.1250
+n=8 C=1 brute n*dens=3.1250 DP=3.1250
+n=12 C=0 brute n*dens=1.1719 DP=1.1719
+n=12 C=1 brute n*dens=3.5889 DP=3.5889
+n=16 C=0 brute n*dens=1.1963 DP=1.1963
+n=16 C=1 brute n*dens=3.8760 DP=3.8760
+n=256: n*dens C=0 1.2683  C=1 4.9954  C=10 114.598  (C+1)^2-scaled C=10: 0.9471
+n=1024: n*dens C=0 1.2720  C=1 5.0682  C=10 142.534  (C+1)^2-scaled C=10: 1.1780
+n=4096: n*dens C=0 1.2729  C=1 5.0867  C=10 151.058  (C+1)^2-scaled C=10: 1.2484

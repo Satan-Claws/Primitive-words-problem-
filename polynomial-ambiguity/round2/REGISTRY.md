@@ -391,3 +391,7 @@ one-sided HEAVY models (U-level only, q_V > 0, β₀ ≤ 1/4); PR1s assumes (T½
 | One-sided heavy: computational counterexample search | D, `R2/r17_oh_search.md` |
 | Lift T8 from unambiguous to polynomial ambiguity | E, `R2/r17_lift.md` |
 | Bridge: every poly-ambiguous grammar for Q contains a dense fold-type part? | F, `R2/r17_bridge.md` |
+
+R17b-A audit_r17: MS⁺ / quadrant c/n / PR2⁺ **SURVIVE** (0 violations brute force, exact DP). Caveats: state the log-level form (Q_n(C+c log n), mass log³N); the open one-sided heavy case also includes one-tape q_V=0 (r15_onesided §4 needs T½). `R2/audit_r17.md`
+R17b-E r17_lift: T8_poly **NOT proved**. Wich route fails at c=1: L1 (markers never on critical loops/their lower blocks) ⇒ loss = junction re-placement ≤ (n+1)^c, already > n^{β₀}. PR2⁺ gives only amb ≥ N^{β₀}/log N. All T8_unamb gaps polynomial; two-sided word-level gap is CONSTANT (Q_n(C) = rotation cross-section); ceiling: count squeezes can't exclude amb ≳ n/log n.
+  Exact gaps: (G-word) set-level sub-cross-section bound o(2ⁿ/n) (would give T8 for all CFGs, two-sided) or (G-struct) force C_exp at a junction via G⁻ (E*#E* shows chains evade C_exp).
