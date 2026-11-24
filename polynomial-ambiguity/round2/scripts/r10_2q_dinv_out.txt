@@ -1,0 +1,3 @@
+row 6, |w|<=20: 116280 words, 0 failures
+row 10, |w|<=20: 352716 words, 0 failures
+row 14, |w|<=20: 54264 words, 0 failures

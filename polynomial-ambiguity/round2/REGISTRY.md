@@ -274,3 +274,18 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 | Rows #a = 2q: poly-ambiguous L ⊇ Cop agreeing with Q there? | R10-B, `R2/r10_2q.md` |
 - R10-A heavy-block (`reports/r10_heavy.md`): NOT proved, no counterexample. Chord form W∈G⁻ ⟺ P(k)+P(n−k)<P(n); pair-model reduction. Two no-gos: Dyck-oriented giant blocks are offset-insensitive, and an injective critical two-tape model with a safe outer walk exists.
   So the contradiction must come from whole-word injectivity at the centre: every critical model seen fails by centre-shift ambiguity (w occurs inside heavy blocks). Search: `scripts/r10_heavy_*`.
+- R10-B (`reports/r10_2q.md`): **Theorem N2** gives an explicit PCFL L** (amb ≤ |w|, via parity regions + new grammar G₂) with Cop ⊆ L** and L** ∩ {#a or #b ∈ P∪2P∪2^ℕ} ⊆ Q. This refutes the r9 §5 conjecture, so row-2q arguments are dead for ¬P_cop [proof + computational, |w| ≤ 16, rows 4/6/10/14 up to |w| ≤ 20].
+- Equality form (L ∩ row 2q = Q ∩ row 2q) is OPEN. Lemma D (one counter: squares D = 0, q-th powers |D| ∈ q·ℕ⁺) reduces it to H₀ = {D=0}∩NonSq and H₊ = {|D|∈#a·ℕ⁺}∩Not2P. If it fails, Q ∉ PCFL, so this is a sub-problem of ¬P(Q), not of ¬P_cop.
+
+**Round 10 synthesis (root).**
+- Heavy-block (`R2/r10_heavy.md`): not proved; no-go 1 (Dyck giant blocks are offset-insensitive) and no-go 2 (natural heavy-tailed constructions become
+  ambiguous through centre-word recurrence). Gap: centre-shift rigidity.
+- 2q rows (`R2/r10_2q.md`): Theorem N2, an explicit PCFL L** (amb ≤ |w|) with Cop ⊆ L** and L** sound on rows #a or #b ∈ P ∪ 2P ∪ 2^ℕ, refuting
+  r9's conjecture and killing row-2q arguments for ¬P_cop. The EQUALITY form (EQ-2q: no PCFL agrees exactly with Q on all rows #a = 2q) is open; it implies ¬P(Q).
+  Lemma D reduces it to H₀ (D = 0, non-squares) and H₊ (|D| ∈ #a·ℕ⁺, not 2-periodic) on even #b.
+
+## Round 11 (started 07:28 UTC). Reports `R2/r11_*.md`.
+| task | owner / file |
+|---|---|
+| EQ-2q: prove no PCFL matches Q exactly on rows 2q, or build one | R11-A, `R2/r11_eq2q.md` |
+| Centre-shift rigidity (unambiguous T8) | R11-B, `R2/r11_rigid.md` |

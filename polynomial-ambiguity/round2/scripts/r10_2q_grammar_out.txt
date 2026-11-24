@@ -1,0 +1,5 @@
+grammar checks |w|<=16: 131070 words, 0 failures, max(amb-|w|)=0
+row #a=4, |w|<=20: 20349 words (8832 with #b odd): 0 failures
+row #a=6, |w|<=20: 116280 words (46782 with #b odd): 0 failures
+row #a=10, |w|<=20: 352716 words (115126 with #b odd): 0 failures
+row #a=14, |w|<=20: 54264 words (12323 with #b odd): 0 failures
