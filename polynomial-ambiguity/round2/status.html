@@ -97,11 +97,11 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
 <header class="hero"><div class="in">
   <h1>Primitive words and polynomially ambiguous grammars</h1>
   <p>Can a context-free grammar generate exactly the primitive words while giving every word only polynomially many parse trees?</p>
-  <p style="opacity:.85;font-size:.92rem">Status snapshot · 24 Nov 2026 · after round 7</p>
+  <p style="opacity:.85;font-size:.92rem">Status snapshot · 24 Nov 2026 · after round 8</p>
   <div class="pills">
     <span class="pill">Status: open</span>
     <span class="pill">Conjectured answer: no</span>
-    <span class="pill">7 rounds · ≈42 agents · 6 gated audits</span>
+    <span class="pill">8 rounds · ≈44 agents · 7 gated audits</span>
   </div>
 </div></header>
 
@@ -225,6 +225,7 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
   <div class="it s"><div class="h">Round 5: dense certificates <span class="tag t-sc">satan-claws</span></div><div class="d">03:17–~04:00</div>Interval-fold certificate (density ≈ 0.61, a variant gets close to 1). Count-based certificates capped at O(n<sup>−1/2</sup>).</div>
   <div class="it s"><div class="h">Round 6: FOLD-COUNTER <span class="tag t-sc">satan-claws</span></div><div class="d">~04:00–06:30</div>Rotated fold certificates cover <b>all</b> primitive words up to length 30. Lemma A: one canonical rotation lands in G⁻ (prefix a-count &lt; suffix a-count for every k ≤ n/2). Prop K: finite-memory fold certificates can't be sound and dense. Lemma SA: the whole question reduces to <b>one length coupling</b> between two one-counter halves. Still open in both directions.</div>
   <div class="it s"><div class="h">Round 7: the length coupling <span class="tag t-sc">satan-claws</span></div><div class="d">~06:30–07:30</div>Uncoupling fails: without the length condition the excluded words are <i>all</i> powers of a-heavy words, so removing them is the original problem (U1). In cycle-lemma form the problem is <b>self-similar</b> on Dyck blocks of length ~√n (U3). Negative tool: Prop S. Remaining gaps G1 (uniformity over spines) and G2 (polynomial ambiguity).</div>
+  <div class="it s"><div class="h">Round 8: closing Prop S <span class="tag t-sc">satan-claws</span></div><div class="d">~07:30–08:30</div>Audit: Prop S and U1–U3 hold as statements. But Theorem C shows per-spine counts add up exactly to the total, so Prop S never really used the fold structure: the route is circular. One small gain (cone-exit rectangles). Exact gap: a <i>cross-spine packing</i> lemma.</div>
 </div>
 </section>
 
@@ -249,7 +250,7 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
 <tr><td>Lemma A + rotation coverage</td><td>One canonical rotation of almost every primitive word lies in G⁻ ⊆ Q; rotated folds cover Q for n ≤ 30</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span> + <span class="tag t-comp">exhaustive n ≤ 30</span></td></tr>
 <tr><td>Prop K</td><td>Fold certificates checkable by a finite automaton are unsound or exponentially sparse</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
 <tr><td>Lemma SA</td><td>G⁻ = Dyck prefix · a-heavy suffix with one length coupling; dropping it is unsound</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
-<tr><td>Prop S</td><td>An unambiguous grammar inside G⁻ carries only O(n<sup>−3/2</sup>) of the words per fixed centre spine</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
+<tr><td>Prop S</td><td>Per fixed centre spine, an unambiguous grammar carries O(n<sup>−3/2</sup>) of its words. Audited as a statement, but shown to hold for <i>every</i> unambiguous grammar (Theorem C), so it gives no leverage</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span>; route <span class="tag t-open">circular</span></td></tr>
 <tr><td>U1–U3 (self-similarity)</td><td>Removing the length coupling recreates the original problem on Dyck blocks of length ~√n</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
 <tr><td>Coverage loop</td><td>Uniform gadgets cover all primitive words of length ≤ 28 except a few thousand</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-comp">computational</span> + <span class="tag t-aud">soundness audited</span></td></tr>
 </table>
