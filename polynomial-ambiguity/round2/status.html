@@ -20,17 +20,17 @@ a{color:var(--teal-d)}
 .hero{background:linear-gradient(135deg,#0f8b8d 0%,#2e9e6b 100%);color:#fff;padding:44px 16px 36px}
 .hero .in{max-width:1000px;margin:0 auto}
 .hero h1{margin:0 0 8px;font-size:2rem;line-height:1.2;letter-spacing:-.01em}
-.hero p{margin:6px 0;opacity:.95;max-width:760px}
+.hero p{margin:6px 0;opacity:.95;max-width:780px}
 .hero .pills{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
 .hero .pill{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:3px 12px;font-size:.85rem}
-nav{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
 nav .in{max-width:1000px;margin:0 auto;padding:8px 16px;display:flex;gap:4px;overflow-x:auto}
 nav a{white-space:nowrap;text-decoration:none;color:var(--muted);font-size:.9rem;padding:6px 10px;border-radius:8px}
 nav a:hover{background:var(--mint);color:var(--teal-d)}
 main{max-width:1000px;margin:0 auto;padding:8px 16px 72px}
 section{scroll-margin-top:56px}
-h2{font-size:1.4rem;margin:44px 0 6px;color:var(--teal-d)}
-h2 small{display:block;font-size:.9rem;font-weight:400;color:var(--muted);margin-top:2px}
+h2{font-size:1.45rem;margin:46px 0 6px;color:var(--teal-d)}
+h2 small{display:block;font-size:.92rem;font-weight:400;color:var(--muted);margin-top:2px}
 h3{font-size:1.05rem;margin:14px 0 6px}
 p{margin:8px 0}
 .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:12px 0;box-shadow:var(--shadow)}
@@ -42,29 +42,30 @@ code,.m{font-family:var(--mono);font-size:.9em;background:var(--mint);padding:1p
 .tag{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap;vertical-align:middle}
 .t-ajax{background:var(--ajax-bg);color:var(--green-d);border:1px solid #bfe5cf}
 .t-sc{background:var(--sc-bg);color:var(--teal-d);border:1px solid #b5dfe1}
-.t-aud{background:#e3f4ee;color:var(--green-d)}
+.t-aud{background:#d7f0e3;color:#15603f}
 .t-wp{background:var(--warn-bg);color:var(--warn)}
-.t-lean{background:#d7f0e3;color:#15603f}
+.t-lean{background:#cdeedd;color:#0f5235}
 .t-open{background:var(--bad-bg);color:var(--bad)}
 .t-comp{background:#eef2f1;color:var(--muted)}
 .callout{border-left:4px solid var(--teal);background:var(--aqua);padding:12px 16px;border-radius:0 10px 10px 0;margin:12px 0}
 .callout.g{border-color:var(--green);background:var(--mint)}
 table{width:100%;border-collapse:collapse;font-size:.92rem}
 th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
-th{color:var(--muted);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.03em}
+th{color:var(--muted);font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:.03em}
 .scroll{overflow-x:auto}
 ul,ol{margin:6px 0 6px 20px;padding:0} li{margin:4px 0}
-/* timeline */
-.tl{position:relative;margin:16px 0 0 8px;padding-left:22px;border-left:2px solid var(--line)}
-.tl .it{position:relative;margin:0 0 18px}
-.tl .it::before{content:"";position:absolute;left:-30px;top:6px;width:14px;height:14px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--line)}
-.tl .it.a::before{background:var(--ajax)} .tl .it.s::before{background:var(--sc)}
-.tl .h{font-weight:650}
-.tl .d{color:var(--muted);font-size:.85rem}
-/* bars */
+.ok{color:var(--green-d);font-weight:600} .bad{color:var(--bad);font-weight:600}
+svg{max-width:100%;height:auto;display:block}
+svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif}
+.step{display:grid;grid-template-columns:56px 1fr;gap:14px;margin:18px 0}
+.step .num{width:44px;height:44px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:700;font-size:1.1rem;margin-top:14px}
+.step.done .num{background:var(--green)}
+.step.live .num{background:#fff;color:var(--teal-d);border:3px solid var(--teal)}
+.step.todo .num{background:#fff;color:var(--muted);border:2px dashed var(--line)}
+@media (max-width:640px){.step{grid-template-columns:1fr}.step .num{margin:0}}
+.status{font-size:.82rem;font-weight:600;margin-left:6px}
 .bar{display:flex;height:26px;border-radius:8px;overflow:hidden;border:1px solid var(--line);margin:8px 0}
 .bar div{display:flex;align-items:center;justify-content:center;color:#fff;font-size:.78rem;font-weight:600;white-space:nowrap}
-/* open questions */
 details{border:1px solid var(--line);border-radius:12px;margin:10px 0;background:#fff;box-shadow:var(--shadow)}
 summary{cursor:pointer;padding:14px 16px;font-weight:600;list-style:none;display:flex;gap:10px;align-items:center}
 summary::-webkit-details-marker{display:none}
@@ -75,69 +76,79 @@ details .body{padding:12px 16px}
 @media (max-width:640px){.yn{grid-template-columns:1fr}}
 .yn div{border-radius:10px;padding:10px 12px;font-size:.92rem}
 .yn .y{background:var(--mint)} .yn .no{background:var(--aqua)}
-/* demo */
 .demo input{width:100%;font:1rem var(--mono);padding:10px 12px;border:1px solid var(--line);border-radius:10px;outline:none}
 .demo input:focus{border-color:var(--teal);box-shadow:0 0 0 3px var(--aqua)}
 .demo .row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
 .demo button{font:inherit;font-size:.85rem;border:1px solid var(--line);background:var(--bg2);color:var(--teal-d);border-radius:8px;padding:5px 10px;cursor:pointer}
 .demo button:hover{background:var(--mint)}
-.verdicts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
-@media (max-width:640px){.verdicts{grid-template-columns:1fr}}
-.verdicts div{border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:.9rem}
-.verdicts b{display:block;font-size:1.05rem}
-.ok{color:var(--green-d)} .bad{color:var(--bad)}
-#chart{width:100%;height:auto;display:block}
-.word{font-family:var(--mono);letter-spacing:.1em;overflow-wrap:anywhere}
+.demo button.on{background:var(--teal);color:#fff;border-color:var(--teal)}
+.verdicts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:10px 0}
+@media (max-width:760px){.verdicts{grid-template-columns:1fr 1fr}}
+.verdicts div{border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:.86rem}
+.verdicts b{display:block;font-size:1rem;margin-top:2px}
+.word{font-family:var(--mono);letter-spacing:.08em;overflow-wrap:anywhere;font-size:.95rem}
 .foot{color:var(--muted);font-size:.85rem;margin-top:48px;border-top:1px solid var(--line);padding-top:14px}
-svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif}
+.tl{position:relative;margin:12px 0 0 8px;padding-left:22px;border-left:2px solid var(--line)}
+.tl .it{position:relative;margin:0 0 14px}
+.tl .it::before{content:"";position:absolute;left:-30px;top:6px;width:14px;height:14px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--line)}
+.tl .it.a::before{background:var(--ajax)} .tl .it.s::before{background:var(--sc)}
+.tl .h{font-weight:650}
+.legend{display:flex;flex-wrap:wrap;gap:10px;font-size:.82rem;color:var(--muted);margin:6px 0}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
 </style>
 </head>
 <body>
 
 <header class="hero"><div class="in">
   <h1>Primitive words and polynomially ambiguous grammars</h1>
-  <p>Can a context-free grammar generate exactly the primitive words while giving every word only polynomially many parse trees?</p>
-  <p style="opacity:.85;font-size:.92rem">Status snapshot · 24 Nov 2026 · round 17 in progress</p>
+  <p>Can one context-free grammar generate exactly the words that are not repetitions, while giving every word only polynomially many parse trees?</p>
+  <p style="opacity:.88;font-size:.93rem">Status snapshot · 24 Nov 2026 · rounds paused after round 16 to consolidate</p>
   <div class="pills">
     <span class="pill">Status: open</span>
     <span class="pill">Conjectured answer: no</span>
-    <span class="pill">17 rounds · ≈64 agents · 10 gated audits</span>
+    <span class="pill">Current target: T8_unamb (one case left)</span>
+    <span class="pill">16 rounds · ≈64 agents · 10 gated audits</span>
   </div>
 </div></header>
 
 <nav><div class="in">
-  <a href="#problem">Problem</a><a href="#who">Who did what</a><a href="#idea">The idea</a><a href="#timeline">Timeline</a>
-  <a href="#results">Results</a><a href="#demo">Fold demo</a><a href="#open">Open questions</a><a href="#path">Path to solution</a><a href="#files">Files</a>
+  <a href="#now">In one minute</a><a href="#problem">Problem</a><a href="#plan">What we're doing</a><a href="#map">Proof map</a>
+  <a href="#demo">Try it</a><a href="#open">Open questions</a><a href="#results">Results</a><a href="#who">Who did what</a><a href="#log">Round log</a><a href="#files">Files</a>
 </div></nav>
 
 <main>
 
-<!-- PROBLEM -->
+<section id="now">
+<h2>In one minute<small>What is being done right now, and why</small></h2>
+<div class="callout g">
+  <p><b>The question.</b> A word like <code>abab</code> is a repetition (<code>ab</code> twice), while <code>aab</code> is <i>primitive</i>. Is there a grammar for exactly the primitive words that is only <b>polynomially</b> ambiguous? Most experts expect <b>no</b>.</p>
+  <p><b>The approach.</b> Instead of hunting for special bad words (the original plan, which turned out not to work), we look at <b>ordinary random words</b>. We found one simple test, a <b>fold</b> of the word, that proves almost every word is primitive. So the problem becomes:
+  <i>can a grammar carry out the fold test?</i> If not even an unambiguous grammar can, that's strong evidence for "no", and a template for the full proof.</p>
+  <p><b>Where we are.</b> We're proving <b>T8_unamb</b>: no unambiguous grammar can carry out the fold test on a sizeable fraction of words. The proof splits into cases. All are done except one (one-sided heavy-tailed grammars), and most of the finished pieces have passed an independent audit.</p>
+</div>
+<div class="grid3">
+  <div class="card"><h3>✅ Done</h3><p>Fold certificate found and audited. The question reduced to one obstacle, a <i>length coupling</i>. Every two-sided and one-sided-light case of T8_unamb proved.</p></div>
+  <div class="card"><h3>🔄 Open in T8_unamb</h3><p>One case: grammars whose heavy blocks sit on only one side and have very heavy tails. Also pending: an audit of the elementary "quadrant" argument from round 16.</p></div>
+  <div class="card"><h3>⏭ After that</h3><p>Lift from <i>unambiguous</i> to <i>polynomially ambiguous</i> (partly done: up to n<sup>1/6</sup>), then show <i>every</i> grammar for Q must contain a fold-type part.</p></div>
+</div>
+</section>
+
 <section id="problem">
-<h2>1. The problem<small>What exactly is being asked</small></h2>
+<h2>1. The problem<small>Definitions, and where it sits</small></h2>
 <div class="grid2">
   <div class="card">
     <h3>Primitive words</h3>
-    <p>A word is <b>primitive</b> if it is not a repetition of a shorter word.</p>
-    <ul>
-      <li><code>aab</code>, <code>abaab</code>: primitive</li>
-      <li><code>abab</code> = (ab)², <code>aaa</code> = a³: not primitive</li>
-    </ul>
-    <p><b>Q</b> = the set of primitive words over {a, b}. Almost every word is primitive; the non-primitive ones are rare but structured.</p>
+    <p>A word is <b>primitive</b> if it isn't a shorter word repeated: <code>aab</code>, <code>abaab</code> are primitive; <code>abab</code> = (ab)², <code>aaa</code> = a³ are not.
+    <b>Q</b> is the set of primitive words over {a, b}. Almost every word is primitive; the exceptions are rare but highly structured.</p>
   </div>
   <div class="card">
     <h3>Ambiguity</h3>
-    <p>A grammar may derive one word in many ways. G is <b>polynomially ambiguous</b> if every word w has ≤ C·|w|ᵏ parse trees, for constants C and k of the grammar.</p>
-    <p><b>Question:</b> is there such a G with L(G) = Q?</p>
-    <p class="m" style="background:none;padding:0;color:var(--muted)">Wich's dichotomy: every grammar is either polynomially or exponentially ambiguous, so "no" means "every grammar for Q is exponentially ambiguous".</p>
+    <p>A grammar can derive the same word in several ways. It is <b>polynomially ambiguous</b> if every word w has at most C·|w|ᵏ parse trees. By Wich's dichotomy, "no" means every grammar for Q is <i>exponentially</i> ambiguous.</p>
   </div>
 </div>
-<div class="callout">
-  <b>Context.</b> Whether Q is context-free <i>at all</i> is a famous open problem (Dömösi–Horváth–Ito, 1991). Known: Q is not unambiguous (Petersen 1996), and not finitely ambiguous (proved in this repo, Lean-checked).
-  Polynomial ambiguity is the next rung on that ladder: it is strictly harder to rule out than finite ambiguity, and strictly easier than settling context-freeness.
-</div>
 <div class="card soft">
-  <h3>The ladder</h3>
+  <h3>The ladder of difficulty</h3>
   <svg viewBox="0 0 900 120" role="img" aria-label="Ambiguity ladder">
     <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#5b726d"/></marker></defs>
     <g font-size="13">
@@ -146,350 +157,357 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
       <rect x="385" y="22" width="200" height="72" rx="10" fill="#0f8b8d"/><text x="485" y="52" text-anchor="middle" font-weight="700" fill="#fff">polynomially ambiguous</text><text x="485" y="72" text-anchor="middle" fill="#e0f7f7">THIS PROBLEM: open</text>
       <rect x="610" y="30" width="130" height="56" rx="10" fill="#fff" stroke="#d5e9e4"/><text x="675" y="54" text-anchor="middle" font-weight="600">exponentially</text><text x="675" y="73" text-anchor="middle" fill="#5b726d">ambiguous</text>
       <rect x="765" y="30" width="130" height="56" rx="10" fill="#fff" stroke="#d5e9e4" stroke-dasharray="4 3"/><text x="830" y="54" text-anchor="middle" font-weight="600">context-free?</text><text x="830" y="73" text-anchor="middle" fill="#5b726d">open since 1991</text>
-      <line x1="167" y1="58" x2="186" y2="58" stroke="#5b726d" marker-end="url(#ar)"/>
-      <line x1="362" y1="58" x2="381" y2="58" stroke="#5b726d" marker-end="url(#ar)"/>
-      <line x1="587" y1="58" x2="606" y2="58" stroke="#5b726d" marker-end="url(#ar)"/>
-      <line x1="742" y1="58" x2="761" y2="58" stroke="#5b726d" marker-end="url(#ar)"/>
-      <text x="450" y="114" text-anchor="middle" fill="#5b726d" font-size="12">each step to the right allows more ambiguous grammars; ruling out a rung is harder the further right it is</text>
+      <line x1="167" y1="58" x2="186" y2="58" stroke="#5b726d" marker-end="url(#ar)"/><line x1="362" y1="58" x2="381" y2="58" stroke="#5b726d" marker-end="url(#ar)"/><line x1="587" y1="58" x2="606" y2="58" stroke="#5b726d" marker-end="url(#ar)"/><line x1="742" y1="58" x2="761" y2="58" stroke="#5b726d" marker-end="url(#ar)"/>
+      <text x="450" y="114" text-anchor="middle" fill="#5b726d" font-size="12">each rung to the right is harder to rule out; we are working on the highlighted one</text>
     </g>
   </svg>
 </div>
 </section>
 
-<!-- WHO -->
-<section id="who">
-<h2>2. Who did what<small>Based on the git history of the repository and the fork</small></h2>
-<div class="grid2">
-  <div class="card" style="border-top:4px solid var(--ajax)">
-    <h3><span class="tag t-ajax">ajax</span> &nbsp;Original repository <code>ajax711/Primitive-words-problem-</code></h3>
-    <p class="m" style="background:none;padding:0;color:var(--muted)">15–19 Nov 2026 · 143 commits (137 from Claude agent sessions, 6 by shobhit)</p>
-    <ul>
-      <li>Context-free campaigns: briefing, agent reports, a Lean statement of the conjecture</li>
-      <li><b>Finite ambiguity resolved</b>: no finitely ambiguous grammar for Q, with a complete <b>Lean 4 proof</b> and audits</li>
-      <li>LIPIcs / LICS manuscript of the finite-ambiguity theorem</li>
-      <li>Infinite-ambiguity investigations (Codex; Claude rounds 4–5)</li>
-      <li>First polynomial-ambiguity campaign: <b>Theorem P</b>, the slice candidate <b>S_N</b>, Lemma 3P and the "core toolkit"</li>
-      <li><code>RESULTS_INDEX.md</code> and the round-2 brief <code>prompt.md</code></li>
-    </ul>
-  </div>
-  <div class="card" style="border-top:4px solid var(--sc)">
-    <h3><span class="tag t-sc">satan-claws</span> &nbsp;This session, fork <code>Satan-Claws/Primitive-words-problem-</code></h3>
-    <p class="m" style="background:none;padding:0;color:var(--muted)">24 Nov 2026 · 78 commits · rounds 2–15 of the polynomial-ambiguity campaign · ≈60 agents · 9 gated audits</p>
-    <ul>
-      <li><b>Rounds 2–3:</b> the slice route is blocked by audited results (ply-1 transport tiling, bounded-data pair facets, Lemma I2); foundations reconstructed; uniformity obstructions (Theorems W, X, R)</li>
-      <li><b>Round 4:</b> <b>strategy change</b> to bottom-up, word-level work; literature verified; Prop H reduction chain (audited)</li>
-      <li><b>Rounds 5–7:</b> the interval-fold certificate (audited), rotation into G⁻ (audited), and the reduction to one <i>length coupling</i>; self-similarity</li>
-      <li><b>Rounds 8–10:</b> dead ends ruled out rigorously (Prop S circular, Theorem N/N2 kill row arguments, no self-similar amplification)</li>
-      <li><b>Round 12:</b> consolidated 831-line <code>RESEARCH_NOTE.md</code> + RESULTS_INDEX §11</li>
-      <li><b>Rounds 13–15:</b> <b>padding rigidity PR2</b> (audited), the first real negative theorem on the fold route; closing the last three pieces of T8_unamb</li>
-    </ul>
-  </div>
+<section id="plan">
+<h2>2. What we're doing, step by step<small>The current strategy, from the problem down to the case we're working on</small></h2>
+
+<div class="step done"><div class="num">1</div><div class="card">
+  <h3>Turn "primitive" into something a grammar could check <span class="status ok">done</span></h3>
+  <p>A word is a repetition exactly when <b>w = vᵖ for a prime p</b> dividing both letter counts. So a grammar has to certify, for <i>every</i> such prime at once, that w isn't a p-th power.
+  For a single prime this is easy (point at one mismatch between positions i and i + n/p; linear ambiguity). The whole difficulty is <b>all primes, one grammar, every length</b>.</p>
+  <p style="color:var(--muted);font-size:.9rem">We also showed the original plan (structured "slice" families that would force huge ambiguity) cannot work: those slices can be covered with overlap 1 <span class="tag t-aud">audited</span>. And the hard words turned out to be <b>typical random words</b>: every simple certificate a grammar can check covers a vanishing fraction of them (~n<sup>−1/2</sup>).</p>
+</div></div>
+
+<div class="step done"><div class="num">2</div><div class="card">
+  <h3>Find one test that certifies almost every word: the fold <span class="status ok">done · audited</span></h3>
+  <p>Fold the word in half. For each k, compare <b>a's in the first k letters</b> with <b>a's in the last k letters</b>, and call the difference d<sub>k</sub>.</p>
+  <svg viewBox="0 0 900 170" role="img" aria-label="Fold diagram"><g font-family="ui-monospace,Menlo,monospace" font-size="18"><g id="foldletters"></g></g></svg>
+  <ul>
+    <li>If w = uᵖ, then at k = ⌊p/2⌋·n/p the first k letters and the last k letters are <i>the same word</i>, so d<sub>k</sub> = 0. That k always lies between n/3 and n/2, for <b>every</b> prime p.</li>
+    <li>So <b>"d<sub>k</sub> ≠ 0 for every k in [n/3, n/2]"</b> proves primitivity for all primes in one go (Lemma F) <span class="tag t-aud">audited</span>. About 61% of words pass.</li>
+    <li>After rotating the word to a canonical starting point, almost every primitive word satisfies the cleaner condition <b>G⁻: d<sub>k</sub> &lt; 0 for every k ≤ n/2</b> (Lemma A) <span class="tag t-aud">audited</span>. Rotations are free for grammars (exact cyclic closure).</li>
+  </ul>
+</div></div>
+
+<div class="step done"><div class="num">3</div><div class="card">
+  <h3>Pin down what's hard about the fold for grammars <span class="status ok">done</span></h3>
+  <p>A grammar can easily generate a word as nested pairs (first letter with last letter, and so on inwards). What it cannot obviously do is <b>count along the fold</b>. We showed G⁻ is exactly two simple halves glued by <b>one length condition</b>:</p>
+  <svg viewBox="0 0 900 150" role="img" aria-label="Length coupling">
+    <g font-size="14">
+      <rect x="40" y="30" width="430" height="46" rx="8" fill="#e6f5ec" stroke="#9fd6b9"/>
+      <text x="255" y="58" text-anchor="middle" font-weight="600" fill="#15603f">x: Dyck-type prefix (b-first, balanced)</text>
+      <rect x="480" y="30" width="330" height="46" rx="8" fill="#e0f2f3" stroke="#b5dfe1"/>
+      <text x="645" y="58" text-anchor="middle" font-weight="600" fill="#0b6466">y: every suffix has more a's than b's</text>
+      <path d="M60 92 L460 92" stroke="#1f7a52" stroke-width="2"/><path d="M490 92 L800 92" stroke="#0b6466" stroke-width="2"/>
+      <text x="450" y="120" text-anchor="middle" fill="#10302b" font-weight="700">coupled by  |x| ≥ |y|</text>
+      <text x="450" y="142" text-anchor="middle" fill="#5b726d" font-size="12">each half alone is easy for a grammar; drop the coupling and squares like baa·baa slip through</text>
+    </g>
+  </svg>
+  <p style="font-size:.92rem">Every attempt to avoid the coupling recreates the original problem one level down (the self-similarity results U1–U3). Finite-memory versions provably fail (Prop K). So the real question is: <b>can any grammar implement this length coupling on a dense set of words?</b></p>
+</div></div>
+
+<div class="step live"><div class="num">4</div><div class="card">
+  <h3>Prove no unambiguous grammar can (T8_unamb) <span class="status" style="color:var(--teal-d)">in progress: one case left</span></h3>
+  <p><b>Statement:</b> no unambiguous context-free language inside G⁻ contains a rotation of a positive fraction of all words.</p>
+  <p><b>Method: a "measure squeeze".</b></p>
+  <ol>
+    <li>A grammar covering that many words must contain a <i>critical, heavy-tailed</i> block structure: long blocks generated on each side of the fold centre (Thm M, Lemma Bot).</li>
+    <li>Those blocks can be swapped freely, so the grammar can make one side "flat" for as long as it likes. Staying inside G⁻ then traps every word's walk in a narrow region: a wedge, or a quadrant.</li>
+    <li>Random walks rarely stay in narrow regions (probability ~n<sup>−2/3</sup> or ~1/n). But an unambiguous grammar with that block structure has to produce many distinct words there (≥ N<sup>β</sup>). Too few words fit, which is a contradiction.</li>
+  </ol>
+  <svg viewBox="0 0 900 240" role="img" aria-label="Measure squeeze">
+    <g font-size="13">
+      <rect x="20" y="10" width="400" height="220" rx="12" fill="#f3faf8" stroke="#d5e9e4"/>
+      <line x1="60" y1="200" x2="400" y2="200" stroke="#9fb8b2"/><line x1="60" y1="200" x2="60" y2="30" stroke="#9fb8b2"/>
+      <text x="400" y="218" text-anchor="end" fill="#5b726d">prefix walk A</text><text x="66" y="40" fill="#5b726d">suffix walk B</text>
+      <path d="M60 200 L400 200 L400 30 L60 30 Z" fill="#dff3f4" opacity=".7"/>
+      <path d="M60 200 L400 30" stroke="#0f8b8d" stroke-dasharray="5 4"/>
+      <polyline id="walkpath" fill="none" stroke="#2e9e6b" stroke-width="2.5" points=""/>
+      <text x="230" y="120" text-anchor="middle" fill="#0b6466" font-weight="600">allowed region</text>
+      <text x="230" y="138" text-anchor="middle" fill="#0b6466">(wedge or quadrant)</text>
+      <g transform="translate(450,20)">
+        <text x="0" y="20" font-weight="700" fill="#10302b">The squeeze in numbers</text>
+        <text x="0" y="50" fill="#10302b">Words that fit inside G⁻:</text><text x="230" y="50" fill="#0b6466" font-weight="600">~ n^(−1/2)</text>
+        <text x="0" y="76" fill="#10302b">…and in the wedge (PR2):</text><text x="230" y="76" fill="#0b6466" font-weight="600">~ n^(−2/3)</text>
+        <text x="0" y="102" fill="#10302b">…and in the quadrant (PR2⁺):</text><text x="230" y="102" fill="#0b6466" font-weight="600">~ n^(−1)</text>
+        <line x1="0" y1="116" x2="400" y2="116" stroke="#d5e9e4"/>
+        <text x="0" y="140" fill="#10302b">An injective grammar needs:</text><text x="230" y="140" fill="#1f7a52" font-weight="600">≥ N^β words</text>
+        <text x="0" y="172" fill="#c0392b" font-weight="700">Not enough room ⇒ contradiction</text>
+        <text x="0" y="196" fill="#5b726d" font-size="12">Also rules out ambiguity below n^(1/6) (first step past unambiguous)</text>
+      </g>
+    </g>
+  </svg>
+  <p>The proof splits by where the long blocks sit (one side or both) and how heavy their length distribution is. See the <a href="#map">proof map</a> for each case's status.</p>
+</div></div>
+
+<div class="step todo"><div class="num">5</div><div class="card">
+  <h3>Lift to polynomial ambiguity, then to every grammar <span class="status" style="color:var(--muted)">next</span></h3>
+  <ul>
+    <li><b>5a.</b> From unambiguous to polynomially ambiguous. The squeeze already tolerates multiplicity up to n<sup>1/6</sup>; a full lift needs either a stronger squeeze or Wich's structure theory (a polynomially ambiguous grammar has only k·log n "ambiguous spots" per tree).</li>
+    <li><b>5b.</b> From fold-type grammars to <i>every</i> grammar for Q. Show any polynomially ambiguous grammar for Q must contain a dense fold-type part. This is the hardest step, and where the full difficulty of the problem lives. Related targets: P_cop and EQ-2q (see <a href="#open">open questions</a>).</li>
+  </ul>
+  <p style="font-size:.9rem;color:var(--muted)">If at any point a grammar <i>does</i> implement the fold densely, the picture flips toward "yes": the remaining words are rare structured exceptions that known gadgets largely handle.</p>
+</div></div>
+</section>
+
+<section id="map">
+<h2>3. Proof map for T8_unamb<small>How the pieces fit together, and the status of each</small></h2>
+<div class="legend">
+  <span><i style="background:#2e9e6b"></i>audited</span>
+  <span><i style="background:#b7e4cf"></i>written proof, audit pending</span>
+  <span><i style="background:#fbeceb;border:1px solid #c0392b"></i>open</span>
 </div>
 <div class="card soft">
-  <h3>Commit share</h3>
-  <div class="bar"><div style="flex:143;background:var(--ajax)">ajax · 143</div><div style="flex:78;background:var(--sc)">satan-claws · 78</div></div>
-  <p style="font-size:.88rem;color:var(--muted)">satan-claws builds directly on ajax's toolkit. Every round-2+ result either uses, tests or overturns something from the original repository.</p>
+<svg viewBox="0 0 960 470" role="img" aria-label="Proof map">
+  <defs><marker id="pm" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#7a918c"/></marker></defs>
+  <g font-size="12.5">
+    <rect x="300" y="10" width="360" height="54" rx="10" fill="#0f8b8d"/>
+    <text x="480" y="33" text-anchor="middle" font-weight="700" fill="#fff">T8_unamb</text>
+    <text x="480" y="52" text-anchor="middle" fill="#e0f7f7">no unambiguous CFL ⊆ G⁻ is rotation-dense</text>
+    <line x1="480" y1="66" x2="480" y2="92" stroke="#7a918c" marker-end="url(#pm)"/>
+    <rect x="250" y="94" width="460" height="54" rx="10" fill="#2e9e6b"/>
+    <text x="480" y="116" text-anchor="middle" font-weight="600" fill="#fff">Reduction: dense ⇒ critical heavy-tailed block structure</text>
+    <text x="480" y="135" text-anchor="middle" fill="#e6f5ec">Thm M, Lemma F, Rn, Cor H, Lemma Bot · Theorem SM (side)</text>
+    <line x1="480" y1="150" x2="480" y2="168" stroke="#7a918c"/>
+    <line x1="170" y1="168" x2="790" y2="168" stroke="#7a918c"/>
+    <line x1="170" y1="168" x2="170" y2="190" stroke="#7a918c" marker-end="url(#pm)"/>
+    <line x1="790" y1="168" x2="790" y2="190" stroke="#7a918c" marker-end="url(#pm)"/>
+    <text x="170" y="184" text-anchor="middle" fill="#5b726d" font-size="11">long blocks on BOTH sides</text>
+    <text x="790" y="184" text-anchor="middle" fill="#5b726d" font-size="11">long blocks on ONE side</text>
+    <rect x="20" y="194" width="300" height="50" rx="10" fill="#2e9e6b"/>
+    <text x="170" y="215" text-anchor="middle" font-weight="600" fill="#fff">Two-sided, light tails: PR2</text>
+    <text x="170" y="233" text-anchor="middle" fill="#e6f5ec">wedge squeeze n^(−2/3) · audited</text>
+    <rect x="20" y="254" width="300" height="50" rx="10" fill="#2e9e6b"/>
+    <text x="170" y="275" text-anchor="middle" font-weight="600" fill="#fff">Two-sided, balanced heavy tails: PR2^β</text>
+    <text x="170" y="293" text-anchor="middle" fill="#e6f5ec">quadrant phase · audited</text>
+    <rect x="20" y="314" width="300" height="50" rx="10" fill="#b7e4cf" stroke="#2e9e6b"/>
+    <text x="170" y="335" text-anchor="middle" font-weight="600" fill="#15603f">All two-sided cases: PR2⁺ (MS⁺)</text>
+    <text x="170" y="353" text-anchor="middle" fill="#15603f">quadrant c/n, elementary · audit pending</text>
+    <rect x="640" y="194" width="300" height="50" rx="10" fill="#2e9e6b"/>
+    <text x="790" y="215" text-anchor="middle" font-weight="600" fill="#fff">One-tape models: PR1</text>
+    <text x="790" y="233" text-anchor="middle" fill="#e6f5ec">audited</text>
+    <rect x="640" y="254" width="300" height="50" rx="10" fill="#2e9e6b"/>
+    <text x="790" y="275" text-anchor="middle" font-weight="600" fill="#fff">One-sided, square-root tails: PR1s</text>
+    <text x="790" y="293" text-anchor="middle" fill="#e6f5ec">Lemma CM + J · audited</text>
+    <rect x="640" y="314" width="300" height="50" rx="10" fill="#fbeceb" stroke="#c0392b"/>
+    <text x="790" y="335" text-anchor="middle" font-weight="700" fill="#c0392b">One-sided, very heavy tails</text>
+    <text x="790" y="353" text-anchor="middle" fill="#c0392b">OPEN: the last case (β₀ ≤ 1/4)</text>
+    <rect x="330" y="400" width="300" height="56" rx="10" fill="#fff" stroke="#d5e9e4"/>
+    <text x="480" y="422" text-anchor="middle" font-weight="600" fill="#10302b">Shared inputs</text>
+    <text x="480" y="441" text-anchor="middle" fill="#5b726d">Denisov–Wachtel cone bounds · Banderier–Drmota tails</text>
+    <line x1="320" y1="300" x2="400" y2="400" stroke="#d5e9e4"/><line x1="640" y1="300" x2="560" y2="400" stroke="#d5e9e4"/>
+  </g>
+</svg>
+</div>
+<p style="font-size:.9rem;color:var(--muted)">Closing the red box, plus an audit of the round-16 quadrant argument, would make T8_unamb a complete theorem. On its own it would <i>not</i> solve the problem (step 5 remains). But it would be the first rigorous evidence that the dense fold certificate is out of reach for grammars.</p>
+</section>
+
+<section id="demo">
+<h2>4. Try the fold test<small>Type a word over {a, b}; everything runs locally in your browser</small></h2>
+<div class="card demo">
+  <input id="w" value="aababbabab" spellcheck="false" autocomplete="off" aria-label="word">
+  <div class="row">
+    <button data-w="abab">abab</button><button data-w="aabaabaab">aabaabaab</button><button data-w="aababbabab">aababbabab</button>
+    <button data-w="abaababaab">abaababaab</button><button data-w="abbabaabbaba">abbabaabbaba</button><button id="rnd">random (n=40)</button>
+    <span style="flex:1"></span>
+    <button id="viewO" class="on">original word</button><button id="viewR">canonical rotation</button>
+  </div>
+  <div class="verdicts">
+    <div>Primitive?<b id="vp">–</b></div>
+    <div>Fold window test<b id="vf">–</b></div>
+    <div>Canonical rotation in G⁻?<b id="vg">–</b></div>
+    <div>Length · gcd(#a,#b)<b id="vn">–</b></div>
+  </div>
+  <p class="word" id="shown"></p>
+  <svg id="chart" viewBox="0 0 640 220" role="img" aria-label="d_k chart"></svg>
+  <p style="font-size:.88rem;color:var(--muted)">The chart plots d<sub>k</sub> = (a's in the first k letters) − (a's in the last k letters) for k = 1…n/2. The shaded band is [n/3, n/2].
+  <b>Fold window test:</b> accept if d<sub>k</sub> ≠ 0 throughout the band. It is sound (powers always hit 0 there) but not complete.
+  <b>Canonical rotation:</b> rotate to start at the unique maximum of T(i) = n·#a(w[0,i)) − i·#a(w); if that rotation is in G⁻ (d<sub>k</sub> &lt; 0 for all k), primitivity is certified. Ties in the maximum are the rare exception.</p>
 </div>
 </section>
 
-<!-- IDEA -->
-<section id="idea">
-<h2>3. What the idea is<small>How the picture evolved, and where it stands now</small></h2>
-<div class="card">
-  <h3>Primitivity is a "for every prime" statement</h3>
-  <p>A word w is not primitive exactly when <b>w = vᵖ for a prime p dividing gcd(#a, #b)</b>. So a proof that w is primitive must, <b>for every such prime p</b>, show that w is not a p-th power.
-  For <i>one</i> fixed prime this is easy for a grammar: point to a single mismatch between positions i and i + n/p (linear ambiguity). The difficulty is doing it for <b>all primes at once, with one grammar, for every length</b>.</p>
-</div>
-<div class="grid3">
-  <div class="card"><span class="tag t-ajax">phase 1 · ajax</span><h3>Force a blow-up on slices</h3><p>Pick structured word families (slices with n = product of primes squared) where certifying every prime seemed to need many overlapping parse trees.</p></div>
-  <div class="card"><span class="tag t-sc">phase 2 · rounds 2–4</span><h3>Slices are fine; typical words are hard</h3><p>The slices <b>can</b> be covered with overlap 1 (audited). The real constraint is <b>uniformity</b>. Every simple certificate a grammar can check covers a vanishing fraction (~n<sup>−1/2</sup>) of <i>random</i> words.</p></div>
-  <div class="card"><span class="tag t-sc">phase 3 · rounds 5–15</span><h3>The fold, and why it resists grammars</h3><p>One certificate covers almost every word: the <b>interval fold</b>, made rotation-friendly as <b>G⁻</b>. Turning it into a grammar needs a length coupling across the centre. The current work is proving no unambiguous grammar can supply it.</p></div>
-</div>
-<div class="card">
-  <h3>The fold certificate in one picture</h3>
-  <p>Fold the word in half. Compare the number of a's in the first k letters with the number in the last k letters, for every k up to n/2.</p>
-  <ul>
-    <li>If w = uᵖ, the prefix and suffix of length ⌊p/2⌋·n/p are <i>identical</i>, so the counts are equal there. That position always lies between n/3 and n/2, for every prime p.</li>
-    <li>So <b>"the counts differ at every k in [n/3, n/2]"</b> proves primitivity, for all primes at once (Lemma F, audited). About 61% of words pass directly.</li>
-    <li>After a canonical rotation, almost every primitive word satisfies the stronger condition <b>G⁻</b>: prefix count &lt; suffix count for <i>every</i> k ≤ n/2 (Lemma A, audited). Rotations cost nothing for grammars, since cyclic closure is exact.</li>
-  </ul>
-</div>
-<div class="callout g">
-  <b>Current working picture (after round 14).</b> A grammar can generate the fold as nested letter pairs. What it can't obviously do is <i>count along the fold</i>. Lemma SA shows G⁻ is exactly a Dyck-type prefix times an a-heavy suffix, <b>coupled by one length condition</b>. Without that coupling, powers sneak in. Removing them is the original problem again, one level down (U1–U3).
-  The negative programme now attacks the coupling directly. <b>PR2 (audited)</b> proves that a large class of unambiguous grammars cannot stay inside G⁻ while covering enough words. It even rules out ambiguity below n<sup>1/6</sup>, using a "measure squeeze": the words such a grammar is forced to make are too rare (n<sup>−2/3</sup>) for it to be injective.
-  The one-sided case is now closed too (PR1s). Side mismatch is closed too (Theorem SM). Round 16 then closed every two-sided case by an elementary quadrant argument (PR2⁺). <b>One case remains</b> before T8_unamb is a full theorem: one-sided models with very heavy tails.
-</div>
+<section id="open">
+<h2>5. Open questions<small>Ranked by how directly they move the problem</small></h2>
+<details open><summary><span class="n">1</span>The last case of T8_unamb: one-sided, very heavy tails</summary><div class="body">
+<p>Grammars whose long blocks sit on one side of the fold only, with block-length tails heavier than the square-root case (exponent β₀ ≤ 1/4). The two-sided trick gives only a wedge here (room ~N<sup>1/3</sup>), which isn't enough. Also pending: an independent audit of the round-16 quadrant lemma MS⁺.</p>
+<div class="yn"><div class="y"><b>If it closes:</b> T8_unamb is a complete theorem, the campaign's strongest new result.</div><div class="no"><b>If a counterexample appears:</b> an unambiguous grammar certifies most words, and the affirmative fold route revives.</div></div>
+</div></details>
+<details><summary><span class="n">2</span>Lifting to polynomial ambiguity</summary><div class="body">
+<p>Every negative tool works best for unambiguous grammars. The squeeze already tolerates multiplicity up to n<sup>1/6−ε</sup>. A full lift needs a sharper squeeze, or control of where ambiguity can sit (Wich).</p>
+</div></details>
+<details><summary><span class="n">3</span>EQ-2q: match Q exactly on rows with 2q a's</summary><div class="body">
+<p>Is there a polynomially ambiguous grammar that agrees <i>exactly</i> with Q on every row with 2q a's (q prime)? If not, the problem is solved as "no". The bad words there are only squares and q-th powers of two-a words; Lemma S characterises the good ones exactly. The missing piece is making the ambiguity bound enter.</p>
+</div></details>
+<details><summary><span class="n">4</span>P_cop: the minimal sandwich</summary><div class="body">
+<p>Is there a polynomially ambiguous language containing every coprime-count word and only primitive words? It is the weakest statement in the chain P(Q) ⇒ … ⇒ P_cop (Prop H, audited). Theorems N and N2 (audited) show "row" arguments can't refute it, so any proof must also handle typical words.</p>
+</div></details>
+<details><summary><span class="n">5</span>Older forms (lower priority)</summary><div class="body">
+<ul><li><b>L₆:</b> length-6m words that are neither squares nor cubes. Its generating function is rational, so counting can't decide it.</li>
+<li><b>Self-similar depth uniformity</b>, and the per-slice gaps <b>SPREAD-JOINT / NONUNIF</b>. None can resolve the problem alone.</li></ul>
+</div></details>
 </section>
 
-<!-- TIMELINE -->
-<section id="timeline">
-<h2>4. Timeline<small>Green dots = ajax, teal dots = satan-claws</small></h2>
-<div class="tl">
-  <div class="it a"><div class="h">Context-free campaigns <span class="tag t-ajax">ajax</span></div><div class="d">15–17 Nov</div>Agent investigations of whether Q is context-free; red-team reviews; Q is not linear and not in FR; exponential total excess.</div>
-  <div class="it a"><div class="h">Finite ambiguity resolved <span class="tag t-ajax">ajax</span> <span class="tag t-lean">Lean-checked</span></div><div class="d">17–18 Nov</div>No finitely ambiguous grammar generates Q; a word in slice R_m needs ≥ ⌈m/2⌉ trees. Full Lean 4 proof; LICS manuscript.</div>
-  <div class="it a"><div class="h">Polynomial ambiguity, campaign 1 <span class="tag t-ajax">ajax</span></div><div class="d">18–19 Nov</div>Theorem P (ambiguity ≥ Ω(√(log L/log log L))); Lemma 3P (slice structure); candidate S_N; reduced to TILE_k + G3**.</div>
-  <div class="it s"><div class="h">Round 2: test the slice plan <span class="tag t-sc">satan-claws</span></div><div class="d">24 Nov, 00:11–01:36 UTC</div>TILE_k holds with ply 1 <span class="tag t-aud">audited</span>; bounded-data version <span class="tag t-aud">audited</span>; no other slice family escapes; foundations reconstructed.</div>
-  <div class="it s"><div class="h">Round 3: uniformity <span class="tag t-sc">satan-claws</span></div><div class="d">01:46–02:40</div>Lemma I2 <span class="tag t-aud">audited</span>; Theorems W, X; uniform grammars for single primes and G_fold; L₆ has a rational generating function.</div>
-  <div class="it s"><div class="h">Round 4: strategy change <span class="tag t-sc">satan-claws</span></div><div class="d">~02:50–03:40</div>Bottom-up coverage loop: the hard core is generic words. Literature verified (per-n only). Prop H reduction chain <span class="tag t-aud">audited</span>.</div>
-  <div class="it s"><div class="h">Round 5: dense certificates <span class="tag t-sc">satan-claws</span></div><div class="d">03:17–~04:00</div>Interval-fold certificate (density ≈ 0.61, a variant gets close to 1). Count-based certificates capped at O(n<sup>−1/2</sup>).</div>
-  <div class="it s"><div class="h">Round 6: FOLD-COUNTER <span class="tag t-sc">satan-claws</span></div><div class="d">~04:00–06:30</div>Rotated fold certificates cover <b>all</b> primitive words up to length 30. Lemma A: one canonical rotation lands in G⁻ (prefix a-count &lt; suffix a-count for every k ≤ n/2). Prop K: finite-memory fold certificates can't be sound and dense. Lemma SA: the whole question reduces to <b>one length coupling</b> between two one-counter halves. Still open in both directions.</div>
-  <div class="it s"><div class="h">Round 7: the length coupling <span class="tag t-sc">satan-claws</span></div><div class="d">~06:30–07:30</div>Uncoupling fails: without the length condition the excluded words are <i>all</i> powers of a-heavy words, so removing them is the original problem (U1). In cycle-lemma form the problem is <b>self-similar</b> on Dyck blocks of length ~√n (U3). Negative tool: Prop S. Remaining gaps G1 (uniformity over spines) and G2 (polynomial ambiguity).</div>
-  <div class="it s"><div class="h">Round 8: closing Prop S <span class="tag t-sc">satan-claws</span></div><div class="d">~07:30–08:30</div>Audit: Prop S and U1–U3 hold as statements. But Theorem C shows per-spine counts add up exactly to the total, so Prop S never really used the fold structure: the route is circular. One small gain (cone-exit rectangles). Exact gap: a <i>cross-spine packing</i> lemma.</div>
-  <div class="it s"><div class="h">Round 9: one agent per core <span class="tag t-sc">satan-claws</span></div><div class="d">~08:40–09:40</div><b>P_cop core:</b> Theorem N, an explicit linear-ambiguity grammar that matches Q on every prime row, so no "Theorem U"-style argument can work, and P_cop is not independent of the typical-word core. <b>Self-similarity:</b> no amplification. All transfers are exact, so both directions return to Q itself (Lemma RG: a recursion would need two independent copies at scale √n). <b>Packing:</b> the unambiguous fold question reduces to one <i>heavy-block lemma</i>. Among 240,000 random grammars, the best unambiguous language inside G⁻ is Catalan, far too thin.</div>
-  <div class="it s"><div class="h">Round 10: sharpest lemmas <span class="tag t-sc">satan-claws</span></div><div class="d">~09:45–10:30</div><b>Heavy-block lemma:</b> not proved. Two no-go results show the "random offset" route can't work. Dyck-shaped giant blocks don't care where the centre falls, and the natural heavy-tailed constructions become ambiguous because the centre word reappears inside blocks. Remaining gap: a centre-shift rigidity statement. <b>Rows #a = 2q:</b> Theorem N2, an explicit grammar with ambiguity ≤ |w| that is sound there and contains all coprime words. That refutes round 9's conjecture. The <i>equality</i> version (EQ-2q) is open, and a "no" there would settle the whole problem.</div>
-  <div class="it s"><div class="h">Round 11 <span class="tag t-sc">satan-claws</span></div><div class="d">~10:30–13:30 (one network outage)</div><b>EQ-2q:</b> exact characterisation of the primitive words on rows 2q (Lemma S), and no finite-automaton sorter works (Theorem T). The missing piece is turning that into a bound on parse trees. <b>Rigidity:</b> the abstract version is false (G⁻ itself is a valid pair model), so any proof must use the shape of context-free grammars. New target: "FSC rigidity".</div>
-  <div class="it s"><div class="h">Round 12 <span class="tag t-sc">satan-claws</span></div><div class="d">~13:40–14:40</div><b>Consolidation:</b> an 831-line research note and 49 new rows in RESULTS_INDEX. <b>FSC rigidity:</b> blocks with high excursions are ruled out (Lemma SF). For Dyck-shaped blocks, swapping high and low excursions provably can't break G⁻ (No-go 4). Remaining gap: "padding rigidity".</div>
-  <div class="it s"><div class="h">Round 13 <span class="tag t-sc">satan-claws</span></div><div class="d">~14:40–15:40</div><b>Audit:</b> Theorems N, N2 and the fold lemmas all survive. <b>Padding rigidity proved for two-sided models (PR2)</b> by a "measure squeeze": long level blocks force a valley shape, valley words inside G⁻ are rarer (n<sup>−2/3</sup> vs n<sup>−1/2</sup>), and an injective grammar needs more mass than that allows. It also rules out multiplicity below n<sup>1/6</sup>, the first quantitative step past unambiguity. Open: "steep" models.</div>
-  <div class="it s"><div class="h">Round 14 <span class="tag t-sc">satan-claws</span></div><div class="d">~15:40–16:40</div><b>Audit: PR1/PR2 SURVIVE.</b> The wedge exponent 2/3 was confirmed independently by exact DP. <b>Steep models:</b> every heavy block contains a self-branching component and is "level" on both sides up to log slack, and PR2 survives that slack. T8_unamb is down to three pieces: side mismatch, heavier tails, and the one-sided step.</div>
-  <div class="it s"><div class="h">Round 15 <span class="tag t-sc">satan-claws</span></div><div class="d">~16:40–17:40</div>One agent per remaining piece of T8_unamb. <b>One-sided case closed</b> (Thm PR1s: Lemma CM + Lemma J squeeze, mass O(N<sup>5/12</sup>) against c√N). <b>Side mismatch closed</b> (Theorem SM). <b>Heavier tails:</b> all balanced cases closed (PR2<sup>β</sup>). The tail mechanism is stacked self-branching components, which corrects round 14. Only unbalanced two-tape cases remain.</div>
-  <div class="it s"><div class="h">Round 16 <span class="tag t-sc">satan-claws</span></div><div class="d">~17:40–18:40</div>The last T8_unamb case (unbalanced tails), plus a gated audit of PR1s, Theorem SM and PR2<sup>β</sup>. <b>Audit: all three SURVIVE</b>, with DP exponents independently confirmed. <b>Unbalanced tails closed:</b> the valley bound holds at every position (Lemma MS⁺), so words are trapped in a quadrant of density c/n. That beats every tail exponent, and the argument is elementary (Thm PR2⁺). Left: one-sided heavy models.</div>
-  <div class="it s"><div class="h">Round 17 <span class="tag t-sc">satan-claws</span> <span class="tag t-open">running</span></div><div class="d">now</div>Gated audit of MS⁺/PR2⁺, and the last case: one-sided heavy models.</div>
-</div>
-</section>
-
-<!-- RESULTS -->
 <section id="results">
-<h2>5. Results scoreboard<small>Status labels follow the repo's convention</small></h2>
+<h2>6. Key results<small>Status labels follow the repo's convention</small></h2>
 <div class="card scroll">
 <table>
 <tr><th>Result</th><th>What it says</th><th>By</th><th>Status</th></tr>
 <tr><td>Not finitely ambiguous</td><td>Every grammar for Q has unbounded ambiguity</td><td><span class="tag t-ajax">ajax</span></td><td><span class="tag t-lean">Lean-checked</span></td></tr>
 <tr><td>Theorem P</td><td>Ambiguity ≥ Ω(√(log L / log log L))</td><td><span class="tag t-ajax">ajax</span></td><td><span class="tag t-wp">written proof</span> (reconstructed)</td></tr>
-<tr><td>Lemma 3P</td><td>On a slice, a grammar = a laminar cover by vector-partition pieces</td><td><span class="tag t-ajax">ajax</span></td><td><span class="tag t-wp">written proof</span> (confirmed)</td></tr>
-<tr><td>TILE_k with ply 1</td><td>Slice regions tile with overlap exactly 1 (min-cost transport)</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
-<tr><td>Pair facets (K = 2)</td><td>…using pieces a fixed grammar could produce</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> near U</td></tr>
-<tr><td>Lemma I2</td><td>≤ 2N non-adjacent witness positions cover all primes</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
-<tr><td>Prop H</td><td>A grammar for one fixed-prime class ⇒ coprime sandwich P_cop</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
-<tr><td>Theorems W, X, R, V</td><td>Exposed certificates for 2 primes, or a varying prime, are impossible</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
-<tr><td>NonPow<sub>p</sub> grammar</td><td>"Not a p-th power" with exactly linear ambiguity, one grammar for all lengths</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
-<tr><td>Theorem U</td><td>No unambiguous language between the coprime words and Q</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
-<tr><td>Prop P / Theorem P_K</td><td>Count-based CF certificates cover ≤ O(n<sup>−1/2</sup>) of words</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
-<tr><td>Lemma F (interval fold)</td><td>Sound certificate, density ≈ 0.61 (variant → 1)</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span>; CF-ness <span class="tag t-open">open</span></td></tr>
-<tr><td>Lemma A + rotation coverage</td><td>One canonical rotation of almost every primitive word lies in G⁻ ⊆ Q; rotated folds cover Q for n ≤ 30</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> + <span class="tag t-comp">exhaustive n ≤ 30</span></td></tr>
-<tr><td>Prop K</td><td>Fold certificates checkable by a finite automaton are unsound or exponentially sparse</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
-<tr><td>Lemma SA</td><td>G⁻ = Dyck prefix · a-heavy suffix with one length coupling; dropping it is unsound</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
-<tr><td>Prop S</td><td>Per fixed centre spine, an unambiguous grammar carries O(n<sup>−3/2</sup>) of its words. Audited as a statement, but shown to hold for <i>every</i> unambiguous grammar (Theorem C), so it gives no leverage</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span>; route <span class="tag t-open">circular</span></td></tr>
-<tr><td>U1–U3 (self-similarity)</td><td>Removing the length coupling recreates the original problem on Dyck blocks of length ~√n</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
-<tr><td>Theorem N</td><td>A linear-ambiguity grammar agrees with Q on every row with #a prime, so Theorem U can't be lifted to polynomial ambiguity</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> (checked |w| ≤ 20)</td></tr>
-<tr><td>Lemma RG / A1–A2</td><td>The √n block reduction is exact; it can't amplify ambiguity, and each depth-k certificate is equivalent to Q</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
-<tr><td>Theorem N2</td><td>A grammar with ambiguity ≤ |w| contains all coprime-count words and is sound on rows #a ∈ P ∪ 2P ∪ 2<sup>ℕ</sup></td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> (checked |w| ≤ 40)</td></tr>
-<tr><td>Thm PR2 (padding rigidity)</td><td>Two-sided level-block models can't be injective inside G⁻ with infinite measure; also rules out multiplicity O(n<sup>1/6−ε</sup>)</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> (two-sided case; cites Denisov–Wachtel; exponent 2/3 independently confirmed)</td></tr>
-<tr><td>Thm PR1s (one-sided)</td><td>A U-level block on one tape alone already forces ambiguity inside G⁻</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> (cites Denisov–Wachtel)</td></tr>
-<tr><td>Theorem SM (side mismatch)</td><td>A heavy block on one side is always level on that side</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
-<tr><td>Thm PR2<sup>β</sup> (heavy tails)</td><td>Balanced two-tape models with any Banderier–Drmota tail exponent can't be injective inside G⁻</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> (cites Denisov–Wachtel)</td></tr>
-<tr><td>Lemma MS⁺ / Thm PR2⁺</td><td>Every two-sided model is trapped in a quadrant of density c/n, so none is injective inside G⁻, for any tail exponent</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span> (elementary); audit running</td></tr>
-<tr><td>Coverage loop</td><td>Uniform gadgets cover all primitive words of length ≤ 28 except a few thousand</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-comp">computational</span> + <span class="tag t-aud">soundness audited</span></td></tr>
+<tr><td>TILE_k + pair facets</td><td>The structured slices can be covered with overlap 1, so the original plan can't work</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
+<tr><td>Prop H chain</td><td>A grammar for Q yields one for P_cop</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
+<tr><td>Theorems W, X, V</td><td>Certificates that expose their witnesses fail for two primes, or for a varying prime</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
+<tr><td>Theorems N, N2</td><td>Explicit low-ambiguity grammars that agree with Q on whole rows, so row arguments are dead</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
+<tr><td>Prop P / Thm P_K</td><td>Count-based certificates cover ≤ O(n<sup>−1/2</sup>) of words</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
+<tr><td>Lemma F (fold)</td><td>The fold window test is sound and covers ≈ 61% of words</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
+<tr><td>Lemma A (rotation)</td><td>Almost every primitive word has a rotation in G⁻</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
+<tr><td>Lemma SA, Prop K, U1–U3</td><td>G⁻ = two easy halves plus one length coupling; finite memory fails; uncoupling recreates the problem</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> (U1–U3) / <span class="tag t-wp">written proof</span></td></tr>
+<tr><td>PR1, PR2</td><td>Measure squeeze for one-tape and two-sided light-tailed grammars</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
+<tr><td>PR1s, Theorem SM, PR2<sup>β</sup></td><td>One-sided square-root tails; side mismatch impossible; balanced heavy tails</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
+<tr><td>MS⁺ / PR2⁺</td><td>All two-sided cases via a quadrant of density c/n (elementary)</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span>, audit pending</td></tr>
 </table>
 </div>
-
-<div class="card">
-  <h3>Coverage of random words by the uniform gadget library</h3>
-  <p style="font-size:.9rem;color:var(--muted)">Fraction of random words of length n that some known uniform, sound certificate covers (Monte Carlo, round 4). It falls like n<sup>−1/2</sup>. The interval fold (dashed) stays near 0.61, but isn't yet known to be context-free.</p>
-  <svg id="cov" viewBox="0 0 640 260" role="img" aria-label="Coverage chart">
-    <g font-size="11" fill="#5b726d">
-      <line x1="50" y1="220" x2="620" y2="220" stroke="#d5e9e4"/>
-      <line x1="50" y1="20" x2="50" y2="220" stroke="#d5e9e4"/>
-      <text x="44" y="224" text-anchor="end">0</text><text x="44" y="124" text-anchor="end">0.5</text><text x="44" y="24" text-anchor="end">1</text>
-      <line x1="50" y1="120" x2="620" y2="120" stroke="#eef6f4"/>
-    </g>
-    <g id="covg"></g>
-  </svg>
-</div>
+<p style="font-size:.88rem;color:var(--muted)">The complete list (≈50 results with proofs) is in <code>polynomial-ambiguity/round2/RESEARCH_NOTE.md</code> and <code>RESULTS_INDEX.md</code> §11.</p>
 </section>
 
-<!-- DEMO -->
-<section id="demo">
-<h2>6. Try the fold certificate<small>Type a word over {a, b}. Everything is computed locally in your browser.</small></h2>
-<div class="card demo">
-  <input id="w" value="aababbabab" spellcheck="false" autocomplete="off" aria-label="word">
-  <div class="row">
-    <button data-w="abab">abab</button><button data-w="abaababaab">abaababaab</button><button data-w="aababbabab">aababbabab</button>
-    <button data-w="aabaabaab">aabaabaab</button><button data-w="abbabaabbaba">abbabaabbaba</button><button id="rnd">random (n=40)</button>
-  </div>
-  <div class="verdicts">
-    <div>Primitive?<b id="vp">–</b></div>
-    <div>Fold certificate (F_K)<b id="vf">–</b></div>
-    <div>Length · gcd(#a,#b)<b id="vg">–</b></div>
-  </div>
-  <svg id="chart" viewBox="0 0 640 220" role="img" aria-label="d_k chart"></svg>
-  <p style="font-size:.88rem;color:var(--muted)">The chart plots d<sub>k</sub> = #a(first k letters) − #a(last k letters) for k = 1…⌊n/2⌋. The teal band is the window [n/3, n/2]. The certificate accepts if d<sub>k</sub> never hits 0 inside the band.
-  It is sound: for w = uᵖ, d<sub>k</sub> = 0 at k = ⌊p/2⌋·n/p, which always lies in the band. It is not complete: some primitive words cross zero in the band and must be certified some other way.</p>
-</div>
-</section>
-
-<!-- OPEN -->
-<section id="open">
-<h2>7. Open questions<small>Current state after round 14, ranked by how directly they move the problem</small></h2>
-
-<details open><summary><span class="n">1</span>T8_unamb: no unambiguous grammar inside G⁻ is rotation-dense<span class="tag t-open" style="margin-left:auto">round 15 running</span></summary><div class="body">
-<p>The sharpest live target. Any unambiguous grammar covering a positive share of rotations inside G⁻ must contain a <i>critical, heavy-tailed</i> block structure (Thm M, Lemma Bot). <b>PR2</b> (audited) rules out the two-sided "level" case, and Prop HL shows every heavy block is level up to log slack. Three pieces remain:</p>
-<ul>
-  <li><b>Side mismatch:</b> <span class="ok">closed in round 15</span> (Theorem SM, written proof: a wrong-side block would force positive slack, making the grammar subcritical).</li>
-  <li><b>Heavier tails</b> (exponent −1 − 2<sup>−k</sup>): <span class="ok">balanced cases closed</span> (Thm PR2<sup>β</sup>). <span class="ok">All two-sided cases closed in round 16</span> (Thm PR2⁺, elementary). <b>Still open:</b> one-sided models with very heavy tails.</li>
-  <li><b>The one-sided case:</b> <span class="ok">closed in round 15</span> (Thm PR1s, written proof: Lemma CM truncates at √(m log m) and uses Hoeffding).</li>
-</ul>
-<div class="yn"><div class="y"><b>If T8_unamb fails</b> (an explicit counterexample): an unambiguous grammar certifies most words, and the affirmative fold route revives.</div><div class="no"><b>If T8_unamb holds:</b> a new theorem, and the first rigorous evidence that the dense fold certificate is beyond grammars. The next step would be lifting it from unambiguous to polynomial ambiguity, where PR2 already reaches n<sup>1/6</sup>.</div></div>
-</div></details>
-
-<details><summary><span class="n">2</span>EQ-2q: match Q exactly on the rows #a = 2q</summary><div class="body">
-<p>Is there a polynomially ambiguous grammar that agrees <i>exactly</i> with Q on every row with 2q a's (q prime)? If not, the problem is solved as "no". On these rows the only bad words are squares and q-th powers of two-a words. Lemma S characterises the good ones exactly via a gap invariant D. Theorem T shows no finite-automaton sorter works. Pumping b's keeps words on their row, which is the advantage, but the argument still needs the ambiguity bound to enter.</p>
-</div></details>
-
-<details><summary><span class="n">3</span>P_cop: the minimal sandwich (now known to contain core 1)</summary><div class="body">
-<p>Is there a polynomially ambiguous language containing every coprime-count word and only primitive words? Prop H (audited) makes it the weakest statement in the chain <span class="m" style="background:none">P(Q) ⇒ … ⇒ P_cop</span>.
-Theorems N and N2 (both audited) show that "row" arguments (prime rows, rows 2q in containment form) can never refute it. So any proof that P_cop fails must also handle typical words.</p>
-</div></details>
-
-<details><summary><span class="n">4</span>Lifting to polynomial ambiguity</summary><div class="body">
-<p>Every negative tool so far works best for <i>unambiguous</i> grammars. PR2's squeeze already tolerates multiplicity up to n<sup>1/6−ε</sup>. A full lift needs either a better squeeze, or Wich's structure theory to control where ambiguity can sit (at most k·log n disjoint ambiguous nodes per tree).</p>
-</div></details>
-
-<details><summary><span class="n">5</span>Older open forms (lower priority)</summary><div class="body">
-<ul>
-<li><b>L₆:</b> words of length 6m that are neither squares nor cubes. Its generating function is rational, so counting can't decide it.</li>
-<li><b>Uniformity in depth k:</b> the self-similar block reduction is exact but doesn't amplify.</li>
-<li><b>SPREAD-JOINT / NONUNIF:</b> the last per-slice gaps. They can't resolve the problem alone.</li>
-</ul>
-</div></details>
-</section>
-
-<!-- PATH -->
-<section id="path">
-<h2>8. How this leads to a solution<small>The routes as they stand now</small></h2>
-<div class="card soft">
-<svg viewBox="0 0 900 470" role="img" aria-label="Roadmap">
-  <defs>
-    <marker id="a2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#5b726d"/></marker>
-  </defs>
-  <g font-size="13">
-    <rect x="300" y="8" width="300" height="56" rx="12" fill="#e3f4ee" stroke="#9fd6b9"/>
-    <text x="450" y="31" text-anchor="middle" font-weight="700" fill="#15603f">DONE: fold certificate + rotation</text>
-    <text x="450" y="50" text-anchor="middle" fill="#15603f">G⁻ covers almost every primitive word (audited)</text>
-    <line x1="450" y1="66" x2="450" y2="92" stroke="#5b726d" marker-end="url(#a2)"/>
-
-    <rect x="290" y="94" width="320" height="58" rx="12" fill="#0f8b8d"/>
-    <text x="450" y="118" text-anchor="middle" font-weight="700" fill="#fff">Can a grammar realise G⁻ densely?</text>
-    <text x="450" y="138" text-anchor="middle" fill="#e0f7f7">one length coupling across the centre</text>
-
-    <line x1="350" y1="154" x2="190" y2="196" stroke="#5b726d" marker-end="url(#a2)"/>
-    <line x1="550" y1="154" x2="710" y2="196" stroke="#5b726d" marker-end="url(#a2)"/>
-    <text x="240" y="172" fill="#1f7a52" font-weight="600">yes (counterexample)</text>
-    <text x="600" y="172" fill="#0b6466" font-weight="600">no</text>
-
-    <rect x="30" y="198" width="320" height="62" rx="10" fill="#e6f5ec" stroke="#9fd6b9"/>
-    <text x="190" y="223" text-anchor="middle" font-weight="600" fill="#15603f">A dense grammar certifies typical words</text>
-    <text x="190" y="243" text-anchor="middle" fill="#15603f">remaining: rare structured exceptions</text>
-
-    <rect x="550" y="198" width="320" height="62" rx="10" fill="#e0f2f3" stroke="#b5dfe1"/>
-    <text x="710" y="217" text-anchor="middle" font-weight="600" fill="#0b6466">T8_unamb (round 15)</text>
-    <text x="710" y="235" text-anchor="middle" fill="#0b6466">two-sided ✓ · side ✓ · one-sided light ✓ · one-sided heavy ?</text>
-    <text x="710" y="252" text-anchor="middle" fill="#0b6466">→ lift to polynomial ambiguity (n^{1/6} so far)</text>
-
-    <line x1="190" y1="262" x2="190" y2="296" stroke="#5b726d" marker-end="url(#a2)"/>
-    <line x1="710" y1="262" x2="710" y2="296" stroke="#5b726d" marker-end="url(#a2)"/>
-
-    <rect x="30" y="298" width="320" height="62" rx="10" fill="#fff" stroke="#9fd6b9"/>
-    <text x="190" y="322" text-anchor="middle" font-weight="600" fill="#15603f">Patch the exceptions with known gadgets</text>
-    <text x="190" y="342" text-anchor="middle" fill="#15603f">(tie family, two-prime cases like L₆)</text>
-
-    <rect x="550" y="298" width="320" height="62" rx="10" fill="#fff" stroke="#b5dfe1"/>
-    <text x="710" y="322" text-anchor="middle" font-weight="600" fill="#0b6466">Show EVERY grammar for Q must contain</text>
-    <text x="710" y="342" text-anchor="middle" fill="#0b6466">a dense fold-type part (via P_cop / EQ-2q)</text>
-
-    <line x1="190" y1="362" x2="190" y2="400" stroke="#5b726d" marker-end="url(#a2)"/>
-    <line x1="710" y1="362" x2="710" y2="400" stroke="#5b726d" marker-end="url(#a2)"/>
-
-    <rect x="50" y="402" width="280" height="54" rx="10" fill="#2e9e6b"/>
-    <text x="190" y="425" text-anchor="middle" font-weight="700" fill="#fff">YES: explicit grammar</text>
-    <text x="190" y="444" text-anchor="middle" fill="#e6f5ec">would also refute the 1991 conjecture</text>
-    <rect x="570" y="402" width="280" height="54" rx="10" fill="#0f8b8d"/>
-    <text x="710" y="425" text-anchor="middle" font-weight="700" fill="#fff">NO: every grammar</text>
-    <text x="710" y="444" text-anchor="middle" fill="#e0f7f7">is exponentially ambiguous</text>
-  </g>
-</svg>
-</div>
+<section id="who">
+<h2>7. Who did what<small>From the git history of the repository and the fork</small></h2>
 <div class="grid2">
-  <div class="card"><h3 style="color:var(--green-d)">Route to "yes"</h3>
-    <ol><li>Find an unambiguous or polynomially ambiguous grammar inside G⁻ covering a positive share of rotations (this would refute T8_unamb).</li><li>Patch the rare exceptions: the tie family, and two-prime cases such as L₆.</li><li>Union with the uniform single-prime grammars; prove L(G) = Q for <i>all</i> lengths and bound the trees.</li></ol>
-    <p style="font-size:.88rem;color:var(--muted)">Evidence so far points the other way: 240k-grammar searches and every construction failed at the length coupling.</p></div>
-  <div class="card"><h3 style="color:var(--teal-d)">Route to "no"</h3>
-    <ol><li>Finish T8_unamb (one case left: one-sided heavy-tailed models).</li><li>Lift it to polynomial ambiguity (PR2 already reaches multiplicity n<sup>1/6</sup>).</li><li>The hardest step: show any polynomially ambiguous grammar for Q must contain a dense fold-type sublanguage, or close P_cop / EQ-2q directly.</li></ol>
-    <p style="font-size:.88rem;color:var(--muted)">Step 3 is where the full difficulty lives. An argument that ignored ambiguity would prove Q isn't context-free, which is harder and not the target.</p></div>
+  <div class="card" style="border-top:4px solid var(--ajax)">
+    <h3><span class="tag t-ajax">ajax</span> &nbsp;<code>ajax711/Primitive-words-problem-</code></h3>
+    <p style="color:var(--muted);font-size:.88rem">15–19 Nov 2026 · 143 commits (137 from Claude agent sessions, 6 by shobhit)</p>
+    <ul>
+      <li>Context-free campaigns, a Lean statement of the conjecture</li>
+      <li><b>Finite ambiguity resolved</b>, with a complete <b>Lean 4 proof</b>; LICS manuscript</li>
+      <li>Infinite-ambiguity investigations</li>
+      <li>First polynomial-ambiguity campaign: <b>Theorem P</b>, Lemma 3P, the slice plan S_N</li>
+      <li><code>RESULTS_INDEX.md</code> and the round-2 brief <code>prompt.md</code></li>
+    </ul>
+  </div>
+  <div class="card" style="border-top:4px solid var(--sc)">
+    <h3><span class="tag t-sc">satan-claws</span> &nbsp;fork <code>Satan-Claws/Primitive-words-problem-</code></h3>
+    <p style="color:var(--muted);font-size:.88rem">24 Nov 2026 · 87 commits · rounds 2–16 · ≈64 agents · 10 gated audits</p>
+    <ul>
+      <li>Showed the slice plan can't work (audited) and moved the work to <b>uniformity and typical words</b></li>
+      <li>Found the <b>fold certificate</b> and its rotation form G⁻ (audited)</li>
+      <li>Reduced the question to one <b>length coupling</b></li>
+      <li>Built the <b>measure-squeeze</b> proof of T8_unamb, with all but one case done</li>
+      <li>Wrote the 831-line <code>RESEARCH_NOTE.md</code> and RESULTS_INDEX §11</li>
+    </ul>
+  </div>
+</div>
+<div class="card soft">
+  <h3>Commit share</h3>
+  <div class="bar"><div style="flex:143;background:var(--ajax)">ajax · 143</div><div style="flex:87;background:var(--sc)">satan-claws · 87</div></div>
 </div>
 </section>
 
-<!-- FILES -->
+<section id="log">
+<h2>8. Round log<small>Collapsed: one line per round</small></h2>
+<details><summary><span class="n">≡</span>Show the round-by-round history</summary><div class="body">
+<div class="tl">
+  <div class="it a"><div class="h">Nov 15–19 · ajax</div>Context-free campaigns; finite ambiguity resolved (Lean); Theorem P; slice plan S_N.</div>
+  <div class="it s"><div class="h">Round 2</div>Slice route blocked: TILE_k ply 1 and pair facets (audited); foundations reconstructed.</div>
+  <div class="it s"><div class="h">Round 3</div>Uniformity: Theorems W, X, R; Lemma I2 (audited); uniform single-prime grammars.</div>
+  <div class="it s"><div class="h">Round 4</div>Strategy change to typical words; coverage loop; literature verified; Prop H (audited).</div>
+  <div class="it s"><div class="h">Round 5</div>Fold certificate (Lemma F); count-based certificates capped at n<sup>−1/2</sup>.</div>
+  <div class="it s"><div class="h">Round 6</div>Rotation into G⁻ (Lemma A); Prop K; reduction to one length coupling (Lemma SA).</div>
+  <div class="it s"><div class="h">Round 7</div>Uncoupling recreates the problem (U1–U3); Prop S.</div>
+  <div class="it s"><div class="h">Round 8</div>Prop S shown circular (Theorem C); cross-spine packing gap.</div>
+  <div class="it s"><div class="h">Round 9</div>Theorem N (row arguments dead); self-similarity gives no amplification; heavy-block lemma.</div>
+  <div class="it s"><div class="h">Round 10</div>Theorem N2; EQ-2q isolated; heavy-block no-gos.</div>
+  <div class="it s"><div class="h">Round 11</div>EQ-2q Lemma S and Theorem T; rigidity reduced to grammar shape (No-go 3).</div>
+  <div class="it s"><div class="h">Round 12</div>Research note written; FSC rigidity reduced to "padding rigidity".</div>
+  <div class="it s"><div class="h">Round 13</div><b>PR1, PR2: the measure squeeze</b> (audited); N, N2, fold lemmas audited.</div>
+  <div class="it s"><div class="h">Round 14</div>Every heavy block is level (Prop HL, Lemma Bot).</div>
+  <div class="it s"><div class="h">Round 15</div>One-sided (PR1s) and side mismatch (SM) closed; balanced heavy tails (PR2<sup>β</sup>); all audited.</div>
+  <div class="it s"><div class="h">Round 16</div>All two-sided cases via the quadrant (MS⁺/PR2⁺, audit pending). Rounds paused here.</div>
+</div>
+</div></details>
+</section>
+
 <section id="files">
 <h2>9. Where things live</h2>
 <div class="card">
 <table>
 <tr><th>What</th><th>Path (in the repo)</th></tr>
 <tr><td><b>Consolidated research note (rounds 2–11)</b></td><td><code>polynomial-ambiguity/round2/RESEARCH_NOTE.md</code></td></tr>
-<tr><td>Summary of rounds 2–6</td><td><code>polynomial-ambiguity/round2/STOP_REPORT.md</code></td></tr>
-<tr><td>Running log + syntheses</td><td><code>polynomial-ambiguity/round2/REGISTRY.md</code></td></tr>
+<tr><td>Running log + round syntheses (all rounds)</td><td><code>polynomial-ambiguity/round2/REGISTRY.md</code></td></tr>
 <tr><td>Agent reports and audits</td><td><code>polynomial-ambiguity/round2/reports/</code></td></tr>
+<tr><td>This page</td><td><code>polynomial-ambiguity/round2/status.html</code></td></tr>
 <tr><td>Campaign brief (ajax)</td><td><code>polynomial-ambiguity/round2/prompt.md</code></td></tr>
-<tr><td>Index of all earlier results (ajax)</td><td><code>RESULTS_INDEX.md</code></td></tr>
+<tr><td>Index of all results</td><td><code>RESULTS_INDEX.md</code></td></tr>
 <tr><td>Lean proof of finite ambiguity (ajax)</td><td><code>finitely-ambiguous/lean/</code></td></tr>
 </table>
-<p style="font-size:.88rem;color:var(--muted)">Local clone: <code>~/Desktop/Test4/Primitive-words-problem-</code> · branch <code>claude/magical-allen-ch9hzl</code> · pushed to fork <code>Satan-Claws/Primitive-words-problem-</code></p>
+<p style="font-size:.88rem;color:var(--muted)">Branch <code>claude/magical-allen-ch9hzl</code> · pushed to fork <code>Satan-Claws/Primitive-words-problem-</code></p>
 </div>
-<p class="foot">Labels: <span class="tag t-lean">Lean-checked</span> machine-verified · <span class="tag t-aud">audited</span> written proof plus an independent red-team audit · <span class="tag t-wp">written proof</span> not audited · <span class="tag t-comp">computational</span> evidence only · <span class="tag t-open">open</span> unresolved.
-Attribution is based on the commit history: the ajax711 repository up to 19 Nov, and this session's commits pushed to the Satan-Claws fork.</p>
+<p class="foot">Labels: <span class="tag t-lean">Lean-checked</span> machine-verified · <span class="tag t-aud">audited</span> written proof plus an independent red-team audit · <span class="tag t-wp">written proof</span> not audited · <span class="tag t-comp">computational</span> evidence only · <span class="tag t-open">open</span> unresolved. Attribution follows the commit history.</p>
 </section>
-
 </main>
 
 <script>
 (function(){
-  // coverage chart
-  var pts=[[256,.84],[1024,.56],[4096,.34],[16384,.20],[65536,.095]];
-  var g=document.getElementById('covg'); var ns='http://www.w3.org/2000/svg';
-  function X(n){var a=Math.log2(256),b=Math.log2(65536);return 70+(Math.log2(n)-a)/(b-a)*530;}
-  function Y(v){return 220-v*200;}
-  var d='';pts.forEach(function(p,i){d+=(i?'L':'M')+X(p[0])+','+Y(p[1]);});
-  var path=document.createElementNS(ns,'path');path.setAttribute('d',d);path.setAttribute('fill','none');path.setAttribute('stroke','#0f8b8d');path.setAttribute('stroke-width','3');g.appendChild(path);
-  var fl=document.createElementNS(ns,'line');fl.setAttribute('x1',X(256));fl.setAttribute('x2',X(65536));fl.setAttribute('y1',Y(.608));fl.setAttribute('y2',Y(.608));fl.setAttribute('stroke','#2e9e6b');fl.setAttribute('stroke-width','2');fl.setAttribute('stroke-dasharray','6 5');g.appendChild(fl);
-  var ft=document.createElementNS(ns,'text');ft.setAttribute('x',X(65536)-4);ft.setAttribute('y',Y(.608)-8);ft.setAttribute('text-anchor','end');ft.setAttribute('font-size','11');ft.setAttribute('fill','#1f7a52');ft.textContent='interval fold ≈ 0.61 (CF?)';g.appendChild(ft);
-  pts.forEach(function(p){
-    var c=document.createElementNS(ns,'circle');c.setAttribute('cx',X(p[0]));c.setAttribute('cy',Y(p[1]));c.setAttribute('r','4.5');c.setAttribute('fill','#fff');c.setAttribute('stroke','#0f8b8d');c.setAttribute('stroke-width','2');g.appendChild(c);
-    var t=document.createElementNS(ns,'text');t.setAttribute('x',X(p[0]));t.setAttribute('y',238);t.setAttribute('text-anchor','middle');t.setAttribute('font-size','11');t.setAttribute('fill','#5b726d');t.textContent='n='+p[0];g.appendChild(t);
-    var v=document.createElementNS(ns,'text');v.setAttribute('x',X(p[0]));v.setAttribute('y',Y(p[1])-10);v.setAttribute('text-anchor','middle');v.setAttribute('font-size','11');v.setAttribute('fill','#0b6466');v.textContent=p[1];g.appendChild(v);
-  });
-  var lt=document.createElementNS(ns,'text');lt.setAttribute('x',X(1024)+6);lt.setAttribute('y',Y(.56)+22);lt.setAttribute('font-size','11');lt.setAttribute('fill','#0b6466');lt.textContent='all known CF certificates';g.appendChild(lt);
+  var ns='http://www.w3.org/2000/svg';
+  function el(parent,t,a,txt){var e=document.createElementNS(ns,t);for(var q in a)e.setAttribute(q,a[q]);if(txt!=null)e.textContent=txt;parent.appendChild(e);return e;}
 
-  // demo
-  var inp=document.getElementById('w'), chart=document.getElementById('chart');
+  (function(){
+    var w='abaababaabba', n=w.length, g=document.getElementById('foldletters');
+    var x0=120, dx=60, y=130, lo=Math.ceil(n/3);
+    for(var k=1;k<=n/2;k++){
+      var a=x0+(k-1)*dx, b=x0+(n-k)*dx, h=12+(n/2-k+1)*13, inWin=k>=lo;
+      el(g,'path',{d:'M'+a+','+(y-26)+' C'+a+','+(y-26-h)+' '+b+','+(y-26-h)+' '+b+','+(y-26),fill:'none',stroke:inWin?'#0f8b8d':'#b9d4ce','stroke-width':inWin?2.2:1.2});
+    }
+    for(var i=0;i<n;i++){
+      var k1=Math.min(i+1,n-i), inWin=k1>=lo;
+      el(g,'rect',{x:x0+i*dx-20,y:y-24,width:40,height:36,rx:6,fill:inWin?'#dff3f4':'#f3faf8',stroke:'#d5e9e4'});
+      el(g,'text',{x:x0+i*dx,y:y,'text-anchor':'middle',fill:w[i]==='a'?'#0b6466':'#10302b','font-weight':'700'},w[i]);
+    }
+    el(g,'text',{x:450,y:165,'text-anchor':'middle','font-size':'12',fill:'#5b726d','font-family':'-apple-system,Segoe UI,sans-serif'},'letter k is paired with letter n+1−k; teal pairs form the window k ∈ [n/3, n/2]');
+  })();
+
+  (function(){
+    var p=document.getElementById('walkpath'), x=60,y=200, pts=[x+','+y], s=7;
+    for(var i=0;i<60;i++){ s=(s*9301+49297)%233280; var r=s/233280; x+=5.5; y-= (r<0.62?3.5:-2.5); if(y>196)y=196; if(y<40)y=40; pts.push(x.toFixed(1)+','+y.toFixed(1)); }
+    p.setAttribute('points',pts.join(' '));
+  })();
+
+  var inp=document.getElementById('w'), chart=document.getElementById('chart'), view='o';
   function gcd(a,b){while(b){var t=a%b;a=b;b=t;}return a;}
-  function primitive(w){ if(!w.length) return false; return (w+w).indexOf(w,1)===w.length; }
+  function primitive(w){return w.length>0 && (w+w).indexOf(w,1)===w.length;}
+  function dvals(w){var n=w.length,half=Math.floor(n/2),d=[0],pa=0,sa=0;for(var k=1;k<=half;k++){if(w[k-1]==='a')pa++;if(w[n-k]==='a')sa++;d.push(pa-sa);}return d;}
+  function canon(w){var n=w.length,A=0,i;for(i=0;i<n;i++)if(w[i]==='a')A++;var best=-1e18,arg=[],c=0;for(i=0;i<n;i++){var T=n*c-i*A;if(T>best){best=T;arg=[i];}else if(T===best)arg.push(i);if(w[i]==='a')c++;}return arg;}
   function render(){
     var w=inp.value.replace(/[^ab]/g,''); if(w!==inp.value) inp.value=w;
-    var n=w.length, vp=document.getElementById('vp'), vf=document.getElementById('vf'), vg=document.getElementById('vg');
+    var n=w.length, vp=document.getElementById('vp'), vf=document.getElementById('vf'), vg=document.getElementById('vg'), vn=document.getElementById('vn'), shown=document.getElementById('shown');
     while(chart.firstChild) chart.removeChild(chart.firstChild);
-    if(n<2){vp.textContent='–';vf.textContent='–';vg.textContent='–';return;}
+    if(n<2){vp.textContent=vf.textContent=vg.textContent=vn.textContent='–';shown.textContent='';return;}
     var pr=primitive(w); vp.textContent=pr?'yes':'no'; vp.className=pr?'ok':'bad';
-    var na=0; for(var i=0;i<n;i++) if(w[i]==='a') na++;
-    vg.textContent=n+' · '+gcd(na,n-na);
-    var half=Math.floor(n/2), lo=Math.ceil(n/3), d=[0], pa=0, sa=0;
-    for(var k=1;k<=half;k++){ if(w[k-1]==='a')pa++; if(w[n-k]==='a')sa++; d.push(pa-sa); }
-    var cert = lo<=half; for(k=lo;k<=half;k++) if(d[k]===0){cert=false;break;}
-    vf.textContent=cert?'accepts (primitive certified)':'no certificate'; vf.className=cert?'ok':'';
-    var W=640,H=220,L=40,R=620,T=15,B=195, mx=1; d.forEach(function(v){mx=Math.max(mx,Math.abs(v));});
-    function x(k){return L+(half?k/half:0)*(R-L);} function y(v){return (T+B)/2-v/mx*((B-T)/2);}
-    function el(t,a){var e=document.createElementNS(ns,t);for(var q in a)e.setAttribute(q,a[q]);chart.appendChild(e);return e;}
-    if(lo<=half) el('rect',{x:x(lo),y:T,width:Math.max(2,x(half)-x(lo)),height:B-T,fill:'#dff3f4'});
-    el('line',{x1:L,x2:R,y1:y(0),y2:y(0),stroke:'#9fb8b2'});
-    var s=''; for(k=0;k<=half;k++) s+=(k?'L':'M')+x(k)+','+y(d[k]);
-    el('path',{d:s,fill:'none',stroke:'#2e9e6b','stroke-width':2.5});
-    for(k=1;k<=half;k++){ var inb=k>=lo; el('circle',{cx:x(k),cy:y(d[k]),r:(half>30?2:3.5),fill:(inb&&d[k]===0)?'#c0392b':(inb?'#0f8b8d':'#2e9e6b')}); }
-    var t1=el('text',{x:L,y:212,'font-size':11,fill:'#5b726d'}); t1.textContent='k = 1';
-    var t2=el('text',{x:R,y:212,'font-size':11,fill:'#5b726d','text-anchor':'end'}); t2.textContent='k = '+half+' (n/2)';
-    if(lo<=half){var t3=el('text',{x:x(lo)+4,y:T+12,'font-size':11,fill:'#0b6466'}); t3.textContent='window [n/3, n/2]';}
-    var t4=el('text',{x:L-6,y:y(0)+4,'font-size':11,fill:'#5b726d','text-anchor':'end'}); t4.textContent='0';
+    var na=0,i,k;for(i=0;i<n;i++)if(w[i]==='a')na++; vn.textContent=n+' · '+gcd(na,n-na);
+    var d=dvals(w), half=Math.floor(n/2), lo=Math.ceil(n/3), cert=lo<=half;
+    for(k=lo;k<=half;k++) if(d[k]===0){cert=false;break;}
+    vf.textContent=cert?'passes ✓':'no certificate'; vf.className=cert?'ok':'';
+    var arg=canon(w), rw=null;
+    if(arg.length===1){ rw=w.slice(arg[0])+w.slice(0,arg[0]); var dr=dvals(rw), inG=true; for(k=1;k<=half;k++) if(dr[k]>=0){inG=false;break;}
+      vg.textContent=inG?'yes ✓ (certified)':'no'; vg.className=inG?'ok':''; }
+    else { vg.textContent='tie (exception)'; vg.className=''; }
+    var ww=(view==='r'&&rw)?rw:w, dd=dvals(ww);
+    shown.textContent=(view==='r'&&rw?'canonical rotation: ':'word: ')+ww;
+    var L=40,R=620,T=15,B=195,mx=1; dd.forEach(function(v){mx=Math.max(mx,Math.abs(v));});
+    function X(k){return L+(half?k/half:0)*(R-L);} function Y(v){return (T+B)/2-v/mx*((B-T)/2);}
+    if(view==='r') el(chart,'rect',{x:L,y:Y(0),width:R-L,height:B-Y(0),fill:'#e3f4ee'});
+    if(lo<=half) el(chart,'rect',{x:X(lo),y:T,width:Math.max(2,X(half)-X(lo)),height:B-T,fill:'#dff3f4',opacity:view==='r'?.5:1});
+    el(chart,'line',{x1:L,x2:R,y1:Y(0),y2:Y(0),stroke:'#9fb8b2'});
+    var s='';for(k=0;k<=half;k++)s+=(k?'L':'M')+X(k)+','+Y(dd[k]);
+    el(chart,'path',{d:s,fill:'none',stroke:'#2e9e6b','stroke-width':2.5});
+    for(k=1;k<=half;k++){var inb=k>=lo, bad=(view==='r')?dd[k]>=0:(inb&&dd[k]===0); el(chart,'circle',{cx:X(k),cy:Y(dd[k]),r:half>30?2:3.5,fill:bad?'#c0392b':(inb?'#0f8b8d':'#2e9e6b')});}
+    el(chart,'text',{x:L,y:212,'font-size':11,fill:'#5b726d'},'k = 1');
+    el(chart,'text',{x:R,y:212,'font-size':11,fill:'#5b726d','text-anchor':'end'},'k = '+half+' (n/2)');
+    el(chart,'text',{x:L-6,y:Y(0)+4,'font-size':11,fill:'#5b726d','text-anchor':'end'},'0');
+    if(view==='r') el(chart,'text',{x:R-4,y:B-6,'font-size':11,fill:'#1f7a52','text-anchor':'end'},'G⁻ region: below 0 everywhere');
+    else if(lo<=half) el(chart,'text',{x:X(lo)+4,y:T+12,'font-size':11,fill:'#0b6466'},'window [n/3, n/2]');
   }
   inp.addEventListener('input',render);
   document.querySelectorAll('[data-w]').forEach(function(b){b.addEventListener('click',function(){inp.value=b.getAttribute('data-w');render();});});
   document.getElementById('rnd').addEventListener('click',function(){var s='';for(var i=0;i<40;i++)s+=Math.random()<.5?'a':'b';inp.value=s;render();});
+  var bo=document.getElementById('viewO'), br=document.getElementById('viewR');
+  bo.addEventListener('click',function(){view='o';bo.classList.add('on');br.classList.remove('on');render();});
+  br.addEventListener('click',function(){view='r';br.classList.add('on');bo.classList.remove('on');render();});
   render();
 })();
 </script>

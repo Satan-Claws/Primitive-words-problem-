@@ -379,3 +379,5 @@ one-sided HEAVY models (U-level only, q_V > 0, β₀ ≤ 1/4); PR1s assumes (T½
 |---|---|
 | Gated audit of MS⁺ / PR2⁺ (+ T8_unamb assembly) | R17-A, `R2/audit_r17.md` |
 | One-sided heavy models (last T8_unamb gap) | R17-B, `R2/r17_oneheavy.md` |
+
+**Round 17 PAUSED by the user** (agents stopped before reporting; audit of MS⁺/PR2⁺ and the one-sided heavy case not done).
