@@ -1,0 +1,7 @@
+mu(D),mu(Y2),mu(Y3) partial sums at N: 1.975073713306332 1.7800951266408596 1.4951595537597622 (limits 2,2,2 approached slowly)
+D (bottom nonlinear)         target -1.5000 local exps: -1.4875 -1.4937 -1.4968 -1.4984 -1.4992
+Y2 (nonlin over nonlin)      target -1.2500 local exps: -1.1635 -1.1740 -1.1835 -1.1921 -1.1997
+Y3 (3 stacked nonlin)        target -1.1250 local exps: -1.0364 -1.0260 -1.0241 -1.0267 -1.0313
+X (linear critical over Y2)  target -0.7500 local exps: -0.7702 -0.7635 -0.7589 -0.7559 -0.7540
+Xs (linear subcritical/Y2)   target -1.2500 local exps: -1.0999 -1.1123 -1.1260 -1.1400 -1.1531
+renewal mass U(N)/N^{1/4}: 1.157 1.095 1.048
