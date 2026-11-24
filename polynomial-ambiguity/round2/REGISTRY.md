@@ -431,3 +431,4 @@ R17b-audit_t8: r17_oh_level (Lemma L, MS^in, Lemma D, Thm OH) **SURVIVES**, no f
 | Repair D–W citation in PR2/PR1s/PR2^β/QW (ballot-only proofs or mark superseded) | D, `R2/r18_dwfix.md` |
 - **R18-D (dwfix):** all D–W uses repaired. Lemma K, CM, J, PR1s need only the pointwise Thm 1 (fixed start). PR2ˡᵒᵍ, QW and PR2^β use new **Lemma U** (elementary, uniform start, 3π/4 wedge, (log m)^{5/3} loss; written proof). All of them are off the T8 path (PR2⁺/OH).
   Exact DP over all starts: sup m^{2/3}P/(1+|z|)^{4/3} saturates near 0.59. Files: `R2/r18_dwfix.md`, `scripts/r18_dwfix_dp.py`.
+- **R18-C (writeup):** `round2/THEOREM_T8.md` (571 lines): self-contained T8_unamb proof (Thm M, Lemma F elementary, Rn, Bot+B1, PC/HL/SM/L, MS⁺/MS^in log form, Lemma Q/D, PR2⁺/OH case split), all audit caveats tabulated (§7 E1–E24), no DW/DLW. Flag §6.3: chain uses only μ(L)=∞, so it appears to prove T8_μ too (unaudited observation).
