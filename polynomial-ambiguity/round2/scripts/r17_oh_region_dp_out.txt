@@ -1,0 +1,4 @@
+(1) wedge 3pi/4: P(tau>m)*m^(2/3): {16: np.float64(0.382), 64: np.float64(0.4006), 256: np.float64(0.4062), 1024: np.float64(0.4077)}
+(2) M=4: T=256: T*P=5.216 T*P/(sqrtM*logM)=1.881; T=1024: T*P=5.302 T*P/(sqrtM*logM)=1.912; T=4096: T*P=5.324 T*P/(sqrtM*logM)=1.920
+(2) M=16: T=256: T*P=9.313 T*P/(sqrtM*logM)=0.840; T=1024: T*P=9.744 T*P/(sqrtM*logM)=0.879; T=4096: T*P=9.859 T*P/(sqrtM*logM)=0.889
+(2) M=64: T=256: T*P=16.108 T*P/(sqrtM*logM)=0.484; T=1024: T*P=18.606 T*P/(sqrtM*logM)=0.559; T=4096: T*P=19.394 T*P/(sqrtM*logM)=0.583
