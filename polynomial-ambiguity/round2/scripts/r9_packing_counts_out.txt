@@ -1,0 +1,4 @@
+n=20: |E|n/2^n=0.0927  |G-|n/2^n=1.762  partial measures E=0.4119 G-=1.35
+n=60: |E|n/2^n=0.0522  |G-|n/2^n=3.077  partial measures E=0.4487 G-=2.63
+n=200: |E|n/2^n=0.0283  |G-|n/2^n=5.635  partial measures E=0.4718 G-=5.16
+n=2000: |E|n/2^n=0.0089  |G-|n/2^n=17.839  partial measures E=0.4911 G-=17.35

@@ -255,3 +255,14 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 - R9-A: L_M (§4, sketch): the obstruction must involve roots v with #a(v) ∤ M for every M, so core (ii) contains core (i). By-product: L_P is inherently ambiguous with linear ambiguity (via U′). Next lemma: is there a PCFL ⊇ Cop that is sound on all rows 2q? Open.
 - R9-C (`reports/r9_selfsim.md`): self-similarity gives NO amplification. A1/A2 [proof]: depth-k truncation certificates L_k = σ(Q₃∩R_k) ⊆ P∩Q (CF substitution, exact tree counts) satisfy P(L_k) ⇔ P(Q) for every finite k; P(P∩Q) ⇒ P(Q); converse OPEN = uniformity in k.
 - R9-C: the invariant certificate lands in the unbounded-H slice Q∩(b*a)⁺, which is the full problem (code {ba,bba}), not a fixed (ab*)ⁿ slice. Lemma RG: amb(n) ≥ C·amb(n^α)^s excludes polynomials iff sα > 1; blocks give s = 1, α = ½ (vacuous); √n contraction is typical-only.
+- R9-B (`R2/r9_packing.md`): T8_unamb NOT proved, no counterexample. Thm M: for unambiguous L, T8 ⟺ μ(L)=Σ|L_n|2^{-n}<∞ (no α=−1); Lemma Rn: a finite-mean critical linear SCC is impossible in G⁻ (renewal).
+  So any counterexample needs a heavy-tailed full-entropy block (≍2^ℓℓ^{-3/2}) feeding a critical linear SCC, α∈(−1,−½]. Exact gap: the heavy-block lemma.
+  Search over 240k grammars: the best unambiguous L ⊆ G⁻ is Catalan (α=−3/2). Ambiguity-collapse example: context measure ∞ but word set = Dyck.
+
+**Round 9 synthesis (root).** All three cores sharpened; none closed.
+- P_cop (`R2/r9_pcop.md`): Theorem N, an explicit linear-ambiguity grammar that agrees with Q on all prime rows, so Theorem-U-type (row) arguments can't
+  lift to polynomial ambiguity, and core (ii) contains core (i). Next: rows #a = 2q, where two witness checks can cross.
+- Self-similarity (`R2/r9_selfsim.md`): exact transfers, so no amplification (Lemma RG needs sα > 1; the structure gives s = 1, α = ½). Gap = uniformity in depth k.
+- Packing (`R2/r9_packing.md`): the unambiguous T8 reduces to the HEAVY-BLOCK LEMMA (a critical linear SCC fed by a heavy-tailed Dyck-like block
+  language cannot keep every word in G⁻). Polynomial ambiguity needs a separate word-level argument (ambiguity-collapse example).
+- Most concrete targets: heavy-block lemma (would give a clean new theorem: no unambiguous CFL inside G⁻ is rotation-dense); the 2q-row question.
