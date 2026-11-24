@@ -362,7 +362,7 @@ details .body{padding:12px 16px}
 <p><b>Round 20 (running): four parallel attacks on the bridge, each using completeness differently.</b></p>
 <ul>
 <li><b>Stable sub-structure:</b> show a grammar for Q must contain a critical part whose substitutions mostly stay inside G⁻, so that T8_poly applies.</li>
-<li><b>Other regions:</b> look for a certificate region other than G⁻ that every grammar for Q is forced into <i>and</i> that the squeeze can handle, or prove no such region exists (which would describe the shape a hypothetical grammar must have).</li>
+<li><b>Other regions: no region found, but a sharp no-go.</b> A region that is both forced and squeezable exists exactly when the answer is "no" (Lemma 0). Theorem NG: any forcing argument that uses only completeness plus the ambiguity bound would also apply to the trivial grammar for all words. So <b>a bridge must use the exclusion of powers essentially</b>, in combination with completeness. Bonus: T8_poly extends to the full pure-sign fold G⁻ ∪ G⁺. A hypothetical grammar would have to look locally like Σ*, exclude powers through a global mix of certificates, and anchor at a floating canonical rotation.</li>
 <li><b>Near-powers: dead end</b> (written proofs). Near-powers are the most "witness-poor" primitive words: one canonical certificate per prime (Lemma WP). A grammar reaches the defect by nesting rather than by memory (Prop N), and every pumping constraint is soundness-only. Lesson: multiplicity has to come from witness-<i>rich</i>, typical words.</li>
 <li><b>Dense sound certificates:</b> does every dense, sound, polynomially ambiguous language secretly use the fold? If so, T8_poly settles the problem as "no". Otherwise, find the non-fold certificate.</li>
 </ul>

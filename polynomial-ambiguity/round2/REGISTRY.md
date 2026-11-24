@@ -468,3 +468,5 @@ Goal: any polynomially ambiguous G with L(G) = Q must contain a structure to whi
 | DENSE-SOUND ⇒ fold? classify dense sound certificates, or find a non-fold one | certificate classification | D, `R2/r20_dense.md` |
 - R20-C near-powers (`R2/r20_nearpow.md`): COLLAPSES. Lemma WP: near-powers have W_q=2 (witness-poorest); spine-memory claim false (nested G_p, ≤2 trees); all NP pumping/counting constraints are FE-type ⇒ ambiguity-blind (r3 Prop 1).
   Gap = Forcing Lemma NF (W-forcing on NP), implausible; multiplicity must come from witness-rich words. Script `scripts/r20_nearpow_witness.py`.
+- R20-B regions (`R2/r20_region.md`): NO forced+squeezable region found. Lemma U: (S) closed under regular splits/bounded rotations ⇒ T8_poly for full pure-sign fold F_[1,n/2]=G⁻⊔G⁺. Rot-closed, F_K, bounded E_h out of T8 reach; bounded E_h forced but (S)(E_h∪P) false.
+  Thm NG (given numerical PR: pumping families hit powers ≤2 times): power-blind forcing contradicts any T8-type squeeze ⇒ forcing must use L(G)∩P=∅. Lyndon rotation end-aligned (E_{log²n}≈0.7) not centre-aligned (G⁻: .63→.24). Scripts `scripts/r20_region_{align,powers}.py`.

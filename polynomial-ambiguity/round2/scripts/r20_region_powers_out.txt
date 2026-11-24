@@ -1,0 +1,1 @@
+families by #m in [1,60] giving a power: {0: 17710, 1: 597, 2: 1, 59: 35, 60: 430}

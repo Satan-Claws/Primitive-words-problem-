@@ -1,0 +1,5 @@
+n=1001, 3000 uniform G^- samples
+ell=   4 one-sided d=0:0.730 d=8:0.987 d=64:0.999 d=250:1.000 | two-sided outer:0.552  ell^-1/2=0.500
+ell=  16 one-sided d=0:0.484 d=8:0.934 d=64:0.995 d=250:1.000 | two-sided outer:0.279  ell^-1/2=0.250
+ell=  64 one-sided d=0:0.339 d=8:0.794 d=64:0.962 d=250:0.990 | two-sided outer:0.146  ell^-1/2=0.125
+ell= 256 one-sided d=0:0.216 d=8:0.622 d=64:0.867 d=250:0.926 | two-sided outer:0.064  ell^-1/2=0.062
