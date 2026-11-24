@@ -251,3 +251,5 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 | Core (ii): not-P_cop via Wich structure (fresh eyes) | R9-A, `R2/r9_pcop.md` |
 | Core (iii): cross-spine packing lemma | R9-B, `R2/r9_packing.md` |
 | Core (i): exploit the self-similar block reduction (both directions) | R9-C, `R2/r9_selfsim.md` |
+- R9-A (`reports/r9_pcop.md`): **No-go for every U-type extension.** Theorem N [written proof + computational, |w| ≤ 15]: there is an explicit linearly ambiguous CFG whose language L_P ⊇ Q, and L_P ∖ Q ⊆ {#a composite}. The two-letter L_P2 has both #a and #b composite. U only uses prime rows (U′), so ¬P_cop must use L ⊆ Q on composite rows; idea (2)'s exact series cannot exist for any language (U*).
+- R9-A: L_M (§4, sketch): the obstruction must involve roots v with #a(v) ∤ M for every M, so core (ii) contains core (i). By-product: L_P is inherently ambiguous with linear ambiguity (via U′). Next lemma: is there a PCFL ⊇ Cop that is sound on all rows 2q? Open.
