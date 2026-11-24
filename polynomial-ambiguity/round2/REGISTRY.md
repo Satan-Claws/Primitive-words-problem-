@@ -289,3 +289,5 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 |---|---|
 | EQ-2q: prove no PCFL matches Q exactly on rows 2q, or build one | R11-A, `R2/r11_eq2q.md` |
 | Centre-shift rigidity (unambiguous T8) | R11-B, `R2/r11_rigid.md` |
+- R11-A (`reports/r11_eq2q.md`): EQ-2q still **OPEN**. Lemma S: Q∩row_{2q} = ({D≠0}∩Not2P) ⊔ ({D=0}∩NonSq) [proof + computational, rows 4/6/10/14, |w| ≤ 20]. **Theorem T** [proof]: no *regular* (gap-saturated) sorter works. (C₁∩R₁)∪(C₂∩R₂)∪R₃ with C₁ ⊇ P_q, C₂ ⊇ Sq∩Not2P fails on every single row 2q.
+- b-pumping route to ¬EQ-2q: the exact obstruction is P1–P3 (pump partner may contain a's; a pure-b partner in gap j ≢ i mod q is harmless; laminarity allows only O(1) square-neutral pumps, but they are not needed). It never uses ambiguity, so as it stands it would prove Q ∉ CFL. Missing piece: Theorem T (the sorter is not gap-saturated) gives no lower bound on amb(w).

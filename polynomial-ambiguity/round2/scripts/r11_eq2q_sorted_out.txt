@@ -1,0 +1,14 @@
+(1) row 4, |w|<=20: 20349 words, 0 failures
+(1) row 6, |w|<=20: 116280 words, 0 failures
+(1) row 10, |w|<=20: 352716 words, 0 failures
+(1) row 14, |w|<=20: 54264 words, 0 failures
+(2) q=3 N=1 M=1: witness ok=True
+(2) q=3 N=2 M=2: witness ok=True
+(2) q=3 N=3 M=6: witness ok=True
+(2) q=5 N=1 M=1: witness ok=True
+(2) q=5 N=2 M=2: witness ok=True
+(2) q=5 N=3 M=6: witness ok=True
+(2) q=7 N=1 M=1: witness ok=True
+(2) q=7 N=2 M=2: witness ok=True
+(2) q=7 N=3 M=6: witness ok=True
+TOTAL failures: 0
