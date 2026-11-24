@@ -1,0 +1,26 @@
+(1) CT(c): alpha_c = -1-2^-k (finite-mass heavy side branch), alpha_y = -1 + m 2^-j (divergent yield)
+  combos with condition TRUE: 16  FALSE: 108  e.g. light yield (ay=0) + Dyck side (ac=-3/2): sum = 0.5
+(2) tokens (u,v), |u|+|v|<=L, exit w; G^- tested on u^i w v^i, i<=6 (alone) and on all
+    sequences of length<=4 over a pair (pairwise). mass = sum 2^-(|u|+|v|); critical needs >=1
+  L=3 w=a: single-ok mass=2.000 (10 toks); greedy pairwise set mass=1.500; e.g. [('b', ''), ('b', 'a'), ('bb', ''), ('b', 'aa')]
+  L=3 w=ab: single-ok mass=0.250 (2 toks); greedy pairwise set mass=0.250; e.g. [('b', 'aa'), ('bb', 'a')]
+  L=3 w=aab: single-ok mass=0.125 (1 toks); greedy pairwise set mass=0.125; e.g. [('bb', 'a')]
+  L=3 w=aaab: single-ok mass=0.125 (1 toks); greedy pairwise set mass=0.125; e.g. [('bb', 'a')]
+  L=4 w=a: single-ok mass=2.938 (25 toks); greedy pairwise set mass=2.062; e.g. [('b', ''), ('b', 'a'), ('bb', ''), ('b', 'aa')]
+  L=4 w=ab: single-ok mass=0.562 (7 toks); greedy pairwise set mass=0.562; e.g. [('b', 'aa'), ('bb', 'a'), ('b', 'aaa'), ('b', 'baa')]
+  L=4 w=aab: single-ok mass=0.375 (5 toks); greedy pairwise set mass=0.375; e.g. [('bb', 'a'), ('b', 'aaa'), ('bb', 'aa'), ('bba', 'a')]
+  L=4 w=aaab: single-ok mass=0.312 (4 toks); greedy pairwise set mass=0.312; e.g. [('bb', 'a'), ('bb', 'aa'), ('bba', 'a'), ('bbb', 'a')]
+  L=5 w=a: single-ok mass=3.875 (55 toks); greedy pairwise set mass=2.594; e.g. [('b', ''), ('b', 'a'), ('bb', ''), ('b', 'aa')]
+  L=5 w=ab: single-ok mass=1.062 (23 toks); greedy pairwise set mass=1.000; e.g. [('b', 'aa'), ('bb', 'a'), ('b', 'aaa'), ('b', 'baa')]
+  L=5 w=aab: single-ok mass=0.719 (16 toks); greedy pairwise set mass=0.688; e.g. [('bb', 'a'), ('b', 'aaa'), ('bb', 'aa'), ('bba', 'a')]
+  L=5 w=aaab: single-ok mass=0.625 (14 toks); greedy pairwise set mass=0.594; e.g. [('bb', 'a'), ('bb', 'aa'), ('bba', 'a'), ('bbb', 'a')]
+(2b) same, restricted to drift-balanced tokens D(u)=D(v)=0 (forced by Hoeffding under poly ambiguity, §3)
+  L=4 w=a: balanced single-ok mass=0.3750 (3 toks) e.g. [('ba', ''), ('baba', ''), ('bbaa', '')]
+  L=4 w=ab: balanced single-ok mass=0.0000 (0 toks) e.g. []
+  L=4 w=aab: balanced single-ok mass=0.0000 (0 toks) e.g. []
+  L=6 w=a: balanced single-ok mass=0.4688 (9 toks) e.g. [('ba', ''), ('baba', ''), ('bbaa', '')]
+  L=6 w=ab: balanced single-ok mass=0.0000 (0 toks) e.g. []
+  L=6 w=aab: balanced single-ok mass=0.0000 (0 toks) e.g. []
+  L=8 w=a: balanced single-ok mass=0.5391 (27 toks) e.g. [('ba', ''), ('baba', ''), ('bbaa', '')]
+  L=8 w=ab: balanced single-ok mass=0.0000 (0 toks) e.g. []
+  L=8 w=aab: balanced single-ok mass=0.0000 (0 toks) e.g. []
