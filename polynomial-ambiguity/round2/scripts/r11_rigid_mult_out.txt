@@ -1,0 +1,8 @@
+n=7: max multiplicity 1, shared-centre collision False
+n=9: max multiplicity 1, shared-centre collision False
+n=11: max multiplicity 1, shared-centre collision False
+n=13: max multiplicity 1, shared-centre collision False
+n=15: max multiplicity 2, shared-centre collision False
+n=17: max multiplicity 2, shared-centre collision False
+n=19: max multiplicity 3, shared-centre collision False
+n=21: max multiplicity 3, shared-centre collision False

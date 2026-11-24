@@ -291,3 +291,12 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 | Centre-shift rigidity (unambiguous T8) | R11-B, `R2/r11_rigid.md` |
 - R11-A (`reports/r11_eq2q.md`): EQ-2q still **OPEN**. Lemma S: Q∩row_{2q} = ({D≠0}∩Not2P) ⊔ ({D=0}∩NonSq) [proof + computational, rows 4/6/10/14, |w| ≤ 20]. **Theorem T** [proof]: no *regular* (gap-saturated) sorter works. (C₁∩R₁)∪(C₂∩R₂)∪R₃ with C₁ ⊇ P_q, C₂ ⊇ Sq∩Not2P fails on every single row 2q.
 - b-pumping route to ¬EQ-2q: the exact obstruction is P1–P3 (pump partner may contain a's; a pure-b partner in gap j ≢ i mod q is harmless; laminarity allows only O(1) square-neutral pumps, but they are not needed). It never uses ambiguity, so as it stands it would prove Q ∉ CFL. Missing piece: Theorem T (the sorter is not gap-saturated) gives no lower bound on amb(w).
+- R11-B rigidity (`reports/r11_rigid.md`): NOT proved. No-go 3 [proof + check n≤16]: G⁻∩even is itself an injective critical heavy-tailed pair model (centre = middle, lazy-walk excursion tokens), so the abstract pair statement is FALSE; the correct target is FSC rigidity (heavy blocks one-tape and substitutable, finite-state coupling).
+  Lemma Fac: full entropy ⇒ every w occurs ≥ εℓ times in almost all block words. Centre-count bound: mult ≤ Σ_c N(c), so centre shifts give ≤ n+1 collisions. The poly-ambiguity lift needs two-tape re-tokenisation, not centre shift. Scripts `scripts/r11_rigid_{lazy,mult}.py`.
+
+**Round 11 synthesis (root).** Both targets sharpened; neither closed.
+- EQ-2q (`R2/r11_eq2q.md`): Lemma S, an exact characterisation of row-2q primitive words via D (checked ~544k words). Theorem T: no regular sorter
+  (restricted class). The pumping attempt never uses the ambiguity bound, so as it stands it would prove Q non-CF; the missing piece is turning T into a tree-count bound.
+- Rigidity (`R2/r11_rigid.md`): No-go 3, G⁻ itself is an injective critical heavy-tailed pair model, so the abstract statement is false and only
+  CF structure (tape-local block swaps + finite-state coupling) can help: "FSC rigidity". Centre absorption gives ≤ n+1 parses, so no iteration.
+- 11 rounds in: the three cores stand as (i) uniform certification of typical words, (ii) P_cop ⊇ (i), (iii) FSC rigidity / EQ-2q tree-count lift.

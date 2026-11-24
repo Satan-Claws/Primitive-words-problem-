@@ -1,0 +1,16 @@
+m=1: tokens 3, weight 0.75000, cumulative 0.75000
+m=2: tokens 1, weight 0.06250, cumulative 0.81250
+m=3: tokens 2, weight 0.03125, cumulative 0.84375
+m=4: tokens 5, weight 0.01953, cumulative 0.86328
+m=5: tokens 14, weight 0.01367, cumulative 0.87695
+m=6: tokens 42, weight 0.01025, cumulative 0.88721
+m=7: tokens 132, weight 0.00806, cumulative 0.89526
+n=2: |G-_n|=1 generated=1 equal=True max multiplicity=1
+n=4: |G-_n|=3 generated=3 equal=True max multiplicity=1
+n=6: |G-_n|=10 generated=10 equal=True max multiplicity=1
+n=8: |G-_n|=35 generated=35 equal=True max multiplicity=1
+n=10: |G-_n|=126 generated=126 equal=True max multiplicity=1
+n=12: |G-_n|=462 generated=462 equal=True max multiplicity=1
+n=14: |G-_n|=1716 generated=1716 equal=True max multiplicity=1
+n=16: |G-_n|=6435 generated=6435 equal=True max multiplicity=1
+ALL OK
