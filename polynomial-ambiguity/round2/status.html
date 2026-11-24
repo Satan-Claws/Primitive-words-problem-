@@ -103,13 +103,13 @@ details .body{padding:12px 16px}
 <header class="hero"><div class="in">
   <h1>Primitive words and polynomially ambiguous grammars</h1>
   <p>Can one context-free grammar generate exactly the words that are not repetitions, while giving every word only polynomially many parse trees?</p>
-  <p style="opacity:.88;font-size:.93rem">Status snapshot · 24 Nov 2026 · after round 17: T8_unamb proved and audited</p>
+  <p style="opacity:.88;font-size:.93rem">Status snapshot · 24 Nov 2026 · after round 19: T8_unamb and T8_poly proved and audited</p>
   <div class="pills">
     <span class="pill">Status: open</span>
     <span class="pill">Conjectured answer: no</span>
     <span class="pill">✅ T8_unamb: fully audited theorem</span>
-    <span class="pill">T8_poly: M1 closed · final audits running</span>
-    <span class="pill">19 rounds · ≈95 agents · 19 gated audits</span>
+    <span class="pill">✅ T8_poly: complete (audited, with caveats)</span>
+    <span class="pill">19 rounds · ≈97 agents · 21 gated audits</span>
   </div>
 </div></header>
 
@@ -126,12 +126,13 @@ details .body{padding:12px 16px}
   <p><b>The question.</b> A word like <code>abab</code> is a repetition (<code>ab</code> twice), while <code>aab</code> is <i>primitive</i>. Is there a grammar for exactly the primitive words that is only <b>polynomially</b> ambiguous? Most experts expect <b>no</b>.</p>
   <p><b>The approach.</b> Instead of hunting for special bad words (the original plan, which turned out not to work), we look at <b>ordinary random words</b>. We found one simple test, a <b>fold</b> of the word, that proves almost every word is primitive. So the problem becomes:
   <i>can a grammar carry out the fold test?</i> If not even an unambiguous grammar can, that's strong evidence for "no", and a template for the full proof.</p>
-  <p><b>Where we are.</b> We're proving <b>T8_unamb</b>: no unambiguous grammar can carry out the fold test on a sizeable fraction of words. The proof splits into cases. All are done except one (one-sided heavy-tailed grammars), and most of the finished pieces have passed an independent audit.</p>
+  <p><b>Where we are.</b> Two theorems are now proved and audited. <b>T8_unamb:</b> no unambiguous grammar can carry out the fold test on a sizeable fraction of words. <b>T8_poly:</b> the same for <i>every polynomially ambiguous</i> grammar. That's strong evidence for "no". The main problem is still <b>open</b>: going from "grammars that use the fold" to "every grammar for the primitive words" is as hard as the problem itself.</p>
 </div>
 <div class="grid3">
   <div class="card"><h3>✅ Done</h3><p>Fold certificate found and audited. The question reduced to one obstacle, a <i>length coupling</i>. Every two-sided and one-sided-light case of T8_unamb proved.</p></div>
   <div class="card"><h3>✅ T8_unamb proved</h3><p>Every case and every foundation has passed a gated audit. No unambiguous grammar can carry out the fold test on a positive fraction of words. 215,820-grammar counterexample search: none. The round-16 "quadrant" argument has now passed its audit.</p></div>
-  <div class="card"><h3>⏭ After that</h3><p>Lift from <i>unambiguous</i> to <i>polynomially ambiguous</i>. Round 17 showed the squeeze alone tops out below n/log n, so a new ingredient is needed. Then show <i>every</i> grammar for Q must contain a fold-type part.</p></div>
+  <div class="card"><h3>✅ Also done: T8_poly</h3><p>The lift to polynomial ambiguity is complete and audited (round 19): set-level word counts, a central-limit argument for the light/light case, and a left-tilted tree count for the subcritical cases.</p></div>
+  <div class="card"><h3>⏭ What's left</h3><p>The <b>bridge</b>: show every polynomially ambiguous grammar for Q must contain a dense fold-type part. Round 17 proved this is equivalent to the whole problem; it must use <i>completeness</i> together with ambiguity.</p></div>
 </div>
 </section>
 
@@ -240,9 +241,9 @@ details .body{padding:12px 16px}
 </div></div>
 
 <div class="step live"><div class="num">5</div><div class="card">
-  <h3>Lift to polynomial ambiguity, then to every grammar <span class="status" style="color:var(--teal-d)">in progress</span></h3>
+  <h3>Lift to polynomial ambiguity, then to every grammar <span class="status" style="color:var(--teal-d)">5a done · 5b open</span></h3>
   <ul>
-    <li><b>5a.</b> From unambiguous to polynomially ambiguous. <b>Partly done:</b> Prop P extends T8 whenever the critical component has an unambiguous nonterminal; the gap is "G-trunk". <b>Also found: the squeeze alone cannot finish it.</b> Its gaps are polynomial, so it can never rule out ambiguity of about n/log n or more (ceiling lemma), and a single erased marker already costs a factor n. A full lift needs a new ingredient: a set-level density bound inside the quadrant (G-word), or using G⁻ to force exponential ambiguity directly (G-struct).</li>
+    <li><b>5a. ✅ Done (T8_poly, audited, round 19).</b> From unambiguous to polynomially ambiguous. History: Prop P extends T8 whenever the critical component has an unambiguous nonterminal; the gap is "G-trunk". <b>Also found: the squeeze alone cannot finish it.</b> Its gaps are polynomial, so it can never rule out ambiguity of about n/log n or more (ceiling lemma), and a single erased marker already costs a factor n. A full lift needs a new ingredient: a set-level density bound inside the quadrant (G-word), or using G⁻ to force exponential ambiguity directly (G-struct).</li>
     <li><b>5b.</b> From fold-type grammars to <i>every</i> grammar for Q. <b>Round 17 finding: this "bridge" is equivalent to the whole problem.</b>
       <ul>
         <li>Regular filtering can't do it (Prop NR).</li>
@@ -340,7 +341,7 @@ details .body{padding:12px 16px}
 <p>Grammars whose long blocks sit on one side of the fold only, with block-length tails heavier than the square-root case (exponent β₀ ≤ 1/4). The two-sided trick gives only a wedge here (room ~N<sup>1/3</sup>), which isn't enough. The round-16 quadrant lemma MS⁺ has passed its audit. The audit also showed the open case includes one-tape models whose block is level on one side only.</p>
 <div class="yn"><div class="y"><b>If it closes:</b> T8_unamb is a complete theorem, the campaign's strongest new result.</div><div class="no"><b>If a counterexample appears:</b> an unambiguous grammar certifies most words, and the affirmative fold route revives.</div></div>
 </div></details>
-<details open><summary><span class="n">1</span>Lifting to polynomial ambiguity (T8_poly): one gap left (M1) <span class="tag t-wp" style="margin-left:auto">in progress</span></summary><div class="body">
+<details><summary><span class="n">✓</span>Lifting to polynomial ambiguity (T8_poly): complete <span class="tag t-aud" style="margin-left:auto">audited</span></summary><div class="body">
 <p>Every negative tool works best for unambiguous grammars. <b>Round 17: the measure squeeze has a hard ceiling.</b> It can never exclude ambiguity ≳ n/log n, because all its gaps are polynomial. The quadrant itself is exactly as large as rotation-density needs (~1/n). What could work: <b>G-word</b>, showing a grammar can't fill a positive share of the quadrant words at the <i>set</i> level, or <b>G-struct</b>, using G⁻ to force a pair of distinct pumping trees with the same interface (Wich's criterion for exponential ambiguity).</p>
 <p><b>Round 17 progress (Prop P, written proof):</b> in a polynomially ambiguous grammar, every self-branching component must be unambiguous, and all ambiguity sits on a bounded number of linear "trunk" spines (Lemmas IF, SU, Trunk Lemma). So T8 <b>does extend to polynomial ambiguity</b> whenever the critical component contains an unambiguous nonterminal. <b>Remaining gap (G-trunk):</b> the critical component lies on the trunk and is fully ambiguous.</p>
 <p><b>Round 17, G-word (written proof, works at ANY ambiguity):</b> inserting a long flat word on the outside moves the fold centre into it. Then the quadrant condition constrains the <i>whole</i> word, so such words have density ~n<sup>−3/2</sup>, and even their rotations only reach ~1/√n: not rotation-dense. <b>Gap (G-word′):</b> this is proved for words with bounded surrounding context. One must show a dense grammar's words pass through such a structure with small context. If so, the lift is done without needing injectivity at all.</p>
@@ -355,6 +356,9 @@ details .body{padding:12px 16px}
 <p><b>Assembly audit: INCOMPLETE.</b> The light-left/heavy-right result survives, and almost every configuration is covered. But the auditor found one uncovered case, <b>M1</b>: a spanning, <i>subcritical</i> light/light component with a positive-drift cycle (example: X₀ → bXaa, X → aXaa | bXaa | a). Its nonlinear analogue M1′ is also uncovered. Both look closable by a "left-tilted" tree count, and an agent is writing it. One earlier step (a G⁻ transfer that assumed finitely many labels) is also being repaired.</p>
 <p><b>Theorem LL audit: SURVIVES.</b> Every truncation really is in L, the central-limit step is valid for a single sequence, the adversary sequence is realisable, and no configuration is missing within its scope. An exhaustive search over 737 small token sets left only one survivor, and that one is exponentially ambiguous, as the theory predicts.</p>
 <p><b>M1 and M1′ closed (round 19, written proof, audit running):</b> a "left-tilted" tree count (Lemma TS). Prefix counting missed this case because each free left letter forces a partner on the far side of the centre; counting trees sees it, and left-heavy words become exponentially rare. Lemma D handles the non-critical cases. <b>Audit: SURVIVES</b>. Brute-force word counts match the predicted decay rates exactly. Final end-to-end audit of T8_poly running.</p>
+</div></details>
+<details open><summary><span class="n">1</span>The bridge: every grammar for Q (now the main target)</summary><div class="body">
+<p>T8_poly rules out polynomially ambiguous grammars that stay <i>inside G⁻</i>. A grammar for Q doesn't have to. Round 17 proved that "every polynomially ambiguous grammar for Q contains a dense part inside G⁻" is <b>equivalent to the whole problem</b>. Regular filtering can't do it, and the weakest property that would let T8 apply is exactly what T8 forbids. A proof must use <b>completeness</b> (the grammar generates <i>every</i> primitive word) together with ambiguity. No mechanism for that is known yet.</p>
 </div></details>
 <details><summary><span class="n">3</span>EQ-2q: match Q exactly on rows with 2q a's</summary><div class="body">
 <p>Is there a polynomially ambiguous grammar that agrees <i>exactly</i> with Q on every row with 2q a's (q prime)? If not, the problem is solved as "no". The bad words there are only squares and q-th powers of two-a words; Lemma S characterises the good ones exactly. The missing piece is making the ambiguity bound enter.</p>
@@ -385,12 +389,13 @@ details .body{padding:12px 16px}
 <tr><td>Lemma SA, Prop K, U1–U3</td><td>G⁻ = two easy halves plus one length coupling; finite memory fails; uncoupling recreates the problem</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> (U1–U3) / <span class="tag t-wp">written proof</span></td></tr>
 <tr><td>PR1, PR2</td><td>Measure squeeze for one-tape and two-sided light-tailed grammars</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> (citation repaired in round 18: pointwise D–W suffices; also superseded by PR2⁺)</td></tr>
 <tr><td>PR1s, Theorem SM, PR2<sup>β</sup></td><td>One-sided square-root tails; side mismatch impossible; balanced heavy tails</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
-<tr><td>Lemma RP (gend2) + Theorem LL</td><td>Two configurations of T8_poly (light-left/heavy-right; critical light/light)</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
+<tr><td>Lemma RP (gend2) + Theorem LL + round-19 fixes</td><td>Configurations of T8_poly (light-left/heavy-right; critical light/light; Lemmas NS, W, SP)</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
 <tr><td>Lemma TS + Lemma D (M1/M1′)</td><td>Left-tilted tree count: left-heavy words are exponentially rare; closes the subcritical spanning cases</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
 <tr><td>G-end for Q(C)</td><td>Polynomially ambiguous grammars inside the quadrant set are never rotation-dense, even with stacked components</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
 <tr><td>Thm G-geo (G-word′)</td><td>T8 at any polynomial ambiguity, for grammars with two-sided flat loops and geometric context; tolerates context up to n/log n</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
 <tr><td>Lemma FR (G-word)</td><td>Set-level bound for any ambiguity: bounded-context insertable words have density ~n<sup>−3/2</sup>, so they are not rotation-dense</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
 <tr><td>Prop P (+ Lemmas IF, SU, Trunk)</td><td>T8 extends to polynomial ambiguity unless the critical component sits fully on an ambiguous trunk</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
+<tr><td><b>T8_poly</b></td><td><b>No polynomially ambiguous CFL inside G⁻ contains a rotation of a positive fraction of all words (for all large n)</b></td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> (final end-to-end audit; with caveats)</td></tr>
 <tr><td><b>T8_unamb</b></td><td><b>No unambiguous CFL inside G⁻ contains a rotation of a positive fraction of all words (for all large n)</b></td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> (all cases + foundations)</td></tr>
 <tr><td>Lemma L + MS<sup>in</sup> (Thm OH)</td><td>The last case of T8_unamb: one-sided heavy models are ambiguous for every tail</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
 <tr><td>MS⁺ / PR2⁺</td><td>All two-sided cases via a quadrant of density c/n (elementary)</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
@@ -451,7 +456,9 @@ details .body{padding:12px 16px}
   <div class="it s"><div class="h">Round 14</div>Every heavy block is level (Prop HL, Lemma Bot).</div>
   <div class="it s"><div class="h">Round 15</div>One-sided (PR1s) and side mismatch (SM) closed; balanced heavy tails (PR2<sup>β</sup>); all audited.</div>
   <div class="it s"><div class="h">Round 16</div>All two-sided cases via the quadrant (MS⁺/PR2⁺).</div>
-  <div class="it s"><div class="h">Round 17 (≈12 parallel agents) · T8_unamb fully audited</div>MS⁺/PR2⁺ audited. Lift: the squeeze has a ceiling (≲ n/log n), so a new ingredient is needed. Bridge: equivalent to the whole problem; it must use completeness plus ambiguity. G-struct: Prop P lifts T8 to polynomial ambiguity except the "trunk" case. G-word: a set-level bound at any ambiguity, extended to context up to n/log n (Thm G-geo); gap "G-end" (stacked components). <b>Last T8_unamb case audited</b>: the case split is complete; the foundations audit is running. Two proof routes and a counterexample search on the last case; lift to polynomial ambiguity; the bridge to all grammars.</div>
+  <div class="it s"><div class="h">Round 17 (≈12 parallel agents)</div><b>T8_unamb fully audited</b> (last case + foundations + citations). Lift ceiling found; bridge shown equivalent to the whole problem.</div>
+  <div class="it s"><div class="h">Round 18</div>D–W citations repaired; THEOREM_T8.md written; G-end, light-left/heavy-right, Theorem LL; SH6 (not in G⁻) refutes (AM) as stated.</div>
+  <div class="it s"><div class="h">Round 19</div>M1/M1′ closed by a tree count; link repairs; <b>T8_poly complete</b> (final end-to-end audit).</div>
 </div>
 </div></details>
 </section>
