@@ -145,3 +145,5 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 | Gadget library + exact uncovered core (coverage loop) | R4-A, `R2/r4_core.md` |
 | One varying prime: Q ∩ {g(w) prime power} | R4-B, `R2/r4_pp.md` |
 | Citation check: Kászonyi–Katsura, Dömösi–Ito (what is proved, are constructions uniform) | R4-C, `R2/r4_cite.md` |
+- R4-C (`R2/r4_cite.md`). Q∩(ab*)^n is CF if n has 3 distinct primes (KK 1997 Thm 1, verified primary) or Σ1/p<4/5 (KK 1999, verified via zbMATH; not Kászonyi 2010, which only quotes it). The 1- and 2-prime cases (incl. n=6) are attested only second-hand (FCT'93 unseen); n=210 is the first uncovered n.
+- R4-C. All results are per-n: CF via Ginsburg plus Flip-Flop, with no explicit grammar, no uniform-in-n construction and no ambiguity claim. Dömösi–Ito book Ch. 10 "Kászonyi–Katsura Theory" (pp. 309–342) and the bounded/slender claims were not read (unverified).
