@@ -59,3 +59,4 @@ Agents: append at most a few lines to the section that fits. Do not rewrite othe
 - Test grammars walk/builder3: neither generates Q; closed.
 - Net: no route unblocked. If the audit passes, the S_N candidate dies and wave 2 must find slice families where
   the transport tiling fails (balanced arcs, non-pair-supported structure, deeper prime powers) or a non-slice mechanism.
+- [written proof + computational] W2 `R2/newslice.md`: NO new slice candidate. Any DFA sub-slice is locally ℝ^J∖∪_{p∈A(ω)}V_p (DFA ⇒ only coordinate restrictions); Lemma VC-gen: convex ply always poly; cross-prime defects (types, τ(δ)) only REDUCE factor count, E_k of S_N is extremal; deep powers n=∏p^a, lower strata, fibre-restricted sub-slices are S_N-type: 0 W-balanced arcs + rule ply-1 checked up to n=27000 (`newslice_check.py`). Live gap stays Lemma C (all N) + realisability + G3**.
