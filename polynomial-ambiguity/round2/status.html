@@ -103,13 +103,13 @@ details .body{padding:12px 16px}
 <header class="hero"><div class="in">
   <h1>Primitive words and polynomially ambiguous grammars</h1>
   <p>Can one context-free grammar generate exactly the words that are not repetitions, while giving every word only polynomially many parse trees?</p>
-  <p style="opacity:.88;font-size:.93rem">Status snapshot · 24 Nov 2026 · after round 19 · round 20 (the bridge) running</p>
+  <p style="opacity:.88;font-size:.93rem">Status snapshot · 24 Nov 2026 · after round 20: T8_unamb and T8_poly proved; bridge narrowed to its core</p>
   <div class="pills">
     <span class="pill">Status: open</span>
     <span class="pill">Conjectured answer: no</span>
     <span class="pill">✅ T8_unamb: fully audited theorem</span>
     <span class="pill">✅ T8_poly: complete (audited, with caveats)</span>
-    <span class="pill">19 rounds · ≈97 agents · 21 gated audits</span>
+    <span class="pill">20 rounds · ≈102 agents · 21 gated audits</span>
   </div>
 </div></header>
 
@@ -359,13 +359,14 @@ details .body{padding:12px 16px}
 </div></details>
 <details open><summary><span class="n">1</span>The bridge: every grammar for Q (now the main target)</summary><div class="body">
 <p>T8_poly rules out polynomially ambiguous grammars that stay <i>inside G⁻</i>. A grammar for Q doesn't have to. Round 17 proved that "every polynomially ambiguous grammar for Q contains a dense part inside G⁻" is <b>equivalent to the whole problem</b>. Regular filtering can't do it, and the weakest property that would let T8 apply is exactly what T8 forbids. A proof must use <b>completeness</b> (the grammar generates <i>every</i> primitive word) together with ambiguity. No mechanism for that is known yet.</p>
-<p><b>Round 20 (running): four parallel attacks on the bridge, each using completeness differently.</b></p>
+<p><b>Round 20: four parallel attacks on the bridge, each using completeness differently.</b></p>
 <ul>
-<li><b>Stable sub-structure:</b> show a grammar for Q must contain a critical part whose substitutions mostly stay inside G⁻, so that T8_poly applies.</li>
+<li><b>Stable sub-structure: fails.</b> Every map the T8 proof uses deliberately pushes words out of G⁻, and the stable part isn't closed under adding blocks (Props F, PF). An explicit sound grammar with low ambiguity, built from cyclic Raney/Dyck words, covers about a 1/√n share of G⁻ at odd lengths and none at lengths 2<sup>j</sup>.</li>
 <li><b>Other regions: no region found, but a sharp no-go.</b> A region that is both forced and squeezable exists exactly when the answer is "no" (Lemma 0). Theorem NG: any forcing argument that uses only completeness plus the ambiguity bound would also apply to the trivial grammar for all words. So <b>a bridge must use the exclusion of powers essentially</b>, in combination with completeness. Bonus: T8_poly extends to the full pure-sign fold G⁻ ∪ G⁺. A hypothetical grammar would have to look locally like Σ*, exclude powers through a global mix of certificates, and anchor at a floating canonical rotation.</li>
 <li><b>Near-powers: dead end</b> (written proofs). Near-powers are the most "witness-poor" primitive words: one canonical certificate per prime (Lemma WP). A grammar reaches the defect by nesting rather than by memory (Prop N), and every pumping constraint is soundness-only. Lesson: multiplicity has to come from witness-<i>rich</i>, typical words.</li>
 <li><b>Dense sound certificates:</b> "dense sound ⇒ fold" turns out to be equivalent to the problem (Prop E), so it isn't a shortcut. But a new obstruction kills the main <i>non-fold</i> candidates. <b>Theorem ET</b> (written proof, audit running): no context-free set of Lyndon words, and no context-free part of the unique-longest-run language, covers a rotation of a positive fraction of words, <i>at any ambiguity</i>. The "partner principle": a pumped quantity has only one partner interval, but certifying "longest" means beating two separated competitors. Still open: window folds, the cyclic unique-run language, and unique-factor certificates.</li>
 </ul>
+<div class="callout"><b>Where round 20 converges.</b> All four attacks point to the same place. A contradiction can't come from the fold region or from near-powers. It has to come from <b>completeness on balanced words whose letter counts share a factor ≥ 2</b>, combined with <b>the exclusion of powers</b> (Theorem NG). That is the original hard core the campaign identified in round 2 (P_cop / "gcd ≥ 2 classes carry the whole problem"), now with much sharper constraints on what an argument must use.</div>
 </div></details>
 <details><summary><span class="n">3</span>EQ-2q: match Q exactly on rows with 2q a's</summary><div class="body">
 <p>Is there a polynomially ambiguous grammar that agrees <i>exactly</i> with Q on every row with 2q a's (q prime)? If not, the problem is solved as "no". The bad words there are only squares and q-th powers of two-a words; Lemma S characterises the good ones exactly. The missing piece is making the ambiguity bound enter.</p>
@@ -467,7 +468,7 @@ details .body{padding:12px 16px}
   <div class="it s"><div class="h">Round 17 (≈12 parallel agents)</div><b>T8_unamb fully audited</b> (last case + foundations + citations). Lift ceiling found; bridge shown equivalent to the whole problem.</div>
   <div class="it s"><div class="h">Round 18</div>D–W citations repaired; THEOREM_T8.md written; G-end, light-left/heavy-right, Theorem LL; SH6 (not in G⁻) refutes (AM) as stated.</div>
   <div class="it s"><div class="h">Round 19</div>M1/M1′ closed by a tree count; link repairs; <b>T8_poly complete</b> (final end-to-end audit).</div>
-  <div class="it s"><div class="h">Round 20 (running)</div>Four parallel attacks on the bridge: stable sub-structure, other regions, near-powers, dense sound certificates.</div>
+  <div class="it s"><div class="h">Round 20</div>Bridge: four attacks. Near-powers and stable sub-structure dead; Theorem NG (must use power exclusion); Theorem ET (partner principle, audit running); all converge on gcd ≥ 2 completeness + power exclusion.</div>
 </div>
 </div></details>
 </section>
