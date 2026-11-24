@@ -1,0 +1,89 @@
+# seeds 11-16, 10000 trials each: audit_t8pf_search.py <seed> 10000
+## t11.txt
+trials=10000 kept(L⊆G⁻ to n=13, amb<=n², |L_n|>=4)=388
+row counts: {'3c': 208, '3h': 140, '3g': 2, 'rej_expamb': 36, 'rej_amb_nt': 19, '3e': 4, '3a': 32, '3b': 1}
+3a ('AS', 'nonlin', 2.017, None, 'NC', '3a') |L_13|=6 {'S': ['bAAa'], 'A': ['SSA', 'b', 'bA']}
+3a ('S', 'nonlin', 1.941, None, 'NC', '3a') |L_13|=10 {'S': ['bASa', 'bAba', 'bSSa', 'bbAa'], 'A': ['AA', 'ba']}
+3b ('S', 'lin', 0.0, np.float64(0.113), 'NC', '3b') |L_13|=5 {'S': ['bASa', 'bAba'], 'A': ['AA', 'ba']}
+3c ('S', 'lin', 1.466, np.float64(0.25), 'NC', '3c') |L_13|=19 {'S': ['b', 'bSBa'], 'B': ['Ba', 'b']}
+3c ('B', 'lin', 1.0, np.float64(0.5), 'NC', '3c') |L_13|=19 {'S': ['b', 'bSBa'], 'B': ['Ba', 'b']}
+3e ('C', 'lin', 1.0, np.float64(0.5), 'posCyc', '3e') |L_13|=5 {'S': ['bSCa', 'ba'], 'B': ['a'], 'C': ['BC', 'ba']}
+3e ('B', 'lin', 1.0, np.float64(0.5), 'posCyc', '3e') |L_13|=4 {'S': ['bbBa', 'bbSa'], 'B': ['aB', 'b']}
+3g ('S', 'lin', 1.438, np.float64(0.188), 'posCyc', '3g') |L_13|=7 {'S': ['a', 'bASa', 'bBSa'], 'A': ['AaB', 'BB', 'ab', 'bB'], 'B': ['ab']}
+3g ('BS', 'lin', 1.189, np.float64(0.354), 'posCyc', '3g') |L_13|=4 {'S': ['bBAa', 'bCBa'], 'A': ['a'], 'B': ['aS', 'aa'], 'C': ['a']}
+3h ('S', 'nonlin', 1.549, None, 'posCyc', '3h') |L_13|=14 {'S': ['a', 'bSSa']}
+3h ('AS', 'nonlin', 1.829, None, 'posCyc', '3h') |L_13|=8 {'S': ['ba', 'baSa', 'bbAa'], 'A': ['AaA', 'bS', 'baA']}
+violations: 0
+## t12.txt
+trials=10000 kept(L⊆G⁻ to n=13, amb<=n², |L_n|>=4)=396
+row counts: {'3a': 42, '3h': 153, '3c': 185, 'rej_expamb': 37, '3e': 4, 'rej_amb_nt': 22, '3g': 1, '3b': 3}
+3a ('AS', 'nonlin', 1.952, None, 'posCyc', '3a') |L_13|=13 {'S': ['a', 'bAaa'], 'A': ['SA', 'a']}
+3a ('ABS', 'nonlin', 1.993, None, 'posCyc', '3a') |L_13|=8 {'S': ['bBAa', 'bBSa', 'ba', 'bbSa'], 'A': ['AAB', 'AAa', 'BS', 'SB'], 'B': ['BA', 'ba']}
+3b ('S', 'lin', 0.0, np.float64(0.226), 'NC', '3b') |L_13|=17 {'S': ['a', 'bBSa', 'bSBa'], 'B': ['BB', 'ba']}
+3b ('S', 'lin', 0.0, np.float64(0.113), 'NC', '3b') |L_13|=5 {'S': ['b', 'bASa'], 'A': ['AA', 'ba']}
+3c ('AS', 'nonlin', 1.457, None, 'NC', '3c') |L_13|=7 {'S': ['bAAa', 'bSba', 'bba'], 'A': ['b', 'bbS']}
+3c ('S', 'nonlin', 1.549, None, 'NC', '3c') |L_13|=14 {'S': ['b', 'bSSa']}
+3e ('A', 'lin', 1.0, np.float64(0.5), 'posCyc', '3e') |L_13|=4 {'S': ['bSAa', 'bba'], 'A': ['aA', 'ab']}
+3e ('B', 'lin', 1.0, np.float64(0.5), 'posCyc', '3e') |L_13|=24 {'S': ['bSBa', 'bSSa', 'bSaa', 'ba'], 'B': ['a', 'aB']}
+3g ('AB', 'lin', 1.414, np.float64(0.64), 'posCyc', '3g') |L_13|=8 {'S': ['baAa'], 'A': ['bB', 'ba'], 'B': ['Aa', 'aBa', 'ba']}
+3h ('ABCS', 'nonlin', 1.716, None, 'posCyc', '3h') |L_13|=11 {'S': ['a', 'bbBa'], 'A': ['ASa', 'b'], 'B': ['CSa', 'ab'], 'C': ['Ca', 'aAb', 'aBa', 'ab']}
+3h ('ABS', 'nonlin', 1.686, None, 'posCyc', '3h') |L_13|=5 {'S': ['bBaa', 'bSSa', 'baa'], 'A': ['BB', 'bBA'], 'B': ['AS', 'SSB', 'ab']}
+violations: 0
+## t13.txt
+trials=10000 kept(L⊆G⁻ to n=13, amb<=n², |L_n|>=4)=367
+row counts: {'3h': 150, '3c': 182, 'rej_expamb': 29, '3a': 34, 'rej_amb_nt': 19, '3e': 3, '3g': 3}
+3a ('ABCS', 'nonlin', 2.01, None, 'posCyc', '3a') |L_13|=4 {'S': ['bCBa', 'bba'], 'A': ['BA', 'bAB', 'ba'], 'B': ['ACC', 'CA', 'SC', 'aA'], 'C': ['AS', 'BBA', 'SS', 'Sba', 'bCB']}
+3a ('S', 'nonlin', 1.942, None, 'posCyc', '3a') |L_13|=7 {'S': ['bSAa', 'bSSa', 'baAa', 'bbaa'], 'A': ['AA', 'ba']}
+3c ('CS', 'nonlin', 1.474, None, 'NC', '3c') |L_13|=6 {'S': ['bSCa', 'ba', 'bbSa'], 'C': ['bS']}
+3c ('S', 'nonlin', 1.549, None, 'NC', '3c') |L_13|=14 {'S': ['b', 'bSSa']}
+3e ('A', 'lin', 1.0, np.float64(0.5), 'posCyc', '3e') |L_13|=9 {'S': ['bSAa', 'bba'], 'A': ['aA', 'b']}
+3e ('A', 'lin', 1.0, np.float64(0.5), 'posCyc', '3e') |L_13|=6 {'S': ['bSAa', 'baaa'], 'A': ['aA', 'b']}
+3g ('AS', 'lin', 1.57, np.float64(0.672), 'posCyc', '3g') |L_13|=9 {'S': ['bAaa', 'bBSa', 'baa'], 'A': ['AB', 'BS', 'aaS', 'ab'], 'B': ['a']}
+3g ('AB', 'lin', 1.0, np.float64(0.5), 'posCyc', '3g') |L_13|=4 {'S': ['b', 'bBaa', 'bSaa', 'bbBa'], 'A': ['Ba', 'aa'], 'B': ['a', 'aA']}
+3h ('AS', 'nonlin', 1.712, None, 'posCyc', '3h') |L_13|=17 {'S': ['bASa', 'baa', 'bbAa', 'bbSa'], 'A': ['AbS', 'a']}
+3h ('S', 'nonlin', 1.757, None, 'posCyc', '3h') |L_13|=14 {'S': ['a', 'bSSa', 'bSaa']}
+violations: 0
+## t14.txt
+trials=10000 kept(L⊆G⁻ to n=13, amb<=n², |L_n|>=4)=397
+row counts: {'3c': 198, 'rej_expamb': 39, '3h': 155, 'rej_amb_nt': 28, '3e': 6, '3a': 33, '3g': 2, '3b': 1}
+3a ('ACS', 'nonlin', 1.981, None, 'NC', '3a') |L_13|=5 {'S': ['bAAa', 'ba'], 'A': ['CCb'], 'C': ['Cb', 'b', 'bAS']}
+3a ('ABS', 'nonlin', 1.998, None, 'posCyc', '3a') |L_13|=26 {'S': ['bSAa', 'bSaa', 'ba', 'bbBa'], 'A': ['BbA', 'a'], 'B': ['SA', 'a']}
+3b ('S', 'lin', 0.0, np.float64(0.113), 'NC', '3b') |L_13|=5 {'S': ['bASa', 'bAaa'], 'A': ['AA', 'ba']}
+3c ('BS', 'lin', 1.189, np.float64(0.354), 'NC', '3c') |L_13|=4 {'S': ['bBaa'], 'A': ['b'], 'B': ['Aab', 'Sa', 'Sb', 'aA']}
+3c ('AS', 'nonlin', 1.803, None, 'NC', '3c') |L_13|=40 {'S': ['b', 'bASa', 'bSAa'], 'A': ['Sa', 'ba']}
+3e ('A', 'lin', 1.0, np.float64(0.5), 'posCyc', '3e') |L_13|=45 {'S': ['bBaa', 'bSAa', 'bSBa'], 'A': ['aA', 'b', 'ba'], 'B': ['a', 'aSB', 'ab']}
+3e ('A', 'lin', 1.0, np.float64(0.5), 'posCyc', '3e') |L_13|=4 {'S': ['bAaa', 'baSa'], 'A': ['a', 'aA']}
+3g ('AS', 'lin', 1.568, np.float64(0.54), 'posCyc', '3g') |L_13|=5 {'S': ['bBAa', 'bBSa', 'baSa'], 'A': ['BB', 'BBS', 'BSB', 'SB', 'SBa'], 'B': ['a']}
+3g ('AS', 'lin', 1.364, np.float64(0.342), 'posCyc', '3g') |L_13|=12 {'S': ['bBAa', 'bBSa', 'bSaa', 'ba'], 'A': ['aSB'], 'B': ['a']}
+3h ('ABS', 'nonlin', 1.545, None, 'posCyc', '3h') |L_13|=7 {'S': ['bASa', 'ba'], 'A': ['BC', 'Sa', 'b'], 'B': ['ASC'], 'C': ['ba']}
+3h ('AS', 'nonlin', 1.727, None, 'posCyc', '3h') |L_13|=21 {'S': ['a', 'bAaa'], 'A': ['SAa', 'a', 'b']}
+violations: 0
+## t15.txt
+trials=10000 kept(L⊆G⁻ to n=13, amb<=n², |L_n|>=4)=370
+row counts: {'rej_expamb': 35, '3a': 38, '3c': 200, '3h': 131, 'rej_amb_nt': 31, '3e': 8, '3b': 1, '3g': 2}
+3a ('ACS', 'nonlin', 2.011, None, 'posCyc', '3a') |L_13|=13 {'S': ['b', 'bSCa', 'bSaa'], 'A': ['SS', 'a', 'bSS'], 'C': ['ACC', 'ba']}
+3a ('AS', 'nonlin', 1.951, None, 'NC', '3a') |L_13|=25 {'S': ['bASa', 'bSba', 'ba'], 'A': ['SA', 'Sb', 'b']}
+3b ('S', 'lin', 0.0, np.float64(0.226), 'NC', '3b') |L_13|=44 {'S': ['a', 'bASa', 'bBSa'], 'A': ['BA', 'ab'], 'B': ['AA', 'ba']}
+3c ('AS', 'nonlin', 1.487, None, 'NC', '3c') |L_13|=6 {'S': ['bAAa', 'bBBa', 'bBSa', 'bSaa'], 'A': ['ABS', 'bbB'], 'B': ['b']}
+3c ('AS', 'nonlin', 1.797, None, 'NC', '3c') |L_13|=4 {'S': ['bAAa', 'bba'], 'A': ['SA', 'b']}
+3e ('A', 'lin', 1.0, np.float64(0.5), 'posCyc', '3e') |L_13|=10 {'S': ['bSAa', 'bSba', 'baCa'], 'A': ['CA', 'ab', 'bC'], 'C': ['a']}
+3e ('A', 'lin', 1.0, np.float64(0.5), 'posCyc', '3e') |L_13|=14 {'S': ['bSAa', 'bSSa', 'bSba', 'bba'], 'A': ['aA', 'ab']}
+3g ('S', 'lin', 1.544, np.float64(0.25), 'posCyc', '3g') |L_13|=30 {'S': ['a', 'bASa', 'bAaa', 'bSBa', 'baBa'], 'A': ['bB', 'ba'], 'B': ['Ba', 'ba']}
+3g ('S', 'lin', 1.595, np.float64(0.073), 'posCyc', '3g') |L_13|=10 {'S': ['bBSa', 'bCAa', 'baa'], 'A': ['a'], 'B': ['BBA', 'ba'], 'C': ['AB', 'CaB', 'a']}
+3h ('AS', 'nonlin', 1.573, None, 'posCyc', '3h') |L_13|=12 {'S': ['a', 'bSAa'], 'A': ['SS']}
+3h ('ABS', 'nonlin', 1.638, None, 'posCyc', '3h') |L_13|=8 {'S': ['bASa', 'bAaa', 'bba'], 'A': ['SBB', 'ab', 'bAa'], 'B': ['ABb', 'SS']}
+violations: 0
+## t16.txt
+trials=10000 kept(L⊆G⁻ to n=13, amb<=n², |L_n|>=4)=385
+row counts: {'3h': 144, '3c': 196, 'rej_expamb': 44, '3b': 1, '3a': 26, 'rej_amb_nt': 22, '3g': 2, '3e': 1}
+3a ('A', 'nonlin', 1.95, None, 'NC', '3a') |L_13|=8 {'S': ['b', 'bASa', 'baAa'], 'A': ['AA', 'ba']}
+3a ('ABCS', 'nonlin', 1.939, None, 'posCyc', '3a') |L_13|=4 {'S': ['bASa', 'ba', 'bbSa'], 'A': ['AS', 'BSS'], 'B': ['Aa', 'BAC', 'BC', 'CS', 'SBB', 'ba'], 'C': ['SAS', 'ba']}
+3b ('S', 'lin', 0.0, np.float64(0.113), 'NC', '3b') |L_13|=8 {'S': ['b', 'bASa', 'baAa'], 'A': ['AA', 'ba']}
+3c ('ABS', 'nonlin', 1.862, None, 'NC', '3c') |L_13|=8 {'S': ['bABa', 'bASa', 'bBSa'], 'A': ['SA', 'b'], 'B': ['AAS', 'Sb', 'b']}
+3c ('S', 'nonlin', 1.549, None, 'NC', '3c') |L_13|=14 {'S': ['b', 'bSSa']}
+3e ('A', 'lin', 1.0, np.float64(0.25), 'posCyc', '3e') |L_13|=30 {'S': ['b', 'bSAa', 'bSBa', 'bSba'], 'A': ['aaA', 'ab'], 'B': ['a']}
+3g ('C', 'lin', 0.0, np.float64(0.25), 'posCyc', '3g') |L_13|=6 {'S': ['bBCa', 'bSAa'], 'A': ['AS', 'BBC', 'CS', 'ab'], 'B': ['CAS', 'ba'], 'C': ['a', 'aCa']}
+3g ('AS', 'lin', 1.272, np.float64(0.405), 'posCyc', '3g') |L_13|=8 {'S': ['bAaa', 'baa'], 'A': ['Sb', 'aAa', 'ab']}
+3h ('ABS', 'nonlin', 1.81, None, 'posCyc', '3h') |L_13|=9 {'S': ['bSBa', 'baa'], 'A': ['BaB', 'a', 'aB'], 'B': ['Sa', 'a', 'aAS', 'bBa']}
+3h ('S', 'nonlin', 1.407, None, 'posCyc', '3h') |L_13|=4 {'S': ['bSSa', 'bSba', 'baaa']}
+violations: 0
