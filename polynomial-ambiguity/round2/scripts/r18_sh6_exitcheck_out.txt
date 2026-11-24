@@ -1,0 +1,2 @@
+n=800 R=300 E_n[m]=6.980 max m=36  max trees at one exit=1
+n=1600 R=300 E_n[m]=12.977 max m=75  max trees at one exit=1
