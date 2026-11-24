@@ -381,3 +381,13 @@ one-sided HEAVY models (U-level only, q_V > 0, β₀ ≤ 1/4); PR1s assumes (T½
 | One-sided heavy models (last T8_unamb gap) | R17-B, `R2/r17_oneheavy.md` |
 
 **Round 17 PAUSED by the user** (agents stopped before reporting; audit of MS⁺/PR2⁺ and the one-sided heavy case not done).
+
+## Round 17b (restarted 09:39 UTC, 6 agents in parallel). Reports `R2/r17_*.md`.
+| task | owner / file |
+|---|---|
+| Gated audit MS⁺ / PR2⁺ | A, `R2/audit_r17.md` |
+| One-sided heavy: half-plane × chord region (MS⁺ extension) | B, `R2/r17_oh_region.md` |
+| One-sided heavy: force the non-level tape to be log-level (SM/HL route) | C, `R2/r17_oh_level.md` |
+| One-sided heavy: computational counterexample search | D, `R2/r17_oh_search.md` |
+| Lift T8 from unambiguous to polynomial ambiguity | E, `R2/r17_lift.md` |
+| Bridge: every poly-ambiguous grammar for Q contains a dense fold-type part? | F, `R2/r17_bridge.md` |
