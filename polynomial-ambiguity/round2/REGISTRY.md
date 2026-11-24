@@ -103,3 +103,15 @@ Agents: append at most a few lines to the section that fits. Do not rewrite othe
 - Audited: TILE_k ply 1 (transport rule, fix C1); bounded-data pair-facet tiling near U (K = 2). So S_N is blocked per slice near U.
 - Open: G-glob′ (i) Lemma I2 (proved N = 2) and (ii) without H2; NONUNIF (one grammar across n); L₆ = NonSq ∩ NonCube.
 - Waves 3–5 turned up no new negative mechanism (Theorem R, multi-split linkage and mixed-type defects all collapse); affirmative-side evidence grew.
+
+## Round 3 (started 01:45 UTC). Reports: `R2/r3_*.md`, scripts `scripts/r3_*.py`.
+| task | mechanism | owner / file |
+|---|---|---|
+| L6 affirmative: run-length comparison grammar | constructive | R3-A, `R2/r3_l6grammar.md` |
+| NONUNIF lower bound across slice lengths | uniformity / negative | R3-B, `R2/r3_nonunif.md` |
+| Lemma I2 for all N | covering / probabilistic | R3-C, `R2/r3_i2.md` |
+| G-glob' (ii) without H2 (separating chords) | tiling | R3-D, `R2/r3_sep.md` |
+| Uniform realisation of the off-W part (T1-P1) | constructive / uniformity | R3-E, `R2/r3_offw.md` |
+- [written proof] R3-B `R2/r3_nonunif.md`: forbidden exchange (U2 across slices: shared L_A∩Σ^ℓ, no filler completing a context to a power) ⇔ L(G)⊆Q (Lemma FE0, downward closed); single-defect Lemma D (every tree's defect path separates x from x̂) forces no 2nd tree; Lemma C1 |Comp_ℓ(C)| ≤ τ′(L)+2^{ℓ−L/2} (sparse conflicts; check L≤14).
+- [written proof] R3-B Prop 1: one-level exchange data is ambiguity-blind (cover multiplicity ≤ |V|L² for EVERY CFG for Q) ⇒ an FE/U2-only lower bound would prove Q non-CF. COLLAPSES to cross-slice W-forcing (`newmech` §5) / NONUNIF, OPEN.
+- [written proof + computational] R3-C `R2/r3_i2.md`: Lemma I2 PROVED for all N (minimum residue cover I; |I|≥3 or non-adjacent ⇒ minimality gives a shared free CRT coord on each adjacent pair, path 2-colouring works even for p=2; I={r,r+1} ⇒ projection count 2|B_o|<∏p fails only for B_o={2}, swap roles). Hence G-glob′(i) unconditional, Pr ≥ (16/729)^N; construction verified for 10 prime sets up to n=44100 (`r3_i2_construct.py`).
