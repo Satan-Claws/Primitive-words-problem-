@@ -101,7 +101,7 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
   <div class="pills">
     <span class="pill">Status: open</span>
     <span class="pill">Conjectured answer: no</span>
-    <span class="pill">16 rounds · ≈62 agents · 9 gated audits</span>
+    <span class="pill">16 rounds · ≈62 agents · 10 gated audits</span>
   </div>
 </div></header>
 
@@ -242,7 +242,7 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
   <div class="it s"><div class="h">Round 13 <span class="tag t-sc">satan-claws</span></div><div class="d">~14:40–15:40</div><b>Audit:</b> Theorems N, N2 and the fold lemmas all survive. <b>Padding rigidity proved for two-sided models (PR2)</b> by a "measure squeeze": long level blocks force a valley shape, valley words inside G⁻ are rarer (n<sup>−2/3</sup> vs n<sup>−1/2</sup>), and an injective grammar needs more mass than that allows. It also rules out multiplicity below n<sup>1/6</sup>, the first quantitative step past unambiguity. Open: "steep" models.</div>
   <div class="it s"><div class="h">Round 14 <span class="tag t-sc">satan-claws</span></div><div class="d">~15:40–16:40</div><b>Audit: PR1/PR2 SURVIVE.</b> The wedge exponent 2/3 was confirmed independently by exact DP. <b>Steep models:</b> every heavy block contains a self-branching component and is "level" on both sides up to log slack, and PR2 survives that slack. T8_unamb is down to three pieces: side mismatch, heavier tails, and the one-sided step.</div>
   <div class="it s"><div class="h">Round 15 <span class="tag t-sc">satan-claws</span></div><div class="d">~16:40–17:40</div>One agent per remaining piece of T8_unamb. <b>One-sided case closed</b> (Thm PR1s: Lemma CM + Lemma J squeeze, mass O(N<sup>5/12</sup>) against c√N). <b>Side mismatch closed</b> (Theorem SM). <b>Heavier tails:</b> all balanced cases closed (PR2<sup>β</sup>). The tail mechanism is stacked self-branching components, which corrects round 14. Only unbalanced two-tape cases remain.</div>
-  <div class="it s"><div class="h">Round 16 <span class="tag t-sc">satan-claws</span> <span class="tag t-open">running</span></div><div class="d">now</div>The last T8_unamb case (unbalanced tails), plus a gated audit of PR1s, Theorem SM and PR2<sup>β</sup>.</div>
+  <div class="it s"><div class="h">Round 16 <span class="tag t-sc">satan-claws</span> <span class="tag t-open">running</span></div><div class="d">now</div>The last T8_unamb case (unbalanced tails), plus a gated audit of PR1s, Theorem SM and PR2<sup>β</sup>. <b>Audit: all three SURVIVE</b>, with DP exponents independently confirmed.</div>
 </div>
 </section>
 
@@ -273,9 +273,9 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
 <tr><td>Lemma RG / A1–A2</td><td>The √n block reduction is exact; it can't amplify ambiguity, and each depth-k certificate is equivalent to Q</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
 <tr><td>Theorem N2</td><td>A grammar with ambiguity ≤ |w| contains all coprime-count words and is sound on rows #a ∈ P ∪ 2P ∪ 2<sup>ℕ</sup></td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> (checked |w| ≤ 40)</td></tr>
 <tr><td>Thm PR2 (padding rigidity)</td><td>Two-sided level-block models can't be injective inside G⁻ with infinite measure; also rules out multiplicity O(n<sup>1/6−ε</sup>)</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> (two-sided case; cites Denisov–Wachtel; exponent 2/3 independently confirmed)</td></tr>
-<tr><td>Thm PR1s (one-sided)</td><td>A U-level block on one tape alone already forces ambiguity inside G⁻</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span> (cites Denisov–Wachtel)</td></tr>
-<tr><td>Theorem SM (side mismatch)</td><td>A heavy block on one side is always level on that side</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
-<tr><td>Thm PR2<sup>β</sup> (heavy tails)</td><td>Balanced two-tape models with any Banderier–Drmota tail exponent can't be injective inside G⁻</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span> (cites Denisov–Wachtel)</td></tr>
+<tr><td>Thm PR1s (one-sided)</td><td>A U-level block on one tape alone already forces ambiguity inside G⁻</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> (cites Denisov–Wachtel)</td></tr>
+<tr><td>Theorem SM (side mismatch)</td><td>A heavy block on one side is always level on that side</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
+<tr><td>Thm PR2<sup>β</sup> (heavy tails)</td><td>Balanced two-tape models with any Banderier–Drmota tail exponent can't be injective inside G⁻</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> (cites Denisov–Wachtel)</td></tr>
 <tr><td>Coverage loop</td><td>Uniform gadgets cover all primitive words of length ≤ 28 except a few thousand</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-comp">computational</span> + <span class="tag t-aud">soundness audited</span></td></tr>
 </table>
 </div>
