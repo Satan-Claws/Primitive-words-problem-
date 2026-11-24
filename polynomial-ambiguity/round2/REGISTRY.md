@@ -314,3 +314,9 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 FSC rigidity (`R2/r12_fsc.md`): Lemma SF (self-fold) kills blocks with high excursions; No-go 4 (Env + Ori): for Dyck-oriented blocks, G⁻ membership depends
 only on block lengths, so swapping high/low excursions cannot violate it; Prop HS: additive-height couplings are ambiguous (≤ n+1 parses, no poly lift).
 Exact gap: "padding rigidity" (non-injectivity when the coupling carries more than additive height). T8_unamb still open.
+
+## Round 13 (started 08:16 UTC).
+| task | owner / file |
+|---|---|
+| Padding rigidity | R13-A, `R2/r13_padding.md` |
+| Audit: Theorems N, N2; interval-fold Lemma F (r5); Lemma A (r6) | R13-B, `R2/audit_r13.md` |
