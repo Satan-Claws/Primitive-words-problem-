@@ -68,3 +68,15 @@ Agents: append at most a few lines to the section that fits. Do not rewrite othe
 - BLOCKED (`R2/newmech.md` §4): multi-split linkage. Width branch = "local defects washed out" (§6); path branch = laminar nested choices = S_N ply. G′ rotation linkage = Z_n-symmetrised laminar cover, factor n only. Open sufficient criterion: W-forcing (ω(log n) disjoint forced-ambiguous subwords).
 - [computational] `R2/construct2.md` §5: n=12 (p²q), all primitive a(6-per)+b(4-per), entries 0..3 (979 200 pts): covered by k≤2 chord-dominance systems with arbitrary chord positions. So the construct.md §2 p²q failure belongs to the rectangle family only; the analogous n=36 test has not been run.
 - [audit] `R2/audit_realise.md`: realise.md part (1) SURVIVES (near-U scope). Pair-facet family covers ∏(E_k∖0) (Pr[u_k>0] ≥ 1/(2p_k) needs window width p_k, N ≥ 4; N=3 width-1 family does NOT cover — structural checks only); Lemma 2 correct for all N; q_k=1, K=2, unimodular, nesting OK N=4..12. Caveats: scope R⁰ only, ply_VC n^{1+o(1)}, Lemma 4 a sketch.
+
+**Wave 2 synthesis (root, 01:00 UTC).**
+- TILE_k: ply-1 transport tiling SURVIVES gated audit (fix C1: root at a positive vertex). Lemma C proved N <= 45 for LAM facets.
+- Pair facets (`R2/realise.md`): K = 2, offsets <= 2n, unimodular, Lemma C for all N; SURVIVES gated audit (`R2/audit_realise.md`)
+  near U only. So per-slice data bounds + ply cannot kill a polynomially ambiguous grammar near U on S_N.
+- No slice family defeats the transport tiling (`R2/newslice.md`): DFA sub-slices, deep prime powers, lower strata, two-prime defects
+  all reduce to S_N product geometry.
+- Multi-split inside/outside mechanism (`R2/newmech.md`): criterion W (omega(log|w|) disjoint ambiguous subwords) suffices but both
+  branches collapse to §6 routes.
+- Constructive: transfer atoms close the n = 30 fibre obstruction (Lemma FT, pqr fibre-supported); W_30 covered to norm 10 [computational].
+- Open, ranked: (a) uniformity NONUNIF (one grammar across n) — the remaining S_N lever; (b) W far from U and off-W points (not covered
+  by the pair-facet family); (c) G-rho / G-h on the length side; (d) n = 36 explicit covers.
