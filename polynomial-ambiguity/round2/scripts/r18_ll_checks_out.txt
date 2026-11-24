@@ -1,0 +1,22 @@
+(1) Case I: fraction of words with >= eps*n visits to 0, eps=0.15
+  n=50: frac=2.221e-01  -log(frac)/n=0.0301
+  n=100: frac=1.052e-01  -log(frac)/n=0.0225
+  n=200: frac=2.151e-02  -log(frac)/n=0.0192
+  n=300: frac=4.819e-03  -log(frac)/n=0.0178
+  Chernoff rate bound (eps=0.15): frac <= exp(-0.0133 n)
+(2) CLT variance: formula vs MC Var(d(N))/N, N=600, 1500 samples
+  law 0: sigma2=1.357  MC=1.340  mean/sqrtN=-0.060
+  law 1: sigma2=2.500  MC=2.363  mean/sqrtN=-0.039
+  law 2: sigma2=3.905  MC=3.782  mean/sqrtN=+0.019
+  law 3: sigma2=0.250  MC=0.245  mean/sqrtN=-0.005
+(3) two-phase adversary tau+=(aab,a), tau-=(b,abb); single-token slopes A<=B?
+  token ('aab', 'a'): slope A=+0.333 slope B=+1.000
+  token ('b', 'abb'): slope A=-1.000 slope B=-0.333
+  m=1: d(K=3m)=2  max_k<=K d=2
+  m=2: d(K=3m)=2  max_k<=K d=2
+  m=5: d(K=3m)=4  max_k<=K d=4
+  m=10: d(K=3m)=8  max_k<=K d=8
+  m=20: d(K=3m)=14  max_k<=K d=14
+  m=40: d(K=3m)=28  max_k<=K d=28
+(4) random mean-zero nondegenerate laws: first k with d_inf(k)>=0 on one sampled sequence
+  190/192 nondegenerate laws hit d>=0 within k<=2000 (offset D(p)-D(q)=0)
