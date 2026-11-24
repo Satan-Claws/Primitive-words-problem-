@@ -173,3 +173,14 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 - R5-A `R2/r5_generic.md`: H* COLLAPSES. Interchange-family soundness = L(G) ⊆ Q (FE0), so it cannot see ambiguity; Wich's normal form bounds neither branching (unambiguous G_D: Strahler ~ log₄ n) nor rates (A → aAb|bbAa|ε); L≥ = {#a ≥ #b} is an unambiguous language of density 1/2 with no positive-density FR sublanguage [written proof].
 - R5-A: Prop P [written proof]: a Parikh-closed CF L ⊆ Q has density O(n^{-1/2}) (the LIN barrier made rigorous). Prop B [written proof + MC]: UMR (unique longest b-run) ⊆ Q is a disjoint union of ≤ n² boxes per n with density ≈ 0.36, also on {p | g}, so set-level skeleton-family arguments fail.
 - R5-A: the gap is unchanged (DENSE-SOUND / newmech W-forcing). Is UMR, or a dense poly-ambiguous subset of it, CF? OPEN; it is a test case for R5-B (the 3-run near-diagonal is stratified).
+- [written proof + exh n≤22 + MC n≤16384] R5-B `R2/r5_dense.md`: Lemma F: F_K = {w : d_k ≠ 0 ∀k∈[n/3,n/2]} ⊆ Q, d_k = #a(pre_k) − #a(suf_k) (u^p ⇒ d_{⌊p/2⌋n/p}=0); density → (2/π)arcsin√(2/3) ≈ .608 (F_δ variant → 1). F_K = fold of a det. one-counter language (TAG); CF-ness of any dense subset OPEN (FOLD-COUNTER).
+- R5-B: Theorem P_K: any CF L ⊆ {gcd of K-window counts = 1} has density O(n^{−1/2}) (kills Parikh/FL/Bézout-split (a); Lemma B: g=1 ⇔ ∃ cyclic factor with det(ψx,ψw)=±1). Prop U: bounded-comparison relaxations of UMR are unsound; UMR CF-status OPEN.
+
+**Round 5 synthesis (root, ~04:00 UTC).**
+- Audit (`R2/audit_r4.md`): Prop H and the coverage gadgets SURVIVE (exact tree-count pullback; soundness independently checked to n = 24).
+- Negative (`R2/r5_generic.md`): H* collapses (unbounded branching, mixed rates). Prop P: a Parikh-closed CF L ⊆ Q has density O(n^{-1/2}).
+- Affirmative (`R2/r5_dense.md`): Lemma F, an interval-fold certificate F_K = {d_k ≠ 0 ∀k ∈ [n/3, n/2]} ⊆ Q, with ONE fold for all primes
+  (k = ⌊p/2⌋n/p). Density ≈ 0.61 (variant → 1). TAG-recognisable unambiguously; CF-ness open (FOLD-COUNTER). Theorem P_K: count-based CF
+  certificates have density O(n^{-1/2}). UMR relaxations are unsound (Prop U).
+- Decisive open question: FOLD-COUNTER. Does F_δ have a positive-density subset that is CF with polynomial ambiguity? A yes kills the
+  "generic words are the hard core" heuristic; a no with a robust reason (fold + counter is non-CF on dense sets) is the best negative lead.
