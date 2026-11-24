@@ -227,3 +227,9 @@ design gadgets for them or extract a word-level negative family. Split the diffi
   Gaps: G1 (uniform constants over spines), G2 (polynomial ambiguity loses n^k).
 - Most promising concrete route now: the negative side via Prop S + G1 + G2, which would show no poly-ambiguous CF L ⊆ G⁻ is rotation-dense.
   Caveat: that kills the FOLD route only, not the affirmative in general.
+
+## Round 8 (started 06:33 UTC). Reports `R2/r8_*.md`.
+| task | owner / file |
+|---|---|
+| Prop S gaps G1 (uniform over spines) + G2 (polynomial ambiguity) | R8-A, `R2/r8_propS.md` |
+| Audit: Prop S, Q0, Lemma R; U1-U3 | R8-B, `R2/audit_r7.md` |
