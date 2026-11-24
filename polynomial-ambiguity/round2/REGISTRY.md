@@ -479,5 +479,6 @@ Goal: any polynomially ambiguous G with L(G) = Q must contain a structure to whi
 - Near-powers (`R2/r20_nearpow.md`): collapse; near-powers are witness-poor (Lemma WP), so multiplicity must come from witness-rich words.
 - Regions (`R2/r20_region.md`): Lemma 0 (forced + squeezable region ⇔ ¬P(Q)); Theorem NG: a bridge must use power-exclusion L(G) ∩ P = ∅ essentially in the forcing step; T8_poly extends to G⁺.
 - Dense certificates (`R2/r20_dense.md`): Prop E ("dense sound ⇒ fold" ⇔ ¬DENSE-SOUND); Theorem ET (partner principle): no CF Lyndon / leading-max-run set is rotation-dense, any ambiguity (audit running).
+- **Audit ET** (`R2/audit_et.md`): Thm ET / Cor ET / Prop E SURVIVE. Spine-of-leaf-m pumping is airtight (U⊆R₁, V right of m, disjoint V's ⇒ one competitor intact); ε(g)≈1.44·2^{−g} (Poisson model = MC); caveats: cite run statistics, union over letters (2ε), PP-class heuristic. Script `scripts/audit_et_check.py`.
 - Stable sub-structure (`R2/r20_stable.md`): fails (Prop F, PF); explicit low-ambiguity sound grammar H_R (cyclic Raney) covers ~1/√n of G⁻ at odd n, none at n = 2^j.
 - Convergence: any contradiction must come from COMPLETENESS on balanced / gcd ≥ 2 words together with POWER EXCLUSION (cf. cyclic.md T1, P_cop). That is the original hard core.

@@ -109,7 +109,7 @@ details .body{padding:12px 16px}
     <span class="pill">Conjectured answer: no</span>
     <span class="pill">✅ T8_unamb: fully audited theorem</span>
     <span class="pill">✅ T8_poly: complete (audited, with caveats)</span>
-    <span class="pill">20 rounds · ≈102 agents · 21 gated audits</span>
+    <span class="pill">20 rounds · ≈103 agents · 22 gated audits</span>
   </div>
 </div></header>
 
@@ -364,7 +364,7 @@ details .body{padding:12px 16px}
 <li><b>Stable sub-structure: fails.</b> Every map the T8 proof uses deliberately pushes words out of G⁻, and the stable part isn't closed under adding blocks (Props F, PF). An explicit sound grammar with low ambiguity, built from cyclic Raney/Dyck words, covers about a 1/√n share of G⁻ at odd lengths and none at lengths 2<sup>j</sup>.</li>
 <li><b>Other regions: no region found, but a sharp no-go.</b> A region that is both forced and squeezable exists exactly when the answer is "no" (Lemma 0). Theorem NG: any forcing argument that uses only completeness plus the ambiguity bound would also apply to the trivial grammar for all words. So <b>a bridge must use the exclusion of powers essentially</b>, in combination with completeness. Bonus: T8_poly extends to the full pure-sign fold G⁻ ∪ G⁺. A hypothetical grammar would have to look locally like Σ*, exclude powers through a global mix of certificates, and anchor at a floating canonical rotation.</li>
 <li><b>Near-powers: dead end</b> (written proofs). Near-powers are the most "witness-poor" primitive words: one canonical certificate per prime (Lemma WP). A grammar reaches the defect by nesting rather than by memory (Prop N), and every pumping constraint is soundness-only. Lesson: multiplicity has to come from witness-<i>rich</i>, typical words.</li>
-<li><b>Dense sound certificates:</b> "dense sound ⇒ fold" turns out to be equivalent to the problem (Prop E), so it isn't a shortcut. But a new obstruction kills the main <i>non-fold</i> candidates. <b>Theorem ET</b> (written proof, audit running): no context-free set of Lyndon words, and no context-free part of the unique-longest-run language, covers a rotation of a positive fraction of words, <i>at any ambiguity</i>. The "partner principle": a pumped quantity has only one partner interval, but certifying "longest" means beating two separated competitors. Still open: window folds, the cyclic unique-run language, and unique-factor certificates.</li>
+<li><b>Dense sound certificates:</b> "dense sound ⇒ fold" turns out to be equivalent to the problem (Prop E), so it isn't a shortcut. But a new obstruction kills the main <i>non-fold</i> candidates. <b>Theorem ET</b> (<span class="tag t-aud">audited</span>): no context-free set of Lyndon words, and no context-free part of the unique-longest-run language, covers a rotation of a positive fraction of words, <i>at any ambiguity</i>. The "partner principle": a pumped quantity has only one partner interval, but certifying "longest" means beating two separated competitors. Still open: window folds, the cyclic unique-run language, and unique-factor certificates.</li>
 </ul>
 <div class="callout"><b>Where round 20 converges.</b> All four attacks point to the same place. A contradiction can't come from the fold region or from near-powers. It has to come from <b>completeness on balanced words whose letter counts share a factor ≥ 2</b>, combined with <b>the exclusion of powers</b> (Theorem NG). That is the original hard core the campaign identified in round 2 (P_cop / "gcd ≥ 2 classes carry the whole problem"), now with much sharper constraints on what an argument must use.</div>
 </div></details>
@@ -398,7 +398,7 @@ details .body{padding:12px 16px}
 <tr><td>PR1, PR2</td><td>Measure squeeze for one-tape and two-sided light-tailed grammars</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> (citation repaired in round 18: pointwise D–W suffices; also superseded by PR2⁺)</td></tr>
 <tr><td>PR1s, Theorem SM, PR2<sup>β</sup></td><td>One-sided square-root tails; side mismatch impossible; balanced heavy tails</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
 <tr><td>Lemma RP (gend2) + Theorem LL + round-19 fixes</td><td>Configurations of T8_poly (light-left/heavy-right; critical light/light; Lemmas NS, W, SP)</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
-<tr><td>Theorem ET (partner principle)</td><td>No context-free set of Lyndon words, or of unique-longest-run words, is rotation-dense, at any ambiguity</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span>, audit running</td></tr>
+<tr><td>Theorem ET (partner principle)</td><td>No context-free set of Lyndon words, or of unique-longest-run words, is rotation-dense, at any ambiguity (strengthens Berstel–Boasson 1997)</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
 <tr><td>Lemma TS + Lemma D (M1/M1′)</td><td>Left-tilted tree count: left-heavy words are exponentially rare; closes the subcritical spanning cases</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
 <tr><td>G-end for Q(C)</td><td>Polynomially ambiguous grammars inside the quadrant set are never rotation-dense, even with stacked components</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
 <tr><td>Thm G-geo (G-word′)</td><td>T8 at any polynomial ambiguity, for grammars with two-sided flat loops and geometric context; tolerates context up to n/log n</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
@@ -468,7 +468,7 @@ details .body{padding:12px 16px}
   <div class="it s"><div class="h">Round 17 (≈12 parallel agents)</div><b>T8_unamb fully audited</b> (last case + foundations + citations). Lift ceiling found; bridge shown equivalent to the whole problem.</div>
   <div class="it s"><div class="h">Round 18</div>D–W citations repaired; THEOREM_T8.md written; G-end, light-left/heavy-right, Theorem LL; SH6 (not in G⁻) refutes (AM) as stated.</div>
   <div class="it s"><div class="h">Round 19</div>M1/M1′ closed by a tree count; link repairs; <b>T8_poly complete</b> (final end-to-end audit).</div>
-  <div class="it s"><div class="h">Round 20</div>Bridge: four attacks. Near-powers and stable sub-structure dead; Theorem NG (must use power exclusion); Theorem ET (partner principle, audit running); all converge on gcd ≥ 2 completeness + power exclusion.</div>
+  <div class="it s"><div class="h">Round 20</div>Bridge: four attacks. Near-powers and stable sub-structure dead; Theorem NG (must use power exclusion); Theorem ET (partner principle, audited); all converge on gcd ≥ 2 completeness + power exclusion.</div>
 </div>
 </div></details>
 </section>
