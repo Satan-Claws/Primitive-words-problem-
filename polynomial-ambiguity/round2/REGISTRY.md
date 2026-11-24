@@ -334,3 +334,4 @@ Open: steep models, tails heavier than ℓ^{-3/2}, one-sided conditional-moment 
 |---|---|
 | Gated audit of PR1/PR2 (+ Lemma K citation) | R14-A, `R2/audit_r14.md` |
 | Steep models + heavier tails (remaining PR gap) | R14-B, `R2/r14_steep.md` |
+- R14-A audit of r13 PR1/PR2: **SURVIVES w/ caveats** (MS lag-free per word OK; wedge 3π/4 exponent 2/3 confirmed by exact DP, m^{2/3}P→0.332; Lemma R/squeeze √N vs N^{1/3} OK; caveat: one-sided case only sketch, "all level-padded excluded" overstated) — `R2/audit_r14.md`
