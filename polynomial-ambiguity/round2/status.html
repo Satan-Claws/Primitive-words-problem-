@@ -97,11 +97,11 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
 <header class="hero"><div class="in">
   <h1>Primitive words and polynomially ambiguous grammars</h1>
   <p>Can a context-free grammar generate exactly the primitive words while giving every word only polynomially many parse trees?</p>
-  <p style="opacity:.85;font-size:.92rem">Status snapshot · 24 Nov 2026 · round 15 in progress</p>
+  <p style="opacity:.85;font-size:.92rem">Status snapshot · 24 Nov 2026 · round 16 in progress</p>
   <div class="pills">
     <span class="pill">Status: open</span>
     <span class="pill">Conjectured answer: no</span>
-    <span class="pill">15 rounds · ≈60 agents · 9 gated audits</span>
+    <span class="pill">16 rounds · ≈62 agents · 9 gated audits</span>
   </div>
 </div></header>
 
@@ -217,7 +217,7 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
 <div class="callout g">
   <b>Current working picture (after round 14).</b> A grammar can generate the fold as nested letter pairs. What it can't obviously do is <i>count along the fold</i>. Lemma SA shows G⁻ is exactly a Dyck-type prefix times an a-heavy suffix, <b>coupled by one length condition</b>. Without that coupling, powers sneak in. Removing them is the original problem again, one level down (U1–U3).
   The negative programme now attacks the coupling directly. <b>PR2 (audited)</b> proves that a large class of unambiguous grammars cannot stay inside G⁻ while covering enough words. It even rules out ambiguity below n<sup>1/6</sup>, using a "measure squeeze": the words such a grammar is forced to make are too rare (n<sup>−2/3</sup>) for it to be injective.
-  The one-sided case is now closed too (PR1s). Side mismatch is closed too (Theorem SM). <b>One piece remains</b> before T8_unamb is a full theorem: heavier-tailed blocks.
+  The one-sided case is now closed too (PR1s). Side mismatch is closed too (Theorem SM). <b>One case remains</b> before T8_unamb is a full theorem: two-tape models with <i>unbalanced</i> heavy tails.
 </div>
 </section>
 
@@ -241,7 +241,8 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
   <div class="it s"><div class="h">Round 12 <span class="tag t-sc">satan-claws</span></div><div class="d">~13:40–14:40</div><b>Consolidation:</b> an 831-line research note and 49 new rows in RESULTS_INDEX. <b>FSC rigidity:</b> blocks with high excursions are ruled out (Lemma SF). For Dyck-shaped blocks, swapping high and low excursions provably can't break G⁻ (No-go 4). Remaining gap: "padding rigidity".</div>
   <div class="it s"><div class="h">Round 13 <span class="tag t-sc">satan-claws</span></div><div class="d">~14:40–15:40</div><b>Audit:</b> Theorems N, N2 and the fold lemmas all survive. <b>Padding rigidity proved for two-sided models (PR2)</b> by a "measure squeeze": long level blocks force a valley shape, valley words inside G⁻ are rarer (n<sup>−2/3</sup> vs n<sup>−1/2</sup>), and an injective grammar needs more mass than that allows. It also rules out multiplicity below n<sup>1/6</sup>, the first quantitative step past unambiguity. Open: "steep" models.</div>
   <div class="it s"><div class="h">Round 14 <span class="tag t-sc">satan-claws</span></div><div class="d">~15:40–16:40</div><b>Audit: PR1/PR2 SURVIVE.</b> The wedge exponent 2/3 was confirmed independently by exact DP. <b>Steep models:</b> every heavy block contains a self-branching component and is "level" on both sides up to log slack, and PR2 survives that slack. T8_unamb is down to three pieces: side mismatch, heavier tails, and the one-sided step.</div>
-  <div class="it s"><div class="h">Round 15 <span class="tag t-sc">satan-claws</span> <span class="tag t-open">running</span></div><div class="d">now</div>One agent per remaining piece of T8_unamb. <b>One-sided case closed</b> (Thm PR1s: Lemma CM + Lemma J squeeze, mass O(N<sup>5/12</sup>) against c√N). <b>Side mismatch closed</b> (Theorem SM). Heavier-tails agent still running.</div>
+  <div class="it s"><div class="h">Round 15 <span class="tag t-sc">satan-claws</span></div><div class="d">~16:40–17:40</div>One agent per remaining piece of T8_unamb. <b>One-sided case closed</b> (Thm PR1s: Lemma CM + Lemma J squeeze, mass O(N<sup>5/12</sup>) against c√N). <b>Side mismatch closed</b> (Theorem SM). <b>Heavier tails:</b> all balanced cases closed (PR2<sup>β</sup>). The tail mechanism is stacked self-branching components, which corrects round 14. Only unbalanced two-tape cases remain.</div>
+  <div class="it s"><div class="h">Round 16 <span class="tag t-sc">satan-claws</span> <span class="tag t-open">running</span></div><div class="d">now</div>The last T8_unamb case (unbalanced tails), plus a gated audit of PR1s, Theorem SM and PR2<sup>β</sup>.</div>
 </div>
 </section>
 
@@ -274,6 +275,7 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
 <tr><td>Thm PR2 (padding rigidity)</td><td>Two-sided level-block models can't be injective inside G⁻ with infinite measure; also rules out multiplicity O(n<sup>1/6−ε</sup>)</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> (two-sided case; cites Denisov–Wachtel; exponent 2/3 independently confirmed)</td></tr>
 <tr><td>Thm PR1s (one-sided)</td><td>A U-level block on one tape alone already forces ambiguity inside G⁻</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span> (cites Denisov–Wachtel)</td></tr>
 <tr><td>Theorem SM (side mismatch)</td><td>A heavy block on one side is always level on that side</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
+<tr><td>Thm PR2<sup>β</sup> (heavy tails)</td><td>Balanced two-tape models with any Banderier–Drmota tail exponent can't be injective inside G⁻</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span> (cites Denisov–Wachtel)</td></tr>
 <tr><td>Coverage loop</td><td>Uniform gadgets cover all primitive words of length ≤ 28 except a few thousand</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-comp">computational</span> + <span class="tag t-aud">soundness audited</span></td></tr>
 </table>
 </div>
@@ -321,7 +323,7 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
 <p>The sharpest live target. Any unambiguous grammar covering a positive share of rotations inside G⁻ must contain a <i>critical, heavy-tailed</i> block structure (Thm M, Lemma Bot). <b>PR2</b> (audited) rules out the two-sided "level" case, and Prop HL shows every heavy block is level up to log slack. Three pieces remain:</p>
 <ul>
   <li><b>Side mismatch:</b> <span class="ok">closed in round 15</span> (Theorem SM, written proof: a wrong-side block would force positive slack, making the grammar subcritical).</li>
-  <li><b>Heavier tails</b> (exponent −1 − 2<sup>−k</sup>): the squeeze is too weak here, N<sup>1/4</sup> against N<sup>1/3</sup>.</li>
+  <li><b>Heavier tails</b> (exponent −1 − 2<sup>−k</sup>): <span class="ok">balanced cases closed</span> (Thm PR2<sup>β</sup>). <b>Still open:</b> unbalanced two-tape cases, one of them exactly borderline (N<sup>1/4</sup> vs N<sup>1/4</sup>).</li>
   <li><b>The one-sided case:</b> <span class="ok">closed in round 15</span> (Thm PR1s, written proof: Lemma CM truncates at √(m log m) and uses Hoeffding).</li>
 </ul>
 <div class="yn"><div class="y"><b>If T8_unamb fails</b> (an explicit counterexample): an unambiguous grammar certifies most words, and the affirmative fold route revives.</div><div class="no"><b>If T8_unamb holds:</b> a new theorem, and the first rigorous evidence that the dense fold certificate is beyond grammars. The next step would be lifting it from unambiguous to polynomial ambiguity, where PR2 already reaches n<sup>1/6</sup>.</div></div>
@@ -378,7 +380,7 @@ Theorems N and N2 (both audited) show that "row" arguments (prime rows, rows 2q 
 
     <rect x="550" y="198" width="320" height="62" rx="10" fill="#e0f2f3" stroke="#b5dfe1"/>
     <text x="710" y="217" text-anchor="middle" font-weight="600" fill="#0b6466">T8_unamb (round 15)</text>
-    <text x="710" y="235" text-anchor="middle" fill="#0b6466">PR2 ✓ · one-sided ✓ · side ✓ · heavier tails</text>
+    <text x="710" y="235" text-anchor="middle" fill="#0b6466">PR2 ✓ · one-sided ✓ · side ✓ · tails: unbalanced left</text>
     <text x="710" y="252" text-anchor="middle" fill="#0b6466">→ lift to polynomial ambiguity (n^{1/6} so far)</text>
 
     <line x1="190" y1="262" x2="190" y2="296" stroke="#5b726d" marker-end="url(#a2)"/>
@@ -409,7 +411,7 @@ Theorems N and N2 (both audited) show that "row" arguments (prime rows, rows 2q 
     <ol><li>Find an unambiguous or polynomially ambiguous grammar inside G⁻ covering a positive share of rotations (this would refute T8_unamb).</li><li>Patch the rare exceptions: the tie family, and two-prime cases such as L₆.</li><li>Union with the uniform single-prime grammars; prove L(G) = Q for <i>all</i> lengths and bound the trees.</li></ol>
     <p style="font-size:.88rem;color:var(--muted)">Evidence so far points the other way: 240k-grammar searches and every construction failed at the length coupling.</p></div>
   <div class="card"><h3 style="color:var(--teal-d)">Route to "no"</h3>
-    <ol><li>Finish T8_unamb (one piece left: heavier tails).</li><li>Lift it to polynomial ambiguity (PR2 already reaches multiplicity n<sup>1/6</sup>).</li><li>The hardest step: show any polynomially ambiguous grammar for Q must contain a dense fold-type sublanguage, or close P_cop / EQ-2q directly.</li></ol>
+    <ol><li>Finish T8_unamb (one case left: unbalanced heavy tails).</li><li>Lift it to polynomial ambiguity (PR2 already reaches multiplicity n<sup>1/6</sup>).</li><li>The hardest step: show any polynomially ambiguous grammar for Q must contain a dense fold-type sublanguage, or close P_cop / EQ-2q directly.</li></ol>
     <p style="font-size:.88rem;color:var(--muted)">Step 3 is where the full difficulty lives. An argument that ignored ambiguity would prove Q isn't context-free, which is harder and not the target.</p></div>
 </div>
 </section>
