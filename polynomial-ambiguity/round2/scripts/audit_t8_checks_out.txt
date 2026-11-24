@@ -1,0 +1,13 @@
+Test2 MS^in: checks 34190 violations 0
+Test3 Lemma D exact density (C=a=1): n*dens/sqrt(M), n*dens/M^0.75
+  n= 256 [(4, np.float64(5.105), np.float64(3.609)), (16, np.float64(4.402), np.float64(2.201)), (64, np.float64(3.452), np.float64(1.221))]
+  n= 1024 [(4, np.float64(5.273), np.float64(3.729)), (16, np.float64(4.798), np.float64(2.399)), (64, np.float64(4.418), np.float64(1.562))]
+  n= 2048 [(4, np.float64(5.302), np.float64(3.749)), (16, np.float64(4.872), np.float64(2.436)), (64, np.float64(4.651), np.float64(1.645))]
+Test3b growth with C=a (log-level constants): n=1024,M=16
+   C=a= 1  n*dens= 19.19
+   C=a= 4  n*dens= 56.68
+   C=a= 8  n*dens= 132.55
+   C=a= 16  n*dens= 349.2
+Test1 critical nonlinear Polish grammars (|code|<=4, arity<=3): 100
+  worst min-depth over lengths in [L/2,L]: 6 ; worst min-suffix-excess: 7
+  top3: [(4, 7, (('a', 0), ('baa', 3), ('bab', 1), ('bb', 2))), (6, 3, (('aa', 2), ('aba', 1), ('abb', 3), ('b', 0))), (5, 1, (('a', 0), ('baa', 3), ('bab', 3), ('bb', 1)))]
