@@ -335,3 +335,16 @@ Open: steep models, tails heavier than ℓ^{-3/2}, one-sided conditional-moment 
 | Gated audit of PR1/PR2 (+ Lemma K citation) | R14-A, `R2/audit_r14.md` |
 | Steep models + heavier tails (remaining PR gap) | R14-B, `R2/r14_steep.md` |
 - R14-A audit of r13 PR1/PR2: **SURVIVES w/ caveats** (MS lag-free per word OK; wedge 3π/4 exponent 2/3 confirmed by exact DP, m^{2/3}P→0.332; Lemma R/squeeze √N vs N^{1/3} OK; caveat: one-sided case only sketch, "all level-padded excluded" overstated) — `R2/audit_r14.md`
+- R14-B steep (`reports/r14_steep.md`): premise "steep ⇒ drift≠0" false (bᵐaᵐ). Lemma PC [proof]: a cycle (v,y) with D(v)≥0, D(v)+D(y)≥0 ⇒ U-level (mirror V). Lemma Bot + Prop HL [proof]: every heavy block contains a critical nonlinear SCC and is U-level, V-level, or log-level on both sides (doubling T_{k+1}=αT_kβT_kγ).
+- R14-B: Thm PR2ˡᵒᵍ [proof mod uniform Denisov–Wachtel bound]: PR1/PR2 survive log (even n^γ, γ<1/8) slack. Open: side mismatch (a U-side heavy block that is only V-level), tails ℓ^{-1-2^{-k}} k≥2 (squeeze N^{1/4} vs N^{1/3}), one-sided step. T8_unamb OPEN.
+
+**Round 14 synthesis (root).** PR1/PR2 audited (SURVIVES; wedge exponent 2/3 confirmed independently). Steep gap (`R2/r14_steep.md`): Lemma PC, Lemma Bot
+(heavy block ⇒ critical nonlinear SCC), Prop HL (every heavy block is U-, V- or log-level on both sides), PR2^log (log / n^{γ<1/8} slack).
+T8_unamb remaining: (1) side mismatch (U-side block only V-level); (2) heavier tails −1−2^{−k} (squeeze N^{1/4} vs N^{1/3} fails); (3) one-sided conditional-moment step.
+
+## Round 15 (started 08:43 UTC): close T8_unamb.
+| task | owner / file |
+|---|---|
+| Side mismatch (zero-drift / cosh-tilt) | R15-A, `R2/r15_side.md` |
+| Heavier tails −1−2^{−k} | R15-B, `R2/r15_tails.md` |
+| One-sided conditional-moment step | R15-C, `R2/r15_onesided.md` |

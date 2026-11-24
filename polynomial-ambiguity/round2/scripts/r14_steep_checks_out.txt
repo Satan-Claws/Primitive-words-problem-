@@ -1,0 +1,19 @@
+(1) l, |T_l|, Catalan, subset_E, min depth (2P units), #words depth<=4
+    2      1      1 True 1 1
+    4      1      2 True 2 1
+    6      2      5 True 2 2
+    8      4     14 True 3 4
+   10      9     42 True 3 8
+   12     21    132 True 3 13
+   14     51    429 True 3 18
+   16    127   1430 True 4 23
+   18    323   4862 True 4 27
+  min depth at l=64,256,1024,4096: [6, 8, 10, 12]  log2(l): [6.0, 8.0, 10.0, 12.0]
+  sum_l |T_l| 2^-l (l<=4000) -> 1.9747765559732648 (limit 2, slowly)
+  pumps checked (l<=12): 6502, violating D(v)<0<D(y): 286
+(2) slack wedge, M=512: C, p(M/4), p(M/2), p(M), local exp, p(M)/p0(M), C^(4/3) ratio
+  C= 0 1.305e-02 8.224e-03 5.183e-03 exp=-0.666 ratio=1.00 (1+C)^(4/3)=1.00
+  C= 2 2.078e-02 1.335e-02 8.503e-03 exp=-0.651 ratio=1.64 (1+C)^(4/3)=4.33
+  C= 4 2.351e-02 1.556e-02 1.010e-02 exp=-0.624 ratio=1.95 (1+C)^(4/3)=8.55
+  C= 8 2.481e-02 1.722e-02 1.165e-02 exp=-0.564 ratio=2.25 (1+C)^(4/3)=18.72
+NOTE: column 'Catalan' = tree count; word count = Motzkin (grammar ambiguous) -> T is not a heavy block.
