@@ -320,3 +320,4 @@ Exact gap: "padding rigidity" (non-injectivity when the coupling carries more th
 |---|---|
 | Padding rigidity | R13-A, `R2/r13_padding.md` |
 | Audit: Theorems N, N2; interval-fold Lemma F (r5); Lemma A (r6) | R13-B, `R2/audit_r13.md` |
+- R13-B audit (`reports/audit_r13.md`): Thm N + L_P2, Thm N2 (G₂, L**), Lemmas F/M/A all **SURVIVE**. Own exact tree counts for all |w| ≤ 20 and semantic checks on non-primitive words |w| ≤ 40; Lemma M checked for every K with n ≤ 24; Lemma A checked for all words with n ≤ 20. 0 failures. Caveats: N2(c) is vacuous for |w| ≤ 16 (shortest extra has length 18; tested at 20/40); r6 drops the factor n in d_k; ε must be excluded at n = 0; N1 relies on the unaudited U′.
