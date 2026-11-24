@@ -1,0 +1,34 @@
+(1) chord identity failures n<=14: 0
+(2) two-tape contexts 17577, max multiplicity 1, outer-walk violations 0
+   p='' w='a' q='': all in G-, ambiguous words=625
+   p='' w='baa' q='': all in G-, ambiguous words=498
+   p='b' w='' q='a': all in G-, ambiguous words=625
+   p='b' w='a' q='a': all in G-, ambiguous words=196
+   p='b' w='b' q='a': all in G-, ambiguous words=232
+   p='b' w='aa' q='a': all in G-, ambiguous words=330
+   p='b' w='ba' q='a': all in G-, ambiguous words=324
+   p='b' w='aaa' q='a': all in G-, ambiguous words=99
+   p='b' w='aba' q='a': all in G-, ambiguous words=88
+   p='b' w='baa' q='a': all in G-, ambiguous words=133
+   p='b' w='bab' q='a': all in G-, ambiguous words=57
+   p='b' w='bba' q='a': all in G-, ambiguous words=52
+   p='bb' w='' q='aa': all in G-, ambiguous words=196
+   p='bb' w='a' q='aa': all in G-, ambiguous words=64
+   p='bb' w='b' q='aa': all in G-, ambiguous words=67
+   p='bb' w='aa' q='aa': all in G-, ambiguous words=97
+   p='bb' w='ab' q='aa': all in G-, ambiguous words=72
+   p='bb' w='ba' q='aa': all in G-, ambiguous words=92
+   p='bb' w='bb' q='aa': all in G-, ambiguous words=76
+   p='bb' w='aaa' q='aa': all in G-, ambiguous words=29
+   p='bb' w='aab' q='aa': all in G-, ambiguous words=2
+   p='bb' w='aba' q='aa': all in G-, ambiguous words=22
+   p='bb' w='abb' q='aa': all in G-, ambiguous words=2
+   p='bb' w='baa' q='aa': all in G-, ambiguous words=33
+   p='bb' w='bab' q='aa': all in G-, ambiguous words=12
+   p='bb' w='bba' q='aa': all in G-, ambiguous words=9
+   p='bb' w='bbb' q='aa': all in G-, ambiguous words=20
+   (allInG, injective) tally over centres: {(False, False): 18, (True, False): 27}
+(3) n=20: |Safe_n| n/2^n = 1.2112
+(3) n=100: |Safe_n| n/2^n = 1.2606
+(3) n=400: |Safe_n| n/2^n = 1.2701
+(3) n=2000: |Safe_n| n/2^n = 1.2726

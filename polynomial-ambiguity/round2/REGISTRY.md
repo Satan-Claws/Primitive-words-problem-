@@ -272,3 +272,5 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 |---|---|
 | Heavy-block lemma (unambiguous T8) | R10-A, `R2/r10_heavy.md` |
 | Rows #a = 2q: poly-ambiguous L ⊇ Cop agreeing with Q there? | R10-B, `R2/r10_2q.md` |
+- R10-A heavy-block (`reports/r10_heavy.md`): NOT proved, no counterexample. Chord form W∈G⁻ ⟺ P(k)+P(n−k)<P(n); pair-model reduction. Two no-gos: Dyck-oriented giant blocks are offset-insensitive, and an injective critical two-tape model with a safe outer walk exists.
+  So the contradiction must come from whole-word injectivity at the centre: every critical model seen fails by centre-shift ambiguity (w occurs inside heavy blocks). Search: `scripts/r10_heavy_*`.
