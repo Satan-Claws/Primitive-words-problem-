@@ -107,7 +107,7 @@ details .body{padding:12px 16px}
   <div class="pills">
     <span class="pill">Status: open</span>
     <span class="pill">Conjectured answer: no</span>
-    <span class="pill">Current target: T8_unamb (one case left)</span>
+    <span class="pill">T8_unamb: all cases claimed, final audit running</span>
     <span class="pill">17 rounds · ≈70 agents · 11 gated audits</span>
   </div>
 </div></header>
@@ -129,7 +129,7 @@ details .body{padding:12px 16px}
 </div>
 <div class="grid3">
   <div class="card"><h3>✅ Done</h3><p>Fold certificate found and audited. The question reduced to one obstacle, a <i>length coupling</i>. Every two-sided and one-sided-light case of T8_unamb proved.</p></div>
-  <div class="card"><h3>🔄 Open in T8_unamb</h3><p>One case: grammars whose heavy blocks sit on only one side and have very heavy tails. The round-16 "quadrant" argument has now passed its audit.</p></div>
+  <div class="card"><h3>🔄 Under audit</h3><p>The last case (one-sided, very heavy tails) was claimed in round 17. A final audit checks it and the whole T8_unamb chain. The round-16 "quadrant" argument has now passed its audit.</p></div>
   <div class="card"><h3>⏭ After that</h3><p>Lift from <i>unambiguous</i> to <i>polynomially ambiguous</i>. Round 17 showed the squeeze alone tops out below n/log n, so a new ingredient is needed. Then show <i>every</i> grammar for Q must contain a fold-type part.</p></div>
 </div>
 </section>
@@ -203,7 +203,7 @@ details .body{padding:12px 16px}
 </div></div>
 
 <div class="step live"><div class="num">4</div><div class="card">
-  <h3>Prove no unambiguous grammar can (T8_unamb) <span class="status" style="color:var(--teal-d)">in progress: one case left</span></h3>
+  <h3>Prove no unambiguous grammar can (T8_unamb) <span class="status" style="color:var(--teal-d)">all cases claimed · final audit running</span></h3>
   <p><b>Statement:</b> no unambiguous context-free language inside G⁻ contains a rotation of a positive fraction of all words.</p>
   <p><b>Method: a "measure squeeze".</b></p>
   <ol>
@@ -285,9 +285,9 @@ details .body{padding:12px 16px}
     <rect x="640" y="254" width="300" height="50" rx="10" fill="#2e9e6b"/>
     <text x="790" y="275" text-anchor="middle" font-weight="600" fill="#fff">One-sided, square-root tails: PR1s</text>
     <text x="790" y="293" text-anchor="middle" fill="#e6f5ec">Lemma CM + J · audited</text>
-    <rect x="640" y="314" width="300" height="50" rx="10" fill="#fbeceb" stroke="#c0392b"/>
-    <text x="790" y="335" text-anchor="middle" font-weight="700" fill="#c0392b">One-sided, very heavy tails</text>
-    <text x="790" y="353" text-anchor="middle" fill="#c0392b">OPEN: last case (incl. U-level-only one-tape)</text>
+    <rect x="640" y="314" width="300" height="50" rx="10" fill="#b7e4cf" stroke="#2e9e6b"/>
+    <text x="790" y="335" text-anchor="middle" font-weight="700" fill="#15603f">One-sided, very heavy tails</text>
+    <text x="790" y="353" text-anchor="middle" fill="#15603f">Lemma L + MS^in · audit pending</text>
     <rect x="330" y="400" width="300" height="56" rx="10" fill="#fff" stroke="#d5e9e4"/>
     <text x="480" y="422" text-anchor="middle" font-weight="600" fill="#10302b">Shared inputs</text>
     <text x="480" y="441" text-anchor="middle" fill="#5b726d">Denisov–Wachtel cone bounds · Banderier–Drmota tails</text>
@@ -295,7 +295,7 @@ details .body{padding:12px 16px}
   </g>
 </svg>
 </div>
-<p style="font-size:.9rem;color:var(--muted)">Closing the red box would make T8_unamb a complete theorem. On its own it would <i>not</i> solve the problem (step 5 remains). But it would be the first rigorous evidence that the dense fold certificate is out of reach for grammars.</p>
+<p style="font-size:.9rem;color:var(--muted)">With the last case now claimed (round 17, Lemma L + MS<sup>in</sup>), a passing audit of it and of the whole chain would make T8_unamb a complete theorem. On its own it would <i>not</i> solve the problem (step 5 remains). But it would be the first rigorous evidence that the dense fold certificate is out of reach for grammars.</p>
 </section>
 
 <section id="demo">
@@ -324,7 +324,8 @@ details .body{padding:12px 16px}
 
 <section id="open">
 <h2>5. Open questions<small>Ranked by how directly they move the problem</small></h2>
-<details open><summary><span class="n">1</span>The last case of T8_unamb: one-sided, very heavy tails</summary><div class="body">
+<details open><summary><span class="n">1</span>The last case of T8_unamb: one-sided, very heavy tails <span class="tag t-wp" style="margin-left:auto">claimed · audit running</span></summary><div class="body">
+<p><b>Round 17 claim:</b> Lemma L shows every heavy block is level on <i>both</i> sides (Theorem SM gives drift choices of both signs). A new "innermost" freezing lemma (MS<sup>in</sup>) then traps the walk, and a two-class split gives the contradiction. Written proof, no Denisov–Wachtel needed; a gated audit of it and of the full T8_unamb chain is running.</p>
 <p>Grammars whose long blocks sit on one side of the fold only, with block-length tails heavier than the square-root case (exponent β₀ ≤ 1/4). The two-sided trick gives only a wedge here (room ~N<sup>1/3</sup>), which isn't enough. The round-16 quadrant lemma MS⁺ has passed its audit. The audit also showed the open case includes one-tape models whose block is level on one side only.</p>
 <div class="yn"><div class="y"><b>If it closes:</b> T8_unamb is a complete theorem, the campaign's strongest new result.</div><div class="no"><b>If a counterexample appears:</b> an unambiguous grammar certifies most words, and the affirmative fold route revives.</div></div>
 </div></details>
@@ -360,6 +361,7 @@ details .body{padding:12px 16px}
 <tr><td>Lemma SA, Prop K, U1–U3</td><td>G⁻ = two easy halves plus one length coupling; finite memory fails; uncoupling recreates the problem</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span> (U1–U3) / <span class="tag t-wp">written proof</span></td></tr>
 <tr><td>PR1, PR2</td><td>Measure squeeze for one-tape and two-sided light-tailed grammars</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
 <tr><td>PR1s, Theorem SM, PR2<sup>β</sup></td><td>One-sided square-root tails; side mismatch impossible; balanced heavy tails</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
+<tr><td>Lemma L + MS<sup>in</sup></td><td>The last case of T8_unamb: one-sided heavy models are ambiguous for every tail</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span>, audit running</td></tr>
 <tr><td>MS⁺ / PR2⁺</td><td>All two-sided cases via a quadrant of density c/n (elementary)</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-aud">audited</span></td></tr>
 </table>
 </div>
@@ -418,7 +420,7 @@ details .body{padding:12px 16px}
   <div class="it s"><div class="h">Round 14</div>Every heavy block is level (Prop HL, Lemma Bot).</div>
   <div class="it s"><div class="h">Round 15</div>One-sided (PR1s) and side mismatch (SM) closed; balanced heavy tails (PR2<sup>β</sup>); all audited.</div>
   <div class="it s"><div class="h">Round 16</div>All two-sided cases via the quadrant (MS⁺/PR2⁺).</div>
-  <div class="it s"><div class="h">Round 17 (6 parallel agents, running)</div>MS⁺/PR2⁺ audited. Lift: the squeeze has a ceiling (≲ n/log n), so a new ingredient is needed. Two proof routes and a counterexample search on the last case; lift to polynomial ambiguity; the bridge to all grammars.</div>
+  <div class="it s"><div class="h">Round 17 (6 parallel agents, running)</div>MS⁺/PR2⁺ audited. Lift: the squeeze has a ceiling (≲ n/log n), so a new ingredient is needed. <b>Last T8_unamb case claimed</b> (Lemma L + MS<sup>in</sup>); final audit running. Two proof routes and a counterexample search on the last case; lift to polynomial ambiguity; the bridge to all grammars.</div>
 </div>
 </div></details>
 </section>
