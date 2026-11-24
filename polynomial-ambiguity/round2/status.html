@@ -363,7 +363,7 @@ details .body{padding:12px 16px}
 <ul>
 <li><b>Stable sub-structure:</b> show a grammar for Q must contain a critical part whose substitutions mostly stay inside G⁻, so that T8_poly applies.</li>
 <li><b>Other regions:</b> look for a certificate region other than G⁻ that every grammar for Q is forced into <i>and</i> that the squeeze can handle, or prove no such region exists (which would describe the shape a hypothetical grammar must have).</li>
-<li><b>Near-powers:</b> a grammar must generate every word one letter away from a power, but never the power itself. Across all exponents p, its loops have to "remember" where the defect is, which may force exponential ambiguity.</li>
+<li><b>Near-powers: dead end</b> (written proofs). Near-powers are the most "witness-poor" primitive words: one canonical certificate per prime (Lemma WP). A grammar reaches the defect by nesting rather than by memory (Prop N), and every pumping constraint is soundness-only. Lesson: multiplicity has to come from witness-<i>rich</i>, typical words.</li>
 <li><b>Dense sound certificates:</b> does every dense, sound, polynomially ambiguous language secretly use the fold? If so, T8_poly settles the problem as "no". Otherwise, find the non-fold certificate.</li>
 </ul>
 </div></details>

@@ -466,3 +466,5 @@ Goal: any polynomially ambiguous G with L(G) = Q must contain a structure to whi
 | Other certificate regions R (beyond G⁻) that are forced and squeezable | new region | B, `R2/r20_region.md` |
 | Near-powers for ALL p: completeness on near-powers + soundness + IF ⇒ C_exp | near-power forcing | C, `R2/r20_nearpow.md` |
 | DENSE-SOUND ⇒ fold? classify dense sound certificates, or find a non-fold one | certificate classification | D, `R2/r20_dense.md` |
+- R20-C near-powers (`R2/r20_nearpow.md`): COLLAPSES. Lemma WP: near-powers have W_q=2 (witness-poorest); spine-memory claim false (nested G_p, ≤2 trees); all NP pumping/counting constraints are FE-type ⇒ ambiguity-blind (r3 Prop 1).
+  Gap = Forcing Lemma NF (W-forcing on NP), implausible; multiplicity must come from witness-rich words. Script `scripts/r20_nearpow_witness.py`.
