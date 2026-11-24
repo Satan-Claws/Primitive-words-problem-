@@ -300,3 +300,9 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 - Rigidity (`R2/r11_rigid.md`): No-go 3, G⁻ itself is an injective critical heavy-tailed pair model, so the abstract statement is false and only
   CF structure (tape-local block swaps + finite-state coupling) can help: "FSC rigidity". Centre absorption gives ≤ n+1 parses, so no iteration.
 - 11 rounds in: the three cores stand as (i) uniform certification of typical words, (ii) P_cop ⊇ (i), (iii) FSC rigidity / EQ-2q tree-count lift.
+
+## Round 12 (started 08:06 UTC).
+| task | owner / file |
+|---|---|
+| FSC rigidity (CF-shaped pair models) | R12-A, `R2/r12_fsc.md` |
+| Consolidated research note (rounds 2-11) + RESULTS_INDEX update | R12-B, `round2/RESEARCH_NOTE.md` |
