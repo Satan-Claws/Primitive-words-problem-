@@ -206,3 +206,9 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 - Negative side (`R2/r6_nofold.md`): bounded pumps, single large pumps and interchange all fail to separate G⁻ from CF; the remaining
   handle is Lemma Q (density of CF L inside shifted meanders G⁻_{t,h}), which needs polynomial ambiguity to enter (F1).
 - Decisive open question: can a polynomially ambiguous CFG realise the length coupling on a rotation-dense subset of G⁻?
+
+## Round 7 (started 06:23 UTC): the length coupling. Reports `R2/r7_*.md`.
+| task | owner / file |
+|---|---|
+| Affirmative: dissolve the coupling (uncoupled P·S minus its powers; rotation normal forms) | R7-A, `R2/r7_uncouple.md` |
+| Negative: Lemma Q via polynomial ambiguity | R7-B, `R2/r7_lemmaQ.md` |
