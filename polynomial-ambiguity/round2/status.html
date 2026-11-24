@@ -130,7 +130,7 @@ details .body{padding:12px 16px}
 <div class="grid3">
   <div class="card"><h3>✅ Done</h3><p>Fold certificate found and audited. The question reduced to one obstacle, a <i>length coupling</i>. Every two-sided and one-sided-light case of T8_unamb proved.</p></div>
   <div class="card"><h3>🔄 Open in T8_unamb</h3><p>One case: grammars whose heavy blocks sit on only one side and have very heavy tails. The round-16 "quadrant" argument has now passed its audit.</p></div>
-  <div class="card"><h3>⏭ After that</h3><p>Lift from <i>unambiguous</i> to <i>polynomially ambiguous</i> (partly done: up to n<sup>1/6</sup>), then show <i>every</i> grammar for Q must contain a fold-type part.</p></div>
+  <div class="card"><h3>⏭ After that</h3><p>Lift from <i>unambiguous</i> to <i>polynomially ambiguous</i>. Round 17 showed the squeeze alone tops out below n/log n, so a new ingredient is needed. Then show <i>every</i> grammar for Q must contain a fold-type part.</p></div>
 </div>
 </section>
 
@@ -239,7 +239,7 @@ details .body{padding:12px 16px}
 <div class="step todo"><div class="num">5</div><div class="card">
   <h3>Lift to polynomial ambiguity, then to every grammar <span class="status" style="color:var(--muted)">next</span></h3>
   <ul>
-    <li><b>5a.</b> From unambiguous to polynomially ambiguous. The squeeze already tolerates multiplicity up to n<sup>1/6</sup>; a full lift needs either a stronger squeeze or Wich's structure theory (a polynomially ambiguous grammar has only k·log n "ambiguous spots" per tree).</li>
+    <li><b>5a.</b> From unambiguous to polynomially ambiguous. <b>Round 17 finding: the squeeze alone cannot do this.</b> Its gaps are polynomial, so it can never rule out ambiguity of about n/log n or more (ceiling lemma), and a single erased marker already costs a factor n. A full lift needs a new ingredient: a set-level density bound inside the quadrant (G-word), or using G⁻ to force exponential ambiguity directly (G-struct).</li>
     <li><b>5b.</b> From fold-type grammars to <i>every</i> grammar for Q. Show any polynomially ambiguous grammar for Q must contain a dense fold-type part. This is the hardest step, and where the full difficulty of the problem lives. Related targets: P_cop and EQ-2q (see <a href="#open">open questions</a>).</li>
   </ul>
   <p style="font-size:.9rem;color:var(--muted)">If at any point a grammar <i>does</i> implement the fold densely, the picture flips toward "yes": the remaining words are rare structured exceptions that known gadgets largely handle.</p>
@@ -329,7 +329,7 @@ details .body{padding:12px 16px}
 <div class="yn"><div class="y"><b>If it closes:</b> T8_unamb is a complete theorem, the campaign's strongest new result.</div><div class="no"><b>If a counterexample appears:</b> an unambiguous grammar certifies most words, and the affirmative fold route revives.</div></div>
 </div></details>
 <details><summary><span class="n">2</span>Lifting to polynomial ambiguity</summary><div class="body">
-<p>Every negative tool works best for unambiguous grammars. The squeeze already tolerates multiplicity up to n<sup>1/6−ε</sup>. A full lift needs a sharper squeeze, or control of where ambiguity can sit (Wich).</p>
+<p>Every negative tool works best for unambiguous grammars. <b>Round 17: the measure squeeze has a hard ceiling.</b> It can never exclude ambiguity ≳ n/log n, because all its gaps are polynomial. The quadrant itself is exactly as large as rotation-density needs (~1/n). What could work: <b>G-word</b>, showing a grammar can't fill a positive share of the quadrant words at the <i>set</i> level, or <b>G-struct</b>, using G⁻ to force a pair of distinct pumping trees with the same interface (Wich's criterion for exponential ambiguity).</p>
 </div></details>
 <details><summary><span class="n">3</span>EQ-2q: match Q exactly on rows with 2q a's</summary><div class="body">
 <p>Is there a polynomially ambiguous grammar that agrees <i>exactly</i> with Q on every row with 2q a's (q prime)? If not, the problem is solved as "no". The bad words there are only squares and q-th powers of two-a words; Lemma S characterises the good ones exactly. The missing piece is making the ambiguity bound enter.</p>
@@ -418,7 +418,7 @@ details .body{padding:12px 16px}
   <div class="it s"><div class="h">Round 14</div>Every heavy block is level (Prop HL, Lemma Bot).</div>
   <div class="it s"><div class="h">Round 15</div>One-sided (PR1s) and side mismatch (SM) closed; balanced heavy tails (PR2<sup>β</sup>); all audited.</div>
   <div class="it s"><div class="h">Round 16</div>All two-sided cases via the quadrant (MS⁺/PR2⁺).</div>
-  <div class="it s"><div class="h">Round 17 (6 parallel agents, running)</div>MS⁺/PR2⁺ audited. Two proof routes and a counterexample search on the last case; lift to polynomial ambiguity; the bridge to all grammars.</div>
+  <div class="it s"><div class="h">Round 17 (6 parallel agents, running)</div>MS⁺/PR2⁺ audited. Lift: the squeeze has a ceiling (≲ n/log n), so a new ingredient is needed. Two proof routes and a counterexample search on the last case; lift to polynomial ambiguity; the bridge to all grammars.</div>
 </div>
 </div></details>
 </section>
