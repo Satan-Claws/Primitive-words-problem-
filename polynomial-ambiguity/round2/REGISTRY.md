@@ -351,3 +351,18 @@ T8_unamb remaining: (1) side mismatch (U-side block only V-level); (2) heavier t
 - R15-C `reports/r15_onesided.md`: **Thm PR1s** (one-sided padding: U-level block + π(v≠ε)>0 + (T½) + G⁻ ⇒ ambiguous), written proof modulo the same DW survival bound as PR2; the conditional-moment step (Lemma CM, E[(s_m+1);τ_W>m] = O(m^{−1/6}√log m)) is proved by truncation plus Hoeffding, with no DW conditional limit. Also: one-tape U-level-only models (§4).
 - R15-C checks: `scripts/r15_onesided_moment.py` (DP m ≤ 128: M1·m^{1/6} → 0.35, J·m^{1/6}K^{1/2} ≈ 0.355, stable); `scripts/r15_onesided_models.py` (3 one-sided families, all (p,w,q) with |·| ≤ 2: each fails by n ≤ 12). Closes r13 §6.3 / audit_r14 C1. T8_unamb is still OPEN.
 - R15-A side (`reports/r15_side.md`): **side mismatch CLOSED [written proof]**. Thm SM: if D ≤ M on L(Y) (Y in critical nonlinear SCC), potential h makes every C*-rule slack 0 (slack rule ⇒ radius >½ by PF-strict + Hoeffding), so e=0 is attained; hence U-side heavy ⇒ U-(log-)level, mirror V. Checks: all 18,746 Polish grammars (4 bounded ⇒ D const). Open: one-sided, tails, T8_unamb.
+- R15-B tails (`reports/r15_tails.md`): B–D Thm 3 checked (finite-μ ⇒ n^{−1−2^{−k}}); r14 mechanism corrected — heavy tails = k stacked critical NONLINEAR SCCs (Lemma ST; critical linear below finite-μ impossible). Prop S: G⁻∩Valley alone can't squeeze β ≤ 1/3 (n^{−2/3} sharp). Thm PR2^β [proof mod DW]: quadrant phase m^{−1/3}n^{−2/3} ⇒ closes balanced tapes (all k) and k=2 with lighter tape 2^{−1}.
+- R15-B OPEN: unbalanced two-tape, heavy 2^{−k} (k≥3) vs lighter 2^{−j}, j<k; k=2 with exponentially light tape is exactly borderline (N^{1/4} vs N^{1/4}). One-tape heavy: PR1 covers all k.
+
+**Round 15 synthesis (root).** T8_unamb narrowed to one case.
+- One-sided case CLOSED: Thm PR1s (`R2/r15_onesided.md`, Lemma CM via truncation + Hoeffding, Lemma J; mass O(N^{5/12}√log N) vs c√N).
+- Side mismatch CLOSED: Theorem SM (`R2/r15_side.md`, slack argument: positive slack ⇒ subcritical).
+- Heavier tails PARTLY (`R2/r15_tails.md`): Banderier–Drmota citation verified; tails come from stacked critical NONLINEAR SCCs (Lemma ST; r14's linear
+  mechanism corrected); Thm PR2^β closes all balanced two-tape cases (quadrant phase, Lemma QW, Lemma Bal). Open: unbalanced two-tape (k ≥ 3 vs j < k;
+  k = 2 with exponentially light tape is borderline N^{1/4} vs N^{1/4}).
+
+## Round 16 (started 08:53 UTC).
+| task | owner / file |
+|---|---|
+| Unbalanced two-tape tails (last T8_unamb gap) | R16-A, `R2/r16_unbal.md` |
+| Gated audit: PR1s, Theorem SM, PR2^β | R16-B, `R2/audit_r16.md` |
