@@ -1,0 +1,22 @@
+1 max mult 1 IF violations 0
+2 max mult 1 IF violations 0
+3 max mult 2 IF violations 0
+4 max mult 2 IF violations 0
+5 max mult 3 IF violations 0
+6 max mult 3 IF violations 0
+7 max mult 4 IF violations 0
+8 max mult 4 IF violations 0
+9 max mult 5 IF violations 0
+10 max mult 5 IF violations 0
+11 max mult 6 IF violations 0
+12 max mult 6 IF violations 0
+13 max mult 7 IF violations 0
+14 max mult 7 IF violations 0
+bbabababababababababababababa 29
+ centre 2 seq (2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1)
+ centre 4 seq (2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 0)
+ centre 6 seq (2, 2, 2, 2, 2, 2, 2, 2, 1, 0, 0)
+ centre 8 seq (2, 2, 2, 2, 2, 2, 1, 0, 0, 0)
+ centre 10 seq (2, 2, 2, 2, 1, 0, 0, 0, 0)
+ centre 12 seq (2, 2, 1, 0, 0, 0, 0, 0)
+ centre 14 seq (1, 0, 0, 0, 0, 0, 0)
