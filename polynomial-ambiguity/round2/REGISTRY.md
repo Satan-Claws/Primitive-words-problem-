@@ -212,3 +212,6 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 |---|---|
 | Affirmative: dissolve the coupling (uncoupled P·S minus its powers; rotation normal forms) | R7-A, `R2/r7_uncouple.md` |
 | Negative: Lemma Q via polynomial ambiguity | R7-B, `R2/r7_lemmaQ.md` |
+- R7-B (`round2/reports/r7_lemmaQ.md`): Lemma Q is false as stated (quotient depends on the paired window, density 1 at h = 1). Lemma R: centre rectangles X×Y ⊆ G⁻ have size ≤ C log²n·2ⁿ/n, exactly the rotation threshold (KMT + Prékopa).
+- Prop S: for unambiguous L ⊆ G⁻, each fixed centre spine carries O_s(2ⁿn^{−3/2}), via uncoupled-length closure + algebraic regular variation. So rotation-dense ⇒ spines escape to infinity.
+- Gaps: G1 uniformity in the spine (correct form of Lemma Q); G2 ambiguity: the disjointness step loses nᵏ, so Prop S is vacuous for poly-ambiguity k ≥ 1/2 without Lemma-M-type distinctness.
