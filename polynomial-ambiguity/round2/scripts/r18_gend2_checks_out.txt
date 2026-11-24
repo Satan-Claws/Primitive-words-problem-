@@ -1,0 +1,9 @@
+(1) RP bookkeeping: 7538 instances with W' in G^-, 53826 k-checks, 0 violations
+(2a) rise-count DP == brute force (h<=14, R<=4): True
+(2b) R=  1 rho=1.618034  2cos(pi/(2R+3))=1.618034  (2-rho)R^2=0.382
+(2b) R=  2 rho=1.801938  2cos(pi/(2R+3))=1.801938  (2-rho)R^2=0.792
+(2b) R=  4 rho=1.918986  2cos(pi/(2R+3))=1.918986  (2-rho)R^2=1.296
+(2b) R=  8 rho=1.972723  2cos(pi/(2R+3))=1.972723  (2-rho)R^2=1.746
+(2b) R= 16 rho=1.991949  2cos(pi/(2R+3))=1.991949  (2-rho)R^2=2.061
+(2b) R= 32 rho=1.997802  2cos(pi/(2R+3))=1.997802  (2-rho)R^2=2.251
+(2b) R= 64 rho=1.999425  2cos(pi/(2R+3))=1.999425  (2-rho)R^2=2.356
