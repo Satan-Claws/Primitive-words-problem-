@@ -149,3 +149,16 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 - R4-C. All results are per-n: CF via Ginsburg plus Flip-Flop, with no explicit grammar, no uniform-in-n construction and no ambiguity claim. Dömösi–Ito book Ch. 10 "Kászonyi–Katsura Theory" (pp. 309–342) and the bounded/slender claims were not read (unverified).
 - R4-B `R2/r4_pp.md`: [written proof] Prop H: pullback along h_p(a)=a^p,h_p(b)=b^p gives P(Q∩{g=p}-sandwich) ⇒ P_cop for each FIXED p (so P(Q_pp) ⇒ P_cop; Cor U_p: no unambiguous sandwich even for g=p). Q_pp not CF.
 - R4-B: isolated core VP (agree with Q on prime-power classes only) OPEN; Theorem V [written proof+comp]: no chord-exposing grammar (span ≡0 mod n/p) covers infinitely many a^p b^p, any ambiguity.
+- [written proof + exhaustive n≤28] R4-A `R2/r4_core.md`: Lemma S (window features x^φ and run sequences inherit (n/p)-periodicity) ⇒ new sound uniform O(n)-ambiguous gadgets FL (factor-count lines c₁occ_f − c₂occ_h = ±1), LF/PF (folds on factor indicators), RLF (fold on run lengths). With LIN+G_fold: U_n = ∅ for n ≤ 19, 21–23; |U_n| = 40/48/400/780/1242/3248 at n = 20, 24–28 (1/1/7/10/17/40 classes), all in Off (U ∩ W_n = ∅): sparse, near-reflection-symmetric run sequences.
+- [MC + sketch] R4-A: every finite library of this type covers only Θ(n^{−1/2}) of random words (LIN∪FL: .84/.56/.34/.20/.095 at n = 256…65536; the folds are exponentially rare). The asymptotic core is GENERIC words, not a near-periodic family. Open target DENSE-SOUND: a poly-amb CFG L ⊆ Q of positive density (equivalently, a dense poly-amb subset of L₆ on 6ℕ). Main affirmative ⇒ DENSE-SOUND; "no such L" ⇒ main negative.
+
+**Round 4 synthesis (root, ~03:40 UTC).**
+- Literature (verified): Kászonyi–Katsura slice results are per-n (Ginsburg + Flip-Flop lemma), with no uniform grammars and no ambiguity statements.
+- Reduction chain: P(Q) ⇒ P(Q_pp) ⇒ P(Q ∩ {g = p}) ⇒ P_cop (Prop H, `R2/r4_pp.md`). So ¬P_cop alone gives the negative resolution, and any proof of it
+  must use the ambiguity bound (pumping alone would show Q not CF). Theorem V: marked chords for a varying prime fail (cf. Theorems W, X).
+- Coverage loop (`R2/r4_core.md`): uniform sound gadgets cover all primitive words of length ≤ 28 except at n ∈ {20, 24..28},
+  but the covered fraction of RANDOM words decays like n^{-1/2}. Every known uniform certificate is "local" (Parikh lines, factor counts,
+  folds) and certifies only a vanishing fraction of words. The hard core is generic words, not slice families (U ∩ W_n = ∅).
+- Strategic consequence: an affirmative construction needs a uniform certificate for TYPICAL words (gcd(#a,#b) with ≥ 2 varying primes),
+  exactly what Theorems V, W and X forbid in exposed form. A negative proof should target generic words, not slices.
+- New target DENSE-SOUND: is there a poly-ambiguous CFL L ⊆ Q of positive density? ¬DENSE-SOUND ⇒ main negative (a stronger statement).

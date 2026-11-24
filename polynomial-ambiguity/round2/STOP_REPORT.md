@@ -112,3 +112,19 @@ Still unresolved. Six agents and one gated audit.
 - **SPREAD-JOINT** (per-slice, S_N): a poly-size family of facet tuples. Each facet touches ≥ P/N^{O(1)} fibres, witness chords are disjoint and non-crossing, and the family covers every two-level point t·1 + sδ + η.
 - **Uniform Off**: one polynomially ambiguous CFG covering Off = {w : x̂_w(1) ≠ 0}. The missing piece is certifying mixed-sign fold sums.
 - **L₆** and **NONUNIF**: unchanged.
+
+## 6. Round 4 addendum (strategy change: uniform, word-level, bottom-up)
+
+- **Citations** (`R2/r4_cite.md`). Kászonyi–Katsura is verified: Q ∩ (ab*)^n is CF for n with 3 distinct prime factors (1997), and for Σ1/p < 4/5 (1999).
+  These are per-n constructions with no ambiguity statements. Nothing in the literature addresses uniformity.
+- **Prop H** [written proof] (`R2/r4_pp.md`): a polynomially ambiguous grammar for Q ∩ {g = p} (one fixed prime) yields one for P_cop.
+  Hence P(Q) ⇒ P_cop, and ¬P_cop is the weakest-looking statement that gives the negative resolution.
+  - Cor U_p: no unambiguous sandwich for a single fixed prime.
+  - Theorem V: grammars marking one mismatch chord for a varying prime cover only finitely many a^p b^p.
+- **Coverage loop** (`R2/r4_core.md`) [written proof for each gadget's soundness + computational]. A library of uniform, sound, O(n)-ambiguous gadgets
+  (Parikh lines, factor-count lines, folds on letters / factors / run lengths) covers every primitive word of length ≤ 28 except
+  40, 48, 400, 780, 1242 and 3248 words at n = 20, 24, 25, 26, 27, 28. Its coverage of random words decays like n^{-1/2}.
+  The uncovered words all have x̂(1) ≠ 0: they are generic, not S_N-type.
+- **Assessment.** The hard core for both directions is certifying primitivity of typical words, whose gcd(#a,#b) has varying, multiple
+  prime factors. Theorems V, W and X rule out exposed certificates for this. Next targets: a hidden (non-exposed) uniform certificate of
+  positive density (DENSE-SOUND), or a negative argument on generic words via the ambiguity bound.
