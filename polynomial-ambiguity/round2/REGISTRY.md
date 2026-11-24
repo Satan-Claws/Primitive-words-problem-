@@ -457,3 +457,12 @@ R17b-audit_t8: r17_oh_level (Lemma L, MS^in, Lemma D, Thm OH) **SURVIVES**, no f
 - Caveats: inherited A1 (LG(c) cites SM/HL), LL and M1 audit caveats; final C1–C4 (NS local constant; (S)-factors at spanning nodes; scope of "light"; overlap).
 - SH6: polynomially ambiguous candidate (IF-free to |U|+|V| ≤ 30) with linear E[m] but NOT in G⁻, so (AM)/CR are false as stated; T8_poly is unaffected.
 - What this does NOT do: the bridge from "inside G⁻" to "every grammar for Q" is equivalent to the whole problem (`R2/r17_bridge.md`). The main problem stays OPEN.
+
+## Round 20 (started 11:13 UTC): THE BRIDGE. Reports `R2/r20_*.md`.
+Goal: any polynomially ambiguous G with L(G) = Q must contain a structure to which T8_poly applies (equivalent to the whole problem, r17_bridge); must use completeness + ambiguity.
+| task | mechanism | owner / file |
+|---|---|---|
+| G⁻-stable critical sub-structure inside any grammar for Q | completeness + substitution closure + rotation | A, `R2/r20_stable.md` |
+| Other certificate regions R (beyond G⁻) that are forced and squeezable | new region | B, `R2/r20_region.md` |
+| Near-powers for ALL p: completeness on near-powers + soundness + IF ⇒ C_exp | near-power forcing | C, `R2/r20_nearpow.md` |
+| DENSE-SOUND ⇒ fold? classify dense sound certificates, or find a non-fold one | certificate classification | D, `R2/r20_dense.md` |
