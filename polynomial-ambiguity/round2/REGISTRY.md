@@ -124,3 +124,14 @@ Agents: append at most a few lines to the section that fits. Do not rewrite othe
 - [written proof] R3-A `R2/r3_l6grammar.md`: L6 has RATIONAL GF Σ(2^{6m}−2^{3m}−2^{2m}+2^m)z^{6m} ⇒ no analytic obstruction even to unambiguity; Thm R° (exposure modulo rotation, ≥3 positive cyclic gaps ⇒ finite) kills rotation-section/“cube witness at fold depth m” routes.
 - [written proof + exhaustive N≤2] R3-A Thm M: in G2⊗(tree automaton) (“one nested structure”), a-run pumps = R_k-palindromic vectors; every L6 run-word has a chord axis k with anti_k(r)∉V3 ⇒ Theorem S's pumping does NOT lift to 𝒟2∪𝒟3∪Reg (`scripts/r3_l6_mirror.py`).
 - OPEN R3-A: no poly-amb CFG for L6 found; residual 𝒟2 task = certify anti_k(r)∉V3 (a fractional comparison); b-containing multi-site pumps on 𝒟2 unsettled.
+- [written proof] R3-depth `R2/r3_depth.md`: for exact facet-tuple constructions, ply(x) = #{σ : x ∈ R_σ}; matchings and levels are tiling devices, so audit C1's per-halving factor is the wrong accounting. Essential depth ≤ N + 1, and G-glob proper has depth 2.
+- [written proof] R3-depth Lemma D1: facets touching ≤ s fibres ⇒ ply ≥ (P/(2s))^N at norm ≤ (2N+1)n (reproves PA LAM (a)). I0/I2/J-share witnesses have s = 2 ⇒ n^{N/2−o(N)}, so the I2 route to G-glob is dead at any depth. The bound is paradigm-relative and its adversary is pure ⊕E_k, so it is NOT a new negative candidate.
+- OPEN R3-depth: SPREAD-JOINT. G-glob needs spread facets (≥ P/N^{O(1)} fibres) that are also C1-compatible (disjoint and NC chords); realise ∪ local overlay is the candidate. SPREAD-CROSS is conjectured, and false for pure types.
+
+**Round 3 synthesis (root, 02:40 UTC).** Still unresolved; no route unblocked.
+- Closed: Lemma I2 for all N (audited, `R2/r3_i2.md`, `R2/audit_r3_i2.md`); G-glob′ (ii) per facet via partial matchings (`R2/r3_sep.md`).
+- G-glob is not closed: I2-witness facets touch ≤ 2 fibres, and Lemma D1 forces ply n^{N/2} for those (`R2/r3_depth.md`). Remaining gap SPREAD-JOINT:
+  a poly-size family of facet tuples that are spread (≥ P/N^{O(1)} fibres) with disjoint, non-crossing witness chords, covering all two-level points.
+- Uniformity, negative side: forbidden exchange across slices collapses to soundness (`R2/r3_nonunif.md`). Theorem X (`R2/r3_offw.md`): no grammar exposes a two-prime certificate.
+- Affirmative side: G_fold is a uniform, linearly ambiguous grammar inside Off ⊆ Q; it does not cover Off for large n. L₆: rational GF; Theorems R° and M (`R2/r3_l6grammar.md`).
+- Exact open forms: SPREAD-JOINT (per-slice), a uniform grammar for Off (mixed-sign fold sums), L₆, NONUNIF.

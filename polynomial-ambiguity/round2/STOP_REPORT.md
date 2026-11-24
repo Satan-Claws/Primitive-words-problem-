@@ -94,3 +94,21 @@ For every cycle-free CFG G with L(G) = Q, A_G(L) = Ω(√(log L / log log L)).
 - **walk.md:** C_exp witness K ⇒ YXYX·K, two ways. The repaired grammar has amb ≤ n^{k+1} but L ⊊ Q.
 - **builder3:** first misses are two necklaces at n = 26.
 - **L₆ partial grammar** C_k: amb ≤ 7n/6 + 1, misses a⁶(bᵏaᵏ)⁶.
+
+## 5. Round 3 addendum (2026-11-24, 01:46–02:40 UTC)
+
+Still unresolved. Six agents and one gated audit.
+
+**New proved results**
+- **Lemma I2** [audited report]: for all N, every primitive y has ≤ 2N pairwise non-adjacent witness positions covering all primes. This gives G-glob′ (i) (`R2/r3_i2.md`, `R2/audit_r3_i2.md`).
+- **G-glob′ (ii) per facet** [written proof]: partial matchings make (H2) automatic, and ±1 facets suffice (`R2/r3_sep.md`).
+- **Lemma D1** [written proof]: an exact facet-region tiling whose facets each touch ≤ s fibres has a point of ply ≥ (P/2s)^N at norm ≤ (2N+1)n. So G-glob needs spread facets (`R2/r3_depth.md`). This is not a lower bound for Q.
+- **Theorem X** [written proof]: no CFG that exposes ≤ K marks containing a two-prime certificate triple generates an infinite language. The minimal W_n^⊥ support has 2^{ω(n)} points (`R2/r3_offw.md`).
+- **G_fold** [written proof + computational]: a uniform CFG with L(G_fold) ⊆ Off ⊆ Q and amb ≤ n. It covers Off fully for n ≤ 8, but coverage falls off for large n.
+- **L₆** [written proof]: rational generating function; Theorem R° (rotation does not rescue exposed marks); Theorem M (fold pumps never reach cubes) (`R2/r3_l6grammar.md`).
+- **Forbidden exchange** [written proof]: the cross-slice exchange constraint is exactly soundness and never forces a second tree (`R2/r3_nonunif.md`).
+
+**Updated exact gaps**
+- **SPREAD-JOINT** (per-slice, S_N): a poly-size family of facet tuples. Each facet touches ≥ P/N^{O(1)} fibres, witness chords are disjoint and non-crossing, and the family covers every two-level point t·1 + sδ + η.
+- **Uniform Off**: one polynomially ambiguous CFG covering Off = {w : x̂_w(1) ≠ 0}. The missing piece is certifying mixed-sign fold sums.
+- **L₆** and **NONUNIF**: unchanged.
