@@ -135,3 +135,13 @@ Agents: append at most a few lines to the section that fits. Do not rewrite othe
 - Uniformity, negative side: forbidden exchange across slices collapses to soundness (`R2/r3_nonunif.md`). Theorem X (`R2/r3_offw.md`): no grammar exposes a two-prime certificate.
 - Affirmative side: G_fold is a uniform, linearly ambiguous grammar inside Off ⊆ Q; it does not cover Off for large n. L₆: rational GF; Theorems R° and M (`R2/r3_l6grammar.md`).
 - Exact open forms: SPREAD-JOINT (per-slice), a uniform grammar for Off (mixed-sign fold sums), L₆, NONUNIF.
+
+## Round 4 (started ~02:50 UTC): strategy change. Reports `R2/r4_*.md`.
+Rationale: per-slice geometry is answered (low-ply bounded-data covers exist), so the remaining question is uniformity at the word/grammar
+level. Switch to a bottom-up loop: union all known uniform poly-ambiguous gadgets, compute the exact uncovered primitive words, then
+design gadgets for them or extract a word-level negative family. Split the difficulty using L1 (only primes dividing g = gcd(#a,#b) matter).
+| task | owner / file |
+|---|---|
+| Gadget library + exact uncovered core (coverage loop) | R4-A, `R2/r4_core.md` |
+| One varying prime: Q ∩ {g(w) prime power} | R4-B, `R2/r4_pp.md` |
+| Citation check: Kászonyi–Katsura, Dömösi–Ito (what is proved, are constructions uniform) | R4-C, `R2/r4_cite.md` |
