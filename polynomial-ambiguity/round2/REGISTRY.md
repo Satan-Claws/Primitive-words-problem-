@@ -80,3 +80,5 @@ Agents: append at most a few lines to the section that fits. Do not rewrite othe
 - Constructive: transfer atoms close the n = 30 fibre obstruction (Lemma FT, pqr fibre-supported); W_30 covered to norm 10 [computational].
 - Open, ranked: (a) uniformity NONUNIF (one grammar across n) — the remaining S_N lever; (b) W far from U and off-W points (not covered
   by the pair-facet family); (c) G-rho / G-h on the length side; (d) n = 36 explicit covers.
+- [written proof + computational] `R2/construct36.md` Lemma 36: E∩W_36 (S_2, whole slice) is covered by 72 k≤2 chord-dominance systems (12 fibre rectangles + 60 cross-fibre chord pairs), so Q∩(ab*)^36 has ply ≤ 2n+φ(n) = 84. Exhaustive check to ‖x‖₁≤16 (4.6M pts, 64 634 D_36-classes) with 0 uncovered; transfer and k=3 atoms are not needed.
+- [assessment] `R2/construct36.md` §4: the mechanism is one system per tuple of distinct witness fibres, which is multiplicative (~n^{N/2}) for N≥3. So S_2 is uninformative for S_N, and S_3 (n=900) is the first real test.
