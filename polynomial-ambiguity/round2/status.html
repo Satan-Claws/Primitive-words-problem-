@@ -108,6 +108,7 @@ details .body{padding:12px 16px}
     <span class="pill">Status: open</span>
     <span class="pill">Conjectured answer: no</span>
     <span class="pill">✅ T8_unamb: fully audited theorem</span>
+    <span class="pill">T8_poly: one case left (light/light)</span>
     <span class="pill">18 rounds · ≈88 agents · 16 gated audits</span>
   </div>
 </div></header>
@@ -347,7 +348,8 @@ details .body{padding:12px 16px}
 <p><b>G-trunk reduced (round 17):</b> the only remaining multiplicity is the exit sliding inside the critical component. It needs only the <i>average</i> multiplicity to be small, condition (AM): E[m] = o(N<sup>β₀</sup>). The worst case can be larger (Example S has ~N trees on one word), and the ceiling lemma doesn't apply to averages. Lemma NR (two different parses never re-synchronise) is the starting point.</p>
 <p><b>Round 18 on (AM):</b> a weaker sufficient condition (Prop AM′) is proved. Its exact gap: ruling out an alternative parse that matches every continuation forever. Every critical grammar with slides found so far turned out to be exponentially ambiguous, which supports a conjecture (CR). But one candidate, <b>SH6</b>, has growing multiplicity and no exponential-ambiguity witness up to length 21. An exact decision procedure is now being run on it. If SH6 is truly polynomially ambiguous, it refutes (AM) as stated, but not T8_poly unless its words also stay inside G⁻.</p>
 <p><b>Round 18 on G-end:</b> proved for grammars whose words stay in the quadrant set Q(C), at any polynomial ambiguity, by counting word prefixes rather than measuring derivations, so stacking never matters. For the real target (inside G⁻), it reduces to one configuration: the top critical component, with light material on the left and heavy material on the right. If both sides are light, this ties back to (AM).</p>
-<p><b>Audit (round 18):</b> G-word, G-geo, Prop P (with Lemmas IF, SU and the Trunk Lemma) and G-end for Q(C) all <b>survive</b>, with two small repairs. The polynomial-ambiguity version is therefore <b>audited for grammars inside the quadrant set Q(C)</b>. What remains for G⁻ is the light-left / heavy-right configuration, plus the SH6 question.</p>
+<p><b>Audit (round 18):</b> G-word, G-geo, Prop P (with Lemmas IF, SU and the Trunk Lemma) and G-end for Q(C) all <b>survive</b>, with two small repairs. The polynomial-ambiguity version is therefore <b>audited for grammars inside the quadrant set Q(C)</b>. What remained for G⁻ was the light-left / heavy-right configuration, plus the SH6 question.</p>
+<p><b>Light-left / heavy-right: closed</b> (Lemma RP, written proof). Inserting a flat heavy word at the <i>top</i> of the segment, not the innermost position, bounds the left walk over the whole span, which leaves too few words. <b>The single remaining gap for T8_poly</b> is a critical component that is light on both sides. It needs the average exit-slide multiplicity to be o(n), a weaker form of (AM). SH6 is exactly the test case.</p>
 </div></details>
 <details><summary><span class="n">3</span>EQ-2q: match Q exactly on rows with 2q a's</summary><div class="body">
 <p>Is there a polynomially ambiguous grammar that agrees <i>exactly</i> with Q on every row with 2q a's (q prime)? If not, the problem is solved as "no". The bad words there are only squares and q-th powers of two-a words; Lemma S characterises the good ones exactly. The missing piece is making the ambiguity bound enter.</p>
