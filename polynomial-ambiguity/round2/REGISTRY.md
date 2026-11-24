@@ -195,3 +195,14 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 - [written proof + 2977/2977 random DFAs] R6-A `R2/r6_build.md`: Prop K: any REGULAR condition on the fold pair sequence (mod-m, any DFA, centre info) that is sound has density e^{−Ω(n)} — fooled by u^{2j+1}, j = idempotent exponent (kernel of the transition monoid); fold certificates need unbounded spine memory.
 - R6-A: Lemma SA: L_A = {xy : x b-first Dyck, every suffix of y a-majority, |x| ≥ |y|} ⊆ G⁻ ⊆ Q (exh n ≤ 18); Rot(L_A ∪ swap) density ≈ .62–.67 (MC). G⁻-affirmative reduces to one Θ(n) length coupling of two one-counter parts; L_A itself is not CF (Prop N, pumping on b⁺a⁺ba⁺).
 - R6-A: no CF positive-density sub-certificate found; FOLD-COUNTER still OPEN (all attempts fail at length coupling vs counters).
+- [written proof + exh n≤14 + MC] R6-B `R2/r6_nofold.md`: FOLD-COUNTER negative NOT resolved. Lemma L (edit of size r moves every d_k by ≤ r; depths below the edit fixed), Lemma M (G⁻ is an up-set: b-insert left / a-insert right / outward flips; rc-invariant). Hence bounded pumps (N1), macroscopic single pumps (N2, MC: ≈0.9 survive) and interchange/one-split rectangles (N3) cannot refute any CF L ⊆ G⁻; slices are stratified (G⁻∩b^i a^j(ba)^m = {i>m}∪{j<i}).
+- R6-B: length coupling is a genuine barrier for local/one-split tools only. Only non-F1 handle: Θ(1) exit probability per macroscopic surgery (Q: 2^{−Ω(n)}). Spine reduction ⇒ hanging languages lie in shifted meanders G⁻_{t,h}; exact gap = Lemma Q (CF L ⊆ G⁻_{t,h} has density ≤ c·min(1,h/√n)^{1+η}), OPEN. Fold-type class: REG = Prop K (sparse); one-counter = FOLD-COUNTER itself; CF not pinnable (would touch Q ∉ CF).
+
+**Round 6 synthesis (root, ~06:30 UTC).** FOLD-COUNTER still open; the question is now one precise obstacle.
+- Rotated fold certificates cover all of Q for n ≤ 30 (exhaustive); Lemma A: a rotation of every primitive word with a unique balance argmax lies in
+  G⁻ = {d_k < 0 ∀k ≤ n/2} ⊆ Q; misses ≈ 0.43/√n (the tie family, g ≥ 2). Lemma M: [n/3, n/2] is the unique all-n window (`R2/r6_miss.md`).
+- Prop K: regular (finite-memory) fold certificates that are sound are exponentially sparse (`R2/r6_build.md`). Lemma SA: G⁻ reduces to
+  Dyck-prefix · a-heavy-suffix with ONE length coupling |x| ≥ |y|; dropping it is unsound (baa·baa); L_A is not CF (Prop N).
+- Negative side (`R2/r6_nofold.md`): bounded pumps, single large pumps and interchange all fail to separate G⁻ from CF; the remaining
+  handle is Lemma Q (density of CF L inside shifted meanders G⁻_{t,h}), which needs polynomial ambiguity to enter (F1).
+- Decisive open question: can a polynomially ambiguous CFG realise the length coupling on a rotation-dense subset of G⁻?
