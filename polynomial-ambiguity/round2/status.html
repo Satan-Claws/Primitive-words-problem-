@@ -97,11 +97,11 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
 <header class="hero"><div class="in">
   <h1>Primitive words and polynomially ambiguous grammars</h1>
   <p>Can a context-free grammar generate exactly the primitive words while giving every word only polynomially many parse trees?</p>
-  <p style="opacity:.85;font-size:.92rem">Status snapshot · 24 Nov 2026 · round 14 in progress</p>
+  <p style="opacity:.85;font-size:.92rem">Status snapshot · 24 Nov 2026 · round 15 in progress</p>
   <div class="pills">
     <span class="pill">Status: open</span>
     <span class="pill">Conjectured answer: no</span>
-    <span class="pill">13 rounds · ≈55 agents · 8 gated audits</span>
+    <span class="pill">14 rounds · ≈57 agents · 9 gated audits</span>
   </div>
 </div></header>
 
@@ -231,7 +231,8 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
   <div class="it s"><div class="h">Round 11 <span class="tag t-sc">satan-claws</span></div><div class="d">~10:30–13:30 (one network outage)</div><b>EQ-2q:</b> exact characterisation of the primitive words on rows 2q (Lemma S), and no finite-automaton sorter works (Theorem T). The missing piece is turning that into a bound on parse trees. <b>Rigidity:</b> the abstract version is false (G⁻ itself is a valid pair model), so any proof must use the shape of context-free grammars. New target: "FSC rigidity".</div>
   <div class="it s"><div class="h">Round 12 <span class="tag t-sc">satan-claws</span></div><div class="d">~13:40–14:40</div><b>Consolidation:</b> an 831-line research note and 49 new rows in RESULTS_INDEX. <b>FSC rigidity:</b> blocks with high excursions are ruled out (Lemma SF). For Dyck-shaped blocks, swapping high and low excursions provably can't break G⁻ (No-go 4). Remaining gap: "padding rigidity".</div>
   <div class="it s"><div class="h">Round 13 <span class="tag t-sc">satan-claws</span></div><div class="d">~14:40–15:40</div><b>Audit:</b> Theorems N, N2 and the fold lemmas all survive. <b>Padding rigidity proved for two-sided models (PR2)</b> by a "measure squeeze": long level blocks force a valley shape, valley words inside G⁻ are rarer (n<sup>−2/3</sup> vs n<sup>−1/2</sup>), and an injective grammar needs more mass than that allows. It also rules out multiplicity below n<sup>1/6</sup>, the first quantitative step past unambiguity. Open: "steep" models.</div>
-  <div class="it s"><div class="h">Round 14 <span class="tag t-sc">satan-claws</span> <span class="tag t-open">running</span></div><div class="d">now</div><b>Audit: PR1/PR2 SURVIVE.</b> The wedge exponent 2/3 was confirmed independently by exact DP. Steep-model agent still running.</div>
+  <div class="it s"><div class="h">Round 14 <span class="tag t-sc">satan-claws</span></div><div class="d">~15:40–16:40</div><b>Audit: PR1/PR2 SURVIVE.</b> The wedge exponent 2/3 was confirmed independently by exact DP. <b>Steep models:</b> every heavy block contains a self-branching component and is "level" on both sides up to log slack, and PR2 survives that slack. T8_unamb is down to three pieces: side mismatch, heavier tails, and the one-sided step.</div>
+  <div class="it s"><div class="h">Round 15 <span class="tag t-sc">satan-claws</span> <span class="tag t-open">running</span></div><div class="d">now</div>One agent per remaining piece of T8_unamb.</div>
 </div>
 </section>
 
