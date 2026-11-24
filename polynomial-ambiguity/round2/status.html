@@ -233,6 +233,7 @@ details .body{padding:12px 16px}
       </g>
     </g>
   </svg>
+  <p><b>What T8_unamb does and doesn't give.</b> It shows the single best-known way to certify typical words is out of reach for unambiguous grammars. That is strong evidence for "no". But it doesn't solve the problem: round 17 showed that getting from "fold-type grammars" to "every grammar" is as hard as the problem itself (step 5b).</p>
   <p>The proof splits by where the long blocks sit (one side or both) and how heavy their length distribution is. See the <a href="#map">proof map</a> for each case's status.</p>
 </div></div>
 
@@ -240,7 +241,13 @@ details .body{padding:12px 16px}
   <h3>Lift to polynomial ambiguity, then to every grammar <span class="status" style="color:var(--muted)">next</span></h3>
   <ul>
     <li><b>5a.</b> From unambiguous to polynomially ambiguous. <b>Round 17 finding: the squeeze alone cannot do this.</b> Its gaps are polynomial, so it can never rule out ambiguity of about n/log n or more (ceiling lemma), and a single erased marker already costs a factor n. A full lift needs a new ingredient: a set-level density bound inside the quadrant (G-word), or using G⁻ to force exponential ambiguity directly (G-struct).</li>
-    <li><b>5b.</b> From fold-type grammars to <i>every</i> grammar for Q. Show any polynomially ambiguous grammar for Q must contain a dense fold-type part. This is the hardest step, and where the full difficulty of the problem lives. Related targets: P_cop and EQ-2q (see <a href="#open">open questions</a>).</li>
+    <li><b>5b.</b> From fold-type grammars to <i>every</i> grammar for Q. <b>Round 17 finding: this "bridge" is equivalent to the whole problem.</b>
+      <ul>
+        <li>Regular filtering can't do it (Prop NR).</li>
+        <li>The weakest property that would let T8 apply (a critical sub-grammar staying inside G⁻) is exactly what T8 forbids (Lemma Core).</li>
+        <li>A bridge must exploit <i>completeness</i> (the grammar generates every primitive word) together with ambiguity. No mechanism for that is known yet.</li>
+      </ul>
+      Related targets: P_cop and EQ-2q (see <a href="#open">open questions</a>).</li>
   </ul>
   <p style="font-size:.9rem;color:var(--muted)">If at any point a grammar <i>does</i> implement the fold densely, the picture flips toward "yes": the remaining words are rare structured exceptions that known gadgets largely handle.</p>
 </div></div>
@@ -420,7 +427,7 @@ details .body{padding:12px 16px}
   <div class="it s"><div class="h">Round 14</div>Every heavy block is level (Prop HL, Lemma Bot).</div>
   <div class="it s"><div class="h">Round 15</div>One-sided (PR1s) and side mismatch (SM) closed; balanced heavy tails (PR2<sup>β</sup>); all audited.</div>
   <div class="it s"><div class="h">Round 16</div>All two-sided cases via the quadrant (MS⁺/PR2⁺).</div>
-  <div class="it s"><div class="h">Round 17 (6 parallel agents, running)</div>MS⁺/PR2⁺ audited. Lift: the squeeze has a ceiling (≲ n/log n), so a new ingredient is needed. <b>Last T8_unamb case claimed</b> (Lemma L + MS<sup>in</sup>); final audit running. Two proof routes and a counterexample search on the last case; lift to polynomial ambiguity; the bridge to all grammars.</div>
+  <div class="it s"><div class="h">Round 17 (6 parallel agents, running)</div>MS⁺/PR2⁺ audited. Lift: the squeeze has a ceiling (≲ n/log n), so a new ingredient is needed. Bridge: equivalent to the whole problem; it must use completeness plus ambiguity. <b>Last T8_unamb case claimed</b> (Lemma L + MS<sup>in</sup>); final audit running. Two proof routes and a counterexample search on the last case; lift to polynomial ambiguity; the bridge to all grammars.</div>
 </div>
 </div></details>
 </section>
