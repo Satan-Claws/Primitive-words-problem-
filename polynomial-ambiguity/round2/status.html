@@ -97,11 +97,11 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
 <header class="hero"><div class="in">
   <h1>Primitive words and polynomially ambiguous grammars</h1>
   <p>Can a context-free grammar generate exactly the primitive words while giving every word only polynomially many parse trees?</p>
-  <p style="opacity:.85;font-size:.92rem">Status snapshot · 24 Nov 2026 · round 6 in progress</p>
+  <p style="opacity:.85;font-size:.92rem">Status snapshot · 24 Nov 2026 · after round 6</p>
   <div class="pills">
     <span class="pill">Status: open</span>
     <span class="pill">Conjectured answer: no</span>
-    <span class="pill">6 rounds · ≈35 agents · 5 gated audits</span>
+    <span class="pill">6 rounds · ≈40 agents · 6 gated audits</span>
   </div>
 </div></header>
 
@@ -223,7 +223,7 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
   <div class="it s"><div class="h">Round 3: uniformity <span class="tag t-sc">satan-claws</span></div><div class="d">01:46–02:40</div>Lemma I2 <span class="tag t-aud">audited</span>; Theorems W, X; uniform grammars for single primes and G_fold; L₆ has a rational generating function.</div>
   <div class="it s"><div class="h">Round 4: strategy change <span class="tag t-sc">satan-claws</span></div><div class="d">~02:50–03:40</div>Bottom-up coverage loop: the hard core is generic words. Literature verified (per-n only). Prop H reduction chain <span class="tag t-aud">audited</span>.</div>
   <div class="it s"><div class="h">Round 5: dense certificates <span class="tag t-sc">satan-claws</span></div><div class="d">03:17–~04:00</div>Interval-fold certificate (density ≈ 0.61, a variant gets close to 1). Count-based certificates capped at O(n<sup>−1/2</sup>).</div>
-  <div class="it s"><div class="h">Round 6: FOLD-COUNTER <span class="tag t-sc">satan-claws</span> <span class="tag t-open">running</span></div><div class="d">now</div>One agent builds a context-free dense fold certificate; one tries to prove none exists.</div>
+  <div class="it s"><div class="h">Round 6: FOLD-COUNTER <span class="tag t-sc">satan-claws</span></div><div class="d">~04:00–06:30</div>Rotated fold certificates cover <b>all</b> primitive words up to length 30. Lemma A: one canonical rotation lands in G⁻ (prefix a-count &lt; suffix a-count for every k ≤ n/2). Prop K: finite-memory fold certificates can't be sound and dense. Lemma SA: the whole question reduces to <b>one length coupling</b> between two one-counter halves. Still open in both directions.</div>
 </div>
 </section>
 
@@ -245,6 +245,9 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
 <tr><td>Theorem U</td><td>No unambiguous language between the coprime words and Q</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
 <tr><td>Prop P / Theorem P_K</td><td>Count-based CF certificates cover ≤ O(n<sup>−1/2</sup>) of words</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
 <tr><td>Lemma F (interval fold)</td><td>Sound certificate, density ≈ 0.61 (variant → 1)</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span>; CF-ness <span class="tag t-open">open</span></td></tr>
+<tr><td>Lemma A + rotation coverage</td><td>One canonical rotation of almost every primitive word lies in G⁻ ⊆ Q; rotated folds cover Q for n ≤ 30</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span> + <span class="tag t-comp">exhaustive n ≤ 30</span></td></tr>
+<tr><td>Prop K</td><td>Fold certificates checkable by a finite automaton are unsound or exponentially sparse</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
+<tr><td>Lemma SA</td><td>G⁻ = Dyck prefix · a-heavy suffix with one length coupling; dropping it is unsound</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-wp">written proof</span></td></tr>
 <tr><td>Coverage loop</td><td>Uniform gadgets cover all primitive words of length ≤ 28 except a few thousand</td><td><span class="tag t-sc">satan-claws</span></td><td><span class="tag t-comp">computational</span> + <span class="tag t-aud">soundness audited</span></td></tr>
 </table>
 </div>
@@ -288,8 +291,9 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-seri
 <section id="open">
 <h2>7. Open questions<small>Ranked by how directly they move the problem</small></h2>
 
-<details open><summary><span class="n">1</span>FOLD-COUNTER: is a dense part of the fold certificate context-free?<span class="tag t-open" style="margin-left:auto">round 6</span></summary><div class="body">
-<p>Is there a polynomially ambiguous CFG L ⊆ Q covering a positive fraction of words, built from the interval-fold idea? A grammar can generate the fold (pairs of letters from both ends) and run a finite automaton over the pairs for free. The obstacle is the <i>counter</i>: "d<sub>k</sub> ≠ 0 across the window" needs unbounded memory alongside the fold.</p>
+<details open><summary><span class="n">1</span>FOLD-COUNTER: can one grammar make the length coupling work?<span class="tag t-open" style="margin-left:auto">sharpened in round 6</span></summary><div class="body">
+<p>After round 6 the question is very specific. A rotation of almost every primitive word lies in <b>G⁻</b> = {prefix a-count &lt; suffix a-count for every k ≤ n/2}, which is inside Q. Exact cyclic closure turns any grammar for a part of G⁻ into one for all its rotations.
+G⁻ splits as a <b>Dyck-type prefix</b> times an <b>a-heavy suffix</b>, glued by one length condition |x| ≥ |y|. Each half is easy for a grammar; the coupling is the whole problem. Dropping it lets squares like <code>baa·baa</code> through. Finite-memory checks provably fail (Prop K), and the coupled language L_A is not context-free (Prop N). Whether some <i>dense</i> polynomially ambiguous sublanguage exists is open. The negative side needs "Lemma Q", a density bound inside shifted meanders.</p>
 <div class="yn"><div class="y"><b>If yes:</b> sound polynomial grammars cover most typical words. The "generic words are hard" heuristic dies, and the remaining difficulty is the structured exceptions. That moves the problem toward "yes".</div><div class="no"><b>If no, for a robust reason</b> ("fold + counter is never CF on dense sets"): the strongest negative lead so far. It explains why every known certificate stays at density → 0.</div></div>
 </div></details>
 
