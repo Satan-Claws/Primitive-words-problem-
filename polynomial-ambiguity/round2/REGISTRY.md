@@ -169,3 +169,4 @@ design gadgets for them or extract a word-level negative family. Split the diffi
 | Negative: generic words vs Wich structure ("bounded linear invariants") | R5-A, `R2/r5_generic.md` |
 | Affirmative: hidden uniform certificate of positive density (DENSE-SOUND) | R5-B, `R2/r5_dense.md` |
 | Audit: Prop H + soundness of coverage-loop gadgets | R5-C, `R2/audit_r4.md` |
+- [audit] R5-C `R2/audit_r4.md`: Prop H SURVIVES (block lemma any p≥2; unary/ε edge cases fine; literal pullback grammar G′ with ε-leaves gives exact tree-count bijection, 6 240 random-grammar tests, 0 mismatch; Cor U_p conditional on unaudited Thm U). Lemma S + LIN/FOLD/FL/LF/PF/RLF SOUND (independent brute force: 8 714 non-primitive words n ≤ 24, 0 accepted; S0 matches .976/.923); RLF wrap needs a canonical split of the partner run (naive split ⇒ ≤ n× trees, still poly).
