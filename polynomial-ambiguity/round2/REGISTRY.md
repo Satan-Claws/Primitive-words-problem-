@@ -366,3 +366,4 @@ T8_unamb remaining: (1) side mismatch (U-side block only V-level); (2) heavier t
 |---|---|
 | Unbalanced two-tape tails (last T8_unamb gap) | R16-A, `R2/r16_unbal.md` |
 | Gated audit: PR1s, Theorem SM, PR2^β | R16-B, `R2/audit_r16.md` |
+- R16-B audit (`reports/audit_r16.md`, `scripts/audit_r16_dp.py`): PR1s SURVIVES (Lemma CM/J recomputed by own DP, M1·m^{1/6}→0.34, E[s;τ>m]·m^{1/6}≈0.32; minor fix for m≤n<4m); Theorem SM SURVIVES (rare/frequent bounds uniform; lower SCCs analytic so non-SCC system fine; Step 3 yields a NEW form with e=0); PR2^β SURVIVES (QW own DP m^{1/3}T^{2/3}P∈[0.82,0.97]; 2^j>2^k−3 bookkeeping correct; ST(i) write-up imprecise, conclusion right). All modulo cited DW.
